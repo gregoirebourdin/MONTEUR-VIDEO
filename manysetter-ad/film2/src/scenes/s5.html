@@ -53,6 +53,7 @@
         /* ---------- Playbook ---------- */
         #s5-pb {
           top: 196px;
+          overflow: visible;
         }
         #s5-pb .body {
           padding: 28px 30px 30px;
@@ -404,8 +405,7 @@
         tl.fromTo("#s5-booked .ok", { scale: 0 }, { scale: 1, duration: 0.45, ease: "back.out(3)" }, {{cue:P5.call}} + 0.3);
         // right in the DM: the camera leans in on the booked call
         tl.fromTo("#s5-chat", { scale: 1 }, { scale: 1.045, duration: 1.4, ease: "power2.inOut", transformOrigin: "60% 85%", immediateRender: false }, {{cue:P5.right}} - 0.1);
-        tl.to("#s5-chat", { opacity: 0.16, x: -200, filter: "blur(14px)", duration: 0.5, ease: "power2.inOut" }, {{bout:8}} - 0.05);
-        tl.to("#s5-chat", { opacity: 0, duration: 0.3 }, {{hold}} - 0.2);
+        tl.to("#s5-chat", { opacity: 0, x: -120, scale: 0.94, filter: "blur(14px)", duration: 0.4, ease: "power2.in" }, {{bout:8}} - 0.05);
 
         {{kt_js}}
         window.__timelines["s5"] = tl;
