@@ -1,0 +1,1139 @@
+1
+00:00:03,280 --> 00:00:07,380
+Hey everyone, today we're back with a brand new YouTube video
+
+2
+00:00:07,380 --> 00:00:10,980
+and it's an awesome one, because today we're going to build nothing less than an
+
+3
+00:00:10,980 --> 00:00:14,940
+AI setter that's going to be plugged into our Instagram
+
+4
+00:00:14,940 --> 00:00:19,020
+and that's going to bring calls straight into our Calendly.
+
+5
+00:00:19,020 --> 00:00:22,620
+It's as simple as that. So why this video? Because these days
+
+6
+00:00:22,620 --> 00:00:26,340
+I see a ton of tutorials in communities
+
+7
+00:00:26,340 --> 00:00:29,880
+or even on YouTube that teach you how to build ManyChat flows to
+
+8
+00:00:29,880 --> 00:00:33,420
+create AI setters, and the problem is that most of the
+
+9
+00:00:33,420 --> 00:00:38,280
+time, the AI setters they show us look like this. Let's be
+
+10
+00:00:38,280 --> 00:00:41,940
+real: nobody on this planet has enough energy or
+
+11
+00:00:41,940 --> 00:00:45,720
+time to maintain this kind of scenario and still seriously
+
+12
+00:00:45,720 --> 00:00:49,440
+focus on the sales side and on the
+
+13
+00:00:49,440 --> 00:00:53,160
+setting side, and on how well our AI setter
+
+14
+00:00:53,160 --> 00:00:57,120
+performs when it comes to booking calls. So what I'm suggesting today
+
+15
+00:00:57,120 --> 00:01:00,900
+is to show you a super simple method that's going to let you, in
+
+16
+00:01:01,140 --> 00:01:04,680.0000000000073
+barely nine minutes, create the best AI setter
+
+17
+00:01:04,680.0000000000073 --> 00:01:08,280
+you've ever used. You ready? Let's
+
+18
+00:01:08,280 --> 00:01:11,880
+go. Step number one is to have
+
+19
+00:01:12,806.6666666666715 --> 00:01:16,380
+a ManyChat account, and obviously an
+
+20
+00:01:16,380 --> 00:01:20,700
+Instagram account to test it, and a Calendly.
+
+21
+00:01:21,146.66666666667152 --> 00:01:24,900
+Once you've got that, head over to this site. It's called
+
+22
+00:01:24,900 --> 00:01:28,440
+manysetter.com, you'll find the link in
+
+23
+00:01:28,440 --> 00:01:32,280
+the description below, and it's going to let you, for free,
+
+24
+00:01:32,280 --> 00:01:36,180
+create your setter. So what's super
+
+25
+00:01:36,180 --> 00:01:39,780
+cool is that you'll be able to manage everything from this
+
+26
+00:01:39,780 --> 00:01:43,440
+site. You're going to take the whole sales part and everything
+
+27
+00:01:43,440 --> 00:01:47,040
+that makes up the core of setting out
+
+28
+00:01:47,040 --> 00:01:50,640
+of ManyChat, and that's what makes the flow so simple that
+
+29
+00:01:50,640 --> 00:01:54,420
+you'll only need two steps instead
+
+30
+00:01:54,420 --> 00:01:57,960
+of the thousand and one steps and thousand and one conditions
+
+31
+00:01:57,960 --> 00:02:01,560
+we usually have in a ManyChat flow. So let's jump
+
+32
+00:02:01,560 --> 00:02:05,220
+right in, we're going to click on Create my Many
+
+33
+00:02:05,220 --> 00:02:09,360.00000000001455
+Chat setter. Once you've clicked on that,
+
+34
+00:02:09,360.00000000001455 --> 00:02:13,080
+you'll be redirected to a login page. In my case,
+
+35
+00:02:13,080 --> 00:02:16,800
+I'm already logged in, but you'll just enter your email and get
+
+36
+00:02:16,800 --> 00:02:20,640
+a code that you'll need to grab from your inbox and paste
+
+37
+00:02:20,640 --> 00:02:24,600
+into ManySetter. Once that's done, you'll simply create
+
+38
+00:02:24,600 --> 00:02:28,500
+a new workspace. So for the demo, I'm going to call it
+
+39
+00:02:30,293.33333333334303 --> 00:02:34,500
+ManyChat Test, nice and simple. I create the workspace.
+
+40
+00:02:35,580 --> 00:02:39,540
+From there, ManySetter offers to create our setter right away.
+
+41
+00:02:39,540 --> 00:02:43,140
+So let's go. We click on Setup
+
+42
+00:02:43,140 --> 00:02:46,800
+setter, and once that's done, the app is going to
+
+43
+00:02:46,800 --> 00:02:50,340
+ask you a pretty relevant question: are you creating it for
+
+44
+00:02:50,340 --> 00:02:53,940
+a client or for your own business? In our case,
+
+45
+00:02:53,940 --> 00:02:58,020
+it's for our own business, so we click on that. We're
+
+46
+00:02:58,020 --> 00:03:01,740
+going to want to create a setter on Instagram, so for
+
+47
+00:03:01,740 --> 00:03:05,820
+the example, we'll call it Instagram setter.
+
+48
+00:03:06,326.66666666665697 --> 00:03:11,700
+I click Next. And
+
+49
+00:03:11,700 --> 00:03:15,360
+now we get to the connection with ManyChat,
+
+50
+00:03:15,360 --> 00:03:19,080
+which makes it even easier to use. So basically, you've got videos
+
+51
+00:03:19,080 --> 00:03:22,620
+here you can watch, but I'll show you directly right here. You're going to
+
+52
+00:03:22,620 --> 00:03:26,460
+click Copy to grab the
+
+53
+00:03:26,460 --> 00:03:30,360
+code and click Install in ManyChat. Then
+
+54
+00:03:30,360 --> 00:03:34,680
+a page will open, the ManyChat page, which will offer to install
+
+55
+00:03:34,680 --> 00:03:38,280
+the app right away. So as you can see, it's super simple, you
+
+56
+00:03:38,280 --> 00:03:42,240
+just have to scroll and
+
+57
+00:03:42,240 --> 00:03:45,900
+click Install. Once that's
+
+58
+00:03:45,900 --> 00:04:16,686.9917916902341
+done, you'll go ahead and pick the app. The
+
+59
+00:04:16,686.9917916902341 --> 00:04:20,346.9917916902341
+page will simply ask you to install this app, so you
+
+60
+00:04:20,346.9917916902341 --> 00:04:24,186.9917916902341
+just have to click the Install button below. Here
+
+61
+00:04:24,633.6584583569202 --> 00:04:28,266.9917916902341
+it's going to ask which account we want to install
+
+62
+00:04:28,266.9917916902341 --> 00:04:31,926.9917916902341
+our AI setter on. You'll select yours, of course,
+
+63
+00:04:32,226.9917916902341 --> 00:04:35,826.9917916902341
+the one with your social accounts connected. So
+
+64
+00:04:35,826.9917916902341 --> 00:04:39,486.9917916902341
+today the tutorial is about Instagram, but you'll also be able to
+
+65
+00:04:39,486.9917916902341 --> 00:04:43,146.9917916902341
+use it on WhatsApp, Telegram, Messenger and Instagram
+
+66
+00:04:43,146.9917916902341 --> 00:04:47,46.991791690234095
+of course. So you click Install. And
+
+67
+00:04:47,46.991791690234095 --> 00:04:51,126.9917916902341
+right away you'll see that ManyChat
+
+68
+00:04:51,126.9917916902341 --> 00:04:54,966.9917916902341
+tells us the app has been installed. You're going to go into
+
+69
+00:04:55,533.6584583569202 --> 00:04:59,166.9917916902341
+the app settings, and it's in these settings
+
+70
+00:04:59,553.6584583569202 --> 00:05:03,666.9917916902341
+that we'll paste the ManySetter code.
+
+71
+00:05:06,993.6584583569202 --> 00:05:10,686.9917916902341
+Once the code is pasted, you can click
+
+72
+00:05:11,553.6584583569202 --> 00:05:16,326.9917916902341
+Save. Perfect,
+
+73
+00:05:16,326.9917916902341 --> 00:05:20,226.9917916902341
+as you can see, everything's been saved. Now
+
+74
+00:05:20,226.9917916902341 --> 00:05:23,946.9917916902341
+ManySetter is connected to your Many
+
+75
+00:05:23,946.9917916902341 --> 00:05:27,606.9917916902341
+Chat. So we go back to the
+
+76
+00:05:27,606.9917916902341 --> 00:05:31,206.9917916902341
+setup page of our workspace and boom, as you can
+
+77
+00:05:31,206.9917916902341 --> 00:05:34,986.9917916902341
+see, ManySetter is connected. Now ManySetter
+
+78
+00:05:34,986.9917916902341 --> 00:05:38,526.9917916902341
+tells us we need to add ManySetter
+
+79
+00:05:38,526.9917916902341 --> 00:05:42,246.9917916902341
+to a ManyChat flow, which is super interesting
+
+80
+00:05:42,246.9917916902341 --> 00:05:46,386.9917916902341
+because that's where it all happens. Instead of having to use
+
+81
+00:05:46,386.9917916902341 --> 00:05:49,926.9917916902341
+thousands of modules, thousands of apps, we're
+
+82
+00:05:49,926.9917916902341 --> 00:05:53,826.9917916902341
+just going to head into our automations.
+
+83
+00:05:53,826.9917916902341 --> 00:05:57,546.9917916902341
+As you can see, I've created a flow that's more than
+
+84
+00:05:57,546.9917916902341 --> 00:06:01,566.9917916902341
+basic for today's test. And
+
+85
+00:06:01,566.9917916902341 --> 00:06:05,106.9917916902341
+this flow simply detects whether
+
+86
+00:06:05,106.9917916902341 --> 00:06:09,66.9917916902341
+a user on Instagram sends us a message containing
+
+87
+00:06:09,513.6584583569202 --> 00:06:13,26.991791690234095
+any of these letters, so it obviously replies to everyone, just for the
+
+88
+00:06:13,26.991791690234095 --> 00:06:16,566.9917916902341
+sake of the test. So as you can see here, we're going to delete
+
+89
+00:06:16,986.9917916902341 --> 00:06:21,666.9917916902341
+Send a message right away. There we go,
+
+90
+00:06:21,666.9917916902341 --> 00:06:25,446.9917916902341
+and we're going to choose another step. We're simply going to click
+
+91
+00:06:25,446.9917916902341 --> 00:06:29,346.9917916902341
+on Action here. So I click.
+
+92
+00:06:29,733.6584583569202 --> 00:06:33,906.9917916902341
+You can click here to add an action, and
+
+93
+00:06:33,906.9917916902341 --> 00:06:37,746.9917916902341
+right away you'll be able to click
+
+94
+00:06:37,746.9917916902341 --> 00:07:21,606.9917916902341
+on Action. Automatically,
+
+95
+00:07:21,606.9917916902341 --> 00:07:25,926.9917916902341
+you'll be able to click on Action right here and select,
+
+96
+00:07:25,926.9917916902341 --> 00:07:29,826.9917916902341
+as you can see, the app that's suggested right there,
+
+97
+00:07:29,826.9917916902341 --> 00:07:33,426.9917916902341
+it doesn't get any simpler. You click Start conversation
+
+98
+00:07:33,786.9917916902341 --> 00:07:37,386.9917916902341
+and once that's done, ManySetter is going to
+
+99
+00:07:37,386.9917916902341 --> 00:07:41,946.9917916902341
+show you a few fields, including the
+
+100
+00:07:41,946.9917916902341 --> 00:07:45,546.9917916902341
+channel you're going to use. In our case, it's Instagram.
+
+101
+00:07:45,546.9917916902341 --> 00:07:49,86.9917916902341
+So we click here and select our
+
+102
+00:07:49,86.9917916902341 --> 00:07:52,686.9917916902341
+setter, which is right here, Instagram setter. Once that's done, you're going to click
+
+103
+00:07:52,686.9917916902341 --> 00:07:57,486.9917916902341
+Save, and right here, Update.
+
+104
+00:07:58,860.325125023548 --> 00:08:03,126.9917916902341
+Perfect. Everything is now connected. We're just going to go back
+
+105
+00:08:03,126.9917916902341 --> 00:08:06,726.9917916902341
+to ManySetter to see how it
+
+106
+00:08:06,726.9917916902341 --> 00:08:10,446.9917916902341
+reacts to that. It's perfect.
+
+107
+00:08:10,446.9917916902341 --> 00:08:58,566.9917916902341
+Now we can click Continue. Once
+
+108
+00:08:58,566.9917916902341 --> 00:09:02,586.9917916902341
+you've clicked Continue, we'll see that the app
+
+109
+00:09:02,586.9917916902341 --> 00:09:06,306.9917916902341
+asks us where we want to receive our calls,
+
+110
+00:09:06,306.9917916902341 --> 00:09:10,26.991791690234095
+so basically, here you can choose to integrate your
+
+111
+00:09:10,26.991791690234095 --> 00:09:13,686.9917916902341
+tools so that the setter, just by talking with
+
+112
+00:09:13,686.9917916902341 --> 00:09:17,226.9917916902341
+your lead, can book the call for them instead
+
+113
+00:09:17,226.9917916902341 --> 00:09:21,66.9917916902341
+of sending them a link. In this case, to keep this tutorial
+
+114
+00:09:21,66.9917916902341 --> 00:09:24,906.9917916902341
+way shorter and not show any API keys in this video,
+
+115
+00:09:24,906.9917916902341 --> 00:09:28,626.9917916902341
+I'm just going to use a link, so I click Your link
+
+116
+00:09:28,926.9917916902341 --> 00:09:33,66.9917916902341
+and I'm going to go straight to my Calendly right here
+
+117
+00:09:33,66.9917916902341 --> 00:09:37,506.9917916902341
+to grab the link. There we go,
+
+118
+00:09:37,506.9917916902341 --> 00:09:41,106.9917916902341
+I click Copy link.
+
+119
+00:09:42,693.658458356862 --> 00:09:46,326.9917916902341
+I go back to my setter and paste the link
+
+120
+00:09:49,293.65845835686196 --> 00:10:15,186.9917916902341
+and I click Continue.
+
+121
+00:10:15,186.9917916902341 --> 00:10:32,166.9917916902341
+Once that's done, you can…
+
+122
+00:10:32,166.9917916902341 --> 00:10:35,886.9917916902341
+Once that's done, you can see right on your screen that it offers you
+
+123
+00:10:35,886.9917916902341 --> 00:10:39,666.9917916902341
+follow-ups. So you've got a couple of
+
+124
+00:10:40,173.65845835686196 --> 00:10:43,986.9917916902341
+options: either you turn them on, or you
+
+125
+00:10:43,986.9917916902341 --> 00:10:47,586.9917916902341
+turn them off, and we'll see a bit later how we can customize them. But
+
+126
+00:10:47,586.9917916902341 --> 00:10:51,126.9917916902341
+as you can see on your left, there's a tab we
+
+127
+00:10:51,126.9917916902341 --> 00:10:54,846.9917916902341
+haven't used yet called Offer and Fit.
+
+128
+00:10:54,846.9917916902341 --> 00:10:58,626.9917916902341
+Go ahead and click on it. And this part is going to be super
+
+129
+00:10:58,626.9917916902341 --> 00:11:02,586.9917916902341
+simple. You'll be able to write your offer,
+
+130
+00:11:02,586.9917916902341 --> 00:11:06,126.9917916902341
+write what you sell, what you want to offer, and give
+
+131
+00:11:06,126.9917916902341 --> 00:11:10,26.991791690234095
+some context so that your whole setting script and
+
+132
+00:11:10,26.991791690234095 --> 00:11:14,106.9917916902341
+your whole setter know what you do. So for me, for
+
+133
+00:11:14,553.658458356862 --> 00:11:19,986.9917916902341
+example, I'm going to say I sell a course
+
+134
+00:11:43,53.658458356861956 --> 00:11:48,966.9917916902341
+on e-com winner
+
+135
+00:11:48,966.9917916902341 --> 00:11:52,626.9917916902341
+product. As you
+
+136
+00:11:52,626.9917916902341 --> 00:11:56,226.9917916902341
+can see here, you can add links, PDFs, anything that
+
+137
+00:11:56,226.9917916902341 --> 00:12:01,746.9917916902341
+fits your business, really.
+
+138
+00:12:01,746.9917916902341 --> 00:12:05,946.9917916902341
+Then here you can add the
+
+139
+00:12:05,946.9917916902341 --> 00:12:09,546.9917916902341
+qualifications you absolutely want. It's not required, but you can.
+
+140
+00:12:09,546.9917916902341 --> 00:12:14,166.9917916902341
+So for example, you can put Can invest 3K.
+
+141
+00:12:14,853.658458356862 --> 00:12:19,146.9917916902341
+You can add Not
+
+142
+00:12:20,73.65845835686196 --> 00:12:24,246.9917916902341
+full beginner. And
+
+143
+00:12:24,246.9917916902341 --> 00:12:28,806.9917916902341
+once you've filled in your info, you can simply click Continue.
+
+144
+00:12:29,553.658458356862 --> 00:12:33,306.9917916902341
+And here, as you can see, there's a loading process that kicks off to
+
+145
+00:12:33,693.658458356862 --> 00:12:37,206.9917916902341
+generate your setting script right away
+
+146
+00:12:37,206.9917916902341 --> 00:12:40,746.9917916902341
+along with all the context it's going to need
+
+147
+00:12:41,166.9917916902341 --> 00:12:45,186.9917916902341
+to be the best AI setter.
+
+148
+00:12:45,186.9917916902341 --> 00:12:49,206.9917916902341
+Usually it takes between one and
+
+149
+00:12:49,206.9917916902341 --> 00:12:52,746.9917916902341
+three minutes, it's not very long, but as you can see, everything is
+
+150
+00:12:52,746.9917916902341 --> 00:13:06,726.9917916902341
+loading. You
+
+151
+00:13:06,726.9917916902341 --> 00:13:10,266.9917916902341
+can see in real time everything it's doing, and keep in mind
+
+152
+00:13:10,266.9917916902341 --> 00:13:14,346.9917916902341
+that all this information is going to be built right
+
+153
+00:13:14,733.658458356862 --> 00:13:18,246.9917916902341
+into your context. You won't have to do anything at all,
+
+154
+00:13:18,246.9917916902341 --> 00:13:21,786.9917916902341
+and I'll show you afterwards how you can improve this
+
+155
+00:13:21,786.9917916902341 --> 00:13:42,6.991791690234095
+first draft. And
+
+156
+00:13:42,6.991791690234095 --> 00:13:45,906.9917916902341
+here's the Playbook, finally
+
+157
+00:13:45,906.9917916902341 --> 00:13:50,466.9917916902341
+done. You can click Continue and
+
+158
+00:13:50,466.9917916902341 --> 00:13:54,66.9917916902341
+simply finish
+
+159
+00:13:54,66.9917916902341 --> 00:13:57,606.9917916902341
+setting up your
+
+160
+00:13:57,606.9917916902341 --> 00:14:02,586.9917916902341
+workspace, so as you can see here,
+
+161
+00:14:02,586.9917916902341 --> 00:14:06,966.9917916902341
+you can try out your setter right away.
+
+162
+00:14:06,966.9917916902341 --> 00:14:10,746.9917916902341
+So this is awesome because you can write Hey
+
+163
+00:14:11,613.658458356862 --> 00:14:15,126.9917916902341
+How are you, I love
+
+164
+00:14:15,126.9917916902341 --> 00:14:18,666.9917916902341
+your content. And that way you'll
+
+165
+00:14:18,666.9917916902341 --> 00:14:23,646.9917916902341
+be able to chat with your setter.
+
+166
+00:14:28,113.65845835686196 --> 00:14:32,466.9917916902341
+And as we can see, the questions are already really interesting, and
+
+167
+00:14:33,993.658458356862 --> 00:14:37,566.9917916902341
+you can keep chatting with it. If you don't like
+
+168
+00:14:37,566.9917916902341 --> 00:14:41,166.9917916902341
+the answers it gives you, you can click right here
+
+169
+00:14:41,706.9917916902341 --> 00:14:46,146.9917916902341
+in this little field and ask, for example, I
+
+170
+00:14:46,146.9917916902341 --> 00:14:54,666.9917916902341
+want… And
+
+171
+00:14:54,666.9917916902341 --> 00:14:58,746.9917916902341
+type here: I want a better tone with emoji face.
+
+172
+00:14:59,793.658458356862 --> 00:15:03,906.9917916902341
+You can send your message right away
+
+173
+00:15:03,906.9917916902341 --> 00:15:07,686.9917916902341
+and you'll be able to improve your
+
+174
+00:15:07,686.9917916902341 --> 00:15:26,886.9917916902341
+script as you go. As
+
+175
+00:15:26,886.9917916902341 --> 00:15:30,486.9917916902341
+we can see, the setting script has been updated, and if I ask
+
+176
+00:15:31,53.658458356861956 --> 00:15:43,506.9917916902341
+a question again. If
+
+177
+00:15:43,506.9917916902341 --> 00:15:47,286.9917916902341
+I ask the question, boom, it answers me with
+
+178
+00:15:47,853.658458356862 --> 00:15:51,546.9917916902341
+the updates applied automatically. With this tool, you get
+
+179
+00:15:52,113.65845835686196 --> 00:15:55,626.9917916902341
+a 14-day free trial right away, so you can totally
+
+180
+00:15:55,626.9917916902341 --> 00:15:59,286.9917916902341
+test it on your first leads, you get 500
+
+181
+00:16:00,933.658458356862 --> 00:16:04,866.9917916902341
+AI replies, so you've got plenty to test and get your
+
+182
+00:16:04,866.9917916902341 --> 00:16:59,487.18095836695284
+first calls. Once
+
+183
+00:16:59,487.18095836695284 --> 00:17:03,387.18095836695284
+we've activated our 14-day trial, we obviously get
+
+184
+00:17:03,387.18095836695284 --> 00:17:06,987.1809583669528
+access to the entire platform, and we're
+
+185
+00:17:06,987.1809583669528 --> 00:17:10,527.1809583669528
+going to do a quick tour so you can understand what
+
+186
+00:17:10,527.1809583669528 --> 00:17:14,367.18095836695284
+it's for. As you can see here, we've got the history of what we asked it so
+
+187
+00:17:14,367.18095836695284 --> 00:17:17,967.1809583669528
+it can train and get better as a setter, so you'll
+
+188
+00:17:17,967.1809583669528 --> 00:17:21,927.1809583669528
+always be able to test it here before plugging it into your
+
+189
+00:17:21,927.1809583669528 --> 00:17:25,527.1809583669528
+clients' accounts or your Instagram account, and you'll find
+
+190
+00:17:25,527.1809583669528 --> 00:17:29,67.18095836695284
+here in the Playbook tab absolutely
+
+191
+00:17:29,67.18095836695284 --> 00:17:32,607.1809583669528
+everything related to the setting script. So you've got your setting
+
+192
+00:17:32,607.1809583669528 --> 00:17:36,807.1809583669528
+script right here, you've got the offer that
+
+193
+00:17:37,467.18095836695284 --> 00:17:41,427.18095836695284
+meets the criteria, your voice, the objections, the context,
+
+194
+00:17:41,427.18095836695284 --> 00:17:44,967.1809583669528
+absolutely everything. So I'll let you look at what the AI
+
+195
+00:17:44,967.1809583669528 --> 00:17:49,47.18095836695284
+generated for you, but overall you're going to get
+
+196
+00:17:49,47.18095836695284 --> 00:17:53,67.18095836695284
+qualified appointments. When you go here into the Booking and follow-up tab,
+
+197
+00:17:53,67.18095836695284 --> 00:17:56,967.1809583669528
+you can connect your calendar way
+
+198
+00:17:56,967.1809583669528 --> 00:18:00,927.1809583669528
+more deeply than just a simple booking link,
+
+199
+00:18:00,927.1809583669528 --> 00:18:04,887.1809583669528
+you can add your API key for your calendar.
+
+200
+00:18:04,887.1809583669528 --> 00:18:08,547.1809583669528
+But we've already done that. Here you can see the follow-ups, which are
+
+201
+00:18:08,547.1809583669528 --> 00:18:12,87.18095836695284
+much more complete than what we had in the onboarding, because
+
+202
+00:18:12,87.18095836695284 --> 00:18:15,687.1809583669528
+here you can not only let the AI
+
+203
+00:18:15,687.1809583669528 --> 00:18:19,527.1809583669528
+write the follow-up you want within the
+
+204
+00:18:19,527.1809583669528 --> 00:18:23,547.1809583669528
+24-hour messaging window on ManyChat, you can write it yourself,
+
+205
+00:18:23,547.1809583669528 --> 00:18:27,207.18095836695284
+but you can also record a voice note so that
+
+206
+00:18:27,747.1809583669528 --> 00:18:31,287.18095836695284
+the follow-ups are even more personalized and the person has
+
+207
+00:18:31,287.18095836695284 --> 00:18:35,187.18095836695284
+absolutely no idea that behind the messages
+
+208
+00:18:35,187.18095836695284 --> 00:18:38,727.1809583669528
+there's an AI. And here you're
+
+209
+00:18:38,727.1809583669528 --> 00:18:42,567.1809583669528
+going to have the settings, everything that lets you manage,
+
+210
+00:18:42,567.1809583669528 --> 00:18:46,227.18095836695284
+for example, the delay the AI
+
+211
+00:18:46,227.18095836695284 --> 00:18:49,887.1809583669528
+takes to reply. Right now it's set to 45 seconds, and we'll see in the test
+
+212
+00:18:49,887.1809583669528 --> 00:18:53,487.18095836695284
+later on that it does wait 45 seconds. You can
+
+213
+00:18:53,487.18095836695284 --> 00:18:57,27.180958366952837
+also pause or delete your
+
+214
+00:18:57,27.180958366952837 --> 00:19:00,807.1809583669528
+setter if you want, but you've also got
+
+215
+00:19:02,633.8476250336971 --> 00:19:07,467.18095836695284
+safety rules. For example, you can tell it
+
+216
+00:19:07,467.18095836695284 --> 00:19:11,787.1809583669528
+to stop talking the
+
+217
+00:19:11,787.1809583669528 --> 00:19:15,447.18095836695284
+moment the person brings up, for example,
+
+218
+00:19:15,447.18095836695284 --> 00:19:22,707.1809583669528
+a refund, or when the person talks about
+
+219
+00:19:22,707.1809583669528 --> 00:19:26,607.1809583669528
+something you don't want to discuss and you don't want the AI to make
+
+220
+00:19:27,353.8476250336971 --> 00:19:31,527.1809583669528
+that call and risk talking about those topics. So it's super interesting,
+
+221
+00:19:31,527.1809583669528 --> 00:19:35,67.18095836695284
+and here you've got an inbox where you'll have all
+
+222
+00:19:35,67.18095836695284 --> 00:19:38,787.1809583669528
+the messages, and as you can see, here are the messages we sent
+
+223
+00:19:38,787.1809583669528 --> 00:19:42,507.18095836695284
+during the test. So you can see exactly what it looks like, and of course
+
+224
+00:19:42,507.18095836695284 --> 00:19:46,107.18095836695284
+you'll be able to take over the lead
+
+225
+00:19:46,107.18095836695284 --> 00:19:49,827.1809583669528
+if you feel like it. If you want to handle your leads
+
+226
+00:19:49,827.1809583669528 --> 00:19:53,847.1809583669528
+manually, you can take back the conversation whenever you want.
+
+227
+00:19:54,413.8476250336971 --> 00:19:58,227.18095836695284
+So now it's time to see if this actually works on
+
+228
+00:19:58,227.18095836695284 --> 00:20:02,367.18095836695284
+our Instagram account. Let's go, I'll meet you
+
+229
+00:20:03,147.18095836695284 --> 00:20:07,287.18095836695284
+right on my Instagram account. Here
+
+230
+00:20:07,287.18095836695284 --> 00:20:10,887.1809583669528
+you can see, let me move my facecam, you can see
+
+231
+00:20:10,887.1809583669528 --> 00:20:14,907.1809583669528
+that right here is the Instagram account that's connected to ManyChat,
+
+232
+00:20:14,907.1809583669528 --> 00:20:18,567.1809583669528
+and we're going to send it a first message. So we'll say,
+
+233
+00:20:18,567.1809583669528 --> 00:20:22,947.1809583669528
+for example, hello, I'm interested
+
+234
+00:20:27,87.18095836695284 --> 00:20:31,227.18095836695284
+Simple as that, we're going to send this message and
+
+235
+00:20:31,227.18095836695284 --> 00:20:35,67.18095836695284
+wait for the reply and see what our setter
+
+236
+00:20:36,53.84762503369711 --> 00:20:43,39.34812504565343
+says. As
+
+237
+00:20:43,39.34812504565343 --> 00:20:46,819.3481250456534
+you can see, our setter replied after 45 seconds
+
+238
+00:20:46,819.3481250456534 --> 00:20:50,359.34812504565343
+and asked the question we wanted, the one meant to qualify
+
+239
+00:20:50,359.34812504565343 --> 00:20:54,739.3481250456534
+our prospect the most, namely whether we've already started e-com
+
+240
+00:20:54,739.3481250456534 --> 00:20:58,399.34812504565343
+or if we're just starting out. So I can answer
+
+241
+00:20:58,399.34812504565343 --> 00:21:10,579.3481250456534
+right away: Yes,
+
+242
+00:21:10,579.3481250456534 --> 00:21:14,359.34812504565343
+I've already made $1,000
+
+243
+00:21:14,899.3481250456534 --> 00:21:18,439.34812504565343
+a month, and see what the AI
+
+244
+00:21:18,439.34812504565343 --> 00:23:02,930.5717083835043
+replies. And
+
+245
+00:23:03,317.2383750502486 --> 00:23:14,930.5717083835043
+there you go. And
+
+246
+00:23:14,930.5717083835043 --> 00:23:18,590.5717083835043
+there you go: after chatting for over five minutes with the
+
+247
+00:23:18,590.5717083835043 --> 00:23:22,250.5717083835043
+AI setter, here's the conversation. We can see it asks
+
+248
+00:23:22,250.5717083835043 --> 00:23:26,90.5717083835043
+if I've already started selling or if I'm just starting out, so
+
+249
+00:23:26,90.5717083835043 --> 00:23:32,690.5717083835043
+I tell it I've already made 1 million. What
+
+250
+00:23:32,690.5717083835043 --> 00:23:36,350.5717083835043
+am I selling right now? So I answer: dog products,
+
+251
+00:23:36,350.5717083835043 --> 00:23:40,250.5717083835043
+to which it replies, that's a good niche, how long have
+
+252
+00:23:40,250.5717083835043 --> 00:23:43,790.5717083835043
+you been doing e-com? I
+
+253
+00:23:43,790.5717083835043 --> 00:23:48,410.5717083835043
+answer two years. Have I tried
+
+254
+00:23:50,897.2383750502486 --> 00:23:54,770.5717083835043
+finding winning products, what happened? So
+
+255
+00:23:54,770.5717083835043 --> 00:23:58,430.5717083835043
+I tell it I'm currently checking Pinterest Trends,
+
+256
+00:23:58,430.5717083835043 --> 00:24:02,30.5717083835043
+and then it says, Ah, but what do you think
+
+257
+00:24:02,30.5717083835043 --> 00:24:05,570.5717083835043
+is holding you back from hitting
+
+258
+00:24:05,570.5717083835043 --> 00:24:09,230.5717083835043
+10K a month with your e-com store? So I tell it: the right sources,
+
+259
+00:24:09,230.5717083835043 --> 00:24:12,770.5717083835043
+and maybe the skills to make better ads
+
+260
+00:24:12,770.5717083835043 --> 00:24:20,930.5717083835043
+or better stores. It tells me it
+
+261
+00:24:20,930.5717083835043 --> 00:24:24,470.5717083835043
+could help me reach €10,000
+
+262
+00:24:24,710.5717083835043 --> 00:24:28,310.5717083835043
+a month, but first asks if I have €3,000
+
+263
+00:24:28,610.5717083835043 --> 00:24:32,330.5717083835043
+set aside to invest in this project. I say yes,
+
+264
+00:24:32,330.5717083835043 --> 00:24:35,990.5717083835043
+why not. It gives me a recap and says the next step is
+
+265
+00:24:35,990.5717083835043 --> 00:24:39,530.5717083835043
+a 30-minute call. I tell it I'm in, it sends me
+
+266
+00:24:39,530.5717083835043 --> 00:24:43,370.5717083835043
+the link, I tell it I booked my call
+
+267
+00:24:43,370.5717083835043 --> 00:24:47,810.5717083835043
+for the next morning at 4 a.m. and
+
+268
+00:24:47,810.5717083835043 --> 00:24:52,70.5717083835043
+it says perfect, see you at 4. The prompt that
+
+269
+00:24:52,70.5717083835043 --> 00:24:55,970.5717083835043
+was used only took
+
+270
+00:24:55,970.5717083835043 --> 00:24:59,690.5717083835043
+five minutes to build. So imagine if you fine-tune
+
+271
+00:25:00,77.23837505024858 --> 00:25:03,890.5717083835043
+your setting script, you can get insane results.
+
+272
+00:25:03,890.5717083835043 --> 00:25:07,670.5717083835043
+And the most interesting part is that if we go back to our
+
+273
+00:25:07,670.5717083835043 --> 00:25:11,210.5717083835043
+ManySetter app here, you're going to
+
+274
+00:25:11,210.5717083835043 --> 00:25:14,870.5717083835043
+go straight into Inbox, and what can you see? You
+
+275
+00:25:14,870.5717083835043 --> 00:25:19,10.571708383504301
+can see right here: Booked. So you
+
+276
+00:25:19,10.571708383504301 --> 00:25:22,550.5717083835043
+can check the stats directly and
+
+277
+00:25:22,550.5717083835043 --> 00:25:26,270.5717083835043
+understand what happened in the
+
+278
+00:25:26,270.5717083835043 --> 00:25:30,50.5717083835043
+conversation, you can even take it over yourself, so it's
+
+279
+00:25:32,177.23837505024858 --> 00:25:36,290.5717083835043
+awesome. Sync ManySetter with
+
+280
+00:25:36,917.2383750502486 --> 00:25:40,610.5717083835043
+ManyChat and you'll never lose
+
+281
+00:25:40,610.5717083835043 --> 00:25:45,470.5717083835043
+a single lead again. I hope
+
+282
+00:25:45,470.5717083835043 --> 00:25:51,410.5717083835043
+you enjoyed this video. If you have any questions, feel
+
+283
+00:25:51,410.5717083835043 --> 00:25:55,670.5717083835043
+free to ask. Take care, and
+
+284
+00:25:55,670.5717083835043 --> 00:26:01,310.5717083835043
+until then, I wish you some great calls
+
+285
+00:26:01,310.5717083835043 --> 00:26:03,590.5717083835043
+with ManySetter. See you soon.

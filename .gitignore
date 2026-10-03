@@ -22,3 +22,5 @@ manysetter-ad/film2/renders/*.log
 manysetter-ad/film2/renders/work-*/
 manysetter-ad/film2/renders/.*
 manysetter-ad/film2/renders/*.mp4
+youtube-dub/takes/*_try*.wav
+manysetter-ad/deliverables/web/vp9*.log
