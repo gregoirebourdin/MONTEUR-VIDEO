@@ -27,8 +27,8 @@ sys.path.insert(0, str(ROOT))
 from common import spoken  # noqa: E402
 
 SR = 48000
-MAX_RATE = 1.22
-MIN_RATE = 0.9
+MAX_RATE = 1.2
+MIN_RATE = 1.0  # never slow the voice down: time-stretching blurs speech
 EARLY = 0.3
 GAP = 0.12
 
@@ -96,11 +96,12 @@ def quiet_point(x, t, lo, hi):
 
 
 def stretch(x: np.ndarray, rate: float) -> np.ndarray:
+    """Speed up speech without changing pitch (ffmpeg atempo: clean on voice for small ratios)."""
     if abs(rate - 1) < 0.01:
         return x
     with tempfile.TemporaryDirectory() as d:
         sf.write(f"{d}/i.wav", x, SR, subtype="FLOAT")
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{d}/i.wav", "-af", f"rubberband=tempo={rate:.4f}:transients=smooth:formant=preserved", f"{d}/o.wav"], check=True)
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{d}/i.wav", "-af", f"atempo={rate:.4f}", f"{d}/o.wav"], check=True)
         y, _ = sf.read(f"{d}/o.wav", dtype="float32")
     return y
 
@@ -199,18 +200,19 @@ def main():
     raw = out / "dub_raw.wav"
     sf.write(raw, track, SR, subtype="PCM_24")
 
-    # 4. loudness: -16 LUFS integrated, -1.5 dBTP (two-pass, linear)
-    def ln(extra=""):
-        r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(raw), "-af", f"loudnorm=I=-16:TP=-1.5:LRA=11:print_format=json{extra}", "-f", "null", "-"], capture_output=True, text=True)
-        import re as _re
+    # 4. loudness: one constant gain to -16 LUFS, then a look-ahead limiter on the rare peaks above
+    #    -1.5 dBTP. (loudnorm switches to dynamic mode on a track like this and pumps.)
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(raw), "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True)
+    import re as _re
 
-        return json.loads(_re.search(r"\{[\s\S]*?\}", r.stderr[r.stderr.rfind("[Parsed_loudnorm") :]).group(0))
-
-    m = ln()
-    af = f"loudnorm=I=-16:TP=-1.5:LRA=11:linear=true:measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}"
+    integrated = float(_re.findall(r"I:\s+(-?[\d.]+) LUFS", r.stderr)[-1])
+    gain = -16.0 - integrated
     final = out / "dub_en_charon.wav"
+    af = f"volume={gain:.2f}dB,alimiter=limit={10 ** (-1.8 / 20):.4f}:attack=3:release=60:level=disabled:latency=1"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-af", af, "-ar", "48000", "-c:a", "pcm_s24le", str(final)], check=True)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(final), "-c:a", "libmp3lame", "-b:a", "256k", str(out / "dub_en_charon.mp3")], check=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(final), "-ac", "1", "-c:a", "libmp3lame", "-b:a", "160k", str(out / "dub_en_charon.mp3")], check=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(final), "-sample_fmt", "s16", "-c:a", "flac", str(out / "dub_en_charon.flac")], check=True)
+    print(f"loudness: {integrated:.1f} LUFS raw, gain {gain:+.1f} dB")
 
     # report + SRT of the dub as placed
     (out / "dub_timing.json").write_text(json.dumps(rows, indent=1, ensure_ascii=False))
