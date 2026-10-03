@@ -17,5 +17,83 @@
    "try1: FAIL [('replace', 'manychat setter', 'manysetter'), ('replace', 'manychat', 'many set'), ('replace', 'we', 'you')]"
   ],
   "ok": false
+ },
+ "3": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "4": {
+  "log": [
+   "try1: PASS [('replace', \"we'll\", 'will')]"
+  ],
+  "ok": true
+ },
+ "5": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "6": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "7": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "8": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "9": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "10": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "11": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "12": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "13": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "14": {
+  "log": [
+   "try1: PASS [('replace', 'setting', 'settings')]"
+  ],
+  "ok": true
+ },
+ "15": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
  }
 }
