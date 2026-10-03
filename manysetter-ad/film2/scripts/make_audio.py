@@ -284,20 +284,21 @@ for k in range(6):
 place(sfx, kit("counter"), cue("P1.blew") - 0.05, 0.08, pan=0.5)
 for k in range(3):
     place(sfx, blip("send"), cue("P1.manychat") + 0.04 + k * 0.3, 0.13, pan=0.45)
-# ---- the 126 flood: pings rain in faster than you can count
+# ---- the 126 flood: a quiet roll under the words, the storm of pings in the gap after "DMs!"
 ct0, ct1 = FLOOD, end("P1.126")
-n_ping = 34
+for k in range(24):
+    place(sfx, tick_soft(), ct0 + (ct1 - ct0) * (k / 23) ** 0.8, 0.035)
+st0, st1 = end("P1.dms") + 0.05, cue("P1.how") - 0.08
+n_ping = 30
 for k in range(n_ping):
     u = k / (n_ping - 1)
-    tt = ct0 + (ct1 - ct0) * (u**0.7)
-    place(sfx, ping(midi(84 + (k * 5) % 9)), tt, 0.05 + 0.03 * (1 - u), pan=((k * 37) % 13 - 6) / 7)
-for k in range(28):
-    place(sfx, tick_soft(), ct0 + (ct1 - ct0) * (k / 27) ** 0.8, 0.06)
-tt = ct1 + 0.2
+    tt = st0 + (st1 - st0) * (u**1.35)
+    place(sfx, ping(midi(84 + (k * 5) % 9)), tt, 0.075 * (1 - 0.5 * u), pan=((k * 37) % 13 - 6) / 7)
+tt = cue("P1.how") + 0.1
 k = 0
 while tt < P1_END:
-    place(sfx, ping(midi(84 + (k * 7) % 12)), tt, 0.035, pan=((k * 29) % 11 - 5) / 6)
-    tt += 0.17 + 0.09 * ((k * 13) % 5) / 4
+    place(sfx, ping(midi(84 + (k * 7) % 12)), tt, 0.018, pan=((k * 29) % 11 - 5) / 6)
+    tt += 0.3 + 0.12 * ((k * 13) % 5) / 4
     k += 1
 place(sfx, whoosh(0.9, 3000, 300), FLOOD - 0.15, 0.12)
 # ---- s2: the late reply
