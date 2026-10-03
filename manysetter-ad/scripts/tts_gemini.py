@@ -55,14 +55,22 @@ def _post(url: str, body: dict, key: str) -> dict:
     raise RuntimeError("retries exhausted")
 
 
-def synthesize_interactions(text: str, style: str, voice: str, model: str, key: str) -> tuple[bytes, int]:
-    """Gemini 3.8 TTS: text is a verbatim transcript, style goes in speech_metadata."""
-    content = {"type": "text", "text": text}
-    if style:
-        content["annotations"] = [{"type": "speech_metadata", "style": style}]
+def synthesize_interactions(text, style: str, voice: str, model: str, key: str) -> tuple[bytes, int]:
+    """Gemini 3.8 TTS: text is a verbatim transcript, style goes in speech_metadata.
+
+    `text` may also be a list of {"text", "style"} segments: one delivery direction per sentence,
+    rendered as a single continuous take.
+    """
+    segs = text if isinstance(text, list) else [{"text": text, "style": style}]
+    content = []
+    for sg in segs:
+        item = {"type": "text", "text": sg["text"]}
+        if sg.get("style"):
+            item["annotations"] = [{"type": "speech_metadata", "style": sg["style"]}]
+        content.append(item)
     body = {
         "model": model,
-        "input": [{"type": "user_input", "content": [content]}],
+        "input": [{"type": "user_input", "content": content}],
         "response_format": {"type": "audio"},
         "generation_config": {"speech_config": [{"voice": voice}]},
     }
@@ -112,13 +120,17 @@ def main() -> None:
     ap.add_argument("--voice", required=True)
     ap.add_argument("--text")
     ap.add_argument("--text-file")
+    ap.add_argument("--segments", help='JSON file: [{"text": "...", "style": "..."}] (3.8 models)')
     ap.add_argument("--style", default="", help="Delivery direction (sent as metadata, never read aloud)")
     ap.add_argument("--model", default=DEFAULT_MODEL)
     ap.add_argument("--out", required=True)
     ap.add_argument("--no-fallback", action="store_true", help="Fail instead of falling back to an older model")
     a = ap.parse_args()
 
-    script = a.text if a.text else pathlib.Path(a.text_file).read_text().strip()
+    if a.segments:
+        script = json.loads(pathlib.Path(a.segments).read_text())
+    else:
+        script = a.text if a.text else pathlib.Path(a.text_file).read_text().strip()
     key = load_key()
 
     last_err = None

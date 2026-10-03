@@ -26,8 +26,14 @@ ALIASES = {
 }
 
 
+NUM = {"$1,500": "fifteen hundred dollar", "1,500": "fifteen hundred", "1500": "fifteen hundred", "2": "two", "a.m.": "am", "a m": "am"}
+
+
 def words(text: str) -> list[str]:
-    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"<[^>]+>|\([^)]*\)|\[[^\]]*\]|\*[^*]*\*", " ", text)  # vocal tags, (laughs), [sighs]
+    for k, v in NUM.items():
+        text = text.replace(k, f" {v} ")
+    text = text.replace("-", " ")
     text = text.lower().replace("many chat", "manychat").replace("many setter", "manysetter")
     text = text.replace("dot com", "dotcom").replace(".com", " dotcom").replace("any time", "anytime")
     out = re.findall(r"[a-z0-9àâäéèêëïîôöùûüç$]+", text)
@@ -57,7 +63,8 @@ def main() -> None:
     ap.add_argument("--lang", default="en")
     a = ap.parse_args()
 
-    script = pathlib.Path(a.script).read_text()
+    raw = pathlib.Path(a.script).read_text()
+    script = " ".join(s["text"] for s in json.loads(raw)) if a.script.endswith(".json") else raw
     heard, _ = transcribe(a.wav, a.lang)
     want, got = words(script), words(heard)
     sm = difflib.SequenceMatcher(a=want, b=got, autojunk=False)
