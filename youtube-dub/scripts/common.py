@@ -41,6 +41,7 @@ def spoken(text: str) -> str:
     t = re.sub(r"(?i)\bmanychat\b", "many chat", t)
     t = re.sub(r"(?i)\bwhatsapp\b", "whats app", t)
     t = re.sub(r"(?i)\ba\.m\.", "a m", t)
+    t = re.sub(r"(?i)\bp\.m\.", "p m", t)
     t = re.sub(r"(?i)\bAPI\b", "a p i", t)
     t = re.sub(r"(?i)\bPDFs\b", "p d fs", t)
     t = re.sub(r"(?i)\bAI\b", "a i", t)
