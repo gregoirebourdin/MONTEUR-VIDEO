@@ -11,5 +11,11 @@
    "try1: PASS [('replace', \"you'll\", 'you')]"
   ],
   "ok": true
+ },
+ "2": {
+  "log": [
+   "try1: FAIL [('replace', 'manychat setter', 'manysetter'), ('replace', 'manychat', 'many set'), ('replace', 'we', 'you')]"
+  ],
+  "ok": false
  }
 }
