@@ -77,31 +77,72 @@ def main() -> None:
         audio = audio.mean(axis=1)
     total = len(audio) / sr
 
-    # Align whisper words to script lines in order (word counts after normalisation).
-    wi = 0
-    for ln in lines:
-        target = [norm(w) for w in ln["text"].replace("...", " ").replace("dot com", "dotcom").split() if norm(w)]
-        got = []
-        while wi < len(words) and len(got) < len(target):
-            n = norm(words[wi]["w"]).replace("manysettercom", "manysetter dotcom")
-            for piece in n.split():
-                got.append((piece, words[wi]))
-            wi += 1
-        ln["_words"] = [w for _, w in got]
-        if len(got) < len(target):
-            raise SystemExit(f"{ln['id']}: ran out of words ({len(got)}/{len(target)})")
+    # Align script words to whisper words at character level (robust to "2am" vs "two a.m.",
+    # "$1,500" vs "fifteen hundred dollar", "many chats" vs "Manychat"...).
+    import difflib
 
-    # Line boundaries: snap to the surrounding silences.
-    for i, ln in enumerate(lines):
-        first, last = ln["_words"][0], ln["_words"][-1]
-        # whisper word starts drift early or late by a few hundred ms: bound each line by the
-        # silence that actually precedes its first word and the one that follows its last word
-        before = [s for s in sil if s[1] is not None and s[0] <= first["start"] + 0.1]
-        src_in = before[-1][1] if before else 0.0
-        after = [s for s in sil if (s[1] if s[1] is not None else total) > last["start"] + 0.15]
-        src_out = after[0][0] if after else total
-        ln["src_in"] = max(0.0, src_in - 0.04)
-        ln["src_out"] = min(total, src_out + 0.06)
+    def clean(txt: str) -> str:
+        return re.sub(r"<[^>]+>", " ", txt).replace("...", " ")
+
+    s_words, s_line = [], []
+    for li, ln in enumerate(lines):
+        for w in clean(ln["text"]).split():
+            if norm(w):
+                s_words.append(w)
+                s_line.append(li)
+    s_stream, s_pos = "", []
+    for w in s_words:
+        s_pos.append(len(s_stream))
+        s_stream += norm(w)
+    w_stream, w_owner = "", []
+    for k, w in enumerate(words):
+        nw = norm(w["w"])
+        w_stream += nw
+        w_owner += [k] * len(nw)
+    sm = difflib.SequenceMatcher(a=s_stream, b=w_stream, autojunk=False)
+    s2w = [None] * len(s_stream)
+    for blk in sm.get_matching_blocks():
+        for i in range(blk.size):
+            s2w[blk.a + i] = blk.b + i
+
+    def whisper_time(ci: int) -> float:
+        # nearest mapped char at or after ci, else before
+        for j in list(range(ci, len(s2w))) + list(range(ci - 1, -1, -1)):
+            if s2w[j] is not None:
+                k = w_owner[s2w[j]]
+                w = words[k]
+                start_c = w_owner.index(k)
+                n_c = w_owner.count(k)
+                nxt = words[k + 1]["start"] if k + 1 < len(words) else w["end"]
+                frac = (s2w[j] - start_c) / max(1, n_c)
+                return w["start"] + frac * max(0.0, nxt - w["start"])
+        return 0.0
+
+    for ln in lines:
+        ln["_words"] = []
+    for i, w in enumerate(s_words):
+        t0 = whisper_time(s_pos[i])
+        lines[s_line[i]]["_words"].append({"w": w, "start": t0})
+    for ln in lines:
+        if not ln["_words"]:
+            raise SystemExit(f"{ln['id']}: no words aligned")
+
+    # Line boundaries: each boundary is ONE silence shared by the two lines (no overlap possible).
+    # Pick the longest silence between the end of line i and the start of line i+1.
+    sil_c = [(st, en if en is not None else total) for st, en in sil]
+    lines[0]["src_in"] = max(0.0, (max([e for s_, e in sil_c if s_ <= lines[0]["_words"][0]["start"] + 0.1] or [0.0])) - 0.04)
+    for i in range(len(lines) - 1):
+        t_a = lines[i]["_words"][-1]["start"]
+        t_b = lines[i + 1]["_words"][0]["start"]
+        cands = [x for x in sil_c if x[1] > t_a + 0.12 and x[0] < t_b + 0.5]
+        if not cands:
+            mid = (t_a + t_b) / 2
+            cands = [min(sil_c, key=lambda x: abs((x[0] + x[1]) / 2 - mid))]
+        best = max(cands, key=lambda x: x[1] - x[0])
+        lines[i]["src_out"] = min(total, best[0] + 0.06)
+        lines[i + 1]["src_in"] = max(0.0, best[1] - 0.04)
+    after = [x for x in sil_c if x[1] > lines[-1]["_words"][-1]["start"] + 0.15]
+    lines[-1]["src_out"] = min(total, (after[0][0] if after else total) + 0.06)
 
     # Lay out on the film timeline: start = max(anchor, previous end + gap).
     t = 0.0

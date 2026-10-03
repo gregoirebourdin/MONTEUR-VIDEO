@@ -23,10 +23,11 @@ ALIASES = {
     "manychats": "manychat",
     "manysetters": "manysetter",
     "real": "reel",
+    "red": "read",
 }
 
 
-NUM = {"$1,500": "fifteen hundred dollar", "1,500": "fifteen hundred", "1500": "fifteen hundred", "2": "two", "a.m.": "am", "a m": "am"}
+NUM = {"$1,500": "fifteen hundred dollar", "$1500": "fifteen hundred dollar", "1,500": "fifteen hundred", "1500": "fifteen hundred", "2": "two", "a.m.": "am", "a m": "am"}
 
 
 def words(text: str) -> list[str]:
