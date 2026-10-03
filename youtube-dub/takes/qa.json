@@ -7,8 +7,9 @@
  },
  "1": {
   "log": [
-   "try1: FAIL [('replace', 'going to', 'gonna'), ('replace', 'going to', 'gonna'), ('replace', 'going to', 'gonna'), ('replace', \"you'll\", 'you')]"
+   "try1: FAIL [('replace', 'going to', 'gonna'), ('replace', 'going to', 'gonna'), ('replace', 'going to', 'gonna'), ('replace', \"you'll\", 'you')]",
+   "try1: PASS [('replace', \"you'll\", 'you')]"
   ],
-  "ok": false
+  "ok": true
  }
 }
