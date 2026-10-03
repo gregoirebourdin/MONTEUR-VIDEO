@@ -28,3 +28,4 @@ manysetter-ad/deliverables/web/*.webm.part
 youtube-dub/v2/takes/*_try*.wav
 youtube-dub/**/out/*.wav
 youtube-dub/takes/
+youtube-dub/**/out/dub_eq.wav

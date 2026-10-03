@@ -31,6 +31,15 @@ MAX_RATE = 1.2
 MIN_RATE = 1.0  # never slow the voice down: time-stretching blurs speech
 EARLY = 0.3
 GAP = 0.12
+VOICE_EQ = (
+    "highpass=f=75:poles=2,"
+    "equalizer=f=250:t=q:w=0.9:g=-4.5,"
+    "equalizer=f=480:t=q:w=1.2:g=-2,"
+    "equalizer=f=3200:t=q:w=0.9:g=4.5,"
+    "highshelf=f=7000:g=3,"
+    "deesser=i=0.35:m=0.5:f=0.5,"
+    "acompressor=threshold=-22dB:ratio=2.5:attack=8:release=150:knee=6"
+)
 
 
 def load_take(path):
@@ -202,13 +211,17 @@ def main():
 
     # 4. loudness: one constant gain to -16 LUFS, then a look-ahead limiter on the rare peaks above
     #    -1.5 dBTP. (loudnorm switches to dynamic mode on a track like this and pumps.)
+    # dialogue EQ: Charon's TTS piles up 150-600 Hz and lacks presence (boxy, "resonant" on its own)
+    eq = out / "dub_eq.wav"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-af", VOICE_EQ, "-c:a", "pcm_f32le", str(eq)], check=True)
+    raw = eq
     r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(raw), "-af", "ebur128=peak=true", "-f", "null", "-"], capture_output=True, text=True)
     import re as _re
 
     integrated = float(_re.findall(r"I:\s+(-?[\d.]+) LUFS", r.stderr)[-1])
     gain = -16.0 - integrated
     final = out / "dub_en_charon.wav"
-    af = f"volume={gain:.2f}dB,alimiter=limit={10 ** (-1.8 / 20):.4f}:attack=3:release=60:level=disabled:latency=1"
+    af = f"volume={gain:.2f}dB,alimiter=limit={10 ** (-1.5 / 20):.4f}:attack=2:release=50:level=disabled:latency=1"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-af", af, "-ar", "48000", "-c:a", "pcm_s24le", str(final)], check=True)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(final), "-ac", "1", "-c:a", "libmp3lame", "-b:a", "160k", str(out / "dub_en_charon.mp3")], check=True)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(final), "-sample_fmt", "s16", "-c:a", "flac", str(out / "dub_en_charon.flac")], check=True)
