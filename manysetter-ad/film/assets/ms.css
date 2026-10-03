@@ -1,0 +1,388 @@
+/* ManySetter film — design system kit.
+   Values mirror the app's compiled CSS (assets_in/app-css/app.css). Components are authored
+   at the app's 1x size; scenes scale whole UI clusters with `zoom` so text stays vector-sharp. */
+
+:root {
+  --ink-0: #ffffff;
+  --ink-25: #fdfcfb;
+  --ink-50: #faf9f8;
+  --ink-100: #f5f3f2;
+  --ink-150: #eeedeb;
+  --ink-200: #e6e5e3;
+  --ink-300: #d7d4d2;
+  --ink-400: #a3a09d;
+  --ink-500: #76736f;
+  --ink-600: #585552;
+  --ink-700: #42403c;
+  --ink-800: #2a2825;
+  --ink-900: #1a1816;
+  --ink-950: #0d0c0a;
+  --brand-50: #fff7f2;
+  --brand-100: #ffecde;
+  --brand-200: #ffd8c0;
+  --brand-300: #ffba97;
+  --brand-400: #ff905e;
+  --brand-500: #ff611d;
+  --brand-600: #e64b15;
+  --brand-700: #bc3a17;
+  --brand-800: #943016;
+  --brand-900: #732814;
+  --emerald-50: #ecfdf5;
+  --emerald-500: #00bb7f;
+  --emerald-600: #009767;
+  --emerald-700: #007956;
+  --shadow-card: 0 0 0 1px #0d0c0a0f, 0 1px 2px 0 #0d0c0a0a, 0 4px 12px -4px #0d0c0a0f;
+  --shadow-popover: 0 0 0 1px #0d0c0a12, 0 4px 8px -2px #0d0c0a0f, 0 16px 36px -8px #0d0c0a29;
+  --shadow-xl: 0 2px 4px 0 #0d0c0a0a, 0 8px 16px -4px #0d0c0a0f, 0 32px 64px -16px #0d0c0a29;
+  --shadow-float: 0 0 0 1px #0d0c0a0d, 0 12px 24px -8px #0d0c0a1f, 0 48px 96px -24px #0d0c0a40;
+  --font-heading: "Nohemi", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+/* ---------- Scene canvases ---------- */
+
+.ms-canvas-light {
+  position: absolute;
+  inset: 0;
+  background: var(--ink-25);
+  overflow: hidden;
+}
+.ms-canvas-dark {
+  position: absolute;
+  inset: 0;
+  background: var(--ink-950);
+  overflow: hidden;
+}
+.ms-grid {
+  position: absolute;
+  inset: -64px;
+  background-image: linear-gradient(90deg, #0d0c0a0d 1px, transparent 1px),
+    linear-gradient(#0d0c0a0d 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.ms-grid-dark {
+  position: absolute;
+  inset: -64px;
+  background-image: linear-gradient(90deg, #ffffff0a 1px, transparent 1px),
+    linear-gradient(#ffffff0a 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.ms-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.ms-grain {
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='256' height='256'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1 0'/></filter><rect width='256' height='256' filter='url(%23n)'/></svg>");
+  background-size: 256px 256px;
+  opacity: 0.045;
+}
+.ms-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 75% 70% at 50% 50%, transparent 55%, #0d0c0a99 100%);
+}
+
+/* ---------- Type ---------- */
+
+.ms-display {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+.ms-heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+.ms-ui {
+  font-family: var(--font-sans);
+  color: var(--ink-900);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* Hand-drawn mark from the site (.highlight-mark): oval / underline */
+.ms-mark-wrap {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.ms-oval {
+  position: absolute;
+  top: -0.22em;
+  left: -0.4em;
+  width: calc(100% + 0.8em);
+  height: calc(100% + 0.4em);
+  overflow: visible;
+  pointer-events: none;
+}
+.ms-underline {
+  position: absolute;
+  left: -0.04em;
+  top: 84%;
+  width: calc(100% + 0.08em);
+  height: 0.38em;
+  overflow: visible;
+  pointer-events: none;
+}
+.ms-oval path,
+.ms-underline path {
+  fill: none;
+  stroke: var(--brand-500);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+/* ---------- Eyebrow chip (site pattern) ---------- */
+
+.ms-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding: 0 18px 0 16px;
+  border-radius: 999px;
+  background: #ffffffcc;
+  box-shadow: inset 0 0 0 1.5px var(--ink-200);
+  font: 500 20px/1 var(--font-sans);
+  color: var(--ink-700);
+}
+.ms-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-500);
+}
+.ms-eyebrow.dark {
+  background: #1a181699;
+  box-shadow: inset 0 0 0 1.5px var(--ink-800);
+  color: var(--ink-300);
+}
+
+/* ---------- App primitives (1x app scale) ---------- */
+
+.ms-card {
+  background: var(--ink-0);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+.ms-window {
+  background: var(--ink-0);
+  border-radius: 20px;
+  box-shadow: var(--shadow-float);
+  overflow: hidden;
+}
+
+.ms-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--ink-100);
+  box-shadow: inset 0 0 0 1px #0d0c0a0f;
+  font: 600 12px/1 var(--font-sans);
+  color: var(--ink-700);
+}
+.ms-avatar.dark {
+  background: var(--ink-900);
+  color: var(--ink-0);
+}
+.ms-avatar .badge {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--ink-0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px #0d0c0a0f;
+}
+.ms-avatar .badge svg {
+  width: 9px;
+  height: 9px;
+}
+
+/* Chat bubbles — app: rounded-[1.125rem] px-3.5 py-2.5 text-[0.90625rem], tail corner 0.3125rem */
+.ms-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ms-bubble {
+  max-width: 360px;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font: 400 14.5px/1.5 var(--font-sans);
+  overflow-wrap: break-word;
+}
+.ms-bubble.lead {
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+  background: var(--ink-0);
+  color: var(--ink-900);
+  box-shadow: inset 0 0 0 1px var(--ink-200);
+}
+.ms-bubble.setter {
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+  background: var(--ink-900);
+  color: var(--ink-0);
+}
+.ms-bubble.flow {
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+  background: var(--ink-150);
+  color: var(--ink-800);
+}
+.ms-msg-meta {
+  font: 500 11.5px/1 var(--font-sans);
+  color: var(--ink-400);
+  padding: 0 2px;
+}
+.ms-why {
+  font: 500 12.5px/1 var(--font-sans);
+  color: var(--brand-700);
+}
+.ms-typing {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border-bottom-right-radius: 5px;
+  background: var(--ink-900);
+}
+.ms-typing i {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ink-0);
+}
+
+/* AI summary — app: rounded-[0.875rem] bg-brand-50/60 inset ring orange 22% */
+.ms-ai-summary {
+  border-radius: 14px;
+  background: #fff7f299;
+  box-shadow: inset 0 0 0 1px #ff611d38;
+  padding: 10px 14px 12px;
+}
+.ms-ai-summary .head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 13px/1 var(--font-sans);
+  color: var(--ink-900);
+}
+.ms-ai-summary .head svg {
+  width: 14px;
+  height: 14px;
+  color: var(--brand-600);
+}
+.ms-ai-summary p {
+  margin-top: 8px;
+  font: 400 13.5px/1.5 var(--font-sans);
+  color: var(--ink-800);
+}
+.ms-ai-summary .next {
+  margin-top: 4px;
+  font: 400 12px/1.4 var(--font-sans);
+  color: var(--ink-500);
+}
+
+/* Chips */
+.ms-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--ink-100);
+  font: 500 11.5px/1 var(--font-sans);
+  color: var(--ink-700);
+  white-space: nowrap;
+}
+.ms-chip.green {
+  background: var(--emerald-50);
+  color: var(--emerald-700);
+  box-shadow: inset 0 0 0 1px #00bb7f40;
+}
+.ms-chip.orange {
+  background: var(--brand-50);
+  color: var(--brand-700);
+  box-shadow: inset 0 0 0 1px #ff611d38;
+}
+.ms-chip .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.ms-chip.green .dot {
+  background: var(--emerald-500);
+}
+
+/* Buttons */
+.ms-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font: 500 14px/1 var(--font-sans);
+  white-space: nowrap;
+}
+.ms-btn svg {
+  width: 16px;
+  height: 16px;
+}
+.ms-btn.secondary {
+  background: linear-gradient(to bottom, var(--ink-100), var(--ink-150));
+  color: var(--ink-900);
+  box-shadow: inset 0 0 0 1px #0d0c0a14, inset 0 1px 0 0 #ffffffcc, 0 1px 2px 0 #0d0c0a0f;
+}
+.ms-btn.primary {
+  background: linear-gradient(to bottom, var(--brand-500), var(--brand-600));
+  color: var(--ink-0);
+  box-shadow: inset 0 1px 0 0 #ffffff47, inset 0 0 0 1px #bc3a17, 0 1px 2px 0 #73281433,
+    0 6px 16px -6px #e64b1599;
+}
+
+/* Logo tile (icon.svg geometry) */
+.ms-logo-tile {
+  display: block;
+  border-radius: 23.4%;
+  background: linear-gradient(to bottom, #ff884d, #e64b15);
+  box-shadow: inset 0 1px 0 #ffffff40, 0 1px 2px #73281433, 0 8px 20px -8px #e64b1580;
+}
+
+/* Lucide icon default */
+.ms-ico {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

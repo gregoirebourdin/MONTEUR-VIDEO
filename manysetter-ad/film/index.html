@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/ms.css" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #0d0c0a; }
+      #root { position: relative; width: 100%; height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
+    <div id="f02" class="clip" data-composition-id="f02" data-composition-src="compositions/frames/02-nothing.html" data-start="0" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
+    <div id="f03" class="clip" data-composition-id="f03" data-composition-src="compositions/frames/03-quiet.html" data-start="1" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
+    <div id="f04" class="clip" data-composition-id="f04" data-composition-src="compositions/frames/04-logo.html" data-start="2" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
+    <div id="f05" class="clip" data-composition-id="f05" data-composition-src="compositions/frames/05-learns.html" data-start="3" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
+    <div id="f07" class="clip" data-composition-id="f07" data-composition-src="compositions/frames/07-booked.html" data-start="4" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
+    <div id="f09" class="clip" data-composition-id="f09" data-composition-src="compositions/frames/09-cta.html" data-start="5" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

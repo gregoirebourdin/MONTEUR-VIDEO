@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <style>
+        @font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+        #f03 {
+          position: absolute;
+          inset: 0;
+        }
+        #f03-glow {
+          left: 980px;
+          top: 360px;
+          width: 1300px;
+          height: 1000px;
+          background: radial-gradient(closest-side, rgba(148,48,22,0.220) 0%, rgba(148,48,22,0.189) 10%, rgba(148,48,22,0.141) 20%, rgba(148,48,22,0.095) 30%, rgba(148,48,22,0.057) 40%, rgba(148,48,22,0.031) 50%, rgba(148,48,22,0.014) 60%, rgba(148,48,22,0.006) 70%, rgba(148,48,22,0.002) 80%, rgba(148,48,22,0.000) 100%);
+        }
+        .f03-ghost {
+          position: absolute;
+          border-radius: 40px;
+          background: var(--ink-900);
+          filter: blur(18px);
+        }
+        #f03-ghost-a {
+          left: 1240px;
+          top: 210px;
+          width: 520px;
+          height: 120px;
+          border-bottom-right-radius: 12px;
+          opacity: 0.7;
+        }
+        #f03-ghost-b {
+          left: 1100px;
+          top: 370px;
+          width: 420px;
+          height: 120px;
+          border-bottom-left-radius: 12px;
+          opacity: 0.5;
+        }
+        #f03-ghost-c {
+          left: 1360px;
+          top: 760px;
+          width: 360px;
+          height: 110px;
+          opacity: 0.35;
+        }
+        #f03-type {
+          position: absolute;
+          left: 150px;
+          top: 50%;
+          translate: 0 -46%;
+        }
+        #f03-type .ms-eyebrow {
+          margin-bottom: 56px;
+        }
+        .f03-line {
+          display: block;
+          font-size: 252px;
+          color: var(--ink-50);
+          white-space: nowrap;
+        }
+        .f03-line + .f03-line {
+          margin-top: 6px;
+        }
+        .f03-l {
+          display: inline-block;
+        }
+        .f03-meta {
+          position: absolute;
+          left: 150px;
+          bottom: 96px;
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          font: 500 22px/1 var(--font-sans);
+          color: var(--ink-600);
+        }
+        .f03-meta .bar {
+          width: 280px;
+          height: 2px;
+          background: var(--ink-800);
+          position: relative;
+          overflow: hidden;
+        }
+        .f03-meta .bar i {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          background: var(--ink-600);
+        }
+        
+      </style>
+      <div id="f03" data-composition-id="f03" data-width="1920" data-height="1080">
+        <div class="ms-canvas-dark">
+          <div class="ms-vignette"></div>
+          <div id="f03-glow" class="ms-glow"></div>
+          <div id="f03-ghost-a" class="f03-ghost"></div>
+          <div id="f03-ghost-b" class="f03-ghost"></div>
+          <div id="f03-ghost-c" class="f03-ghost"></div>
+          <div id="f03-type">
+            <span class="ms-eyebrow dark">The problem</span>
+            <span class="ms-display f03-line">Good leads</span>
+            <span class="ms-display f03-line"
+              ><span class="f03-l">go</span>&nbsp;<span class="f03-l">q</span><span class="f03-l">u</span><span class="f03-l" style="color: var(--ink-300)">i</span><span class="f03-l" style="color: var(--ink-600)">e</span><span class="f03-l" style="color: var(--ink-800)">t</span><span class="f03-l" style="color: #1f1d1a">.</span></span
+            >
+          </div>
+          <div class="f03-meta"><span>Volume</span><span class="bar"><i style="width: 18%"></i></span></div>
+          <div class="ms-grain"></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#f03-glow", { scale: 1 }, { scale: 1.06, duration: 2.5, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f03 .ms-grain", { x: 0, y: 0 }, { x: -31, y: 19, duration: 2.5, ease: "steps(30)" }, 0);
+        window.__timelines["f03"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

@@ -11,3 +11,6 @@ manysetter-ad/research/pricing-*.png
 manysetter-ad/renders/**/frames/
 .hyperframes/
 __pycache__/
+manysetter-ad/film/snapshots/
+manysetter-ad/film/.hyperframes/
+manysetter-ad/film/renders/

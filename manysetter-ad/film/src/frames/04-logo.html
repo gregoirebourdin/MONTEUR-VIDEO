@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <style>
+        {{fonts}}
+        #f04 {
+          position: absolute;
+          inset: 0;
+        }
+        #f04-bloom {
+          left: 260px;
+          top: -260px;
+          width: 1400px;
+          height: 1400px;
+          background: radial-gradient(closest-side, rgba(230,75,21,0.420) 0%, rgba(230,75,21,0.361) 10%, rgba(230,75,21,0.269) 20%, rgba(230,75,21,0.181) 30%, rgba(230,75,21,0.109) 40%, rgba(230,75,21,0.059) 50%, rgba(230,75,21,0.027) 60%, rgba(230,75,21,0.011) 70%, rgba(230,75,21,0.004) 80%, rgba(230,75,21,0.000) 100%);
+        }
+        #f04-core {
+          left: 660px;
+          top: 140px;
+          width: 600px;
+          height: 600px;
+          background: radial-gradient(closest-side, rgba(255,144,94,0.380) 0%, rgba(255,144,94,0.327) 10%, rgba(255,144,94,0.243) 20%, rgba(255,144,94,0.163) 30%, rgba(255,144,94,0.099) 40%, rgba(255,144,94,0.053) 50%, rgba(255,144,94,0.025) 60%, rgba(255,144,94,0.010) 70%, rgba(255,144,94,0.003) 80%, rgba(255,144,94,0.000) 100%);
+        }
+        #f04-streak {
+          position: absolute;
+          left: 0;
+          width: 1920px;
+          top: 524px;
+          height: 6px;
+          background: linear-gradient(90deg, #ff611d00 8%, #ff905e59 50%, #ff611d00 92%);
+          filter: blur(2px);
+        }
+        #f04-tile {
+          position: absolute;
+          left: 760px;
+          top: 340px;
+          width: 400px;
+          height: 400px;
+        }
+        #f04-tile svg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          overflow: visible;
+        }
+        #f04-spark {
+          position: absolute;
+          left: 974px;
+          top: 527px;
+          width: 18px;
+          height: 18px;
+          margin: -9px 0 0 -9px;
+          border-radius: 50%;
+          background: #fff7f2;
+          box-shadow: 0 0 12px 4px #ffd8c0, 0 0 40px 14px #ff905e, 0 0 110px 40px #ff611d80;
+        }
+        #f04-caption {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 120px;
+          text-align: center;
+          font: 500 22px/1 var(--font-sans);
+          letter-spacing: 0.32em;
+          text-transform: uppercase;
+          color: var(--ink-600);
+        }
+        
+      </style>
+      <div id="f04" data-composition-id="f04" data-width="1920" data-height="1080">
+        <div class="ms-canvas-dark">
+          <div class="ms-vignette"></div>
+          <div id="f04-bloom" class="ms-glow"></div>
+          <div id="f04-core" class="ms-glow"></div>
+          <div id="f04-streak"></div>
+          <div id="f04-tile">
+            <svg viewBox="0 0 64 64">
+              <defs>
+                <linearGradient id="f04-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ff884d" />
+                  <stop offset="1" stop-color="#e64b15" />
+                </linearGradient>
+                <filter id="f04-blur-wide" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2" /></filter>
+                <filter id="f04-blur-mid" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.7" /></filter>
+              </defs>
+              <rect x="0.5" y="0.5" width="63" height="63" rx="15" fill="url(#f04-grad)" opacity="0.1" />
+              <rect x="0.5" y="0.5" width="63" height="63" rx="15" fill="none" stroke="#ff905e" stroke-opacity="0.32" stroke-width="0.35" />
+              <g transform="translate(12.16 12.16) scale(1.6533)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0.45" stroke="#ff611d" stroke-width="4.5" filter="url(#f04-blur-wide)" opacity="0.9" />
+                <path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0.45" stroke="#ff905e" stroke-width="2.6" filter="url(#f04-blur-mid)" />
+                <path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0.45" stroke="#fff7f2" stroke-width="1.3" />
+              </g>
+            </svg>
+          </div>
+          <div id="f04-spark"></div>
+          <div id="f04-caption">ManySetter</div>
+          <div class="ms-grain"></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#f04-bloom", { scale: 0.96 }, { scale: 1.04, duration: 3, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f04 .ms-grain", { x: 0, y: 0 }, { x: 29, y: 41, duration: 3, ease: "steps(36)" }, 0);
+        window.__timelines["f04"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

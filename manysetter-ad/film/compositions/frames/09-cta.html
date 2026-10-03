@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <style>
+        @font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+        #f09 {
+          position: absolute;
+          inset: 0;
+        }
+        #f09-mesh-a {
+          left: 360px;
+          top: -700px;
+          width: 1200px;
+          height: 1200px;
+          background: radial-gradient(closest-side, rgba(230,75,21,0.72) 0%, rgba(230,75,21,0.62) 10%, rgba(230,75,21,0.46) 20%, rgba(230,75,21,0.31) 30%, rgba(230,75,21,0.187) 40%, rgba(230,75,21,0.1) 50%, rgba(230,75,21,0.047) 60%, rgba(230,75,21,0.019) 70%, rgba(230,75,21,0.006) 80%, rgba(230,75,21,0) 100%);
+        }
+        #f09-mesh-b {
+          left: -420px;
+          top: 300px;
+          width: 1000px;
+          height: 1000px;
+          background: radial-gradient(closest-side, rgba(148,48,22,0.45) 0%, rgba(148,48,22,0.387) 10%, rgba(148,48,22,0.288) 20%, rgba(148,48,22,0.194) 30%, rgba(148,48,22,0.117) 40%, rgba(148,48,22,0.063) 50%, rgba(148,48,22,0.029) 60%, rgba(148,48,22,0.012) 70%, rgba(148,48,22,0.004) 80%, rgba(148,48,22,0) 100%);
+        }
+        #f09-mesh-c {
+          left: 1340px;
+          top: 420px;
+          width: 1000px;
+          height: 1000px;
+          background: radial-gradient(closest-side, rgba(188,58,23,0.34) 0%, rgba(188,58,23,0.292) 10%, rgba(188,58,23,0.218) 20%, rgba(188,58,23,0.146) 30%, rgba(188,58,23,0.088) 40%, rgba(188,58,23,0.048) 50%, rgba(188,58,23,0.022) 60%, rgba(188,58,23,0.009) 70%, rgba(188,58,23,0.003) 80%, rgba(188,58,23,0) 100%);
+        }
+        #f09-center {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 176px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        #f09-lockup {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+        }
+        #f09-lockup .ms-logo-tile {
+          width: 68px;
+          height: 68px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #f09-lockup .ms-logo-tile svg {
+          width: 42px;
+          height: 42px;
+        }
+        #f09-lockup .word {
+          font: 600 46px/1 var(--font-heading);
+          letter-spacing: -0.04em;
+          color: var(--ink-50);
+        }
+        #f09-title {
+          margin-top: 64px;
+          font-size: 108px;
+          color: var(--ink-50);
+        }
+        #f09-title .line {
+          display: block;
+          white-space: nowrap;
+        }
+        #f09-title .line + .line {
+          margin-top: 10px;
+        }
+        #f09-title .accent {
+          color: var(--brand-400);
+        }
+        #f09-title .ms-underline path {
+          stroke: var(--brand-500);
+          stroke-width: 5px;
+        }
+        #f09-cta {
+          position: relative;
+          margin-top: 78px;
+        }
+        #f09-btn {
+          height: 104px;
+          padding: 0 54px 0 58px;
+          border-radius: 26px;
+          gap: 18px;
+          font: 600 38px/1 var(--font-sans);
+          letter-spacing: -0.01em;
+          box-shadow: inset 0 2px 0 0 #ffffff47, inset 0 0 0 1.5px #bc3a17, 0 2px 4px 0 #73281433, 0 24px 60px -16px #e64b15b3, 0 0 0 10px #ff611d1a;
+        }
+        #f09-btn svg {
+          width: 38px;
+          height: 38px;
+          stroke-width: 2.4;
+        }
+        #f09-cursor {
+          position: absolute;
+          right: -36px;
+          bottom: -56px;
+          width: 58px;
+          height: 72px;
+          filter: drop-shadow(0 6px 10px #00000080);
+        }
+        #f09-checks {
+          margin-top: 64px;
+          display: flex;
+          gap: 44px;
+          font: 500 26px/1 var(--font-sans);
+          color: var(--ink-300);
+        }
+        #f09-checks span {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+        }
+        #f09-checks .ms-ico {
+          width: 26px;
+          height: 26px;
+          color: var(--brand-400);
+          stroke-width: 2.6;
+        }
+        #f09-foot {
+          position: absolute;
+          left: 150px;
+          right: 150px;
+          bottom: 86px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        #f09-url {
+          font: 500 40px/1 var(--font-heading);
+          letter-spacing: -0.03em;
+          color: var(--ink-100);
+        }
+        #f09-proof {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          font: 500 24px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        #f09-proof .ms-ico {
+          width: 26px;
+          height: 26px;
+          color: var(--brand-400);
+        }
+      </style>
+      <div id="f09" data-composition-id="f09" data-width="1920" data-height="1080">
+        <div class="ms-canvas-dark">
+          <div class="ms-vignette"></div>
+          <div id="f09-mesh-a" class="ms-glow"></div>
+          <div id="f09-mesh-b" class="ms-glow"></div>
+          <div id="f09-mesh-c" class="ms-glow"></div>
+          <div id="f09-center">
+            <div id="f09-lockup">
+              <span class="ms-logo-tile"
+                ><svg viewBox="0 0 24 24" fill="none"><path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg
+              ></span>
+              <span class="word">ManySetter</span>
+            </div>
+            <div id="f09-title" class="ms-display">
+              <span class="line">Your next qualified lead</span>
+              <span class="line"
+                >may already be <span class="ms-mark-wrap accent"
+                  >in your DMs.<svg class="ms-underline" viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M3 14.5C46 8.2 118 6.1 197 9.8" /></svg></span
+              ></span>
+            </div>
+            <div id="f09-cta">
+              <span id="f09-btn" class="ms-btn primary">Build my setter free<svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></span>
+              <svg id="f09-cursor" viewBox="0 0 24 30"><path d="M3 2.5v21.2l5.6-5.4 3.7 8.4 3.6-1.6-3.7-8.2h7.6z" fill="#fff" stroke="#0d0c0a" stroke-width="1.4" stroke-linejoin="round" /></svg>
+            </div>
+            <div id="f09-checks">
+              <span><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>Free to build and test</span>
+              <span><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>No card to start</span>
+              <span><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>14-day trial when you go live</span>
+            </div>
+          </div>
+          <div id="f09-foot">
+            <span id="f09-url">manysetter.com</span>
+            <span id="f09-proof"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>Tested by 100+ marketing agencies</span>
+          </div>
+          <div class="ms-grain"></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#f09-mesh-a", { x: 0, y: 0 }, { x: 60, y: 20, duration: 6, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f09-mesh-b", { x: 0, y: 0 }, { x: 40, y: -30, duration: 6, ease: "sine.inOut" }, 0);
+        window.__timelines["f09"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

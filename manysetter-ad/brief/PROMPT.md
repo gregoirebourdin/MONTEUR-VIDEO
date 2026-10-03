@@ -35,7 +35,7 @@ CONTRAT
 PROCESS ET QUALITÉ
 - Images-clés 4K validées avant toute animation. Animatique calée sur la voix validée avant
   l'animation finale.
-- Rendu 4K, 60 fps, vrai flou de mouvement (obturateur 180°, rendu 120 i/s fusionné).
+- Rendu 4K, 60 fps, flou de mouvement réel sur les 1 à 3 mouvements rapides, atterrissage net.
 - Mix -14 LUFS / -1 dBTP, voix toujours intelligible sur un haut-parleur de téléphone.
 - QA automatique avant chaque envoi : lint, validation runtime, zones sûres, frames noires
   ou gelées, VO vérifiée mot à mot, loudness mesurée.
@@ -120,6 +120,16 @@ mot à mot par whisper. Les prises supplémentaires dépendent du quota Gemini (
 ---
 
 ## 4. Découpage du film héros (16:9)
+
+> **v2.1, après accès au dashboard (workspace « ManySetter demos », lecture seule).** Les plans
+> 5, 6 et 8 utilisent les vrais écrans de l'app, reconstruits en vectoriel avec des données
+> fictives en anglais : **Playbook** (« Built from 6 documents », docs Offer · Voice · Objections ·
+> Fears · Dreams, doc *Voice* « Written by AI from your offer and who it's for »),
+> **Inbox** (*AI summary*, *Why this reply?* → Script step · It knew · It used · Rule,
+> bouton *Reply myself*), **Booking & follow-ups** (*Follow-ups* « in writing or with your
+> voice », *Hand to a person* : quand le lead demande un humain, semble contrarié, ou quand
+> le setter ne connaît pas la réponse). Le rendez-vous est le **mercredi 14 octobre** (le
+> 8 octobre 2026 est un jeudi). Images-clés validables : `deliverables/styleframes/`.
 
 Timings indicatifs : **l'image est re-calée sur la prise de voix retenue, au frame près.**
 🔒 = plan qui utilisera tes vrais écrans du dashboard (workspace démo).
@@ -226,7 +236,7 @@ l'app : `shadow-card`, `shadow-popover`, `shadow-xl`.
 2. **Cascade.** Éléments frères décalés de 3 à 5 frames, jamais tous ensemble.
 3. **Caméra vivante.** Tout plan a une dérive : dolly de 0,5 à 1,5 % ou translation lente. Aucun plan figé.
 4. **Profondeur.** Trois plans de parallaxe : fond mesh à 0,3×, UI à 1×, chips et curseurs au premier plan à 1,3×. Ce qui n'est pas le sujet est flou (6 à 14 px).
-5. **Vrai flou de mouvement.** Rendu à 120 i/s, fusion de frames vers 60 fps : obturateur 180°, comme une caméra de cinéma.
+5. **Flou de mouvement juste.** Réservé aux 1 à 3 mouvements vraiment rapides (slam de la typo, cartes en vol, flip) : obturateur réel, l'élément arrive flou et se pose net. Jamais sur un texte à lire, un fondu ou une dérive lente : là, il ferait « rendu cheap ».
 6. **Transitions motivées.** Chaque raccord naît d'un élément du plan : la lumière du logo, un pointillé qui entraîne la caméra, une carte qui se retourne, un bouton qui s'enfonce. Aucun fondu enchaîné générique, aucun « slide » de PowerPoint.
 7. **Le son a une forme.** Chaque son correspond à un mouvement visible, et chaque mouvement important a son son.
 

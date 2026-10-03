@@ -1,0 +1,519 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <style>
+        @font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+        #f05 {
+          position: absolute;
+          inset: 0;
+        }
+        #f05 .ms-grid {
+          -webkit-mask-image: radial-gradient(ellipse 70% 70% at 55% 45%, #000 30%, transparent 85%);
+          mask-image: radial-gradient(ellipse 70% 70% at 55% 45%, #000 30%, transparent 85%);
+        }
+        #f05-mesh-a {
+          left: 1000px;
+          top: -520px;
+          width: 1400px;
+          height: 1200px;
+          background: radial-gradient(closest-side, rgba(255,186,151,0.62) 0%, rgba(255,186,151,0.53) 10%, rgba(255,186,151,0.40) 20%, rgba(255,186,151,0.27) 30%, rgba(255,186,151,0.16) 40%, rgba(255,186,151,0.09) 50%, rgba(255,186,151,0.04) 60%, rgba(255,186,151,0.017) 70%, rgba(255,186,151,0.006) 80%, rgba(255,186,151,0) 100%);
+        }
+        #f05-mesh-b {
+          left: -420px;
+          top: 520px;
+          width: 1300px;
+          height: 1100px;
+          background: radial-gradient(closest-side, rgba(255,216,192,0.75) 0%, rgba(255,216,192,0.64) 10%, rgba(255,216,192,0.48) 20%, rgba(255,216,192,0.32) 30%, rgba(255,216,192,0.19) 40%, rgba(255,216,192,0.1) 50%, rgba(255,216,192,0.05) 60%, rgba(255,216,192,0.02) 70%, rgba(255,216,192,0.007) 80%, rgba(255,216,192,0) 100%);
+        }
+        #f05-copy {
+          position: absolute;
+          left: 140px;
+          top: 300px;
+          width: 640px;
+        }
+        #f05-title {
+          margin-top: 40px;
+          font-size: 98px;
+          color: var(--ink-900);
+        }
+        #f05-title .line {
+          display: block;
+          white-space: nowrap;
+        }
+        #f05-title .line + .line {
+          margin-top: 18px;
+          padding-left: 0.4em;
+        }
+        #f05-title .brand {
+          color: var(--brand-600);
+        }
+        #f05-title .ms-oval path {
+          stroke-width: 5px;
+        }
+        #f05-built {
+          margin-top: 64px;
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          height: 56px;
+          padding: 0 22px 0 18px;
+          border-radius: 16px;
+          background: #ffffffd9;
+          box-shadow: var(--shadow-card);
+          font: 500 24px/1 var(--font-sans);
+          color: var(--ink-800);
+        }
+        #f05-built .ms-ico {
+          width: 24px;
+          height: 24px;
+          color: var(--brand-600);
+        }
+        #f05-stage {
+          position: absolute;
+          left: 790px;
+          top: 150px;
+          width: 1080px;
+          height: 840px;
+          perspective: 2600px;
+        }
+        #f05-win {
+          position: absolute;
+          left: 60px;
+          top: 40px;
+          transform: rotateY(-11deg) rotateX(4deg);
+          transform-origin: 0% 50%;
+        }
+        #f05-win-zoom {
+          zoom: 1.36;
+        }
+        .f05-window {
+          width: 730px;
+          height: 520px;
+          display: flex;
+          flex-direction: column;
+        }
+        .f05-top {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          padding: 18px 22px 0;
+        }
+        .f05-top h3 {
+          font: 600 21px/1.1 var(--font-heading);
+          letter-spacing: -0.03em;
+          color: var(--ink-900);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .f05-top .sub {
+          margin-top: 5px;
+          font: 400 11.5px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f05-tabs {
+          display: flex;
+          gap: 22px;
+          padding: 16px 22px 0;
+          border-bottom: 1px solid var(--ink-150);
+          font: 500 12.5px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f05-tabs span {
+          padding-bottom: 11px;
+        }
+        .f05-tabs .on {
+          color: var(--ink-900);
+          box-shadow: inset 0 -2px 0 var(--ink-900);
+        }
+        .f05-body {
+          flex: 1;
+          display: flex;
+          min-height: 0;
+        }
+        .f05-list {
+          width: 232px;
+          padding: 14px 10px;
+          border-right: 1px solid var(--ink-150);
+          background: var(--ink-25);
+        }
+        .f05-list .intro {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 8px;
+          padding: 0 6px 12px;
+          font: 400 10.5px/1.35 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f05-list .ms-btn {
+          height: 26px;
+          padding: 0 9px;
+          font-size: 11.5px;
+          border-radius: 8px;
+          gap: 4px;
+        }
+        .f05-list .ms-btn svg {
+          width: 12px;
+          height: 12px;
+        }
+        .f05-item {
+          display: flex;
+          gap: 9px;
+          padding: 8px 8px;
+          border-radius: 10px;
+        }
+        .f05-item.on {
+          background: var(--ink-0);
+          box-shadow: var(--shadow-card);
+        }
+        .f05-item .ms-ico {
+          width: 13px;
+          height: 13px;
+          margin-top: 2px;
+          color: var(--ink-400);
+        }
+        .f05-item.on .ms-ico {
+          color: var(--brand-600);
+        }
+        .f05-item .t {
+          font: 600 12px/1.25 var(--font-sans);
+          color: var(--ink-900);
+          display: flex;
+          gap: 6px;
+          align-items: center;
+        }
+        .f05-item .d {
+          margin-top: 2px;
+          font: 400 10.5px/1.25 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f05-item .ms-chip {
+          height: 17px;
+          font-size: 9.5px;
+          padding: 0 6px;
+        }
+        .f05-sep {
+          padding: 12px 8px 4px;
+          font: 500 10px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        .f05-doc {
+          flex: 1;
+          padding: 18px 26px;
+        }
+        .f05-doc-head {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+        .f05-doc h4 {
+          font: 600 25px/1 var(--font-heading);
+          letter-spacing: -0.035em;
+          color: var(--ink-900);
+        }
+        .f05-doc .by {
+          margin-top: 6px;
+          font: 400 11px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f05-doc .ms-btn {
+          height: 28px;
+          padding: 0 10px;
+          font-size: 11.5px;
+          border-radius: 8px;
+        }
+        .f05-doc .ms-btn svg {
+          width: 13px;
+          height: 13px;
+          color: var(--brand-600);
+        }
+        .f05-toolbar {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-top: 14px;
+          padding: 7px 10px;
+          border-radius: 10px;
+          box-shadow: inset 0 0 0 1px var(--ink-150);
+          color: var(--ink-500);
+        }
+        .f05-toolbar .ms-ico {
+          width: 13px;
+          height: 13px;
+        }
+        .f05-toolbar .saved {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font: 500 10.5px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f05-toolbar .saved i {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: var(--emerald-500);
+        }
+        .f05-text {
+          margin-top: 14px;
+          font: 400 12px/1.6 var(--font-sans);
+          color: var(--ink-700);
+        }
+        .f05-text .lede {
+          font-weight: 600;
+          color: var(--ink-900);
+          margin-bottom: 6px;
+        }
+        .f05-text ul {
+          padding-left: 16px;
+        }
+        .f05-text li {
+          margin-bottom: 5px;
+        }
+        .f05-text b {
+          font-weight: 600;
+          color: var(--ink-900);
+        }
+        .f05-src {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          width: 380px;
+          padding: 16px 18px;
+          border-radius: 20px;
+          background: var(--ink-0);
+          box-shadow: var(--shadow-float);
+        }
+        .f05-src .tile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          border-radius: 14px;
+          background: var(--brand-50);
+          box-shadow: inset 0 0 0 1px #ff611d2e;
+          color: var(--brand-600);
+        }
+        .f05-src .tile .ms-ico {
+          width: 24px;
+          height: 24px;
+        }
+        .f05-src .t {
+          font: 600 22px/1.2 var(--font-sans);
+          color: var(--ink-900);
+        }
+        .f05-src .d {
+          margin-top: 3px;
+          font: 400 18px/1.2 var(--font-sans);
+          color: var(--ink-500);
+        }
+        #f05-src-a {
+          left: 660px;
+          top: 104px;
+          transform: rotate(-6deg);
+        }
+        #f05-src-a-smear {
+          left: 560px;
+          top: 98px;
+          transform: rotate(-6deg);
+          filter: blur(10px);
+          opacity: 0.35;
+        }
+        #f05-src-b {
+          left: 720px;
+          top: 836px;
+          transform: rotate(4deg);
+        }
+        #f05-voice {
+          position: absolute;
+          left: 1300px;
+          top: 800px;
+          width: 470px;
+          padding: 18px 20px;
+          border-radius: 22px;
+          background: var(--ink-0);
+          box-shadow: var(--shadow-float);
+        }
+        #f05-voice .row {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+        #f05-voice .play {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 54px;
+          height: 54px;
+          border-radius: 50%;
+          background: linear-gradient(to bottom, var(--brand-500), var(--brand-600));
+          color: #fff;
+          box-shadow: 0 6px 16px -6px #e64b15aa;
+        }
+        #f05-voice .play .ms-ico {
+          width: 22px;
+          height: 22px;
+          fill: #fff;
+          margin-left: 3px;
+        }
+        #f05-wave {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          height: 54px;
+          flex: 1;
+        }
+        #f05-wave i {
+          display: block;
+          width: 4px;
+          border-radius: 2px;
+          background: var(--brand-500);
+        }
+        #f05-wave i.off {
+          background: var(--ink-200);
+        }
+        #f05-voice .time {
+          font: 500 18px/1 var(--font-sans);
+          color: var(--ink-500);
+          font-variant-numeric: tabular-nums;
+        }
+        #f05-voice .cap {
+          margin-top: 12px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font: 500 17px/1 var(--font-sans);
+          color: var(--ink-600);
+        }
+        #f05-voice .cap .ms-ico {
+          width: 18px;
+          height: 18px;
+          color: var(--brand-600);
+        }
+        #f05-learned {
+          position: absolute;
+          left: 1560px;
+          top: 112px;
+        }
+        #f05-learned .ms-chip {
+          zoom: 2;
+        }
+      </style>
+      <div id="f05" data-composition-id="f05" data-width="1920" data-height="1080">
+        <div class="ms-canvas-light">
+          <div class="ms-grid"></div>
+          <div id="f05-mesh-a" class="ms-glow"></div>
+          <div id="f05-mesh-b" class="ms-glow"></div>
+
+          <div id="f05-copy">
+            <span class="ms-eyebrow">Playbook</span>
+            <div id="f05-title" class="ms-display">
+              <span class="line">Your leads hear</span>
+              <span class="line"><span class="ms-mark-wrap brand"
+                >your brand<svg class="ms-oval" viewBox="0 0 200 64" preserveAspectRatio="none"><path d="M166 5C130 3 70 3 26 5.5C11 6.5 3 19 3 32C3 46 9.9 58 26 59.5C70 61.5 130 61.5 174 59C190.1 58 197 45 197 30.5C197 17 189 7 170 6C150 5 120 6 96 8" /></svg
+              ></span></span>
+            </div>
+            <div id="f05-built"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>Built from 6 documents</div>
+          </div>
+
+          <div id="f05-stage">
+            <div id="f05-win">
+              <div id="f05-win-zoom" class="ms-ui">
+                <div class="ms-window f05-window">
+                  <div class="f05-top">
+                    <div>
+                      <h3>Clientflow <span class="ms-chip green"><span class="dot"></span>Live</span></h3>
+                      <div class="sub">Answering on Instagram · Clientflow Coaching</div>
+                    </div>
+                    <span class="ms-btn secondary" style="height: 28px; padding: 0 10px; font-size: 11.5px; border-radius: 8px"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path><path d="M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1"></path></svg>Test it</span>
+                  </div>
+                  <div class="f05-tabs"><span>Overview</span><span class="on">Playbook</span><span>Booking &amp; follow-ups</span><span>Settings</span></div>
+                  <div class="f05-body">
+                    <div class="f05-list">
+                      <div class="intro"><span>What your setter knows. Edit anything, it uses it right away.</span><span class="ms-btn primary"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Add</span></div>
+                      <div class="f05-item"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Setting script <span class="ms-chip">Main</span></div><div class="d">The conversation, step by step</div></div></div>
+                      <div class="f05-item"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Offer</div><div class="d">1 page</div></div></div>
+                      <div class="f05-item on"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Voice</div><div class="d">Warm, direct, short</div></div></div>
+                      <div class="f05-item"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Objections</div><div class="d">10 objections</div></div></div>
+                      <div class="f05-sep">More it knows</div>
+                      <div class="f05-item"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Discussion context</div><div class="d">Written by AI</div></div></div>
+                      <div class="f05-item"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Fears</div><div class="d">5 rational, 5 irrational</div></div></div>
+                    </div>
+                    <div class="f05-doc">
+                      <div class="f05-doc-head">
+                        <div>
+                          <h4>Voice</h4>
+                          <div class="by">Written by AI from your offer and who it’s for</div>
+                        </div>
+                        <span class="ms-btn secondary"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>Rewrite with AI</span>
+                      </div>
+                      <div class="f05-toolbar"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="19" x2="10" y1="4" y2="4"></line><line x1="14" x2="5" y1="20" y2="20"></line><line x1="15" x2="9" y1="4" y2="20"></line></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"></path><path d="M6 20V4"></path><path d="M18 20V4"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h10"></path><path d="M11 12h10"></path><path d="M11 19h10"></path><path d="M4 4h1v5"></path><path d="M4 9h2"></path><path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg><span class="saved"><i></i>Saved</span></div>
+                      <div class="f05-text">
+                        <div class="lede">Warm, direct, short</div>
+                        <ul>
+                          <li><b>Speaking as:</b> Maya, in the first person. Her program is her story.</li>
+                          <li><b>Energy:</b> calm and sure. Encouraging, never pushy.</li>
+                          <li><b>Addressing the lead:</b> first name, casual.</li>
+                          <li><b>Length:</b> 1 to 2 lines. One question at a time.</li>
+                          <li><b>Says:</b> “Totally fair question”, “20-min fit call”.</li>
+                          <li><b>Never says:</b> “Guaranteed results”.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="f05-learned" class="ms-ui"><span class="ms-chip green"><span class="dot"></span>Learned</span></div>
+
+          <div id="f05-src-a" class="f05-src ms-ui"><span class="tile"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></span><div><div class="t">Sales page</div><div class="d">clientflow.co/program</div></div></div>
+          <div id="f05-src-b" class="f05-src ms-ui"><span class="tile"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></span><div><div class="t">Offer doc</div><div class="d">Program 2026.pdf</div></div></div>
+
+          <div id="f05-voice" class="ms-ui">
+            <div class="row">
+              <span class="play"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg></span>
+              <div id="f05-wave"></div>
+              <span class="time">0:21</span>
+            </div>
+            <div class="cap"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19v3"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><rect x="9" y="2" width="6" height="13" rx="3"></rect></svg>Follow-up voice note, in your voice</div>
+          </div>
+          <div class="ms-grain"></div>
+        </div>
+      </div>
+      <script>
+        // Waveform bars: deterministic heights (seeded), first 60% "played"
+        (function () {
+          const wave = document.getElementById("f05-wave");
+          let s = 7;
+          const rnd = () => ((s = (s * 16807) % 2147483647) / 2147483647);
+          const n = 38;
+          for (let i = 0; i < n; i++) {
+            const env = Math.sin((Math.PI * (i + 1)) / (n + 1));
+            const h = Math.round(10 + 40 * env * (0.45 + 0.55 * rnd()));
+            const bar = document.createElement("i");
+            bar.style.height = h + "px";
+            if (i > n * 0.62) bar.className = "off";
+            wave.appendChild(bar);
+          }
+        })();
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#f05-mesh-a", { x: 0, y: 0 }, { x: -40, y: 30, duration: 7, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f05-mesh-b", { x: 0, y: 0 }, { x: 50, y: -20, duration: 7, ease: "sine.inOut" }, 0);
+        window.__timelines["f05"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
