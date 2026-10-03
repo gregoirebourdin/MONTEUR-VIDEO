@@ -58,7 +58,7 @@ def norm_words(text: str) -> list[str]:
     t = re.sub(r"\bwanna\b", "want to", t)
     t = re.sub(r"\bgotta\b", "got to", t)
     for a, b in ((r"\ba i\b", "ai"), (r"\bmany chat\b", "manychat"), (r"\bmany setter\b", "manysetter"),
-                 (r"\bwhats app\b", "whatsapp"), (r"\be com\b", "ecom"), (r"\be commerce\b", "ecommerce"), (r"\ba m\b", "am"),
+                 (r"\bwhats app\b", "whatsapp"), (r"\be com\b", "ecom"), (r"\be commerce\b", "ecommerce"), (r"\ba m\b", "am"), (r"\bp m\b", "pm"),
                  (r"\bset up\b", "setup")):
         t = re.sub(a, b, t)
     ws = re.findall(r"[a-z0-9']+", t)
