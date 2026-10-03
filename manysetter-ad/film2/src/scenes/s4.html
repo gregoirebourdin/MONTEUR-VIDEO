@@ -284,7 +284,7 @@
         tl.to("#s4-tile", { x: -463, scale: 0.5, duration: 0.8, ease: "expo.inOut" }, MEET - 0.1);
         const chars = gsap.utils.toArray("#s4-word .s4-ch");
         tl.fromTo(chars, { opacity: 0, x: (i) => (i - 5) * 30 + 40 }, { opacity: 1, x: 0, duration: 1.0, ease: "expo.out", stagger: 0.022 }, MEET + 0.22);
-        tl.fromTo("#s4-q", { scale: 0.3, rotation: -20 }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(3)", immediateRender: false }, MEET + 0.35);
+        tl.fromTo("#s4-q", { scale: 0.3, rotation: -20 }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(3)", immediateRender: false }, {{end:P4.manysetter}} + 0.05);
         tl.fromTo("#s4-lockup", { scale: 1 }, { scale: 1.035, duration: {{cue:P4.an}} - 0.34 - MEET, ease: "sine.inOut", transformOrigin: "50% 50%" }, MEET);
         tl.to("#s4-lockup", { opacity: 0, y: -60, scale: 0.94, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, {{cue:P4.an}} - 0.32);
         // the plug: ManySetter appears, the wire runs up, Manychat connects

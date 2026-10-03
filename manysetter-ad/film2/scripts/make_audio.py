@@ -200,7 +200,7 @@ for b in range(NBARS):
 # stop-time: everything drops for "Wait…", comes back on "seriously?"
 i0, i1 = int(STOP0 * SR), int(STOP1 * SR)
 F[i0:i1] *= np.linspace(1, 0.0, i1 - i0)[:, None] ** 6
-place(F, noise_swell(STOP1 - STOP0, 600, 8000, up=True), STOP0, 0.25)
+place(F, noise_swell(STOP1 - end("P5.wait") - 0.05, 600, 8000, up=True), end("P5.wait") + 0.05, 0.12)
 place(F, sub_hit(40, 1.0), STOP1, 0.4)
 place(F, verb(hp(rng.standard_normal(int(1.6 * SR)) * np.exp(-t_(1.6) * 3.2), 3500), 0.3), STOP1, 0.06)
 # lift into the end
@@ -232,7 +232,9 @@ if vo.ndim > 1:
 vo = np.pad(vo, (0, max(0, N - len(vo))))[:N]
 hop = 240
 envv = np.sqrt(np.convolve(vo**2, np.ones(hop * 4) / (hop * 4), mode="same"))
-active = (envv > 0.01).astype(float)
+active = (envv > 0.004).astype(float)
+look = int(0.08 * SR)  # look-ahead: the bed is already down when a word starts
+active = np.maximum(active, np.concatenate([active[look:], np.zeros(look)]))
 a_c, r_c = np.exp(-1 / (0.02 * SR)), np.exp(-1 / (0.3 * SR))
 sm = np.zeros(N)
 lvl = 0.0
@@ -255,23 +257,23 @@ def kit(name):
 for ev in FILM["events"]:
     t, kind = ev["t"], ev["kind"]
     if kind == "rise":
-        place(sfx, tick_soft(), t - 0.03, 0.05 if not ev.get("acc") else 0.07)
+        place(sfx, tick_soft(), t - 0.1, 0.035 if not ev.get("acc") else 0.05)  # just before the consonant
         if ev.get("acc"):
             place(sfx, thump(120), t - 0.02, 0.12)
     elif kind == "sink":
-        place(sfx, tick_soft(), t - 0.03, 0.05)
+        place(sfx, tick_soft(), t - 0.1, 0.035)
     elif kind == "slam":
-        place(sfx, impact(52), t - 0.02, 0.32)
+        place(sfx, impact_word(50), t - 0.05, 0.3)
     elif kind == "pop":
         place(sfx, kit("pop"), t - 0.03, 0.2)
     elif kind == "soft":
-        place(sfx, swish(0.35), t - 0.08, 0.05)
+        place(sfx, swish(0.35), t - 0.3, 0.02)
     elif kind == "count":
         pass  # the 126 roll is designed below
     elif kind == "mark":
         place(sfx, scribble(0.62), t, 0.075)
     elif kind == "exit":
-        place(sfx, whoosh(0.3, 2500, 900), t - 0.02, 0.035)
+        place(sfx, whoosh(0.22, 2500, 900), t - 0.06, 0.02)
 
 S = lambda sid: SC[sid]["start"]  # noqa: E731
 
@@ -305,7 +307,7 @@ place(sfx, whoosh(0.9, 3000, 300), FLOOD - 0.15, 0.12)
 place(sfx, whoosh(0.6, 500, 3000), S("s2") + 0.05, 0.1, pan=0.5)
 place(sfx, blip("recv"), cue("P2.reply") - 0.1, 0.14, pan=0.5)
 place(sfx, kit("tick"), cue("P2.late") - 0.08, 0.12, pan=0.5)
-place(sfx, blip("send"), cue("P2.theyll") + 0.02, 0.12, pan=0.5)
+place(sfx, blip("send"), end("P2.me") + 0.05, 0.08, pan=0.5)
 place(sfx, whoosh(1.0, 2000, 300), cue("P2.forget") + 0.1, 0.07, pan=0.5)
 place(sfx, whoosh(0.7, 2500, 400), B.LINES["P2"]["start"] + 2.0, 0.08, pan=0.5)
 # ---- s3: hiring, the cringe
@@ -318,16 +320,16 @@ for k in range(3):
     place(sfx, tick_soft(), cue("P3.total") + 0.1 + k * 0.5, 0.04, pan=0.5)
 for w in ("P3.hey", "P3.babe", "P3.ready", "P3.to#3", "P3.tenx", "P3.your", "P3.life"):
     place(sfx, kit("star") * 0.8, cue(w) - 0.04, 0.06, pan=0.45)
-place(sfx, scratch(), UH - 0.12, 0.22)
+place(sfx, scratch(), UH - 0.5, 0.22)
 place(sfx, woodblock(420), cue("P3.no") - 0.01, 0.2)
 place(sfx, scribble(0.3), cue("P3.no"), 0.12, pan=0.5)
 place(sfx, whoosh(0.5, 2000, 300), S("s4") - 0.55, 0.1, pan=0.5)
 # ---- s4: the spark, the bloom, the plug
 for k in range(10):
     place(sfx, hp(rng.standard_normal(int(0.01 * SR)) * np.exp(-t_(0.01) * 400), 4000), T_SPARK + k * (MEET - T_SPARK) / 10, 0.05)
-place(sfx, verb(swish(1.0), 0.4), MEET - 0.05, 0.16)
-place(sfx, sparkle(1.0), MEET + 0.1, 0.1)
-place(sfx, kit("pop"), MEET + 0.35, 0.16)  # the "?"
+place(sfx, verb(swish(0.8), 0.4), MEET - 0.7, 0.1)
+place(sfx, sparkle(1.0), end("P4.manysetter") + 0.02, 0.08)
+place(sfx, kit("pop"), end("P4.manysetter") + 0.05, 0.12)  # the "?"
 place(sfx, whoosh(0.5, 3000, 500), cue("P4.an") - 0.32, 0.08)
 place(sfx, whoosh(0.6, 500, 3000), cue("P4.ai") - 0.05, 0.1, pan=0.5)
 place(sfx, whoosh(0.6, 500, 3000), cue("P4.plugs") - 0.05, 0.1, pan=0.5)
@@ -360,7 +362,7 @@ for k in range(3):
     place(sfx, tick_soft(), cue("P6.before") + 0.15 + k * 0.45, 0.035, pan=0.5)
 place(sfx, blip("send"), cue("P6.would") - 0.12, 0.13, pan=0.6)
 place(sfx, whoosh(0.7, 500, 3500), cue("P6.every") - 0.2, 0.1, pan=0.5)
-place(sfx, sparkle(0.7), cue("P6.ai") - 0.1, 0.08, pan=0.5)
+place(sfx, sparkle(0.7), end("P6.summary") + 0.02, 0.04, pan=0.5)
 for k in range(4):
     place(sfx, tick_soft(), cue("P6.summary") + k * 0.16, 0.04, pan=0.5)
 place(sfx, scribble(0.4), cue("P6.exactly") - 0.05, 0.06, pan=0.5)

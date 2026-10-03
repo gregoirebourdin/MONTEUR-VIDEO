@@ -24,6 +24,7 @@ ALIASES = {
     "manysetters": "manysetter",
     "real": "reel",
     "red": "read",
+    "ok": "okay",
 }
 
 

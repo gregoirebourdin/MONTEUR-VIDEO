@@ -264,3 +264,10 @@ def sparkle(dur=0.8, lo=86, hi=104):
 def click():
     n = int(0.03 * SR)
     return bp(rng.standard_normal(n), 1200, 7000) * np.exp(-np.arange(n) / SR * 260) + thump(180)[:n] * 0.5
+
+
+def impact_word(f=50):
+    """Slam under a spoken word: sub thump and a soft click, no mid-range crack to mask the consonant."""
+    s = sub_hit(f, 0.7)
+    s[: int(0.004 * SR)] += hp(rng.standard_normal(int(0.004 * SR)), 5000) * 0.2
+    return lp(s, 1200)

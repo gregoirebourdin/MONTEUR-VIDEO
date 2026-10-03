@@ -75,8 +75,7 @@ SCENES = [
         "beats": [
             {"t": "Okay,!pop | let's try.", "pos": "center", "size": 150},
             {"t": "I give it | my *sales page…", "pos": "left", "size": 112},
-            {"t": "two minutes later,", "pos": "left", "size": 112},
-            {"t": "it knows my offer | {by heart.}~u", "pos": "left", "size": 112},
+            {"t": "two minutes later, | it knows my offer | {by heart.}~u", "pos": "left", "size": 112},
             {"t": "It answers | every DM,", "pos": "left", "size": 112},
             {"t": "handles the | “I need to | think about it”", "pos": "left", "size": 104},
             {"t": "and when | someone's a *fit,", "pos": "left", "size": 112},

@@ -120,31 +120,31 @@
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });
-        const MS = 0.411;
+        const MS = 0.430;
         tl.fromTo("#s9-halo", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" }, MS - 0.3);
         tl.fromTo("#s9-tile", { opacity: 0, scale: 0.3, rotation: -14, y: 30 }, { opacity: 1, scale: 1, rotation: 0, y: 0, duration: 0.75, ease: "back.out(1.9)" }, MS - 0.12);
         const chars = gsap.utils.toArray("#s9-word .s9-ch");
         tl.fromTo(chars, { opacity: 0, x: (i) => (i - 4.5) * 28 + 40, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.9, ease: "expo.out", stagger: 0.025 }, MS);
         // manysetter dot com: the address types itself in three beats with the voice
-        tl.fromTo("#s9-pill", { opacity: 0, y: 40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.8)" }, 4.288 - 0.15);
-        const U = [4.288, 4.750, 4.931];
+        tl.fromTo("#s9-pill", { opacity: 0, y: 40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.8)" }, 4.676 - 0.15);
+        const U = [4.676, 5.217, 5.417];
         gsap.utils.toArray(".s9-url-ch").forEach((c, k) => {
           tl.fromTo(c, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, U[k] - 0.04);
         });
-        tl.fromTo("#s9-pill .go", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2.4)" }, 4.931 + 0.15);
-        tl.fromTo("#s9-legal", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 4.931 + 0.6);
+        tl.fromTo("#s9-pill .go", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2.4)" }, 5.417 + 0.15);
+        tl.fromTo("#s9-legal", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 5.417 + 0.6);
         // the end card breathes
-        tl.fromTo("#s9-all", { scale: 1 }, { scale: 1.03, duration: 9.624 - MS, ease: "sine.inOut", transformOrigin: "50% 50%" }, MS);
+        tl.fromTo("#s9-all", { scale: 1 }, { scale: 1.03, duration: 9.908 - MS, ease: "sine.inOut", transformOrigin: "50% 50%" }, MS);
 
-        tl.fromTo("#s9-w1", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.145);
-tl.fromTo("#s9-w2", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.325);
-tl.fromTo("#s9-w3", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.767);
-tl.fromTo("#s9-w4", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.049);
-tl.fromTo("#s9-w5", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.953);
-tl.fromTo("#s9-w6", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.133);
-tl.fromTo("#s9-m1-1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.72, ease: "power2.inOut" }, 3.525);
-tl.fromTo("#s9-w7", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.375);
-tl.fromTo("#s9-b1-d", { scale: 1 }, { scale: 1.05, duration: 8.529, ease: "none" }, 1.095);
+        tl.fromTo("#s9-w1", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.402);
+tl.fromTo("#s9-w2", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.562);
+tl.fromTo("#s9-w3", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.183);
+tl.fromTo("#s9-w4", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.383);
+tl.fromTo("#s9-w5", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.445);
+tl.fromTo("#s9-w6", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.525);
+tl.fromTo("#s9-m1-1", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.72, ease: "power2.inOut" }, 3.855);
+tl.fromTo("#s9-w7", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.705);
+tl.fromTo("#s9-b1-d", { scale: 1 }, { scale: 1.05, duration: 8.556, ease: "none" }, 1.352);
         window.__timelines["s9"] = tl;
       </script>
       <script>
