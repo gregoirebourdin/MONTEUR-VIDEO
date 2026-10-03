@@ -55,7 +55,7 @@
           color: var(--brand-600);
         }
         #f05-title .ms-oval path {
-          stroke-width: 5px;
+          stroke-width: 2.3px;
         }
         #f05-built {
           margin-top: 64px;
@@ -87,7 +87,6 @@
           position: absolute;
           left: 60px;
           top: 40px;
-          transform: rotateY(-11deg) rotateX(4deg);
           transform-origin: 0% 50%;
         }
         #f05-win-zoom {
@@ -321,19 +320,18 @@
         #f05-src-a {
           left: 660px;
           top: 104px;
-          transform: rotate(-6deg);
         }
-        #f05-src-a-smear {
-          left: 560px;
-          top: 98px;
-          transform: rotate(-6deg);
-          filter: blur(10px);
-          opacity: 0.35;
+        #f05-src-c {
+          left: 300px;
+          top: 120px;
+        }
+        #f05-src-d {
+          left: 260px;
+          top: 860px;
         }
         #f05-src-b {
           left: 720px;
           top: 836px;
-          transform: rotate(4deg);
         }
         #f05-voice {
           position: absolute;
@@ -411,17 +409,17 @@
         }
       </style>
       <div id="f05" data-composition-id="f05" data-width="1920" data-height="1080">
-        <div class="ms-canvas-light">
+        <div id="f05-canvas" class="ms-canvas-light">
           <div class="ms-grid"></div>
           <div id="f05-mesh-a" class="ms-glow"></div>
           <div id="f05-mesh-b" class="ms-glow"></div>
 
           <div id="f05-copy">
-            <span class="ms-eyebrow">Playbook</span>
+            <span id="f05-eyebrow" class="ms-eyebrow">Playbook</span>
             <div id="f05-title" class="ms-display">
-              <span class="line">Your leads hear</span>
-              <span class="line"><span class="ms-mark-wrap brand"
-                >your brand<svg class="ms-oval" viewBox="0 0 200 64" preserveAspectRatio="none"><path d="M166 5C130 3 70 3 26 5.5C11 6.5 3 19 3 32C3 46 9.9 58 26 59.5C70 61.5 130 61.5 174 59C190.1 58 197 45 197 30.5C197 17 189 7 170 6C150 5 120 6 96 8" /></svg
+              <span id="f05-l1" class="line">Your leads hear</span>
+              <span id="f05-l2" class="line"><span class="ms-mark-wrap brand"
+                >your brand<svg class="ms-oval" viewBox="0 0 200 64" preserveAspectRatio="none"><path id="f05-oval" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M166 5C130 3 70 3 26 5.5C11 6.5 3 19 3 32C3 46 9.9 58 26 59.5C70 61.5 130 61.5 174 59C190.1 58 197 45 197 30.5C197 17 189 7 170 6C150 5 120 6 96 8" /></svg
               ></span></span>
             </div>
             <div id="f05-built"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>Built from 6 documents</div>
@@ -430,7 +428,7 @@
           <div id="f05-stage">
             <div id="f05-win">
               <div id="f05-win-zoom" class="ms-ui">
-                <div class="ms-window f05-window">
+                <div id="f05-window" class="ms-window f05-window">
                   <div class="f05-top">
                     <div>
                       <h3>Clientflow <span class="ms-chip green"><span class="dot"></span>Live</span></h3>
@@ -440,26 +438,26 @@
                   </div>
                   <div class="f05-tabs"><span>Overview</span><span class="on">Playbook</span><span>Booking &amp; follow-ups</span><span>Settings</span></div>
                   <div class="f05-body">
-                    <div class="f05-list">
+                    <div id="f05-list" class="f05-list">
                       <div class="intro"><span>What your setter knows. Edit anything, it uses it right away.</span><span class="ms-btn primary"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>Add</span></div>
-                      <div class="f05-item"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Setting script <span class="ms-chip">Main</span></div><div class="d">The conversation, step by step</div></div></div>
-                      <div class="f05-item"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Offer</div><div class="d">1 page</div></div></div>
-                      <div class="f05-item on"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Voice</div><div class="d">Warm, direct, short</div></div></div>
-                      <div class="f05-item"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Objections</div><div class="d">10 objections</div></div></div>
-                      <div class="f05-sep">More it knows</div>
-                      <div class="f05-item"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Discussion context</div><div class="d">Written by AI</div></div></div>
-                      <div class="f05-item"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Fears</div><div class="d">5 rational, 5 irrational</div></div></div>
+                      <div class="f05-item f05-it"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Setting script <span class="ms-chip">Main</span></div><div class="d">The conversation, step by step</div></div></div>
+                      <div class="f05-item f05-it"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Offer</div><div class="d">1 page</div></div></div>
+                      <div id="f05-voice-item" class="f05-item f05-it on"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Voice</div><div class="d">Warm, direct, short</div></div></div>
+                      <div class="f05-item f05-it"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Objections</div><div class="d">10 objections</div></div></div>
+                      <div class="f05-sep f05-it">More it knows</div>
+                      <div class="f05-item f05-it"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Discussion context</div><div class="d">Written by AI</div></div></div>
+                      <div class="f05-item f05-it"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path></svg><div><div class="t">Fears</div><div class="d">5 rational, 5 irrational</div></div></div>
                     </div>
-                    <div class="f05-doc">
-                      <div class="f05-doc-head">
+                    <div id="f05-doc" class="f05-doc">
+                      <div id="f05-doc-head" class="f05-doc-head">
                         <div>
                           <h4>Voice</h4>
                           <div class="by">Written by AI from your offer and who it’s for</div>
                         </div>
                         <span class="ms-btn secondary"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>Rewrite with AI</span>
                       </div>
-                      <div class="f05-toolbar"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="19" x2="10" y1="4" y2="4"></line><line x1="14" x2="5" y1="20" y2="20"></line><line x1="15" x2="9" y1="4" y2="20"></line></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"></path><path d="M6 20V4"></path><path d="M18 20V4"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h10"></path><path d="M11 12h10"></path><path d="M11 19h10"></path><path d="M4 4h1v5"></path><path d="M4 9h2"></path><path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg><span class="saved"><i></i>Saved</span></div>
-                      <div class="f05-text">
+                      <div id="f05-toolbar" class="f05-toolbar"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="19" x2="10" y1="4" y2="4"></line><line x1="14" x2="5" y1="20" y2="20"></line><line x1="15" x2="9" y1="4" y2="20"></line></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"></path><path d="M6 20V4"></path><path d="M18 20V4"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h.01"></path><path d="M3 12h.01"></path><path d="M3 19h.01"></path><path d="M8 5h13"></path><path d="M8 12h13"></path><path d="M8 19h13"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h10"></path><path d="M11 12h10"></path><path d="M11 19h10"></path><path d="M4 4h1v5"></path><path d="M4 9h2"></path><path d="M6.5 20H3.4c0-1 2.6-1.925 2.6-3.5a1.5 1.5 0 0 0-2.6-1.02"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg><span class="saved"><i></i>Saved</span></div>
+                      <div id="f05-text" class="f05-text">
                         <div class="lede">Warm, direct, short</div>
                         <ul>
                           <li><b>Speaking as:</b> Maya, in the first person. Her program is her story.</li>
@@ -479,12 +477,14 @@
 
           <div id="f05-learned" class="ms-ui"><span class="ms-chip green"><span class="dot"></span>Learned</span></div>
 
+          <div id="f05-src-c" class="f05-src ms-ui"><span class="tile"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v16"></path><path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"></path></svg></span><div><div class="t">FAQ</div><div class="d">18 questions</div></div></div>
+          <div id="f05-src-d" class="f05-src ms-ui"><span class="tile"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="7" x="3" y="3" rx="1"></rect><rect width="9" height="7" x="3" y="14" rx="1"></rect><rect width="5" height="7" x="16" y="14" rx="1"></rect></svg></span><div><div class="t">Instagram posts</div><div class="d">Pasted captions</div></div></div>
           <div id="f05-src-a" class="f05-src ms-ui"><span class="tile"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></span><div><div class="t">Sales page</div><div class="d">clientflow.co/program</div></div></div>
           <div id="f05-src-b" class="f05-src ms-ui"><span class="tile"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></span><div><div class="t">Offer doc</div><div class="d">Program 2026.pdf</div></div></div>
 
           <div id="f05-voice" class="ms-ui">
             <div class="row">
-              <span class="play"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg></span>
+              <span id="f05-play" class="play"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg></span>
               <div id="f05-wave"></div>
               <span class="time">0:21</span>
             </div>
@@ -505,13 +505,44 @@
             const h = Math.round(10 + 40 * env * (0.45 + 0.55 * rnd()));
             const bar = document.createElement("i");
             bar.style.height = h + "px";
-            if (i > n * 0.62) bar.className = "off";
-            wave.appendChild(bar);
+                        wave.appendChild(bar);
           }
         })();
         const tl = gsap.timeline({ paused: true });
-        tl.fromTo("#f05-mesh-a", { x: 0, y: 0 }, { x: -40, y: 30, duration: 7, ease: "sine.inOut" }, 0);
-        tl.fromTo("#f05-mesh-b", { x: 0, y: 0 }, { x: 50, y: -20, duration: 7, ease: "sine.inOut" }, 0);
+        const X = "expo.out", DRAWER = "power3.inOut", SPRING = "back.out(1.5)";
+        // crossfade in from the logo scene, ambient drift
+        tl.fromTo("#f05-canvas", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 0);
+        tl.fromTo("#f05-mesh-a", { x: 0, y: 0 }, { x: -60, y: 40, duration: 6.334, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f05-mesh-b", { x: 0, y: 0 }, { x: 70, y: -30, duration: 6.334, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f05-win", { x: 180, opacity: 0, rotationY: -26, rotationX: 4 }, { x: 0, opacity: 1, rotationY: -11, rotationX: 4, duration: 1.2, ease: X }, 0.15);
+        tl.to("#f05-win", { rotationY: -7, rotationX: 2, duration: 6.334 - 1.4, ease: "sine.inOut" }, 1.35);
+        tl.fromTo(".f05-it", { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.5, ease: X, stagger: 0.05 }, 0.55);
+        // copy
+        tl.fromTo("#f05-eyebrow", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, 0.2);
+        tl.fromTo("#f05-l1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: X }, 0.380 - 0.25);
+        tl.fromTo("#f05-l2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: X }, 2.550 - 0.3);
+        tl.fromTo("#f05-oval", { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.85, ease: "cubic-bezier(.65,0,.35,1)" }, 2.910 - 0.05);
+        // the sources fly in on "offer" and get absorbed on "voice"
+        const fly = (sel, from, rot, t) => tl.fromTo(sel, from, { x: 0, y: 0, rotation: rot, opacity: 1, duration: 0.75, ease: X }, t);
+        fly("#f05-src-a", { x: -700, y: -120, rotation: -22, opacity: 0 }, -6, 1.120 - 0.35);
+        fly("#f05-src-c", { x: -600, y: -60, rotation: -14, opacity: 0 }, -3, 1.120 - 0.25);
+        fly("#f05-src-d", { x: -600, y: 120, rotation: 12, opacity: 0 }, 3, 1.120 - 0.15);
+        fly("#f05-src-b", { x: -700, y: 160, rotation: 18, opacity: 0 }, 4, 1.120 - 0.05);
+        tl.to("#f05-src-c", { x: 560, y: 260, scale: 0.4, opacity: 0, duration: 0.55, ease: "power3.in" }, 1.830 - 0.25);
+        tl.to("#f05-src-d", { x: 600, y: -280, scale: 0.4, opacity: 0, duration: 0.55, ease: "power3.in" }, 1.830 - 0.15);
+        tl.fromTo("#f05-learned", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: SPRING }, 1.830 + 0.2);
+        // the Voice doc writes itself
+        tl.fromTo("#f05-voice-item", { backgroundColor: "rgba(255,255,255,0)" }, { backgroundColor: "rgba(255,255,255,1)", duration: 0.3 }, 1.830 - 0.1);
+        tl.fromTo("#f05-doc-head", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, 1.830 - 0.05);
+        tl.fromTo("#f05-toolbar", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 1.830 + 0.1);
+        tl.fromTo("#f05-text .lede, #f05-text li", { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.45, ease: X, stagger: 0.24 }, 1.830 + 0.25);
+        tl.fromTo("#f05-built", { opacity: 0, y: 18, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: SPRING }, 0.501 - 0.1);
+        // ...even the voice notes
+        tl.fromTo("#f05-voice", { opacity: 0, y: 60, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: X }, 4.161 - 0.3);
+        tl.fromTo("#f05-play", { scale: 1 }, { scale: 0.9, duration: 0.12, ease: "power2.out", yoyo: true, repeat: 1 }, 4.700 - 0.1);
+        tl.fromTo("#f05-wave i", { backgroundColor: "#e6e5e3" }, { backgroundColor: "#ff611d", duration: 0.08, stagger: 0.04 }, 4.700);
+        // hand over
+        tl.to("#f05-copy, #f05-stage, #f05-voice, #f05-learned, #f05-src-a, #f05-src-b", { opacity: 0, duration: 0.35, ease: "power2.in" }, 5.984);
         window.__timelines["f05"] = tl;
       </script>
     </template>

@@ -21,6 +21,10 @@
           height: 1000px;
           background: radial-gradient(closest-side, rgba(148,48,22,0.220) 0%, rgba(148,48,22,0.189) 10%, rgba(148,48,22,0.141) 20%, rgba(148,48,22,0.095) 30%, rgba(148,48,22,0.057) 40%, rgba(148,48,22,0.031) 50%, rgba(148,48,22,0.014) 60%, rgba(148,48,22,0.006) 70%, rgba(148,48,22,0.002) 80%, rgba(148,48,22,0.000) 100%);
         }
+        #f03-all {
+          position: absolute;
+          inset: 0;
+        }
         .f03-ghost {
           position: absolute;
           border-radius: 40px;
@@ -103,21 +107,43 @@
           <div id="f03-ghost-a" class="f03-ghost"></div>
           <div id="f03-ghost-b" class="f03-ghost"></div>
           <div id="f03-ghost-c" class="f03-ghost"></div>
-          <div id="f03-type">
-            <span class="ms-eyebrow dark">The problem</span>
-            <span class="ms-display f03-line">Good leads</span>
+          <div id="f03-all"><div id="f03-type">
+            <span id="f03-eyebrow" class="ms-eyebrow dark">The problem</span>
+            <span class="ms-display f03-line"><span id="f03-w-good" class="f03-l">Good</span>&nbsp;<span id="f03-w-leads" class="f03-l">leads</span></span>
             <span class="ms-display f03-line"
-              ><span class="f03-l">go</span>&nbsp;<span class="f03-l">q</span><span class="f03-l">u</span><span class="f03-l" style="color: var(--ink-300)">i</span><span class="f03-l" style="color: var(--ink-600)">e</span><span class="f03-l" style="color: var(--ink-800)">t</span><span class="f03-l" style="color: #1f1d1a">.</span></span
+              ><span id="f03-w-go" class="f03-l">go</span>&nbsp;<span id="f03-w-quiet" class="f03-l"
+                ><span class="f03-l">q</span><span class="f03-l">u</span><span id="f03-c-i" class="f03-l">i</span><span id="f03-c-e" class="f03-l">e</span><span id="f03-c-t" class="f03-l">t</span><span id="f03-c-dot" class="f03-l">.</span></span
+              ></span
             >
           </div>
-          <div class="f03-meta"><span>Volume</span><span class="bar"><i style="width: 18%"></i></span></div>
+          <div id="f03-meta" class="f03-meta"><span>Volume</span><span class="bar"><i id="f03-vol"></i></span></div>
+          </div>
           <div class="ms-grain"></div>
         </div>
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });
-        tl.fromTo("#f03-glow", { scale: 1 }, { scale: 1.06, duration: 2.5, ease: "sine.inOut" }, 0);
-        tl.fromTo("#f03 .ms-grain", { x: 0, y: 0 }, { x: -31, y: 19, duration: 2.5, ease: "steps(30)" }, 0);
+        const SLAM = "power4.out";
+        tl.fromTo("#f03-glow", { scale: 1 }, { scale: 1.08, duration: 2.774, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f03 .ms-grain", { x: 0, y: 0 }, { x: -31, y: 19, duration: 2.774, ease: "steps(40)" }, 0);
+        tl.fromTo("#f03-type", { scale: 1 }, { scale: 1.035, transformOrigin: "0% 50%", duration: 2.774, ease: "sine.out" }, 0);
+        tl.fromTo(".f03-ghost", { opacity: 0 }, { opacity: 1, duration: 1.2, stagger: 0.15 }, 0);
+        tl.fromTo("#f03-eyebrow", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0.02);
+        tl.fromTo("#f03-meta", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0.1);
+        tl.fromTo("#f03-vol", { width: "100%" }, { width: "18%", duration: 1.6, ease: "power2.inOut" }, 0.781);
+        const slam = (sel, t) =>
+          tl.fromTo(sel, { opacity: 0, y: 70, scaleY: 1.18, filter: "blur(10px)" }, { opacity: 1, y: 0, scaleY: 1, filter: "blur(0px)", duration: 0.34, ease: SLAM }, t);
+        slam("#f03-w-good", 0.781 - 0.06);
+        slam("#f03-w-leads", 0.981 - 0.06);
+        slam("#f03-w-go", 0.781 - 0.06);
+        slam("#f03-w-quiet", 1.841 - 0.06);
+        // the letters of "quiet." switch off one by one
+        tl.to("#f03-c-i", { color: "#d7d4d2", duration: 0.25 }, 1.841 + 0.4);
+        tl.to("#f03-c-e", { color: "#585552", duration: 0.25 }, 1.841 + 0.52);
+        tl.to("#f03-c-t", { color: "#2a2825", duration: 0.25 }, 1.841 + 0.64);
+        tl.to("#f03-c-dot", { color: "#1f1d1a", duration: 0.25 }, 1.841 + 0.76);
+        // everything goes dark before the light comes back
+        tl.to("#f03-all", { opacity: 0, duration: 0.32, ease: "power2.in" }, 2.774 - 0.34);
         window.__timelines["f03"] = tl;
       </script>
     </template>

@@ -8,17 +8,23 @@
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { width: 1920px; height: 1080px; overflow: hidden; background: #0d0c0a; }
-      #root { position: relative; width: 100%; height: 100%; }
+      #root { position: relative; width: 100%; height: 100%; background: #0d0c0a; }
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="6" data-width="1920" data-height="1080">
-    <div id="f02" class="clip" data-composition-id="f02" data-composition-src="compositions/frames/02-nothing.html" data-start="0" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
-    <div id="f03" class="clip" data-composition-id="f03" data-composition-src="compositions/frames/03-quiet.html" data-start="1" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
-    <div id="f04" class="clip" data-composition-id="f04" data-composition-src="compositions/frames/04-logo.html" data-start="2" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
-    <div id="f05" class="clip" data-composition-id="f05" data-composition-src="compositions/frames/05-learns.html" data-start="3" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
-    <div id="f07" class="clip" data-composition-id="f07" data-composition-src="compositions/frames/07-booked.html" data-start="4" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
-    <div id="f09" class="clip" data-composition-id="f09" data-composition-src="compositions/frames/09-cta.html" data-start="5" data-duration="1" data-track-index="0" data-width="1920" data-height="1080"></div>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="42.124" data-fps="60" data-width="1920" data-height="1080">
+      <div id="f01" class="clip" data-composition-id="f01" data-composition-src="compositions/frames/01-thread.html" data-start="0.000" data-duration="7.609" data-track-index="0" data-width="1920" data-height="1080" style="z-index: 1"></div>
+      <div id="f03" class="clip" data-composition-id="f03" data-composition-src="compositions/frames/03-quiet.html" data-start="7.609" data-duration="2.774" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 2"></div>
+      <div id="f04" class="clip" data-composition-id="f04" data-composition-src="compositions/frames/04-logo.html" data-start="10.383" data-duration="4.997" data-track-index="0" data-width="1920" data-height="1080" style="z-index: 3"></div>
+      <div id="f05" class="clip" data-composition-id="f05" data-composition-src="compositions/frames/05-learns.html" data-start="14.930" data-duration="6.334" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 4"></div>
+      <div id="f06" class="clip" data-composition-id="f06" data-composition-src="compositions/frames/06-qualifies.html" data-start="20.914" data-duration="5.521" data-track-index="0" data-width="1920" data-height="1080" style="z-index: 5"></div>
+      <div id="f07" class="clip" data-composition-id="f07" data-composition-src="compositions/frames/07-booked.html" data-start="26.135" data-duration="4.359" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 6"></div>
+      <div id="f08" class="clip" data-composition-id="f08" data-composition-src="compositions/frames/08-control.html" data-start="30.194" data-duration="3.973" data-track-index="0" data-width="1920" data-height="1080" style="z-index: 7"></div>
+      <div id="f09" class="clip" data-composition-id="f09" data-composition-src="compositions/frames/09-cta.html" data-start="33.867" data-duration="4.957" data-track-index="1" data-width="1920" data-height="1080" style="z-index: 8"></div>
+      <div id="f10" class="clip" data-composition-id="f10" data-composition-src="compositions/frames/10-endcard.html" data-start="38.324" data-duration="3.800" data-track-index="0" data-width="1920" data-height="1080" style="z-index: 9"></div>
+      <audio id="vo" src="assets/audio/vo.wav" data-start="0" data-duration="42.124" data-track-index="10" data-volume="1"></audio>
+      <audio id="music" src="assets/audio/music.wav" data-start="0" data-duration="42.124" data-track-index="11" data-volume="0.75"></audio>
+      <audio id="sfx" src="assets/audio/sfx.wav" data-start="0" data-duration="42.124" data-track-index="12" data-volume="0.8"></audio>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });

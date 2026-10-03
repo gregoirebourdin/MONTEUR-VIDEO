@@ -1,0 +1,394 @@
+{
+ "take": "vo/takes/hero_Charon_t1.wav",
+ "duration": 37.724,
+ "lines": [
+  {
+   "id": "L1",
+   "text": "Your Instagram Reel worked. Manychat sent the link. The lead replied... and then, nothing.",
+   "start": 0.6,
+   "end": 7.309,
+   "words": [
+    {
+     "w": "Your",
+     "t": 0.65
+    },
+    {
+     "w": "Instagram",
+     "t": 0.93
+    },
+    {
+     "w": "Reel",
+     "t": 1.29
+    },
+    {
+     "w": "worked.",
+     "t": 2.04
+    },
+    {
+     "w": "ManyChat",
+     "t": 2.33
+    },
+    {
+     "w": "sent",
+     "t": 3.17
+    },
+    {
+     "w": "the",
+     "t": 3.43
+    },
+    {
+     "w": "link.",
+     "t": 3.66
+    },
+    {
+     "w": "The",
+     "t": 4.0
+    },
+    {
+     "w": "lead",
+     "t": 4.59
+    },
+    {
+     "w": "replied.",
+     "t": 5.09
+    },
+    {
+     "w": "And",
+     "t": 5.98
+    },
+    {
+     "w": "then,",
+     "t": 6.149
+    },
+    {
+     "w": "nothing.",
+     "t": 6.89
+    }
+   ]
+  },
+  {
+   "id": "L2",
+   "text": "That's where good leads go quiet.",
+   "start": 7.759,
+   "end": 9.833,
+   "words": [
+    {
+     "w": "That's",
+     "t": 7.809
+    },
+    {
+     "w": "where",
+     "t": 8.03
+    },
+    {
+     "w": "good",
+     "t": 8.39
+    },
+    {
+     "w": "leads",
+     "t": 8.59
+    },
+    {
+     "w": "go",
+     "t": 9.16
+    },
+    {
+     "w": "quiet.",
+     "t": 9.45
+    }
+   ]
+  },
+  {
+   "id": "L3",
+   "text": "Meet ManySetter, the AI setter for Manychat.",
+   "start": 11.433,
+   "end": 14.58,
+   "words": [
+    {
+     "w": "Meet",
+     "t": 11.483
+    },
+    {
+     "w": "ManySetter,",
+     "t": 11.71
+    },
+    {
+     "w": "the",
+     "t": 12.99
+    },
+    {
+     "w": "AI",
+     "t": 13.14
+    },
+    {
+     "w": "setter",
+     "t": 13.59
+    },
+    {
+     "w": "for",
+     "t": 13.7
+    },
+    {
+     "w": "ManyChat.",
+     "t": 13.95
+    }
+   ]
+  },
+  {
+   "id": "L4",
+   "text": "It learns your offer and your voice, so every reply sounds like you. Even the voice notes.",
+   "start": 15.18,
+   "end": 20.514,
+   "words": [
+    {
+     "w": "It",
+     "t": 15.23
+    },
+    {
+     "w": "learns",
+     "t": 15.31
+    },
+    {
+     "w": "your",
+     "t": 15.431
+    },
+    {
+     "w": "offer",
+     "t": 16.05
+    },
+    {
+     "w": "and",
+     "t": 16.13
+    },
+    {
+     "w": "your",
+     "t": 16.56
+    },
+    {
+     "w": "voice,",
+     "t": 16.76
+    },
+    {
+     "w": "so",
+     "t": 17.09
+    },
+    {
+     "w": "every",
+     "t": 17.17
+    },
+    {
+     "w": "reply",
+     "t": 17.48
+    },
+    {
+     "w": "sounds",
+     "t": 17.84
+    },
+    {
+     "w": "like",
+     "t": 18.23
+    },
+    {
+     "w": "you.",
+     "t": 18.67
+    },
+    {
+     "w": "Even",
+     "t": 19.091
+    },
+    {
+     "w": "the",
+     "t": 19.46
+    },
+    {
+     "w": "voice",
+     "t": 19.63
+    },
+    {
+     "w": "notes.",
+     "t": 20.17
+    }
+   ]
+  },
+  {
+   "id": "L5",
+   "text": "It qualifies each lead with your rules. Only the right ones get your calendar.",
+   "start": 21.064,
+   "end": 25.535,
+   "words": [
+    {
+     "w": "It",
+     "t": 21.114
+    },
+    {
+     "w": "qualifies",
+     "t": 21.41
+    },
+    {
+     "w": "each",
+     "t": 21.87
+    },
+    {
+     "w": "lead",
+     "t": 22.16
+    },
+    {
+     "w": "with",
+     "t": 22.45
+    },
+    {
+     "w": "your",
+     "t": 22.76
+    },
+    {
+     "w": "rules.",
+     "t": 22.88
+    },
+    {
+     "w": "Only",
+     "t": 23.52
+    },
+    {
+     "w": "the",
+     "t": 24.02
+    },
+    {
+     "w": "right",
+     "t": 24.26
+    },
+    {
+     "w": "ones",
+     "t": 24.35
+    },
+    {
+     "w": "get",
+     "t": 24.55
+    },
+    {
+     "w": "your",
+     "t": 24.81
+    },
+    {
+     "w": "calendar.",
+     "t": 25.05
+    }
+   ]
+  },
+  {
+   "id": "L6",
+   "text": "Then it books the call, right in the DM.",
+   "start": 26.435,
+   "end": 29.244,
+   "words": [
+    {
+     "w": "Then",
+     "t": 26.485
+    },
+    {
+     "w": "it",
+     "t": 26.565
+    },
+    {
+     "w": "books",
+     "t": 26.94
+    },
+    {
+     "w": "the",
+     "t": 27.15
+    },
+    {
+     "w": "call,",
+     "t": 27.5
+    },
+    {
+     "w": "right",
+     "t": 28.6
+    },
+    {
+     "w": "in",
+     "t": 28.87
+    },
+    {
+     "w": "the",
+     "t": 28.95
+    },
+    {
+     "w": "DM.",
+     "t": 29.144
+    }
+   ]
+  },
+  {
+   "id": "L7",
+   "text": "Keep your Manychat flows. Take over anytime.",
+   "start": 30.344,
+   "end": 33.267,
+   "words": [
+    {
+     "w": "Keep",
+     "t": 30.394
+    },
+    {
+     "w": "your",
+     "t": 30.51
+    },
+    {
+     "w": "ManyChat",
+     "t": 30.67
+    },
+    {
+     "w": "flows.",
+     "t": 31.26
+    },
+    {
+     "w": "Take",
+     "t": 32.04
+    },
+    {
+     "w": "over",
+     "t": 32.25
+    },
+    {
+     "w": "anytime.",
+     "t": 32.63
+    }
+   ]
+  },
+  {
+   "id": "L8",
+   "text": "Build your setter free, at ManySetter dot com.",
+   "start": 34.067,
+   "end": 36.724,
+   "words": [
+    {
+     "w": "Build",
+     "t": 34.117
+    },
+    {
+     "w": "your",
+     "t": 34.36
+    },
+    {
+     "w": "setter",
+     "t": 34.56
+    },
+    {
+     "w": "free",
+     "t": 34.91
+    },
+    {
+     "w": "at",
+     "t": 35.42
+    },
+    {
+     "w": "ManySetter.com.",
+     "t": 35.57
+    },
+    {
+     "w": "ManySetter.com.",
+     "t": 35.65
+    }
+   ]
+  }
+ ]
+}

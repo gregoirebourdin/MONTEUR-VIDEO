@@ -1,0 +1,402 @@
+[
+{
+"w": "Your",
+"start": 0.28,
+"end": 0.34
+},
+{
+"w": "Instagram",
+"start": 0.34,
+"end": 1.12
+},
+{
+"w": "Reel",
+"start": 1.12,
+"end": 1.46
+},
+{
+"w": "worked.",
+"start": 1.46,
+"end": 2.2
+},
+{
+"w": "ManyChat",
+"start": 2.2,
+"end": 2.8
+},
+{
+"w": "sent",
+"start": 2.8,
+"end": 3.11
+},
+{
+"w": "the",
+"start": 3.11,
+"end": 3.33
+},
+{
+"w": "link.",
+"start": 3.33,
+"end": 3.9
+},
+{
+"w": "The",
+"start": 3.9,
+"end": 4.22
+},
+{
+"w": "lead",
+"start": 4.22,
+"end": 4.64
+},
+{
+"w": "replied.",
+"start": 4.64,
+"end": 5.4
+},
+{
+"w": "And",
+"start": 5.4,
+"end": 5.79
+},
+{
+"w": "then,",
+"start": 5.79,
+"end": 6.4
+},
+{
+"w": "nothing.",
+"start": 6.4,
+"end": 7.2
+},
+{
+"w": "That's",
+"start": 7.2,
+"end": 7.79
+},
+{
+"w": "where",
+"start": 7.79,
+"end": 8.29
+},
+{
+"w": "good",
+"start": 8.29,
+"end": 8.69
+},
+{
+"w": "leads",
+"start": 8.69,
+"end": 9.19
+},
+{
+"w": "go",
+"start": 9.19,
+"end": 9.7
+},
+{
+"w": "quiet.",
+"start": 9.7,
+"end": 10.2
+},
+{
+"w": "Meet",
+"start": 10.2,
+"end": 10.68
+},
+{
+"w": "ManySetter,",
+"start": 10.68,
+"end": 12.08
+},
+{
+"w": "the",
+"start": 12.08,
+"end": 12.43
+},
+{
+"w": "AI",
+"start": 12.43,
+"end": 12.66
+},
+{
+"w": "setter",
+"start": 12.66,
+"end": 12.89
+},
+{
+"w": "for",
+"start": 12.89,
+"end": 13.12
+},
+{
+"w": "ManyChat.",
+"start": 13.12,
+"end": 14.0
+},
+{
+"w": "It",
+"start": 14.0,
+"end": 14.28
+},
+{
+"w": "learns",
+"start": 14.28,
+"end": 14.54
+},
+{
+"w": "your",
+"start": 14.54,
+"end": 14.81
+},
+{
+"w": "offer",
+"start": 14.81,
+"end": 15.15
+},
+{
+"w": "and",
+"start": 15.15,
+"end": 15.35
+},
+{
+"w": "your",
+"start": 15.35,
+"end": 15.66
+},
+{
+"w": "voice,",
+"start": 15.66,
+"end": 16.0
+},
+{
+"w": "so",
+"start": 16.0,
+"end": 16.28
+},
+{
+"w": "every",
+"start": 16.28,
+"end": 16.55
+},
+{
+"w": "reply",
+"start": 16.55,
+"end": 16.93
+},
+{
+"w": "sounds",
+"start": 16.93,
+"end": 17.4
+},
+{
+"w": "like",
+"start": 17.4,
+"end": 17.71
+},
+{
+"w": "you.",
+"start": 17.71,
+"end": 18.2
+},
+{
+"w": "Even",
+"start": 18.2,
+"end": 18.56
+},
+{
+"w": "the",
+"start": 18.56,
+"end": 18.83
+},
+{
+"w": "voice",
+"start": 18.83,
+"end": 19.28
+},
+{
+"w": "notes.",
+"start": 19.28,
+"end": 20.0
+},
+{
+"w": "It",
+"start": 20.0,
+"end": 20.28
+},
+{
+"w": "qualifies",
+"start": 20.28,
+"end": 20.81
+},
+{
+"w": "each",
+"start": 20.81,
+"end": 21.09
+},
+{
+"w": "lead",
+"start": 21.09,
+"end": 21.38
+},
+{
+"w": "with",
+"start": 21.38,
+"end": 21.67
+},
+{
+"w": "your",
+"start": 21.67,
+"end": 21.96
+},
+{
+"w": "rules.",
+"start": 21.96,
+"end": 22.6
+},
+{
+"w": "Only",
+"start": 22.6,
+"end": 22.88
+},
+{
+"w": "the",
+"start": 22.88,
+"end": 23.0
+},
+{
+"w": "right",
+"start": 23.0,
+"end": 23.29
+},
+{
+"w": "ones",
+"start": 23.29,
+"end": 23.52
+},
+{
+"w": "get",
+"start": 23.52,
+"end": 23.69
+},
+{
+"w": "your",
+"start": 23.69,
+"end": 23.92
+},
+{
+"w": "calendar.",
+"start": 23.92,
+"end": 24.6
+},
+{
+"w": "Then",
+"start": 24.6,
+"end": 24.99
+},
+{
+"w": "it",
+"start": 24.99,
+"end": 25.19
+},
+{
+"w": "books",
+"start": 25.19,
+"end": 25.68
+},
+{
+"w": "the",
+"start": 25.68,
+"end": 25.98
+},
+{
+"w": "call,",
+"start": 25.98,
+"end": 27.07
+},
+{
+"w": "right",
+"start": 27.07,
+"end": 27.13
+},
+{
+"w": "in",
+"start": 27.13,
+"end": 27.34
+},
+{
+"w": "the",
+"start": 27.34,
+"end": 27.65
+},
+{
+"w": "DM.",
+"start": 27.65,
+"end": 28.2
+},
+{
+"w": "Keep",
+"start": 28.48,
+"end": 28.5
+},
+{
+"w": "your",
+"start": 28.5,
+"end": 28.8
+},
+{
+"w": "ManyChat",
+"start": 28.8,
+"end": 29.39
+},
+{
+"w": "flows.",
+"start": 29.39,
+"end": 30.0
+},
+{
+"w": "Take",
+"start": 30.0,
+"end": 30.4
+},
+{
+"w": "over",
+"start": 30.4,
+"end": 30.81
+},
+{
+"w": "anytime.",
+"start": 30.81,
+"end": 31.8
+},
+{
+"w": "Build",
+"start": 31.8,
+"end": 32.16
+},
+{
+"w": "your",
+"start": 32.16,
+"end": 32.45
+},
+{
+"w": "setter",
+"start": 32.45,
+"end": 32.89
+},
+{
+"w": "free",
+"start": 32.89,
+"end": 33.2
+},
+{
+"w": "at",
+"start": 33.2,
+"end": 33.37
+},
+{
+"w": "ManySetter.com.",
+"start": 33.37,
+"end": 34.8
+}
+]

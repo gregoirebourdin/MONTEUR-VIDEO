@@ -14,28 +14,60 @@
           position: absolute;
           inset: 0;
         }
-        #f04-bloom {
+        #f04-dark-glow {
           left: 260px;
           top: -260px;
           width: 1400px;
           height: 1400px;
-          background: radial-gradient(closest-side, rgba(230,75,21,0.420) 0%, rgba(230,75,21,0.361) 10%, rgba(230,75,21,0.269) 20%, rgba(230,75,21,0.181) 30%, rgba(230,75,21,0.109) 40%, rgba(230,75,21,0.059) 50%, rgba(230,75,21,0.027) 60%, rgba(230,75,21,0.011) 70%, rgba(230,75,21,0.004) 80%, rgba(230,75,21,0.000) 100%);
-        }
-        #f04-core {
-          left: 660px;
-          top: 140px;
-          width: 600px;
-          height: 600px;
-          background: radial-gradient(closest-side, rgba(255,144,94,0.380) 0%, rgba(255,144,94,0.327) 10%, rgba(255,144,94,0.243) 20%, rgba(255,144,94,0.163) 30%, rgba(255,144,94,0.099) 40%, rgba(255,144,94,0.053) 50%, rgba(255,144,94,0.025) 60%, rgba(255,144,94,0.010) 70%, rgba(255,144,94,0.003) 80%, rgba(255,144,94,0.000) 100%);
+          background: radial-gradient(closest-side, rgba(230,75,21,0.42) 0%, rgba(230,75,21,0.361) 10%, rgba(230,75,21,0.269) 20%, rgba(230,75,21,0.181) 30%, rgba(230,75,21,0.109) 40%, rgba(230,75,21,0.059) 50%, rgba(230,75,21,0.027) 60%, rgba(230,75,21,0.011) 70%, rgba(230,75,21,0.004) 80%, rgba(230,75,21,0) 100%);
         }
         #f04-streak {
           position: absolute;
           left: 0;
           width: 1920px;
-          top: 524px;
+          top: 537px;
           height: 6px;
           background: linear-gradient(90deg, #ff611d00 8%, #ff905e59 50%, #ff611d00 92%);
           filter: blur(2px);
+        }
+        /* the light world the bloom reveals */
+        #f04-light {
+          position: absolute;
+          inset: 0;
+          background: var(--ink-25);
+          -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 calc(var(--r, 0%) - 18%), transparent var(--r, 0%));
+          mask-image: radial-gradient(circle at 50% 50%, #000 calc(var(--r, 0%) - 18%), transparent var(--r, 0%));
+        }
+        #f04-light .ms-grid {
+          -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 20%, transparent 80%);
+          mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 20%, transparent 80%);
+        }
+        #f04-mesh-a {
+          left: 900px;
+          top: -560px;
+          width: 1400px;
+          height: 1200px;
+          background: radial-gradient(closest-side, rgba(255,186,151,0.62) 0%, rgba(255,186,151,0.53) 10%, rgba(255,186,151,0.40) 20%, rgba(255,186,151,0.27) 30%, rgba(255,186,151,0.16) 40%, rgba(255,186,151,0.09) 50%, rgba(255,186,151,0.04) 60%, rgba(255,186,151,0.017) 70%, rgba(255,186,151,0.006) 80%, rgba(255,186,151,0) 100%);
+        }
+        #f04-mesh-b {
+          left: -460px;
+          top: 480px;
+          width: 1300px;
+          height: 1100px;
+          background: radial-gradient(closest-side, rgba(255,216,192,0.75) 0%, rgba(255,216,192,0.64) 10%, rgba(255,216,192,0.48) 20%, rgba(255,216,192,0.32) 30%, rgba(255,216,192,0.19) 40%, rgba(255,216,192,0.1) 50%, rgba(255,216,192,0.05) 60%, rgba(255,216,192,0.02) 70%, rgba(255,216,192,0.007) 80%, rgba(255,216,192,0) 100%);
+        }
+        #f04-flash {
+          position: absolute;
+          left: 360px;
+          top: -60px;
+          width: 1200px;
+          height: 1200px;
+          border-radius: 50%;
+          background: radial-gradient(closest-side, rgba(255,247,242,0.95) 0%, rgba(255,236,222,0.7) 25%, rgba(255,186,151,0.3) 50%, rgba(255,144,94,0) 75%);
+        }
+        #f04-lockup {
+          position: absolute;
+          inset: 0;
         }
         #f04-tile {
           position: absolute;
@@ -53,8 +85,8 @@
         }
         #f04-spark {
           position: absolute;
-          left: 974px;
-          top: 527px;
+          left: 0;
+          top: 0;
           width: 18px;
           height: 18px;
           margin: -9px 0 0 -9px;
@@ -62,53 +94,127 @@
           background: #fff7f2;
           box-shadow: 0 0 12px 4px #ffd8c0, 0 0 40px 14px #ff905e, 0 0 110px 40px #ff611d80;
         }
-        #f04-caption {
+        #f04-word {
           position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 120px;
-          text-align: center;
-          font: 500 22px/1 var(--font-sans);
-          letter-spacing: 0.32em;
-          text-transform: uppercase;
-          color: var(--ink-600);
+          left: 618px;
+          top: 452px;
+          font-size: 168px;
+          color: var(--ink-900);
+          white-space: nowrap;
         }
-        
+        .f04-ch {
+          display: inline-block;
+        }
+        #f04-chip {
+          position: absolute;
+          left: 626px;
+          top: 662px;
+        }
+        #f04-chip .ms-eyebrow {
+          zoom: 1.35;
+        }
       </style>
       <div id="f04" data-composition-id="f04" data-width="1920" data-height="1080">
         <div class="ms-canvas-dark">
           <div class="ms-vignette"></div>
-          <div id="f04-bloom" class="ms-glow"></div>
-          <div id="f04-core" class="ms-glow"></div>
+          <div id="f04-dark-glow" class="ms-glow"></div>
           <div id="f04-streak"></div>
-          <div id="f04-tile">
-            <svg viewBox="0 0 64 64">
-              <defs>
-                <linearGradient id="f04-grad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#ff884d" />
-                  <stop offset="1" stop-color="#e64b15" />
-                </linearGradient>
-                <filter id="f04-blur-wide" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2" /></filter>
-                <filter id="f04-blur-mid" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.7" /></filter>
-              </defs>
-              <rect x="0.5" y="0.5" width="63" height="63" rx="15" fill="url(#f04-grad)" opacity="0.1" />
-              <rect x="0.5" y="0.5" width="63" height="63" rx="15" fill="none" stroke="#ff905e" stroke-opacity="0.32" stroke-width="0.35" />
-              <g transform="translate(12.16 12.16) scale(1.6533)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0.45" stroke="#ff611d" stroke-width="4.5" filter="url(#f04-blur-wide)" opacity="0.9" />
-                <path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0.45" stroke="#ff905e" stroke-width="2.6" filter="url(#f04-blur-mid)" />
-                <path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0.45" stroke="#fff7f2" stroke-width="1.3" />
-              </g>
-            </svg>
+          <div id="f04-light">
+            <div class="ms-grid"></div>
+            <div id="f04-mesh-a" class="ms-glow"></div>
+            <div id="f04-mesh-b" class="ms-glow"></div>
           </div>
-          <div id="f04-spark"></div>
-          <div id="f04-caption">ManySetter</div>
+          <div id="f04-flash"></div>
+          <div id="f04-lockup">
+            <div id="f04-tile">
+              <svg viewBox="0 0 64 64">
+                <defs>
+                  <linearGradient id="f04-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#ff884d" />
+                    <stop offset="1" stop-color="#e64b15" />
+                  </linearGradient>
+                  <filter id="f04-blur-wide" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2" /></filter>
+                  <filter id="f04-blur-mid" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.7" /></filter>
+                  <filter id="f04-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#e64b15" flood-opacity="0.45" /></filter>
+                </defs>
+                <rect id="f04-fill" x="0.5" y="0.5" width="63" height="63" rx="15" fill="url(#f04-grad)" filter="url(#f04-shadow)" />
+                <rect id="f04-outline" x="0.5" y="0.5" width="63" height="63" rx="15" fill="none" stroke="#ff905e" stroke-opacity="0.32" stroke-width="0.35" />
+                <g transform="translate(12.16 12.16) scale(1.6533)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path class="f04-m" id="f04-m-wide" d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" stroke="#ff611d" stroke-width="4.5" filter="url(#f04-blur-wide)" opacity="0.9" />
+                  <path class="f04-m" id="f04-m-mid" d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" stroke="#ff905e" stroke-width="2.6" filter="url(#f04-blur-mid)" />
+                  <path class="f04-m" id="f04-m-core" d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" stroke="#fff7f2" stroke-width="1.3" />
+                  <path id="f04-m-final" d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" stroke="#ffffff" stroke-width="2.4" opacity="0" />
+                </g>
+              </svg>
+              <div id="f04-spark"></div>
+            </div>
+            <div id="f04-word" class="ms-display"><span class="f04-ch">M</span><span class="f04-ch">a</span><span class="f04-ch">n</span><span class="f04-ch">y</span><span class="f04-ch">S</span><span class="f04-ch">e</span><span class="f04-ch">t</span><span class="f04-ch">t</span><span class="f04-ch">e</span><span class="f04-ch">r</span></div>
+            <div id="f04-chip"><span class="ms-eyebrow">The AI setter for Manychat</span></div>
+          </div>
           <div class="ms-grain"></div>
         </div>
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });
-        tl.fromTo("#f04-bloom", { scale: 0.96 }, { scale: 1.04, duration: 3, ease: "sine.inOut" }, 0);
-        tl.fromTo("#f04 .ms-grain", { x: 0, y: 0 }, { x: 29, y: 41, duration: 3, ease: "steps(36)" }, 0);
+        // M path vertices in tile pixels (400px tile), for the spark that leads the stroke
+        const map = (x, y) => [(12.16 + x * 1.6533) * 6.25, (12.16 + y * 1.6533) * 6.25];
+        const pts = [map(5.5, 17.5), map(5.5, 7.25), map(6.69, 6.76), map(12, 12.06), map(17.31, 6.76), map(18.5, 7.25), map(18.5, 17.5)];
+        const seg = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]));
+        const total = seg.reduce((a, b) => a + b, 0);
+        const at = (u) => {
+          let d = u * total;
+          for (let i = 0; i < seg.length; i++) {
+            if (d <= seg[i] || i === seg.length - 1) {
+              const k = Math.min(1, d / seg[i]);
+              return [pts[i][0] + (pts[i + 1][0] - pts[i][0]) * k, pts[i][1] + (pts[i + 1][1] - pts[i][1]) * k];
+            }
+            d -= seg[i];
+          }
+        };
+        const spark = document.getElementById("f04-spark");
+        const strokes = document.querySelectorAll(".f04-m");
+        const draw = { u: 0 };
+        const paint = () => {
+          strokes.forEach((p) => p.setAttribute("stroke-dashoffset", String(1 - draw.u)));
+          const [x, y] = at(draw.u);
+          spark.style.left = x + "px";
+          spark.style.top = y + "px";
+        };
+        const light = document.getElementById("f04-light");
+        const bloom = { r: 0 };
+        const paintBloom = () => light.style.setProperty("--r", bloom.r + "%");
+        paint();
+        paintBloom();
+
+        const T0 = 0.32; // the spark appears out of the silence
+        const MEET = 1.100;
+        tl.fromTo("#f04-dark-glow", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 1.2, ease: "power2.out" }, T0);
+        tl.fromTo("#f04-outline", { opacity: 0 }, { opacity: 1, duration: 0.45 }, T0 + 0.1);
+        tl.fromTo("#f04-fill", { opacity: 0 }, { opacity: 0.1, duration: 0.45 }, T0 + 0.1);
+        tl.fromTo(spark, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power2.out" }, T0);
+        tl.fromTo(draw, { u: 0 }, { u: 1, duration: MEET - T0 - 0.05, ease: "power2.inOut", onUpdate: paint }, T0 + 0.05);
+        tl.fromTo("#f04-streak", { opacity: 0, scaleX: 0.3 }, { opacity: 1, scaleX: 1, duration: 0.6, ease: "power2.out" }, T0 + 0.2);
+        // the tile lights up on "Meet" and the light floods the frame
+        tl.to(spark, { opacity: 0, scale: 2.4, duration: 0.35, ease: "power2.out" }, MEET - 0.05);
+        tl.to("#f04-fill", { opacity: 1, duration: 0.3, ease: "power2.out" }, MEET - 0.1);
+        tl.to("#f04-outline", { opacity: 0, duration: 0.3 }, MEET - 0.1);
+        tl.to("#f04-m-final", { opacity: 1, duration: 0.25 }, MEET - 0.05);
+        tl.to("#f04-m-wide, #f04-m-mid, #f04-m-core", { opacity: 0, duration: 0.35 }, MEET);
+        tl.fromTo("#f04-flash", { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1.2, duration: 0.35, ease: "power2.out" }, MEET - 0.05);
+        tl.to("#f04-flash", { opacity: 0, scale: 2.2, duration: 0.7, ease: "power2.in" }, MEET + 0.3);
+        tl.fromTo(bloom, { r: 0 }, { r: 120, duration: 0.95, ease: "power3.inOut", onUpdate: paintBloom, immediateRender: false }, MEET - 0.02);
+        tl.to("#f04-streak, #f04-dark-glow", { opacity: 0, duration: 0.6 }, MEET + 0.3);
+        // lockup: the tile glides left and the wordmark sets in on "ManySetter"
+        tl.to("#f04-tile", { x: -477, scale: 0.42, duration: 0.9, ease: "expo.inOut" }, 1.327 - 0.35);
+        // wordmark: glyphs converge from a wide spread (transform-only, sub-pixel smooth)
+        const chars = gsap.utils.toArray("#f04-word .f04-ch");
+        tl.fromTo(chars, { opacity: 0, x: (i) => (i - 4.5) * 34 + 40 }, { opacity: 1, x: 0, duration: 1.1, ease: "expo.out", stagger: 0.025 }, 1.327 - 0.05);
+        tl.fromTo("#f04-chip", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" }, 2.607 - 0.15);
+        tl.fromTo("#f04-lockup", { scale: 1 }, { scale: 1.03, duration: 4.997 - MEET, ease: "sine.inOut", transformOrigin: "50% 50%" }, MEET);
+        tl.fromTo("#f04-mesh-a", { x: 0, y: 0 }, { x: -50, y: 30, duration: 4.997, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f04-mesh-b", { x: 0, y: 0 }, { x: 60, y: -20, duration: 4.997, ease: "sine.inOut" }, 0);
+        // hand over to the next scene
+        tl.to("#f04-lockup", { opacity: 0, y: -30, filter: "blur(6px)", duration: 0.45, ease: "power2.in" }, 4.547 - 0.1);
         window.__timelines["f04"] = tl;
       </script>
     </template>

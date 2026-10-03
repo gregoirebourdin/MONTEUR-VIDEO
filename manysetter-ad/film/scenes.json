@@ -1,0 +1,68 @@
+{
+ "total": 42.124,
+ "scenes": [
+  {
+   "name": "01-thread",
+   "id": "f01",
+   "start": 0.0,
+   "end": 7.609,
+   "overlap": 0.0
+  },
+  {
+   "name": "03-quiet",
+   "id": "f03",
+   "start": 7.609,
+   "end": 10.383,
+   "overlap": 0.0
+  },
+  {
+   "name": "04-logo",
+   "id": "f04",
+   "start": 10.383,
+   "end": 14.93,
+   "overlap": 0.45
+  },
+  {
+   "name": "05-learns",
+   "id": "f05",
+   "start": 14.93,
+   "end": 20.914,
+   "overlap": 0.35
+  },
+  {
+   "name": "06-qualifies",
+   "id": "f06",
+   "start": 20.914,
+   "end": 26.135,
+   "overlap": 0.3
+  },
+  {
+   "name": "07-booked",
+   "id": "f07",
+   "start": 26.135,
+   "end": 30.194,
+   "overlap": 0.3
+  },
+  {
+   "name": "08-control",
+   "id": "f08",
+   "start": 30.194,
+   "end": 33.867,
+   "overlap": 0.3
+  },
+  {
+   "name": "09-cta",
+   "id": "f09",
+   "start": 33.867,
+   "end": 38.324,
+   "overlap": 0.5
+  },
+  {
+   "name": "10-endcard",
+   "id": "f10",
+   "start": 38.324,
+   "end": 42.124,
+   "overlap": 0.0
+  }
+ ]
+}

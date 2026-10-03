@@ -81,7 +81,7 @@
         }
         #f09-title .ms-underline path {
           stroke: var(--brand-500);
-          stroke-width: 5px;
+          stroke-width: 2.3px;
         }
         #f09-cta {
           position: relative;
@@ -105,9 +105,20 @@
           position: absolute;
           right: -36px;
           bottom: -56px;
+          transform-origin: 10% 8%;
           width: 58px;
           height: 72px;
           filter: drop-shadow(0 6px 10px #00000080);
+        }
+        #f09-ring {
+          position: absolute;
+          right: 18px;
+          bottom: -2px;
+          width: 60px;
+          height: 60px;
+          margin: -30px -30px 0 0;
+          border-radius: 50%;
+          box-shadow: 0 0 0 3px #ffffffb3;
         }
         #f09-checks {
           margin-top: 64px;
@@ -155,7 +166,7 @@
         }
       </style>
       <div id="f09" data-composition-id="f09" data-width="1920" data-height="1080">
-        <div class="ms-canvas-dark">
+        <div id="f09-canvas" class="ms-canvas-dark">
           <div class="ms-vignette"></div>
           <div id="f09-mesh-a" class="ms-glow"></div>
           <div id="f09-mesh-b" class="ms-glow"></div>
@@ -168,20 +179,21 @@
               <span class="word">ManySetter</span>
             </div>
             <div id="f09-title" class="ms-display">
-              <span class="line">Your next qualified lead</span>
-              <span class="line"
+              <span id="f09-l1" class="line">Your next qualified lead</span>
+              <span id="f09-l2" class="line"
                 >may already be <span class="ms-mark-wrap accent"
-                  >in your DMs.<svg class="ms-underline" viewBox="0 0 200 20" preserveAspectRatio="none"><path d="M3 14.5C46 8.2 118 6.1 197 9.8" /></svg></span
+                  >in your DMs.<svg class="ms-underline" viewBox="0 0 200 20" preserveAspectRatio="none"><path id="f09-underline" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M3 14.5C46 8.2 118 6.1 197 9.8" /></svg></span
               ></span>
             </div>
             <div id="f09-cta">
               <span id="f09-btn" class="ms-btn primary">Build my setter free{{i:arrow-right}}</span>
+              <span id="f09-ring"></span>
               <svg id="f09-cursor" viewBox="0 0 24 30"><path d="M3 2.5v21.2l5.6-5.4 3.7 8.4 3.6-1.6-3.7-8.2h7.6z" fill="#fff" stroke="#0d0c0a" stroke-width="1.4" stroke-linejoin="round" /></svg>
             </div>
             <div id="f09-checks">
-              <span>{{i:check}}Free to build and test</span>
-              <span>{{i:check}}No card to start</span>
-              <span>{{i:check}}14-day trial when you go live</span>
+              <span class="f09-check">{{i:check}}Free to build and test</span>
+              <span class="f09-check">{{i:check}}No card to start</span>
+              <span class="f09-check">{{i:check}}14-day trial when you go live</span>
             </div>
           </div>
           <div id="f09-foot">
@@ -193,8 +205,26 @@
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });
-        tl.fromTo("#f09-mesh-a", { x: 0, y: 0 }, { x: 60, y: 20, duration: 6, ease: "sine.inOut" }, 0);
-        tl.fromTo("#f09-mesh-b", { x: 0, y: 0 }, { x: 40, y: -30, duration: 6, ease: "sine.inOut" }, 0);
+        const X = "expo.out", SPRING = "back.out(1.6)";
+        tl.fromTo("#f09-canvas", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 0);
+        tl.fromTo("#f09-mesh-a", { x: 0, y: -40, scale: 0.9 }, { x: 60, y: 20, scale: 1.05, duration: {{dur}}, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f09-mesh-b", { x: 0, y: 0 }, { x: 40, y: -30, duration: {{dur}}, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f09-mesh-c", { x: 0, y: 0 }, { x: -40, y: -20, duration: {{dur}}, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f09-lockup", { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.7, ease: X }, 0.1);
+        tl.fromTo("#f09-l1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: X }, {{cue:L8.build}} - 0.2);
+        tl.fromTo("#f09-l2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: X }, {{cue:L8.build}} + 0.05);
+        tl.fromTo("#f09-underline", { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.8, ease: "cubic-bezier(.65,0,.35,1)" }, {{cue:L8.setter}});
+        // the real button, pressed
+        tl.fromTo("#f09-btn", { opacity: 0, scale: 0.86, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: SPRING }, {{cue:L8.setter}} - 0.15);
+        tl.fromTo("#f09-cursor", { x: 260, y: 220, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, {{cue:L8.free}} - 0.45);
+        tl.to("#f09-cursor", { scale: 0.86, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out" }, {{cue:L8.free}} + 0.12);
+        tl.to("#f09-btn", { scale: 0.96, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out" }, {{cue:L8.free}} + 0.12);
+        tl.fromTo("#f09-ring", { opacity: 1, scale: 0.2 }, { opacity: 0, scale: 2.4, duration: 0.6, ease: "power2.out" }, {{cue:L8.free}} + 0.14);
+        tl.fromTo(".f09-check", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: X, stagger: 0.14 }, {{cue:L8.free}} + 0.3);
+        tl.fromTo("#f09-url", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, {{cue:L8.manysettercom}} - 0.2);
+        tl.fromTo("#f09-proof", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, {{cue:L8.manysettercom}} + 0.1);
+        // hand over to the end card
+        tl.to("#f09-center, #f09-foot", { opacity: 0, duration: 0.45, ease: "power2.in" }, {{hold}});
         window.__timelines["f09"] = tl;
       </script>
     </template>

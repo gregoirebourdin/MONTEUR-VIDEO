@@ -14,3 +14,4 @@ __pycache__/
 manysetter-ad/film/snapshots/
 manysetter-ad/film/.hyperframes/
 manysetter-ad/film/renders/
+manysetter-ad/film/renders/*_raw.mp4

@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <style>
+        @font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+        #f08 {
+          position: absolute;
+          inset: 0;
+        }
+        #f08 .ms-grid {
+          -webkit-mask-image: radial-gradient(ellipse 65% 65% at 30% 55%, #000 20%, transparent 85%);
+          mask-image: radial-gradient(ellipse 65% 65% at 30% 55%, #000 20%, transparent 85%);
+        }
+        #f08-mesh-a {
+          left: 1100px;
+          top: -520px;
+          width: 1300px;
+          height: 1100px;
+          background: radial-gradient(closest-side, rgba(255,186,151,0.6) 0%, rgba(255,186,151,0.52) 10%, rgba(255,186,151,0.38) 20%, rgba(255,186,151,0.26) 30%, rgba(255,186,151,0.16) 40%, rgba(255,186,151,0.085) 50%, rgba(255,186,151,0.04) 60%, rgba(255,186,151,0.016) 70%, rgba(255,186,151,0.005) 80%, rgba(255,186,151,0) 100%);
+        }
+        #f08-mesh-b {
+          left: -400px;
+          top: 560px;
+          width: 1200px;
+          height: 1000px;
+          background: radial-gradient(closest-side, rgba(255,216,192,0.7) 0%, rgba(255,216,192,0.6) 10%, rgba(255,216,192,0.45) 20%, rgba(255,216,192,0.3) 30%, rgba(255,216,192,0.18) 40%, rgba(255,216,192,0.1) 50%, rgba(255,216,192,0.045) 60%, rgba(255,216,192,0.018) 70%, rgba(255,216,192,0.006) 80%, rgba(255,216,192,0) 100%);
+        }
+        #f08-copy {
+          position: absolute;
+          left: 150px;
+          top: 150px;
+        }
+        #f08-title {
+          margin-top: 36px;
+          font-size: 92px;
+          color: var(--ink-900);
+        }
+        #f08-title .line {
+          display: block;
+          white-space: nowrap;
+        }
+        #f08-title .line + .line {
+          margin-top: 14px;
+        }
+        #f08-title .accent {
+          color: var(--brand-600);
+        }
+        #f08-title .ms-underline path {
+          stroke-width: 2.3px;
+        }
+        #f08-flow {
+          position: absolute;
+          left: 150px;
+          top: 560px;
+          display: flex;
+          align-items: center;
+        }
+        .f08-node {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          height: 72px;
+          padding: 0 20px 0 14px;
+          border-radius: 20px;
+          background: var(--ink-0);
+          box-shadow: var(--shadow-float);
+          font: 600 21px/1 var(--font-sans);
+          color: var(--ink-900);
+          white-space: nowrap;
+        }
+        .f08-node .ic {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          height: 44px;
+          border-radius: 12px;
+          background: var(--ink-100);
+          color: var(--ink-700);
+        }
+        .f08-node .ic .ms-ico,
+        .f08-node .ic .ms-brand {
+          width: 22px;
+          height: 22px;
+        }
+        .f08-node .sub {
+          display: block;
+          margin-top: 5px;
+          font: 400 15px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f08-ig {
+          color: #ff0069;
+        }
+        .f08-link {
+          width: 40px;
+          height: 3px;
+          background: repeating-linear-gradient(90deg, var(--ink-300) 0 7px, transparent 7px 14px);
+        }
+        .f08-link.orange {
+          background: repeating-linear-gradient(90deg, var(--brand-500) 0 7px, transparent 7px 14px);
+        }
+        #f08-ms {
+          box-shadow: var(--shadow-float), 0 0 0 3px #ff611d, 0 0 0 9px #ff611d24;
+        }
+        #f08-ms .ms-logo-tile {
+          width: 44px;
+          height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #f08-ms .ms-logo-tile svg {
+          width: 28px;
+          height: 28px;
+        }
+        #f08-channels {
+          position: absolute;
+          left: 150px;
+          top: 724px;
+          display: flex;
+          gap: 14px;
+        }
+        .f08-ch {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          height: 54px;
+          padding: 0 20px 0 16px;
+          border-radius: 999px;
+          background: #ffffffd9;
+          box-shadow: var(--shadow-card);
+          font: 500 20px/1 var(--font-sans);
+          color: var(--ink-800);
+        }
+        .f08-ch .ms-brand {
+          width: 22px;
+          height: 22px;
+        }
+        .f08-wa {
+          color: #25d366;
+        }
+        .f08-me {
+          color: #00b2ff;
+        }
+        #f08-inbox-pos {
+          position: absolute;
+          left: 1010px;
+          top: 250px;
+        }
+        #f08-inbox-zoom {
+          zoom: 1.42;
+        }
+        .f08-inbox {
+          width: 540px;
+          display: flex;
+          flex-direction: column;
+        }
+        .f08-ihead {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 14px 16px 12px;
+          border-bottom: 1px solid var(--ink-150);
+        }
+        .f08-ihead .name {
+          font: 600 14px/1.2 var(--font-sans);
+          color: var(--ink-900);
+        }
+        .f08-ihead .sub {
+          font: 400 11.5px/1.2 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f08-ihead .actions {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+        .f08-ihead .more {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 32px;
+          height: 32px;
+          border-radius: 10px;
+          color: var(--ink-500);
+        }
+        #f08-reply {
+          height: 34px;
+          padding: 0 14px;
+          font-size: 13px;
+        }
+        .f08-ai {
+          margin: 12px 14px 0;
+        }
+        .f08-ai .ms-chip {
+          height: 18px;
+          font-size: 10.5px;
+          padding: 0 7px;
+        }
+        .f08-ai .hide {
+          margin-left: auto;
+          font: 500 11.5px/1 var(--font-sans);
+          color: var(--brand-700);
+        }
+        .f08-thread {
+          padding: 16px 16px 12px;
+        }
+        .f08-thread .ms-bubble {
+          max-width: 360px;
+        }
+        .f08-day {
+          align-self: center;
+          font: 500 11px/1 var(--font-sans);
+          color: var(--ink-400);
+          margin-bottom: 4px;
+        }
+        .f08-why {
+          align-self: flex-end;
+        }
+        .f08-foot {
+          position: relative;
+          padding: 12px 14px 14px;
+          border-top: 1px solid var(--ink-100);
+        }
+        .f08-foot p {
+          border-radius: 12px;
+          background: var(--ink-50);
+          padding: 12px 14px;
+          font: 400 12.5px/1.4 var(--font-sans);
+          color: var(--ink-600);
+        }
+        #f08-compose {
+          position: absolute;
+          inset: 12px 14px 14px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 0 6px 0 14px;
+          border-radius: 12px;
+          background: var(--ink-0);
+          box-shadow: inset 0 0 0 1px var(--ink-200), 0 0 0 4px #ff611d1f;
+          font: 400 12.5px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        #f08-compose .send {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 9px;
+          background: linear-gradient(to bottom, var(--brand-500), var(--brand-600));
+          color: #fff;
+        }
+        #f08-compose .send .ms-ico {
+          width: 14px;
+          height: 14px;
+        }
+        #f08-control-chip {
+          position: absolute;
+          left: 1010px;
+          top: 186px;
+        }
+        #f08-control-chip .ms-chip {
+          zoom: 1.6;
+        }
+        #f08-cursor {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 48px;
+          height: 60px;
+          filter: drop-shadow(0 6px 10px #0d0c0a59);
+        }
+      </style>
+      <div id="f08" data-composition-id="f08" data-width="1920" data-height="1080">
+        <div id="f08-canvas" class="ms-canvas-light">
+          <div class="ms-grid"></div>
+          <div id="f08-mesh-a" class="ms-glow"></div>
+          <div id="f08-mesh-b" class="ms-glow"></div>
+
+          <div id="f08-copy">
+            <span id="f08-eyebrow" class="ms-eyebrow">Manychat + ManySetter</span>
+            <div id="f08-title" class="ms-display">
+              <span id="f08-l1" class="line">Keep what you built.</span>
+              <span id="f08-l2" class="line"
+                ><span class="ms-mark-wrap accent"
+                  >Add the setter.<svg class="ms-underline" viewBox="0 0 200 20" preserveAspectRatio="none"><path id="f08-underline" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M3 14.5C46 8.2 118 6.1 197 9.8" /></svg></span
+              ></span>
+            </div>
+          </div>
+
+          <div id="f08-flow" class="ms-ui">
+            <div id="f08-n1" class="f08-node"><span class="ic"><svg class="ms-brand f08-ig" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg></span><span>Comment<span class="sub">keyword GUIDE</span></span></div>
+            <div id="f08-c1" class="f08-link"></div>
+            <div id="f08-n2" class="f08-node"><span class="ic"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg></span><span>Send the link<span class="sub">your Manychat flow</span></span></div>
+            <div id="f08-c2" class="f08-link orange"></div>
+            <div id="f08-ms" class="f08-node"
+              ><span class="ms-logo-tile"
+                ><svg viewBox="0 0 24 24" fill="none"><path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span
+              ><span>Your setter<span class="sub">takes it from the reply</span></span></div
+            >
+          </div>
+
+          <div id="f08-channels" class="ms-ui">
+            <span class="f08-ch"><svg class="ms-brand f08-ig" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg>Instagram</span>
+            <span class="f08-ch"><svg class="ms-brand f08-wa" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>WhatsApp</span>
+            <span class="f08-ch"><svg class="ms-brand f08-me" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.24 0 0 4.952 0 11.64c0 3.499 1.434 6.521 3.769 8.61a.96.96 0 0 1 .323.683l.065 2.135a.96.96 0 0 0 1.347.85l2.381-1.053a.96.96 0 0 1 .641-.046A13 13 0 0 0 12 23.28c6.76 0 12-4.952 12-11.64S18.76 0 12 0m6.806 7.44c.522-.03.971.567.63 1.094l-4.178 6.457a.707.707 0 0 1-.977.208l-3.87-2.504a.44.44 0 0 0-.49.007l-4.363 3.01c-.637.438-1.415-.317-.995-.966l4.179-6.457a.706.706 0 0 1 .977-.21l3.87 2.505c.15.097.344.094.491-.007l4.362-3.008a.7.7 0 0 1 .364-.13"></path></svg>Messenger</span>
+          </div>
+
+          <div id="f08-control-chip" class="ms-ui"><span class="ms-chip green"><span class="dot"></span>You’re in control</span></div>
+
+          <div id="f08-inbox-pos">
+            <div id="f08-inbox-zoom" class="ms-ui">
+              <div class="ms-window f08-inbox">
+                <div class="f08-ihead">
+                  <span class="ms-avatar">SK<span class="badge"><svg class="ms-brand f08-ig" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg></span></span>
+                  <div>
+                    <div class="name">Sarah K.</div>
+                    <div class="sub">Instagram · via Manychat</div>
+                  </div>
+                  <div class="actions">
+                    <span id="f08-reply" class="ms-btn secondary"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"></path><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"></path><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"></path><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"></path></svg>Reply myself</span>
+                    <span class="more"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></span>
+                  </div>
+                </div>
+                <div class="ms-ai-summary f08-ai">
+                  <div class="head"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>AI summary <span class="ms-chip">Qualified</span><span class="hide">Hide</span></div>
+                  <p>Sarah coaches 6 clients and wants 10 by summer. Budget confirmed, no time to answer DMs.</p>
+                  <div class="next">Next: confirm the fit call · Updated just now</div>
+                </div>
+                <div class="ms-thread f08-thread">
+                  <span class="f08-day">Today</span>
+                  <div class="ms-bubble lead">Sounds good. What happens on the call?</div>
+                  <div class="ms-bubble setter">We map your DMs and see if the program fits. Still good for Wed 4:30?</div>
+                  <span class="f08-why ms-why">Why this reply?</span>
+                </div>
+                <div class="f08-foot">
+                  <p id="f08-handling">The setter is handling this conversation. Choose “Reply myself” to answer yourself.</p>
+                  <div id="f08-compose">Write your reply…<span class="send"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 7-7 7 7"></path><path d="M12 19V5"></path></svg></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <svg id="f08-cursor" viewBox="0 0 24 30"><path d="M3 2.5v21.2l5.6-5.4 3.7 8.4 3.6-1.6-3.7-8.2h7.6z" fill="#fff" stroke="#0d0c0a" stroke-width="1.4" stroke-linejoin="round" /></svg>
+          <div class="ms-grain"></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const X = "expo.out", SPRING = "back.out(1.6)";
+        tl.fromTo("#f08-canvas", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 0);
+        tl.fromTo("#f08-mesh-a", { x: 0, y: 0 }, { x: -50, y: 30, duration: 3.973, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f08-mesh-b", { x: 0, y: 0 }, { x: 60, y: -30, duration: 3.973, ease: "sine.inOut" }, 0);
+        // keep your Manychat flows...
+        tl.fromTo("#f08-eyebrow", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, 0.1);
+        tl.fromTo("#f08-l1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: X }, 0.200 - 0.2);
+        tl.fromTo("#f08-n1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, 0.476 - 0.15);
+        tl.fromTo("#f08-c1", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, 0.476 + 0.1);
+        tl.fromTo("#f08-n2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, 0.476 + 0.15);
+        // ...add the setter: it docks onto the flow
+        tl.fromTo("#f08-c2", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, 1.066 - 0.05);
+        tl.fromTo("#f08-ms", { opacity: 0, x: 140, scale: 0.9 }, { opacity: 1, x: 0, scale: 1, duration: 0.55, ease: "back.out(2)" }, 1.066 - 0.15);
+        tl.fromTo("#f08-l2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: X }, 1.066 - 0.1);
+        tl.fromTo("#f08-underline", { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.7, ease: "cubic-bezier(.65,0,.35,1)" }, 1.066 + 0.25);
+        tl.fromTo(".f08-ch", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: X, stagger: 0.08 }, 1.066 + 0.3);
+        // the inbox: the setter is handling it, you take over in one click
+        tl.fromTo("#f08-inbox-pos", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.9, ease: X }, 0.3);
+        tl.set("#f08-compose", { opacity: 0 }, 0);
+        tl.fromTo("#f08-cursor", { x: 1900, y: 1100, opacity: 0 }, { x: 1600, y: 292, opacity: 1, duration: 0.6, ease: "power3.out" }, 1.846 - 0.45);
+        tl.to("#f08-cursor", { scale: 0.86, duration: 0.08, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "10% 10%" }, 2.056 - 0.05);
+        tl.to("#f08-reply", { scale: 0.94, duration: 0.08, ease: "power2.out", yoyo: true, repeat: 1 }, 2.056 - 0.05);
+        tl.to("#f08-handling", { opacity: 0, duration: 0.2 }, 2.056 + 0.08);
+        tl.to("#f08-compose", { opacity: 1, duration: 0.3 }, 2.056 + 0.12);
+        tl.fromTo("#f08-control-chip", { opacity: 0, y: 12, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: SPRING }, 2.056 + 0.2);
+        tl.to("#f08-cursor", { x: 1700, y: 420, opacity: 0, duration: 0.5, ease: "power2.in" }, 2.436 + 0.2);
+        // hand over
+        tl.to("#f08-copy, #f08-flow, #f08-channels, #f08-inbox-pos, #f08-control-chip", { opacity: 0, duration: 0.3, ease: "power2.in" }, 3.673);
+        window.__timelines["f08"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

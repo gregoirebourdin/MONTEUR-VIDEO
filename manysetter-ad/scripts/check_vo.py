@@ -29,7 +29,7 @@ ALIASES = {
 def words(text: str) -> list[str]:
     text = re.sub(r"<[^>]+>", " ", text)
     text = text.lower().replace("many chat", "manychat").replace("many setter", "manysetter")
-    text = text.replace("dot com", "dotcom").replace(".com", " dotcom")
+    text = text.replace("dot com", "dotcom").replace(".com", " dotcom").replace("any time", "anytime")
     out = re.findall(r"[a-z0-9àâäéèêëïîôöùûüç$]+", text)
     return [ALIASES.get(w, w) for w in out]
 

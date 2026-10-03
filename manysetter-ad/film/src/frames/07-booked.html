@@ -43,12 +43,12 @@
           margin-top: 14px;
         }
         #f07-title .ms-oval path {
-          stroke-width: 5px;
+          stroke-width: 2.3px;
         }
         #f07-works {
           margin-top: 76px;
           font: 500 20px/1 var(--font-sans);
-          color: var(--ink-500);
+          color: var(--ink-400);
         }
         #f07-cals {
           margin-top: 20px;
@@ -159,7 +159,6 @@
           border-radius: 18px;
           background: var(--ink-0);
           box-shadow: 0 0 0 1px #ffffff1a, 0 30px 60px -20px #000000e6, 0 0 80px -20px #ff611d66;
-          transform: perspective(1400px) rotateX(7deg);
           transform-origin: 50% 0%;
         }
         .f07-card .row1 {
@@ -172,7 +171,7 @@
           align-items: center;
           gap: 6px;
           font: 500 11.5px/1 var(--font-sans);
-          color: var(--ink-500);
+          color: var(--ink-600);
         }
         .f07-card .src .ms-brand {
           width: 18px;
@@ -211,7 +210,7 @@
         }
         .f07-notes .h {
           font: 500 11px/1 var(--font-sans);
-          color: var(--ink-500);
+          color: var(--ink-600);
           margin-bottom: 8px;
         }
         .f07-notes div.n {
@@ -229,17 +228,17 @@
         }
       </style>
       <div id="f07" data-composition-id="f07" data-width="1920" data-height="1080">
-        <div class="ms-canvas-dark">
+        <div id="f07-canvas" class="ms-canvas-dark">
           <div class="ms-vignette"></div>
           <div class="ms-grid-dark"></div>
           <div id="f07-glow" class="ms-glow"></div>
           <div id="f07-copy">
-            <span class="ms-eyebrow dark">Calendar</span>
+            <span id="f07-eyebrow" class="ms-eyebrow dark">Calendar</span>
             <div id="f07-title" class="ms-display">
-              <span class="line">Booked right</span>
-              <span class="line"
+              <span id="f07-l1" class="line">Booked right</span>
+              <span id="f07-l2" class="line"
                 >in <span class="ms-mark-wrap" style="margin-left: 0.32em"
-                  >the DM.<svg class="ms-oval" viewBox="0 0 200 64" preserveAspectRatio="none"><path d="M166 5C130 3 70 3 26 5.5C11 6.5 3 19 3 32C3 46 9.9 58 26 59.5C70 61.5 130 61.5 174 59C190.1 58 197 45 197 30.5C197 17 189 7 170 6C150 5 120 6 96 8" /></svg></span
+                  >the DM.<svg class="ms-oval" viewBox="0 0 200 64" preserveAspectRatio="none"><path id="f07-oval" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M166 5C130 3 70 3 26 5.5C11 6.5 3 19 3 32C3 46 9.9 58 26 59.5C70 61.5 130 61.5 174 59C190.1 58 197 45 197 30.5C197 17 189 7 170 6C150 5 120 6 96 8" /></svg></span
               ></span>
             </div>
             <div id="f07-works">Books on your calendar</div>
@@ -251,7 +250,7 @@
           </div>
           <div id="f07-stack">
             <div id="f07-zoom" class="ms-ui">
-              <div class="f07-pill">
+              <div id="f07-pill" class="f07-pill">
                 <span class="ms-logo-tile"
                   ><svg viewBox="0 0 24 24" fill="none"><path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg
                 ></span>
@@ -261,17 +260,17 @@
                 </div>
                 <span class="live"></span>
               </div>
-              <div class="f07-dash"></div>
-              <div class="f07-chat">
+              <div id="f07-dash1" class="f07-dash"></div>
+              <div id="f07-chat" class="f07-chat">
                 <div class="ms-thread">
-                  <div class="ms-bubble setter">I’ve got Wed 4:30 PM or Thu 11 AM. Which works?</div>
-                  <div class="ms-bubble lead">Wed 4:30 works!</div>
+                  <div id="f07-b1" class="ms-bubble setter">I’ve got Wed 4:30 PM or Thu 11 AM. Which works?</div>
+                  <div id="f07-b2" class="ms-bubble lead">Wed 4:30 works!</div>
                 </div>
               </div>
-              <div class="f07-dash"></div>
-              <div class="f07-card">
+              <div id="f07-dash2" class="f07-dash"></div>
+              <div id="f07-card" class="f07-card">
                 <div class="row1">
-                  <span class="ms-chip green"><span class="dot"></span>Call booked</span>
+                  <span id="f07-booked" class="ms-chip green"><span class="dot"></span>Call booked</span>
                   <span class="src">{{b:calcom}}Cal.com</span>
                 </div>
                 <h5>Discovery call · 30 min</h5>
@@ -281,9 +280,9 @@
                 </div>
                 <div class="f07-notes">
                   <div class="h">Notes from your setter</div>
-                  <div class="n">{{i:check}}Coaches 6 clients, wants 10 by summer</div>
-                  <div class="n">{{i:check}}Budget confirmed</div>
-                  <div class="n">{{i:check}}No time to answer DMs</div>
+                  <div class="n f07-note">{{i:check}}Coaches 6 clients, wants 10 by summer</div>
+                  <div class="n f07-note">{{i:check}}Budget confirmed</div>
+                  <div class="n f07-note">{{i:check}}No time to answer DMs</div>
                 </div>
               </div>
             </div>
@@ -293,7 +292,31 @@
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });
-        tl.fromTo("#f07-glow", { scale: 0.97 }, { scale: 1.03, duration: 4, ease: "sine.inOut" }, 0);
+        const X = "expo.out", SPRING = "back.out(1.5)";
+        tl.fromTo("#f07-canvas", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 0);
+        tl.fromTo("#f07-glow", { scale: 0.85, opacity: 0.5 }, { scale: 1.05, opacity: 1, duration: {{dur}}, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f07 .ms-grain", { x: 0, y: 0 }, { x: 33, y: 21, duration: {{dur}}, ease: "steps(48)" }, 0);
+        // left column
+        tl.fromTo("#f07-eyebrow", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, 0.15);
+        tl.fromTo("#f07-l1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: X }, {{cue:L6.books}} - 0.2);
+        tl.fromTo("#f07-l2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: X }, {{cue:L6.right}} - 0.25);
+        tl.fromTo("#f07-oval", { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.85, ease: "cubic-bezier(.65,0,.35,1)" }, {{cue:L6.dm}} - 0.15);
+        tl.fromTo("#f07-works", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.5);
+        tl.fromTo(".f07-cal", { opacity: 0, y: 30, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: X, stagger: 0.1 }, 0.55);
+        // the setter offers times, the lead picks one
+        tl.fromTo("#f07-pill", { opacity: 0, y: -16, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: SPRING }, 0.2);
+        tl.fromTo("#f07-dash1", { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 0.35, ease: "power2.out" }, 0.55);
+        tl.fromTo("#f07-chat", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7, ease: X }, 0.6);
+        tl.fromTo("#f07-b1", { opacity: 0, scale: 0.9, y: 8 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: SPRING, transformOrigin: "100% 100%" }, {{cue:L6.books}} - 0.25);
+        tl.fromTo("#f07-b2", { opacity: 0, scale: 0.9, y: 8 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: SPRING, transformOrigin: "0% 100%" }, {{cue:L6.call}} + 0.25);
+        // the booking card flips onto the stack
+        tl.fromTo("#f07-dash2", { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 0.3, ease: "power2.out" }, {{cue:L6.call}} + 0.55);
+        tl.fromTo("#f07-card", { opacity: 0, rotationX: -88, transformPerspective: 1400, y: -10 }, { opacity: 1, rotationX: 6, y: 0, duration: 0.8, ease: "back.out(1.2)" }, {{cue:L6.call}} + 0.7);
+        tl.fromTo("#f07-booked", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: SPRING }, {{cue:L6.right}} - 0.05);
+        tl.fromTo(".f07-note", { opacity: 0, x: -8 }, { opacity: 1, x: 0, duration: 0.4, ease: X, stagger: 0.16 }, {{cue:L6.right}} + 0.25);
+        tl.to("#f07-card", { rotationX: 3, duration: 1.2, ease: "sine.inOut" }, {{cue:L6.dm}});
+        // hand over
+        tl.to("#f07-copy, #f07-stack", { opacity: 0, duration: 0.3, ease: "power2.in" }, {{hold}});
         window.__timelines["f07"] = tl;
       </script>
     </template>

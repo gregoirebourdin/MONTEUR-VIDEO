@@ -1,0 +1,346 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <style>
+        {{fonts}}
+        #f01 {
+          position: absolute;
+          inset: 0;
+        }
+        #f01-glow {
+          left: 120px;
+          top: 160px;
+          width: 1100px;
+          height: 900px;
+          background: radial-gradient(closest-side, rgba(148,48,22,0.300) 0%, rgba(148,48,22,0.258) 10%, rgba(148,48,22,0.192) 20%, rgba(148,48,22,0.129) 30%, rgba(148,48,22,0.078) 40%, rgba(148,48,22,0.042) 50%, rgba(148,48,22,0.019) 60%, rgba(148,48,22,0.008) 70%, rgba(148,48,22,0.003) 80%, rgba(148,48,22,0.000) 100%);
+        }
+        #f01-glow2 {
+          left: 1150px;
+          top: 120px;
+          width: 900px;
+          height: 900px;
+          background: radial-gradient(closest-side, rgba(42,40,37,0.500) 0%, rgba(42,40,37,0.430) 10%, rgba(42,40,37,0.320) 20%, rgba(42,40,37,0.215) 30%, rgba(42,40,37,0.130) 40%, rgba(42,40,37,0.070) 50%, rgba(42,40,37,0.033) 60%, rgba(42,40,37,0.013) 70%, rgba(42,40,37,0.004) 80%, rgba(42,40,37,0.000) 100%);
+        }
+        #f01-cam {
+          position: absolute;
+          inset: 0;
+          transform-origin: 30% 55%;
+        }
+        #f01-thread-pos {
+          position: absolute;
+          left: 150px;
+          top: 50%;
+          translate: 0 -50%;
+        }
+        #f01-thread-wrap {
+          width: 400px;
+          zoom: 2;
+        }
+        #f01-thread {
+          display: flex;
+          flex-direction: column;
+          gap: 9px;
+        }
+        .f01-head {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 8px;
+        }
+        .f01-head .name {
+          font: 600 14px/1.2 var(--font-sans);
+          color: var(--ink-100);
+        }
+        .f01-head .sub {
+          font: 400 12px/1.2 var(--font-sans);
+          color: var(--ink-400);
+        }
+        .f01-past {
+          display: flex;
+          flex-direction: column;
+          gap: 9px;
+        }
+        .f01-comment {
+          align-self: flex-start;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 9px 12px;
+          border-radius: 14px;
+          background: var(--ink-900);
+          box-shadow: inset 0 0 0 1px var(--ink-800);
+          font: 400 13px/1.3 var(--font-sans);
+          color: var(--ink-300);
+        }
+        .f01-comment .ms-brand,
+        .f01-head .badge .ms-brand {
+          width: 14px;
+          height: 14px;
+          color: #ff0069;
+        }
+        .f01-head .badge .ms-brand {
+          width: 9px;
+          height: 9px;
+        }
+        .f01-kw {
+          padding: 3px 7px;
+          border-radius: 6px;
+          background: var(--ink-800);
+          font: 600 11.5px/1 var(--font-sans);
+          letter-spacing: 0.04em;
+          color: var(--ink-100);
+        }
+        .f01-label {
+          align-self: flex-end;
+          font: 500 11px/1 var(--font-sans);
+          color: var(--ink-400);
+          margin-top: 6px;
+        }
+        .f01-flow {
+          align-self: flex-end;
+          max-width: 340px;
+          padding: 10px 14px;
+          border-radius: 18px;
+          border-bottom-right-radius: 5px;
+          background: var(--ink-800);
+          color: var(--ink-100);
+          font: 400 14.5px/1.5 var(--font-sans);
+        }
+        .f01-link {
+          align-self: flex-end;
+          width: 260px;
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          padding: 10px 12px;
+          border-radius: 14px;
+          background: var(--ink-900);
+          box-shadow: inset 0 0 0 1px var(--ink-800);
+        }
+        .f01-link .ico {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 8px;
+          background: var(--ink-800);
+          color: var(--ink-300);
+        }
+        .f01-link .t1 {
+          font: 600 12.5px/1.3 var(--font-sans);
+          color: var(--ink-100);
+        }
+        .f01-link .t2 {
+          font: 400 11.5px/1.3 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f01-lead {
+          transform-origin: 0% 100%;
+          padding: 10px 14px;
+          border-radius: 18px;
+          border-bottom-left-radius: 5px;
+          background: var(--ink-100);
+          color: var(--ink-900);
+          font: 500 14.5px/1.5 var(--font-sans);
+          box-shadow: 0 10px 30px -10px #00000099;
+        }
+        #f01-lead-slot {
+          position: relative;
+          align-self: flex-start;
+          margin-top: 12px;
+        }
+        .f01-ltyping {
+          position: absolute;
+          left: 0;
+          top: 4px;
+          display: inline-flex;
+          gap: 5px;
+          padding: 13px 15px;
+          border-radius: 18px;
+          border-bottom-left-radius: 5px;
+          background: var(--ink-100);
+        }
+        .f01-ltyping i {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: var(--ink-500);
+        }
+        .f01-typing {
+          align-self: flex-end;
+          margin-top: 4px;
+          display: inline-flex;
+          gap: 5px;
+          padding: 13px 15px;
+          border-radius: 18px;
+          border-bottom-right-radius: 5px;
+          background: var(--ink-900);
+          box-shadow: inset 0 0 0 1px var(--ink-800);
+        }
+        .f01-typing i {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: var(--ink-400);
+        }
+        .f01-status {
+          align-self: flex-start;
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          margin-top: 2px;
+          font: 600 12px/1 var(--font-sans);
+          color: var(--brand-400);
+        }
+        .f01-status .dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: var(--brand-500);
+          box-shadow: 0 0 10px var(--brand-500);
+        }
+        #f01-counter {
+          position: absolute;
+          left: 1110px;
+          top: 50%;
+          translate: 0 -50%;
+          width: 680px;
+        }
+        #f01-counter .ms-eyebrow {
+          margin-bottom: 8px;
+        }
+        #f01-roll {
+          position: relative;
+          height: 420px;
+          overflow: hidden;
+          -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #0000004d 30%, #000 52%);
+          mask-image: linear-gradient(to bottom, transparent 0%, #0000004d 30%, #000 52%);
+        }
+        #f01-col {
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        .f01-val {
+          display: block;
+          height: 210px;
+          white-space: nowrap;
+          font-size: 204px;
+          color: var(--ink-100);
+        }
+        .f01-rule {
+          width: 100%;
+          height: 2px;
+          margin-top: 40px;
+          background: linear-gradient(90deg, var(--ink-700), #42403c00);
+        }
+        .f01-caption {
+          margin-top: 22px;
+          font: 400 24px/1.4 var(--font-sans);
+          color: var(--ink-500);
+        }
+        
+      </style>
+      <div id="f01" data-composition-id="f01" data-width="1920" data-height="1080">
+        <div class="ms-canvas-dark">
+          <div class="ms-vignette"></div>
+          <div id="f01-glow" class="ms-glow"></div>
+          <div id="f01-glow2" class="ms-glow"></div>
+          <div id="f01-cam"><div id="f01-thread-pos"><div id="f01-thread-wrap" class="ms-ui">
+            <div id="f01-thread">
+              <div id="f01-past" class="f01-past">
+                <div id="f01-head" class="f01-head">
+                  <span class="ms-avatar dark">SK<span class="badge">{{b:instagram}}</span></span>
+                  <div>
+                    <div class="name">Sarah K.</div>
+                    <div class="sub">Instagram</div>
+                  </div>
+                </div>
+                <div id="f01-comment" class="f01-comment">{{b:instagram}}<span>Commented on your Reel</span><span class="f01-kw">GUIDE</span></div>
+                <div id="f01-label" class="f01-label">Manychat flow</div>
+                <div id="f01-flow" class="f01-flow">Thanks for the comment! Here’s your link.</div>
+                <div id="f01-link" class="f01-link">
+                  <span class="ico">{{i:globe}}</span>
+                  <div>
+                    <div class="t1">clientflow.co/guide</div>
+                    <div class="t2">Free guide · 3 DMs that book calls</div>
+                  </div>
+                </div>
+              </div>
+              <div id="f01-lead-slot">
+                <div id="f01-ltyping" class="f01-ltyping"><i></i><i></i><i></i></div>
+                <div id="f01-lead" class="f01-lead">Thanks! Does it work for beginners?</div>
+              </div>
+              <div id="f01-typing" class="f01-typing"><i></i><i></i><i></i></div>
+              <div id="f01-status" class="f01-status"><span class="dot"></span>No reply · 2 days</div>
+            </div>
+          </div></div></div>
+          <div id="f01-counter">
+            <span id="f01-eyebrow" class="ms-eyebrow dark">No reply</span>
+            <div id="f01-roll">
+              <div id="f01-col">
+                <span class="ms-display f01-val">&nbsp;</span>
+                <span class="ms-display f01-val">1 h</span>
+                <span class="ms-display f01-val">6 h</span>
+                <span class="ms-display f01-val">1 day</span>
+                <span class="ms-display f01-val">2 days</span>
+              </div>
+            </div>
+            <div id="f01-rule" class="f01-rule"></div>
+            <div id="f01-caption" class="f01-caption">since the lead’s last message</div>
+          </div>
+          <div class="ms-grain"></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const X = "expo.out", SPRING = "back.out(1.6)";
+        // ambience
+        tl.fromTo("#f01-cam", { scale: 1 }, { scale: 1.045, duration: {{dur}}, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f01-glow", { scale: 0.96, opacity: 0.7 }, { scale: 1.06, opacity: 1, duration: {{dur}}, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f01 .ms-grain", { x: 0, y: 0 }, { x: 41, y: -27, duration: {{dur}}, ease: "steps(60)" }, 0);
+        // the Reel worked: comment, then the Manychat flow reply and its link
+        // the thread scrolls like a real inbox: the newest message stays in the eye line
+        tl.fromTo("#f01-thread-pos", { y: 250 }, { y: 150, duration: 0.8, ease: X }, {{cue:L1.manychat}} - 0.12);
+        tl.to("#f01-thread-pos", { y: 70, duration: 0.8, ease: X }, {{cue:L1.link}} - 0.2);
+        tl.to("#f01-thread-pos", { y: 0, duration: 0.8, ease: X }, {{cue:L1.lead}} - 0.05);
+        tl.fromTo("#f01-head", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.8, ease: X }, 0.15);
+        tl.fromTo("#f01-comment", { opacity: 0, y: 18, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: X }, 0.4);
+        tl.fromTo("#f01-label", { opacity: 0 }, { opacity: 1, duration: 0.5 }, {{cue:L1.manychat}} - 0.2);
+        tl.fromTo("#f01-flow", { opacity: 0, x: 46, scale: 0.97 }, { opacity: 1, x: 0, scale: 1, duration: 0.75, ease: X }, {{cue:L1.manychat}} - 0.12);
+        tl.fromTo("#f01-link", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.7, ease: X }, {{cue:L1.link}} - 0.2);
+        // the lead types, then replies
+        tl.fromTo("#f01-ltyping", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: SPRING }, {{cue:L1.the}} - 0.15);
+        tl.fromTo("#f01-ltyping i", { y: 0 }, { y: -3, duration: 0.18, ease: "sine.inOut", stagger: 0.09, yoyo: true, repeat: 3 }, {{cue:L1.the}});
+        tl.to("#f01-ltyping", { opacity: 0, duration: 0.12 }, {{cue:L1.lead}} - 0.05);
+        tl.fromTo("#f01-lead", { opacity: 0, scale: 0.86, y: 8 }, { opacity: 1, scale: 1, y: 0, duration: 0.55, ease: SPRING }, {{cue:L1.lead}} - 0.05);
+        // brand side starts typing... and stops
+        tl.fromTo("#f01-typing", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: SPRING }, {{cue:L1.and}} - 0.25);
+        tl.fromTo("#f01-typing i", { y: 0 }, { y: -3, duration: 0.16, ease: "sine.inOut", stagger: 0.08, yoyo: true, repeat: 1 }, {{cue:L1.and}} - 0.1);
+        tl.to("#f01-typing i:nth-child(3)", { opacity: 0.1, duration: 0.25 }, {{cue:L1.then}} + 0.05);
+        tl.to("#f01-typing i:nth-child(2)", { opacity: 0.1, duration: 0.25 }, {{cue:L1.then}} + 0.3);
+        tl.to("#f01-typing i:nth-child(1)", { opacity: 0.1, duration: 0.25 }, {{cue:L1.then}} + 0.55);
+        tl.to("#f01-typing", { opacity: 0.35, duration: 0.5 }, {{cue:L1.nothing}});
+        // ...and then, nothing: the thread loses its colour and sinks
+        tl.fromTo("#f01-past", { opacity: 1, filter: "saturate(1) blur(0px)" }, { opacity: 0.42, filter: "saturate(0) blur(0.6px)", duration: 1.1, ease: "power2.out" }, {{cue:L1.nothing}} - 0.1);
+        tl.fromTo("#f01-status", { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, {{cue:L1.nothing}} + 0.05);
+        // the silence counter rolls
+        tl.fromTo("#f01-eyebrow", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, {{cue:L1.and}} - 0.3);
+        tl.set("#f01-col", { y: 210 }, 0);
+        tl.to("#f01-col", { y: 0, duration: 0.28, ease: X }, {{cue:L1.and}} - 0.15);
+        tl.to("#f01-col", { y: -210, duration: 0.28, ease: X }, {{cue:L1.then}} + 0.08);
+        tl.to("#f01-col", { y: -420, duration: 0.28, ease: X }, {{cue:L1.nothing}} - 0.3);
+        tl.to("#f01-col", { y: -630, duration: 0.45, ease: X }, {{cue:L1.nothing}} + 0.05);
+        tl.fromTo("#f01-rule", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.8, ease: "power3.inOut" }, {{cue:L1.nothing}} + 0.1);
+        tl.fromTo("#f01-caption", { opacity: 0 }, { opacity: 1, duration: 0.6 }, {{cue:L1.nothing}} + 0.3);
+        window.__timelines["f01"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

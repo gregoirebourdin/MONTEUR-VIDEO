@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <style>
+        {{fonts}}
+        #f06 {
+          position: absolute;
+          inset: 0;
+        }
+        #f06 .ms-grid {
+          -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 62%, #000 25%, transparent 85%);
+          mask-image: radial-gradient(ellipse 70% 60% at 50% 62%, #000 25%, transparent 85%);
+        }
+        #f06-mesh-a {
+          left: 1050px;
+          top: 420px;
+          width: 1300px;
+          height: 1100px;
+          background: radial-gradient(closest-side, rgba(255,216,192,0.75) 0%, rgba(255,216,192,0.64) 10%, rgba(255,216,192,0.48) 20%, rgba(255,216,192,0.32) 30%, rgba(255,216,192,0.19) 40%, rgba(255,216,192,0.1) 50%, rgba(255,216,192,0.05) 60%, rgba(255,216,192,0.02) 70%, rgba(255,216,192,0.007) 80%, rgba(255,216,192,0) 100%);
+        }
+        #f06-mesh-b {
+          left: -500px;
+          top: -480px;
+          width: 1300px;
+          height: 1100px;
+          background: radial-gradient(closest-side, rgba(255,186,151,0.55) 0%, rgba(255,186,151,0.47) 10%, rgba(255,186,151,0.35) 20%, rgba(255,186,151,0.24) 30%, rgba(255,186,151,0.14) 40%, rgba(255,186,151,0.08) 50%, rgba(255,186,151,0.035) 60%, rgba(255,186,151,0.015) 70%, rgba(255,186,151,0.005) 80%, rgba(255,186,151,0) 100%);
+        }
+        #f06-head {
+          position: absolute;
+          left: 150px;
+          top: 96px;
+        }
+        #f06-title {
+          margin-top: 34px;
+          font-size: 104px;
+          color: var(--ink-900);
+          white-space: nowrap;
+        }
+        #f06-title .w {
+          display: inline-block;
+        }
+        #f06-title .ms-mark-wrap {
+          margin-left: 0.3em;
+          color: var(--brand-600);
+        }
+        #f06-title .ms-oval path {
+          stroke-width: 2.3px;
+        }
+        .f06-card-pos {
+          position: absolute;
+          top: 372px;
+        }
+        #f06-left {
+          left: 150px;
+        }
+        #f06-right {
+          left: 1190px;
+        }
+        .f06-zoom {
+          zoom: 1.45;
+        }
+        .f06-card {
+          width: 400px;
+          padding: 14px 14px 16px;
+          border-radius: 22px;
+          background: var(--ink-0);
+          box-shadow: var(--shadow-float);
+        }
+        .f06-card-head {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 0 2px 12px;
+          margin-bottom: 12px;
+          border-bottom: 1px solid var(--ink-150);
+        }
+        .f06-card-head .name {
+          font: 600 13.5px/1.2 var(--font-sans);
+          color: var(--ink-900);
+        }
+        .f06-card-head .sub {
+          font: 400 11.5px/1.2 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f06-card-head .right {
+          margin-left: auto;
+        }
+        .ms-avatar .badge .ms-brand {
+          width: 9px;
+          height: 9px;
+        }
+        .f06-ig {
+          color: #ff0069;
+        }
+        .f06-wa {
+          color: #25d366;
+        }
+        .f06-card .ms-thread {
+          gap: 7px;
+        }
+        .f06-card .ms-bubble {
+          max-width: 300px;
+          font-size: 13.5px;
+          padding: 9px 13px;
+        }
+        .f06-verdict {
+          align-self: flex-start;
+          margin: 4px 0 2px;
+        }
+        .f06-verdict .ms-chip {
+          height: 24px;
+          font-size: 11.5px;
+          padding: 0 10px;
+        }
+        .f06-verdict .ms-chip .ms-ico {
+          width: 12px;
+          height: 12px;
+        }
+        .f06-why {
+          align-self: flex-end;
+          margin-top: -2px;
+        }
+        #f06-rule {
+          position: absolute;
+          left: 784px;
+          top: 566px;
+          width: 352px;
+        }
+        .f06-rule-card {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 18px 22px;
+          border-radius: 24px;
+          background: var(--ink-0);
+          box-shadow: var(--shadow-float), 0 0 0 6px #ff611d14;
+        }
+        .f06-rule-card .tile {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: none;
+          width: 56px;
+          height: 56px;
+          border-radius: 16px;
+          background: var(--brand-50);
+          box-shadow: inset 0 0 0 1px #ff611d2e;
+          color: var(--brand-600);
+        }
+        .f06-rule-card .tile .ms-ico {
+          width: 28px;
+          height: 28px;
+        }
+        .f06-rule-card .k {
+          font: 500 18px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .f06-rule-card .v {
+          margin-top: 8px;
+          font: 600 24px/1.2 var(--font-sans);
+          color: var(--ink-900);
+        }
+        .f06-beam {
+          position: absolute;
+          top: 616px;
+          height: 3px;
+          background: repeating-linear-gradient(90deg, var(--brand-500) 0 9px, transparent 9px 18px);
+        }
+        #f06-beam-l {
+          left: 732px;
+          width: 52px;
+          transform-origin: 100% 50%;
+        }
+        #f06-beam-r {
+          left: 1136px;
+          width: 54px;
+          transform-origin: 0% 50%;
+        }
+        #f06-left-glow {
+          position: absolute;
+          left: 130px;
+          top: 352px;
+          width: 620px;
+          height: 600px;
+          border-radius: 48px;
+          box-shadow: 0 0 0 3px #00bb7f, 0 0 60px 10px #00bb7f40;
+        }
+      </style>
+      <div id="f06" data-composition-id="f06" data-width="1920" data-height="1080">
+        <div id="f06-canvas" class="ms-canvas-light">
+          <div class="ms-grid"></div>
+          <div id="f06-mesh-a" class="ms-glow"></div>
+          <div id="f06-mesh-b" class="ms-glow"></div>
+
+          <div id="f06-head">
+            <span id="f06-eyebrow" class="ms-eyebrow">Qualification</span>
+            <div id="f06-title" class="ms-display"
+              ><span id="f06-t1" class="w">Only the</span
+              ><span id="f06-t2" class="ms-mark-wrap"
+                >right leads.<svg class="ms-oval" viewBox="0 0 200 64" preserveAspectRatio="none"><path id="f06-oval" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M166 5C130 3 70 3 26 5.5C11 6.5 3 19 3 32C3 46 9.9 58 26 59.5C70 61.5 130 61.5 174 59C190.1 58 197 45 197 30.5C197 17 189 7 170 6C150 5 120 6 96 8" /></svg></span
+            ></div>
+          </div>
+
+          <div id="f06-left-glow"></div>
+          <div id="f06-beam-l" class="f06-beam"></div>
+          <div id="f06-beam-r" class="f06-beam"></div>
+
+          <div id="f06-left" class="f06-card-pos">
+            <div class="f06-zoom ms-ui">
+              <div class="f06-card">
+                <div class="f06-card-head">
+                  <span class="ms-avatar">ER<span class="badge">{{b:instagram:f06-ig}}</span></span>
+                  <div>
+                    <div class="name">Emma R.</div>
+                    <div class="sub">Instagram · via Manychat</div>
+                  </div>
+                  <span id="f06-times" class="right ms-chip orange">{{i:calendar-clock}}Times offered</span>
+                </div>
+                <div class="ms-thread">
+                  <div class="ms-bubble lead">Interested, but not sure it’s for me.</div>
+                  <div class="ms-bubble setter">Fair! How many clients do you coach right now?</div>
+                  <div id="f06-e3" class="ms-bubble lead">Five. Most leads never reach a call.</div>
+                  <div id="f06-e-verdict" class="f06-verdict"><span class="ms-chip green">{{i:check}}Qualified · fits 2–10 clients</span></div>
+                  <div id="f06-e4" class="ms-bubble setter">That’s who it’s for. Want 20 min to map your DMs?</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="f06-rule">
+            <div class="f06-rule-card ms-ui">
+              <span class="tile">{{i:target}}</span>
+              <div>
+                <div class="k">Your fit rule</div>
+                <div class="v">Coaches with 2 to 10 clients</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="f06-right" class="f06-card-pos">
+            <div class="f06-zoom ms-ui">
+              <div class="f06-card">
+                <div class="f06-card-head">
+                  <span class="ms-avatar">AM<span class="badge">{{b:whatsapp:f06-wa}}</span></span>
+                  <div>
+                    <div class="name">Alex M.</div>
+                    <div class="sub">WhatsApp · via Manychat</div>
+                  </div>
+                </div>
+                <div class="ms-thread">
+                  <div class="ms-bubble lead">Hey! Can your program get me my first client?</div>
+                  <div class="ms-bubble setter">Honest answer: it’s built for coaches with 2+ clients.</div>
+                  <div id="f06-a3" class="ms-bubble lead">Ah. I’m just starting out.</div>
+                  <div id="f06-a4" class="ms-bubble setter">Then start with the free guide. It covers client #1.</div>
+                  <div id="f06-a-verdict" class="f06-verdict"><span class="ms-chip">Not a fit · free guide sent instead of a call</span></div>
+                  <span id="f06-why" class="f06-why ms-why">Why this reply?</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ms-grain"></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const X = "expo.out", SPRING = "back.out(1.6)";
+        tl.fromTo("#f06-canvas", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 0);
+        tl.fromTo("#f06-mesh-a", { x: 0, y: 0 }, { x: -60, y: -30, duration: {{dur}}, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f06-mesh-b", { x: 0, y: 0 }, { x: 50, y: 40, duration: {{dur}}, ease: "sine.inOut" }, 0);
+        tl.fromTo("#f06-eyebrow", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.6, ease: X }, 0.2);
+        // the diptych opens like a door on "qualifies"
+        tl.fromTo("#f06-left", { opacity: 0, x: -160, rotationY: 14, transformPerspective: 1600 }, { opacity: 1, x: 0, rotationY: 0, duration: 1.0, ease: X }, {{cue:L5.qualifies}} - 0.35);
+        tl.fromTo("#f06-right", { opacity: 0, x: 160, rotationY: -14, transformPerspective: 1600 }, { opacity: 1, x: 0, rotationY: 0, duration: 1.0, ease: X }, {{cue:L5.qualifies}} - 0.25);
+        tl.fromTo("#f06-e3", { opacity: 0, scale: 0.88, y: 8 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: SPRING, transformOrigin: "0% 100%" }, {{cue:L5.lead}} - 0.1);
+        tl.fromTo("#f06-a3", { opacity: 0, scale: 0.88, y: 8 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: SPRING, transformOrigin: "0% 100%" }, {{cue:L5.with}});
+        // your rule, wired to both conversations
+        tl.fromTo("#f06-rule", { opacity: 0, scale: 0.8, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: SPRING }, {{cue:L5.rules}} - 0.25);
+        tl.fromTo("#f06-beam-l", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power3.out" }, {{cue:L5.rules}} + 0.1);
+        tl.fromTo("#f06-beam-r", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power3.out" }, {{cue:L5.rules}} + 0.1);
+        // only the right ones...
+        tl.fromTo("#f06-t1", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: X }, {{cue:L5.only}} - 0.2);
+        tl.fromTo("#f06-t2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: X }, {{cue:L5.right}} - 0.2);
+        tl.fromTo("#f06-oval", { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.85, ease: "cubic-bezier(.65,0,.35,1)" }, {{cue:L5.right}} + 0.15);
+        tl.fromTo("#f06-e-verdict", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: SPRING, transformOrigin: "0% 50%" }, {{cue:L5.only}} - 0.05);
+        tl.fromTo("#f06-left-glow", { opacity: 0, scale: 0.97 }, { opacity: 1, scale: 1, duration: 0.6, ease: X }, {{cue:L5.only}});
+        tl.fromTo("#f06-e4", { opacity: 0, scale: 0.88, y: 8 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: SPRING, transformOrigin: "100% 100%" }, {{cue:L5.only}} + 0.35);
+        tl.fromTo("#f06-a4", { opacity: 0, scale: 0.88, y: 8 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: SPRING, transformOrigin: "100% 100%" }, {{cue:L5.right}} - 0.15);
+        tl.fromTo("#f06-a-verdict", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: SPRING, transformOrigin: "0% 50%" }, {{cue:L5.right}} + 0.2);
+        tl.fromTo("#f06-why", { opacity: 0 }, { opacity: 1, duration: 0.4 }, {{cue:L5.right}} + 0.45);
+        // ...get your calendar
+        tl.fromTo("#f06-times", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: SPRING }, {{cue:L5.calendar}} - 0.15);
+        // hand over
+        tl.to("#f06-head, #f06-left, #f06-right, #f06-rule, .f06-beam, #f06-left-glow", { opacity: 0, duration: 0.3, ease: "power2.in" }, {{hold}});
+        window.__timelines["f06"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
