@@ -64,17 +64,17 @@
         const bloom = { r: 0 };
         const paint = () => canvas.style.setProperty("--r", bloom.r + "%");
         paint();
-        const BLOOM = 1.962 - 0.02;
+        const BLOOM = 2.505 - 0.02;
         tl.fromTo("#bgd-root", { opacity: 0 }, { opacity: 1, duration: 0.05 }, BLOOM);
         tl.fromTo(bloom, { r: 0 }, { r: 140, duration: 1.0, ease: "power3.inOut", onUpdate: paint, immediateRender: false }, BLOOM);
         // mesh blobs drift for the whole day
-        tl.fromTo("#bgd-mesh-a", { x: 0, y: 0 }, { x: -160, y: 70, duration: 61.460, ease: "sine.inOut" }, 0);
-        tl.fromTo("#bgd-mesh-b", { x: 0, y: 0 }, { x: 200, y: -60, duration: 61.460, ease: "sine.inOut" }, 0);
-        tl.fromTo("#bgd-grid", { y: 0 }, { y: -128, duration: 61.460, ease: "none" }, 0);
+        tl.fromTo("#bgd-mesh-a", { x: 0, y: 0 }, { x: -160, y: 70, duration: 61.836, ease: "sine.inOut" }, 0);
+        tl.fromTo("#bgd-mesh-b", { x: 0, y: 0 }, { x: 200, y: -60, duration: 61.836, ease: "sine.inOut" }, 0);
+        tl.fromTo("#bgd-grid", { y: 0 }, { y: -128, duration: 61.836, ease: "none" }, 0);
         // next morning: the sun comes up behind the words, then settles for the offer
-        tl.fromTo("#bgd-sun, #bgd-sun-core", { opacity: 0, y: 520 }, { opacity: 1, y: 0, duration: 2.0, ease: "power2.out" }, 35.405 + 0.05);
-        tl.to("#bgd-sun, #bgd-sun-core", { opacity: 0.45, y: 260, duration: 2.0, ease: "power2.inOut" }, 35.405 + 2.3);
-        tl.to("#bgd-sun, #bgd-sun-core", { opacity: 0, y: 420, duration: 1.4, ease: "power2.inOut" }, 43.667 - 0.3);
+        tl.fromTo("#bgd-sun, #bgd-sun-core", { opacity: 0, y: 520 }, { opacity: 1, y: 0, duration: 2.0, ease: "power2.out" }, 36.815 + 0.05);
+        tl.to("#bgd-sun, #bgd-sun-core", { opacity: 0.45, y: 260, duration: 2.0, ease: "power2.inOut" }, 36.815 + 2.3);
+        tl.to("#bgd-sun, #bgd-sun-core", { opacity: 0, y: 420, duration: 1.4, ease: "power2.inOut" }, 44.623 - 0.3);
         window.__timelines["bgd"] = tl;
       </script>
     </template>

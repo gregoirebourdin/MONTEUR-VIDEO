@@ -1,59 +1,59 @@
 {
- "total": 86.872,
+ "total": 90.27,
  "scenes": [
   {
    "id": "s1",
    "part": "P1",
    "start": 0.0,
-   "end": 10.618
+   "end": 11.715
   },
   {
    "id": "s2",
    "part": "P2",
-   "start": 10.618,
-   "end": 14.916
+   "start": 11.715,
+   "end": 16.992
   },
   {
    "id": "s3",
    "part": "P3",
-   "start": 14.916,
-   "end": 25.412
+   "start": 16.992,
+   "end": 28.434
   },
   {
    "id": "s4",
    "part": "P4",
-   "start": 25.412,
-   "end": 32.826
+   "start": 28.434,
+   "end": 36.556
   },
   {
    "id": "s5",
    "part": "P5",
-   "start": 32.826,
-   "end": 46.587
+   "start": 36.556,
+   "end": 51.592
   },
   {
    "id": "s6",
    "part": "P6",
-   "start": 46.587,
-   "end": 60.817
+   "start": 51.592,
+   "end": 65.249
   },
   {
    "id": "s7",
    "part": "P7",
-   "start": 60.817,
-   "end": 69.079
+   "start": 65.249,
+   "end": 73.057
   },
   {
    "id": "s8",
    "part": "P8",
-   "start": 69.079,
-   "end": 76.964
+   "start": 73.057,
+   "end": 80.646
   },
   {
    "id": "s9",
    "part": "P9",
-   "start": 76.964,
-   "end": 86.872
+   "start": 80.646,
+   "end": 90.27
   }
  ],
  "beats": [
@@ -61,103 +61,103 @@
    "scene": "s1",
    "i": 0,
    "t": "I posted a *Reel.",
-   "in": 0.55,
-   "out": 1.734,
+   "in": 0.731,
+   "out": 1.472,
    "ui": false
   },
   {
    "scene": "s1",
    "i": 1,
    "t": "Boom,!slam | it blew up.",
-   "in": 1.934,
-   "out": 3.3169999999999997,
+   "in": 1.672,
+   "out": 3.0749999999999997,
    "ui": false
   },
   {
    "scene": "s1",
    "i": 2,
    "t": "Manychat sent | the links,",
-   "in": 3.517,
-   "out": 4.54,
+   "in": 3.275,
+   "out": 4.117,
    "ui": false
   },
   {
    "scene": "s1",
    "i": 3,
    "t": "and I got\u2026",
-   "in": 4.74,
-   "out": 5.362,
+   "in": 4.317,
+   "out": 5.379,
    "ui": false
   },
   {
    "scene": "s1",
    "i": 4,
    "t": "*126!count | DMs!!slam",
-   "in": 5.562,
-   "out": 7.366,
+   "in": 5.579,
+   "out": 7.8839999999999995,
    "ui": false
   },
   {
    "scene": "s1",
    "i": 5,
    "t": "How am I supposed | to pitch my offer | to all of them?",
-   "in": 7.566,
-   "out": 9.351,
+   "in": 8.084,
+   "out": 10.368,
    "ui": false
   },
   {
    "scene": "s1",
    "i": 6,
    "t": "It's!slam *9!slam *p.m.!!slam",
-   "in": 9.551,
-   "out": 10.518,
+   "in": 10.568,
+   "out": 11.615,
    "ui": false
   },
   {
    "scene": "s2",
    "i": 0,
    "t": "If I reply too *late, | they'll forget me!",
-   "in": 10.843,
-   "out": 12.868,
+   "in": 11.98,
+   "out": 13.743,
    "ui": false
   },
   {
    "scene": "s2",
    "i": 1,
    "t": "So all of that\u2026 | for nothing?!sink",
-   "in": 13.068,
-   "out": 14.816,
+   "in": 13.943,
+   "out": 16.892,
    "ui": false
   },
   {
    "scene": "s3",
    "i": 0,
    "t": "Quick,!slam | I need to hire | a *setter.",
-   "in": 15.121,
-   "out": 16.723,
+   "in": 17.217,
+   "out": 18.54,
    "ui": false
   },
   {
    "scene": "s3",
    "i": 1,
    "t": "But I have to | train them, | pay them | commission\u2026",
-   "in": 16.923,
-   "out": 19.106,
+   "in": 18.74,
+   "out": 21.504,
    "ui": false
   },
   {
    "scene": "s3",
    "i": 2,
    "t": "and what if | they reply with | total *cringe like",
-   "in": 19.306,
-   "out": 24.031000000000002,
+   "in": 21.704,
+   "out": 27.333000000000002,
    "ui": false
   },
   {
    "scene": "s3",
    "i": 3,
    "t": "Hey babe! Ready to ten-x your life?",
-   "in": 21.688,
+   "in": 24.849,
    "out": null,
    "ui": true
   },
@@ -165,15 +165,15 @@
    "scene": "s3",
    "i": 4,
    "t": "Uh\u2026!pop | *no.!slam",
-   "in": 24.231,
-   "out": 25.311999999999998,
+   "in": 27.533,
+   "out": 28.334,
    "ui": false
   },
   {
    "scene": "s4",
    "i": 0,
    "t": "Wait\u2026 | what's this?",
-   "in": 25.812,
+   "in": 28.814,
    "out": 30.78,
    "ui": false
   },
@@ -181,7 +181,7 @@
    "scene": "s4",
    "i": 1,
    "t": "ManySetter?",
-   "in": 27.374,
+   "in": 30.939,
    "out": null,
    "ui": true
   },
@@ -189,151 +189,151 @@
    "scene": "s4",
    "i": 2,
    "t": "An *AI setter | that plugs into | my Manychat\u2026",
-   "in": 28.556,
-   "out": 31.019000000000002,
+   "in": 32.162,
+   "out": 34.948,
    "ui": false
   },
   {
    "scene": "s4",
    "i": 3,
    "t": "and talks exactly | {like me?}~o",
-   "in": 31.219,
-   "out": 32.726,
+   "in": 35.148,
+   "out": 36.455999999999996,
    "ui": false
   },
   {
    "scene": "s5",
    "i": 0,
    "t": "Okay,!pop | let's try.",
-   "in": 33.151,
-   "out": 34.153,
+   "in": 36.881,
+   "out": 38.221999999999994,
    "ui": false
   },
   {
    "scene": "s5",
    "i": 1,
    "t": "I give it | my *sales page\u2026",
-   "in": 34.353,
-   "out": 35.614,
+   "in": 38.422,
+   "out": 39.983999999999995,
    "ui": false
   },
   {
    "scene": "s5",
    "i": 2,
    "t": "two minutes later, | it knows my offer | {by heart.}~u",
-   "in": 35.814,
-   "out": 37.516999999999996,
+   "in": 40.184,
+   "out": 42.324999999999996,
    "ui": false
   },
   {
    "scene": "s5",
    "i": 3,
    "t": "It answers | every DM,",
-   "in": 37.717,
-   "out": 39.058,
+   "in": 42.525,
+   "out": 43.986999999999995,
    "ui": false
   },
   {
    "scene": "s5",
    "i": 4,
    "t": "handles the | \u201cI need to | think about it\u201d",
-   "in": 39.258,
-   "out": 41.620999999999995,
+   "in": 44.187,
+   "out": 45.808,
    "ui": false
   },
   {
    "scene": "s5",
    "i": 5,
    "t": "and when | someone's a *fit,",
-   "in": 41.821,
-   "out": 42.882999999999996,
+   "in": 46.008,
+   "out": 46.888999999999996,
    "ui": false
   },
   {
    "scene": "s5",
    "i": 6,
    "t": "it *books | the call.",
-   "in": 43.083,
-   "out": 44.104,
+   "in": 47.089,
+   "out": 48.129999999999995,
    "ui": false
   },
   {
    "scene": "s5",
    "i": 7,
    "t": "Right in | the {DM.}~o",
-   "in": 44.304,
-   "out": 45.285999999999994,
+   "in": 48.33,
+   "out": 49.830999999999996,
    "ui": false
   },
   {
    "scene": "s5",
    "i": 8,
    "t": "Wait\u2026!soft | seriously?!slam",
-   "in": 45.486,
-   "out": 46.487,
+   "in": 50.031,
+   "out": 51.492,
    "ui": false
   },
   {
    "scene": "s6",
    "i": 0,
    "t": "Oh, and it's | *sneaky.!pop",
-   "in": 47.007,
-   "out": 48.829,
+   "in": 51.952,
+   "out": 53.373999999999995,
    "ui": false
   },
   {
    "scene": "s6",
    "i": 1,
    "t": "It waits a beat | before replying\u2026",
-   "in": 49.029,
-   "out": 50.47,
+   "in": 53.574,
+   "out": 54.775999999999996,
    "ui": false
   },
   {
    "scene": "s6",
    "i": 2,
    "t": "like a real | *human would.",
-   "in": 50.67,
-   "out": 52.190999999999995,
+   "in": 54.976,
+   "out": 56.437999999999995,
    "ui": false
   },
   {
    "scene": "s6",
    "i": 3,
    "t": "Every lead gets | an *AI summary,",
-   "in": 52.391,
-   "out": 53.732,
+   "in": 56.638,
+   "out": 58.141,
    "ui": false
   },
   {
    "scene": "s6",
    "i": 4,
    "t": "so I know exactly | who I'm calling.",
-   "in": 53.932,
-   "out": 55.534,
+   "in": 58.341,
+   "out": 60.323,
    "ui": false
   },
   {
    "scene": "s6",
    "i": 5,
    "t": "And my | sales team?",
-   "in": 55.734,
-   "out": 56.553999999999995,
+   "in": 60.523,
+   "out": 61.305,
    "ui": false
   },
   {
    "scene": "s6",
    "i": 6,
    "t": "They get | the *stats.",
-   "in": 56.754,
-   "out": 60.717,
+   "in": 61.505,
+   "out": 65.149,
    "ui": false
   },
   {
    "scene": "s6",
    "i": 7,
    "t": "Conversations, qualified leads, calls booked.",
-   "in": 57.935,
+   "in": 62.446,
    "out": null,
    "ui": true
   },
@@ -341,87 +341,87 @@
    "scene": "s7",
    "i": 0,
    "t": "Next morning.",
-   "in": 61.337,
-   "out": 61.998999999999995,
+   "in": 65.79,
+   "out": 66.372,
    "ui": false
   },
   {
    "scene": "s7",
    "i": 1,
    "t": "Coffee in hand\u2026",
-   "in": 62.199,
-   "out": 63.04,
+   "in": 66.572,
+   "out": 67.334,
    "ui": false
   },
   {
    "scene": "s7",
    "i": 2,
    "t": "and the calls | are already | in my *calendar.",
-   "in": 63.24,
-   "out": 65.50399999999999,
+   "in": 67.534,
+   "out": 69.539,
    "ui": false
   },
   {
    "scene": "s7",
    "i": 3,
    "t": "No setter.!slam | No commission.!slam",
-   "in": 65.704,
-   "out": 67.487,
+   "in": 69.739,
+   "out": 71.243,
    "ui": false
   },
   {
    "scene": "s7",
    "i": 4,
    "t": "And it still | sounds {like me.}~o",
-   "in": 67.687,
-   "out": 68.979,
+   "in": 71.443,
+   "out": 72.95700000000001,
    "ui": false
   },
   {
    "scene": "s8",
    "i": 0,
    "t": "Got a *Reel | coming up?",
-   "in": 69.469,
-   "out": 70.47,
+   "in": 73.467,
+   "out": 74.26899999999999,
    "ui": false
   },
   {
    "scene": "s8",
    "i": 1,
    "t": "Build your setter | for *free.",
-   "in": 70.67,
-   "out": 71.931,
+   "in": 74.469,
+   "out": 75.77,
    "ui": false
   },
   {
    "scene": "s8",
    "i": 2,
    "t": "No card.!pop",
-   "in": 72.131,
-   "out": 72.81099999999999,
+   "in": 75.97,
+   "out": 76.571,
    "ui": false
   },
   {
    "scene": "s8",
    "i": 3,
    "t": "If your program's | [[$1,500,||fifteen hundred bucks,]]",
-   "in": 73.011,
-   "out": 74.773,
+   "in": 76.771,
+   "out": 78.354,
    "ui": false
   },
   {
    "scene": "s8",
    "i": 4,
    "t": "one new client | pays for | the {whole year.}~u",
-   "in": 74.973,
-   "out": 76.864,
+   "in": 78.554,
+   "out": 80.546,
    "ui": false
   },
   {
    "scene": "s9",
    "i": 0,
    "t": "ManySetter.",
-   "in": 77.394,
+   "in": 81.057,
    "out": null,
    "ui": true
   },
@@ -429,7 +429,7 @@
    "scene": "s9",
    "i": 1,
    "t": "Your DMs on *autopilot\u2026 | in your {voice.}~u",
-   "in": 78.416,
+   "in": 81.841,
    "out": null,
    "ui": false
   },
@@ -437,664 +437,608 @@
    "scene": "s9",
    "i": 2,
    "t": "ManySetter dot com.",
-   "in": 81.64,
+   "in": 84.934,
    "out": null,
    "ui": true
   }
  ],
  "events": [
   {
-   "t": 0.55,
+   "t": 0.731,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "I"
   },
   {
-   "t": 0.671,
+   "t": 0.831,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "posted"
   },
   {
-   "t": 1.052,
+   "t": 1.131,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "a"
   },
   {
-   "t": 1.112,
+   "t": 1.191,
    "kind": "rise",
    "scene": "s1",
    "acc": true,
    "w": "Reel."
   },
   {
-   "t": 1.734,
+   "t": 1.472,
    "kind": "exit",
    "scene": "s1"
   },
   {
-   "t": 1.934,
+   "t": 1.672,
    "kind": "slam",
    "scene": "s1",
    "acc": false,
    "w": "Boom,"
   },
   {
-   "t": 2.475,
+   "t": 2.073,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "it"
   },
   {
-   "t": 2.575,
+   "t": 2.153,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "blew"
   },
   {
-   "t": 2.836,
+   "t": 2.394,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "up."
   },
   {
-   "t": 3.317,
+   "t": 3.075,
    "kind": "exit",
    "scene": "s1"
   },
   {
-   "t": 3.517,
+   "t": 3.275,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "Manychat"
   },
   {
-   "t": 4.098,
+   "t": 3.796,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "sent"
   },
   {
-   "t": 4.299,
+   "t": 3.956,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "the"
   },
   {
-   "t": 4.439,
+   "t": 4.077,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "links,"
   },
   {
-   "t": 4.54,
+   "t": 4.117,
    "kind": "exit",
    "scene": "s1"
   },
   {
-   "t": 4.74,
+   "t": 4.317,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "and"
   },
   {
-   "t": 4.84,
+   "t": 4.417,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "I"
   },
   {
-   "t": 4.94,
+   "t": 4.497,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "got\u2026"
   },
   {
-   "t": 5.362,
+   "t": 5.379,
    "kind": "exit",
    "scene": "s1"
   },
   {
-   "t": 5.562,
+   "t": 5.579,
    "kind": "count",
    "scene": "s1",
    "acc": true,
    "w": "126"
   },
   {
-   "t": 6.624,
+   "t": 6.401,
    "kind": "slam",
    "scene": "s1",
    "acc": false,
    "w": "DMs!"
   },
   {
-   "t": 7.366,
+   "t": 7.884,
    "kind": "exit",
    "scene": "s1"
   },
   {
-   "t": 7.566,
+   "t": 8.084,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "How"
   },
   {
-   "t": 7.707,
+   "t": 8.304,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "am"
   },
   {
-   "t": 7.807,
+   "t": 8.444,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "I"
   },
   {
-   "t": 7.867,
+   "t": 8.524,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "supposed"
   },
   {
-   "t": 8.127,
+   "t": 8.845,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "to"
   },
   {
-   "t": 8.248,
+   "t": 8.925,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "pitch"
   },
   {
-   "t": 8.508,
+   "t": 9.125,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "my"
   },
   {
-   "t": 8.669,
+   "t": 9.346,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "offer"
   },
   {
-   "t": 8.889,
+   "t": 9.626,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "to"
   },
   {
-   "t": 9.029,
+   "t": 10.047,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "all"
   },
   {
-   "t": 9.17,
+   "t": 10.227,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "of"
   },
   {
-   "t": 9.25,
+   "t": 10.328,
    "kind": "rise",
    "scene": "s1",
    "acc": false,
    "w": "them?"
   },
   {
-   "t": 9.351,
+   "t": 10.368,
    "kind": "exit",
    "scene": "s1"
   },
   {
-   "t": 9.551,
+   "t": 10.568,
    "kind": "slam",
    "scene": "s1",
    "acc": false,
    "w": "It's"
   },
   {
-   "t": 9.711,
+   "t": 10.768,
    "kind": "slam",
    "scene": "s1",
    "acc": true,
    "w": "9"
   },
   {
-   "t": 9.932,
+   "t": 11.029,
    "kind": "slam",
    "scene": "s1",
    "acc": true,
    "w": "p.m.!"
   },
   {
-   "t": 10.518,
+   "t": 11.615,
    "kind": "exit",
    "scene": "s1"
   },
   {
-   "t": 10.843,
+   "t": 11.98,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "If"
   },
   {
-   "t": 10.964,
+   "t": 12.1,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "I"
   },
   {
-   "t": 11.064,
+   "t": 12.221,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "reply"
   },
   {
-   "t": 11.364,
+   "t": 12.521,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "too"
   },
   {
-   "t": 11.505,
+   "t": 12.661,
    "kind": "rise",
    "scene": "s2",
    "acc": true,
    "w": "late,"
   },
   {
-   "t": 11.945,
+   "t": 12.781,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "they'll"
   },
   {
-   "t": 12.146,
+   "t": 13.002,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "forget"
   },
   {
-   "t": 12.446,
+   "t": 13.362,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "me!"
   },
   {
-   "t": 12.868,
+   "t": 13.743,
    "kind": "exit",
    "scene": "s2"
   },
   {
-   "t": 13.068,
+   "t": 13.943,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "So"
   },
   {
-   "t": 13.268,
+   "t": 14.664,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "all"
   },
   {
-   "t": 13.408,
+   "t": 14.864,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "of"
   },
   {
-   "t": 13.488,
+   "t": 14.964,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "that\u2026"
   },
   {
-   "t": 14.25,
+   "t": 16.126,
    "kind": "rise",
    "scene": "s2",
    "acc": false,
    "w": "for"
   },
   {
-   "t": 14.39,
+   "t": 16.306,
    "kind": "sink",
    "scene": "s2",
    "acc": false,
    "w": "nothing?"
   },
   {
-   "t": 14.816,
+   "t": 16.892,
    "kind": "exit",
    "scene": "s2"
   },
   {
-   "t": 15.121,
+   "t": 17.217,
    "kind": "slam",
    "scene": "s3",
    "acc": false,
    "w": "Quick,"
   },
   {
-   "t": 15.502,
+   "t": 17.718,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "I"
   },
   {
-   "t": 15.582,
+   "t": 17.798,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "need"
   },
   {
-   "t": 15.742,
+   "t": 17.938,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "to"
   },
   {
-   "t": 15.822,
+   "t": 17.998,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "hire"
   },
   {
-   "t": 16.082,
+   "t": 18.219,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "a"
   },
   {
-   "t": 16.142,
+   "t": 18.299,
    "kind": "rise",
    "scene": "s3",
    "acc": true,
    "w": "setter."
   },
   {
-   "t": 16.723,
+   "t": 18.54,
    "kind": "exit",
    "scene": "s3"
   },
   {
-   "t": 16.923,
+   "t": 18.74,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "But"
   },
   {
-   "t": 17.043,
+   "t": 19.481,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "I"
   },
   {
-   "t": 17.123,
+   "t": 19.581,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "have"
   },
   {
-   "t": 17.264,
+   "t": 19.741,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "to"
   },
   {
-   "t": 17.404,
+   "t": 19.901,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "train"
   },
   {
-   "t": 17.744,
+   "t": 20.202,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "them,"
   },
   {
-   "t": 18.044,
+   "t": 20.462,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "pay"
   },
   {
-   "t": 18.184,
+   "t": 20.642,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "them"
   },
   {
-   "t": 18.345,
+   "t": 20.803,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "commission\u2026"
   },
   {
-   "t": 19.106,
+   "t": 21.504,
    "kind": "exit",
    "scene": "s3"
   },
   {
-   "t": 19.306,
+   "t": 21.704,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "and"
   },
   {
-   "t": 19.406,
+   "t": 22.325,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "what"
   },
   {
-   "t": 19.526,
+   "t": 22.485,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "if"
   },
   {
-   "t": 19.586,
+   "t": 22.565,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "they"
   },
   {
-   "t": 19.746,
+   "t": 22.706,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "reply"
   },
   {
-   "t": 20.046,
+   "t": 23.026,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "with"
   },
   {
-   "t": 20.227,
+   "t": 23.266,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "total"
   },
   {
-   "t": 20.587,
+   "t": 23.587,
    "kind": "rise",
    "scene": "s3",
    "acc": true,
    "w": "cringe"
   },
   {
-   "t": 21.108,
+   "t": 24.008,
    "kind": "rise",
    "scene": "s3",
    "acc": false,
    "w": "like"
   },
   {
-   "t": 24.031,
+   "t": 27.333,
    "kind": "exit",
    "scene": "s3"
   },
   {
-   "t": 24.231,
+   "t": 27.533,
    "kind": "pop",
    "scene": "s3",
    "acc": false,
    "w": "Uh\u2026"
   },
   {
-   "t": 24.892,
+   "t": 27.873,
    "kind": "slam",
    "scene": "s3",
    "acc": true,
    "w": "no."
   },
   {
-   "t": 25.312,
+   "t": 28.334,
    "kind": "exit",
    "scene": "s3"
   },
   {
-   "t": 25.812,
+   "t": 28.814,
    "kind": "soft",
    "scene": "s4",
    "acc": false,
    "w": "Wait\u2026"
   },
   {
-   "t": 26.373,
+   "t": 29.837,
    "kind": "soft",
    "scene": "s4",
    "acc": false,
    "w": "what's"
   },
   {
-   "t": 26.593,
+   "t": 30.037,
    "kind": "soft",
    "scene": "s4",
    "acc": false,
    "w": "this?"
-  },
-  {
-   "t": 28.556,
-   "kind": "rise",
-   "scene": "s4",
-   "acc": false,
-   "w": "An"
-  },
-  {
-   "t": 28.776,
-   "kind": "rise",
-   "scene": "s4",
-   "acc": true,
-   "w": "AI"
-  },
-  {
-   "t": 29.116,
-   "kind": "rise",
-   "scene": "s4",
-   "acc": false,
-   "w": "setter"
-  },
-  {
-   "t": 29.417,
-   "kind": "rise",
-   "scene": "s4",
-   "acc": false,
-   "w": "that"
-  },
-  {
-   "t": 29.577,
-   "kind": "rise",
-   "scene": "s4",
-   "acc": false,
-   "w": "plugs"
-  },
-  {
-   "t": 29.837,
-   "kind": "rise",
-   "scene": "s4",
-   "acc": false,
-   "w": "into"
-  },
-  {
-   "t": 30.038,
-   "kind": "rise",
-   "scene": "s4",
-   "acc": false,
-   "w": "my"
-  },
-  {
-   "t": 30.178,
-   "kind": "rise",
-   "scene": "s4",
-   "acc": false,
-   "w": "Manychat\u2026"
   },
   {
    "t": 30.78,
@@ -1102,1152 +1046,1208 @@
    "scene": "s4"
   },
   {
-   "t": 31.019,
+   "t": 32.162,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "An"
+  },
+  {
+   "t": 32.382,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": true,
+   "w": "AI"
+  },
+  {
+   "t": 32.723,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "setter"
+  },
+  {
+   "t": 33.024,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "that"
+  },
+  {
+   "t": 33.164,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "plugs"
+  },
+  {
+   "t": 33.505,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "into"
+  },
+  {
+   "t": 33.745,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "my"
+  },
+  {
+   "t": 33.885,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "Manychat\u2026"
+  },
+  {
+   "t": 34.948,
    "kind": "exit",
    "scene": "s4"
   },
   {
-   "t": 31.219,
+   "t": 35.148,
    "kind": "rise",
    "scene": "s4",
    "acc": false,
    "w": "and"
   },
   {
-   "t": 31.379,
+   "t": 35.309,
    "kind": "rise",
    "scene": "s4",
    "acc": false,
    "w": "talks"
   },
   {
-   "t": 31.7,
+   "t": 35.589,
    "kind": "rise",
    "scene": "s4",
    "acc": false,
    "w": "exactly"
   },
   {
-   "t": 32.14,
+   "t": 35.95,
    "kind": "rise",
    "scene": "s4",
    "acc": false,
    "w": "like"
   },
   {
-   "t": 32.24,
+   "t": 36.05,
    "kind": "mark",
    "scene": "s4"
   },
   {
-   "t": 32.321,
+   "t": 36.13,
    "kind": "rise",
    "scene": "s4",
    "acc": false,
    "w": "me?"
   },
   {
-   "t": 32.726,
+   "t": 36.456,
    "kind": "exit",
    "scene": "s4"
   },
   {
-   "t": 33.151,
+   "t": 36.881,
    "kind": "pop",
    "scene": "s5",
    "acc": false,
    "w": "Okay,"
   },
   {
-   "t": 33.452,
+   "t": 37.201,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "let's"
   },
   {
-   "t": 33.632,
+   "t": 37.382,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "try."
   },
   {
-   "t": 34.153,
+   "t": 38.222,
    "kind": "exit",
    "scene": "s5"
   },
   {
-   "t": 34.353,
+   "t": 38.422,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "I"
   },
   {
-   "t": 34.433,
+   "t": 38.502,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "give"
   },
   {
-   "t": 34.573,
+   "t": 38.642,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "it"
   },
   {
-   "t": 34.653,
+   "t": 38.723,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "my"
   },
   {
-   "t": 34.773,
+   "t": 38.843,
    "kind": "rise",
    "scene": "s5",
    "acc": true,
    "w": "sales"
   },
   {
-   "t": 35.053,
+   "t": 39.103,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "page\u2026"
   },
   {
-   "t": 35.614,
+   "t": 39.984,
    "kind": "exit",
    "scene": "s5"
   },
   {
-   "t": 35.814,
+   "t": 40.184,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "two"
   },
   {
-   "t": 35.955,
+   "t": 40.384,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "minutes"
   },
   {
-   "t": 36.215,
+   "t": 40.624,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "later,"
   },
   {
-   "t": 36.475,
+   "t": 40.924,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "it"
   },
   {
-   "t": 36.535,
+   "t": 40.984,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "knows"
   },
   {
-   "t": 36.735,
+   "t": 41.184,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "my"
   },
   {
-   "t": 36.876,
+   "t": 41.324,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "offer"
   },
   {
-   "t": 37.096,
+   "t": 41.565,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "by"
   },
   {
-   "t": 37.196,
+   "t": 41.665,
    "kind": "mark",
    "scene": "s5"
   },
   {
-   "t": 37.216,
+   "t": 41.725,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "heart."
   },
   {
-   "t": 37.517,
+   "t": 42.325,
    "kind": "exit",
    "scene": "s5"
   },
   {
-   "t": 37.717,
+   "t": 42.525,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "It"
   },
   {
-   "t": 37.857,
+   "t": 42.705,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "answers"
   },
   {
-   "t": 38.337,
+   "t": 43.286,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "every"
   },
   {
-   "t": 38.638,
+   "t": 43.606,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "DM,"
   },
   {
-   "t": 39.058,
+   "t": 43.987,
    "kind": "exit",
    "scene": "s5"
   },
   {
-   "t": 39.258,
+   "t": 44.187,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "handles"
   },
   {
-   "t": 39.659,
+   "t": 44.567,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "the"
   },
   {
-   "t": 40.4,
+   "t": 44.867,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "\u201cI"
   },
   {
-   "t": 40.5,
+   "t": 44.927,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "need"
   },
   {
-   "t": 40.68,
+   "t": 45.087,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "to"
   },
   {
-   "t": 40.84,
+   "t": 45.167,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "think"
   },
   {
-   "t": 41.101,
+   "t": 45.367,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "about"
   },
   {
-   "t": 41.421,
+   "t": 45.628,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "it\u201d"
   },
   {
-   "t": 41.621,
+   "t": 45.808,
    "kind": "exit",
    "scene": "s5"
   },
   {
-   "t": 41.821,
+   "t": 46.008,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "and"
   },
   {
-   "t": 41.922,
+   "t": 46.108,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "when"
   },
   {
-   "t": 42.082,
+   "t": 46.268,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "someone's"
   },
   {
-   "t": 42.402,
+   "t": 46.588,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "a"
   },
   {
-   "t": 42.502,
+   "t": 46.668,
    "kind": "rise",
    "scene": "s5",
    "acc": true,
    "w": "fit,"
   },
   {
-   "t": 42.883,
+   "t": 46.889,
    "kind": "exit",
    "scene": "s5"
   },
   {
-   "t": 43.083,
+   "t": 47.089,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "it"
   },
   {
-   "t": 43.243,
+   "t": 47.289,
    "kind": "rise",
    "scene": "s5",
    "acc": true,
    "w": "books"
   },
   {
-   "t": 43.523,
+   "t": 47.589,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "the"
   },
   {
-   "t": 43.644,
+   "t": 47.689,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "call."
   },
   {
-   "t": 44.104,
+   "t": 48.13,
    "kind": "exit",
    "scene": "s5"
   },
   {
-   "t": 44.304,
+   "t": 48.33,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "Right"
   },
   {
-   "t": 44.485,
+   "t": 48.71,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "in"
   },
   {
-   "t": 44.565,
+   "t": 48.79,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "the"
   },
   {
-   "t": 44.645,
+   "t": 48.89,
    "kind": "rise",
    "scene": "s5",
    "acc": false,
    "w": "DM."
   },
   {
-   "t": 44.745,
+   "t": 48.99,
    "kind": "mark",
    "scene": "s5"
   },
   {
-   "t": 45.286,
+   "t": 49.831,
    "kind": "exit",
    "scene": "s5"
   },
   {
-   "t": 45.486,
+   "t": 50.031,
    "kind": "soft",
    "scene": "s5",
    "acc": false,
    "w": "Wait\u2026"
   },
   {
-   "t": 45.786,
+   "t": 50.691,
    "kind": "slam",
    "scene": "s5",
    "acc": false,
    "w": "seriously?"
   },
   {
-   "t": 46.487,
+   "t": 51.492,
    "kind": "exit",
    "scene": "s5"
   },
   {
-   "t": 47.007,
+   "t": 51.952,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "Oh,"
   },
   {
-   "t": 47.307,
+   "t": 52.253,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "and"
   },
   {
-   "t": 47.448,
+   "t": 52.393,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "it's"
   },
   {
-   "t": 48.068,
+   "t": 52.693,
    "kind": "pop",
    "scene": "s6",
    "acc": true,
    "w": "sneaky."
   },
   {
-   "t": 48.829,
+   "t": 53.374,
    "kind": "exit",
    "scene": "s6"
   },
   {
-   "t": 49.029,
+   "t": 53.574,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "It"
   },
   {
-   "t": 49.129,
+   "t": 53.675,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "waits"
   },
   {
-   "t": 49.469,
+   "t": 53.935,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "a"
   },
   {
-   "t": 49.549,
+   "t": 53.995,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "beat"
   },
   {
-   "t": 49.749,
+   "t": 54.175,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "before"
   },
   {
-   "t": 50.089,
+   "t": 54.436,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "replying\u2026"
   },
   {
-   "t": 50.47,
+   "t": 54.776,
    "kind": "exit",
    "scene": "s6"
   },
   {
-   "t": 50.67,
+   "t": 54.976,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "like"
   },
   {
-   "t": 50.87,
+   "t": 55.196,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "a"
   },
   {
-   "t": 50.95,
+   "t": 55.357,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "real"
   },
   {
-   "t": 51.17,
+   "t": 55.677,
    "kind": "rise",
    "scene": "s6",
    "acc": true,
    "w": "human"
   },
   {
-   "t": 51.49,
+   "t": 55.957,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "would."
   },
   {
-   "t": 52.191,
+   "t": 56.438,
    "kind": "exit",
    "scene": "s6"
   },
   {
-   "t": 52.391,
+   "t": 56.638,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "Every"
   },
   {
-   "t": 52.611,
+   "t": 56.879,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "lead"
   },
   {
-   "t": 52.831,
+   "t": 57.139,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "gets"
   },
   {
-   "t": 53.032,
+   "t": 57.359,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "an"
   },
   {
-   "t": 53.192,
+   "t": 57.539,
    "kind": "rise",
    "scene": "s6",
    "acc": true,
    "w": "AI"
   },
   {
-   "t": 53.492,
+   "t": 57.86,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "summary,"
   },
   {
-   "t": 53.732,
+   "t": 58.141,
    "kind": "exit",
    "scene": "s6"
   },
   {
-   "t": 53.932,
+   "t": 58.341,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "so"
   },
   {
-   "t": 54.092,
+   "t": 58.521,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "I"
   },
   {
-   "t": 54.172,
+   "t": 58.581,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "know"
   },
   {
-   "t": 54.353,
+   "t": 58.821,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "exactly"
   },
   {
-   "t": 54.793,
+   "t": 59.482,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "who"
   },
   {
-   "t": 54.933,
+   "t": 59.622,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "I'm"
   },
   {
-   "t": 55.073,
+   "t": 59.762,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "calling."
   },
   {
-   "t": 55.534,
+   "t": 60.323,
    "kind": "exit",
    "scene": "s6"
   },
   {
-   "t": 55.734,
+   "t": 60.523,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "And"
   },
   {
-   "t": 55.854,
+   "t": 60.603,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "my"
   },
   {
-   "t": 55.994,
+   "t": 60.744,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "sales"
   },
   {
-   "t": 56.294,
+   "t": 60.964,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "team?"
   },
   {
-   "t": 56.554,
+   "t": 61.305,
    "kind": "exit",
    "scene": "s6"
   },
   {
-   "t": 56.754,
+   "t": 61.505,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "They"
   },
   {
-   "t": 56.914,
+   "t": 61.625,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "get"
   },
   {
-   "t": 57.034,
+   "t": 61.725,
    "kind": "rise",
    "scene": "s6",
    "acc": false,
    "w": "the"
   },
   {
-   "t": 57.135,
+   "t": 61.805,
    "kind": "rise",
    "scene": "s6",
    "acc": true,
    "w": "stats."
   },
   {
-   "t": 60.717,
+   "t": 65.149,
    "kind": "exit",
    "scene": "s6"
   },
   {
-   "t": 61.337,
+   "t": 65.79,
    "kind": "soft",
    "scene": "s7",
    "acc": false,
    "w": "Next"
   },
   {
-   "t": 61.538,
+   "t": 66.01,
    "kind": "soft",
    "scene": "s7",
    "acc": false,
    "w": "morning."
   },
   {
-   "t": 61.999,
+   "t": 66.372,
    "kind": "exit",
    "scene": "s7"
   },
   {
-   "t": 62.199,
+   "t": 66.572,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "Coffee"
   },
   {
-   "t": 62.499,
+   "t": 66.892,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "in"
   },
   {
-   "t": 62.619,
+   "t": 66.993,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "hand\u2026"
   },
   {
-   "t": 63.04,
+   "t": 67.334,
    "kind": "exit",
    "scene": "s7"
   },
   {
-   "t": 63.24,
+   "t": 67.534,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "and"
   },
   {
-   "t": 63.38,
+   "t": 67.654,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "the"
   },
   {
-   "t": 63.501,
+   "t": 67.774,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "calls"
   },
   {
-   "t": 63.921,
+   "t": 68.135,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "are"
   },
   {
-   "t": 64.122,
+   "t": 68.356,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "already"
   },
   {
-   "t": 64.502,
+   "t": 68.717,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "in"
   },
   {
-   "t": 64.602,
+   "t": 68.797,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "my"
   },
   {
-   "t": 64.763,
+   "t": 68.937,
    "kind": "rise",
    "scene": "s7",
    "acc": true,
    "w": "calendar."
   },
   {
-   "t": 65.504,
+   "t": 69.539,
    "kind": "exit",
    "scene": "s7"
   },
   {
-   "t": 65.704,
+   "t": 69.739,
    "kind": "slam",
    "scene": "s7",
    "acc": false,
    "w": "No"
   },
   {
-   "t": 65.904,
+   "t": 69.9,
    "kind": "slam",
    "scene": "s7",
    "acc": false,
    "w": "setter."
   },
   {
-   "t": 66.686,
+   "t": 70.481,
    "kind": "slam",
    "scene": "s7",
    "acc": false,
    "w": "No"
   },
   {
-   "t": 66.846,
+   "t": 70.621,
    "kind": "slam",
    "scene": "s7",
    "acc": false,
    "w": "commission."
   },
   {
-   "t": 67.487,
+   "t": 71.243,
    "kind": "exit",
    "scene": "s7"
   },
   {
-   "t": 67.687,
+   "t": 71.443,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "And"
   },
   {
-   "t": 67.827,
+   "t": 71.564,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "it"
   },
   {
-   "t": 67.947,
+   "t": 71.784,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "still"
   },
   {
-   "t": 68.188,
+   "t": 72.145,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "sounds"
   },
   {
-   "t": 68.408,
+   "t": 72.406,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "like"
   },
   {
-   "t": 68.508,
+   "t": 72.506,
    "kind": "mark",
    "scene": "s7"
   },
   {
-   "t": 68.588,
+   "t": 72.586,
    "kind": "rise",
    "scene": "s7",
    "acc": false,
    "w": "me."
   },
   {
-   "t": 68.979,
+   "t": 72.957,
    "kind": "exit",
    "scene": "s7"
   },
   {
-   "t": 69.469,
+   "t": 73.467,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "Got"
   },
   {
-   "t": 69.629,
+   "t": 73.628,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "a"
   },
   {
-   "t": 69.689,
+   "t": 73.688,
    "kind": "rise",
    "scene": "s8",
    "acc": true,
    "w": "Reel"
   },
   {
-   "t": 69.929,
+   "t": 73.868,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "coming"
   },
   {
-   "t": 70.21,
+   "t": 74.108,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "up?"
   },
   {
-   "t": 70.47,
+   "t": 74.269,
    "kind": "exit",
    "scene": "s8"
   },
   {
-   "t": 70.67,
+   "t": 74.469,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "Build"
   },
   {
-   "t": 70.95,
+   "t": 74.709,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "your"
   },
   {
-   "t": 71.13,
+   "t": 74.849,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "setter"
   },
   {
-   "t": 71.43,
+   "t": 75.129,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "for"
   },
   {
-   "t": 71.651,
+   "t": 75.39,
    "kind": "rise",
    "scene": "s8",
    "acc": true,
    "w": "free."
   },
   {
-   "t": 71.931,
+   "t": 75.77,
    "kind": "exit",
    "scene": "s8"
   },
   {
-   "t": 72.131,
+   "t": 75.97,
    "kind": "pop",
    "scene": "s8",
    "acc": false,
    "w": "No"
   },
   {
-   "t": 72.311,
+   "t": 76.151,
    "kind": "pop",
    "scene": "s8",
    "acc": false,
    "w": "card."
   },
   {
-   "t": 72.811,
+   "t": 76.571,
    "kind": "exit",
    "scene": "s8"
   },
   {
-   "t": 73.011,
+   "t": 76.771,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "If"
   },
   {
-   "t": 73.092,
+   "t": 76.831,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "your"
   },
   {
-   "t": 73.232,
+   "t": 76.992,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "program's"
   },
   {
-   "t": 73.672,
+   "t": 77.372,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "$1,500,"
   },
   {
-   "t": 74.773,
+   "t": 78.354,
    "kind": "exit",
    "scene": "s8"
   },
   {
-   "t": 74.973,
+   "t": 78.554,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "one"
   },
   {
-   "t": 75.173,
+   "t": 78.734,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "new"
   },
   {
-   "t": 75.333,
+   "t": 78.894,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "client"
   },
   {
-   "t": 75.713,
+   "t": 79.274,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "pays"
   },
   {
-   "t": 75.933,
+   "t": 79.515,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "for"
   },
   {
-   "t": 76.033,
+   "t": 79.615,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "the"
   },
   {
-   "t": 76.134,
+   "t": 79.775,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "whole"
   },
   {
-   "t": 76.234,
+   "t": 79.875,
    "kind": "mark",
    "scene": "s8"
   },
   {
-   "t": 76.374,
+   "t": 80.055,
    "kind": "rise",
    "scene": "s8",
    "acc": false,
    "w": "year."
   },
   {
-   "t": 76.864,
+   "t": 80.546,
    "kind": "exit",
    "scene": "s8"
   },
   {
-   "t": 78.416,
+   "t": 81.841,
    "kind": "rise",
    "scene": "s9",
    "acc": false,
    "w": "Your"
   },
   {
-   "t": 78.576,
+   "t": 82.021,
    "kind": "rise",
    "scene": "s9",
    "acc": false,
    "w": "DMs"
   },
   {
-   "t": 79.197,
+   "t": 82.463,
    "kind": "rise",
    "scene": "s9",
    "acc": false,
    "w": "on"
   },
   {
-   "t": 79.397,
+   "t": 82.745,
    "kind": "rise",
    "scene": "s9",
    "acc": true,
    "w": "autopilot\u2026"
   },
   {
-   "t": 80.459,
+   "t": 83.649,
    "kind": "rise",
    "scene": "s9",
    "acc": false,
    "w": "in"
   },
   {
-   "t": 80.539,
+   "t": 83.829,
    "kind": "rise",
    "scene": "s9",
    "acc": false,
    "w": "your"
   },
   {
-   "t": 80.719,
+   "t": 84.071,
    "kind": "rise",
    "scene": "s9",
    "acc": false,
    "w": "voice."
   },
   {
-   "t": 80.819,
+   "t": 84.171,
    "kind": "mark",
    "scene": "s9"
   }

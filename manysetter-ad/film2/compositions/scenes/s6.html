@@ -381,31 +381,31 @@
         const leave = (sel, t) => tl.to(sel, { opacity: 0, x: -60, scale: 0.95, filter: "blur(10px)", duration: 0.35, ease: "power2.in" }, t);
 
         // ---------- it waits a beat before replying ----------
-        enter("#s6-set", 2.442 - 0.25);
-        tl.fromTo("#s6-pill", { x: 0 }, { x: 209, duration: 0.55, ease: "back.out(1.6)" }, 2.542);
-        tl.fromTo("#s6-typing", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", transformOrigin: "100% 100%" }, 3.162 - 0.05);
+        enter("#s6-set", 1.982 - 0.25);
+        tl.fromTo("#s6-pill", { x: 0 }, { x: 209, duration: 0.55, ease: "back.out(1.6)" }, 2.083);
+        tl.fromTo("#s6-typing", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", transformOrigin: "100% 100%" }, 2.583 - 0.05);
         gsap.utils.toArray("#s6-typing i").forEach((dot, k) => {
-          tl.fromTo(dot, { y: 0 }, { keyframes: { y: [0, -7, 0, 0] }, duration: 0.45, repeat: 2, ease: "sine.inOut" }, 3.162 + 0.15 + k * 0.11);
+          tl.fromTo(dot, { y: 0 }, { keyframes: { y: [0, -7, 0, 0] }, duration: 0.45, repeat: 2, ease: "sine.inOut" }, 2.583 + 0.15 + k * 0.11);
         });
-        tl.to("#s6-typing", { opacity: 0, scale: 0.7, duration: 0.15 }, 4.903 - 0.25);
-        tl.fromTo("#s6-reply", { opacity: 0, y: 16, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)", transformOrigin: "100% 100%" }, 4.903 - 0.12);
-        leave("#s6-set", 5.604 - 0.05);
+        tl.to("#s6-typing", { opacity: 0, scale: 0.7, duration: 0.15 }, 4.365 - 0.25);
+        tl.fromTo("#s6-reply", { opacity: 0, y: 16, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)", transformOrigin: "100% 100%" }, 4.365 - 0.12);
+        leave("#s6-set", 4.846 - 0.05);
 
         // ---------- every lead gets an AI summary ----------
-        enter("#s6-lead", 5.804 - 0.2);
-        tl.fromTo("#s6-sum", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 6.605 - 0.15);
+        enter("#s6-lead", 5.046 - 0.2);
+        tl.fromTo("#s6-sum", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 5.947 - 0.15);
         gsap.utils.toArray("#s6-sum .s6-ln, #s6-next").forEach((ln, k) => {
-          tl.fromTo(ln, { opacity: 0, x: -16, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.out" }, 6.905 + k * 0.16);
+          tl.fromTo(ln, { opacity: 0, x: -16, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.out" }, 6.268 + k * 0.16);
         });
-        tl.fromTo("#s6-hl1 i", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, 7.766 - 0.05);
-        tl.fromTo("#s6-hl2 i", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, 8.486 - 0.1);
-        leave("#s6-lead", 8.947 - 0.05);
+        tl.fromTo("#s6-hl1 i", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, 7.229 - 0.05);
+        tl.fromTo("#s6-hl2 i", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, 8.170 - 0.1);
+        leave("#s6-lead", 8.731 - 0.05);
 
         // ---------- and my sales team gets the stats ----------
-        enter("#s6-res", 9.147 - 0.15);
-        tl.fromTo("#s6-team", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.4)" }, 9.707 - 0.08);
-        tl.fromTo(".s6-stat", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out", stagger: 0.08 }, 9.147 + 0.15);
-        [["#s6-st1", 11.348, 12.129], ["#s6-st2", 12.129, 13.089], ["#s6-st3", 13.089, 14.230 - 0.3]].forEach(([id, t, t2]) => {
+        enter("#s6-res", 8.931 - 0.15);
+        tl.fromTo("#s6-team", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.4)" }, 9.372 - 0.08);
+        tl.fromTo(".s6-stat", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out", stagger: 0.08 }, 8.931 + 0.15);
+        [["#s6-st1", 10.854, 11.695], ["#s6-st2", 11.695, 12.716], ["#s6-st3", 12.716, 13.657 - 0.3]].forEach(([id, t, t2]) => {
           const row = document.querySelector(id);
           const num = row.querySelector(".num");
           const lbl = row.querySelector(".lbl");
@@ -416,58 +416,58 @@
           tl.fromTo(lbl, { color: "#a3a09d" }, { color: "#1a1816", duration: 0.2, immediateRender: false }, t - 0.06);
           tl.fromTo(c, { v: 0 }, { v: +num.dataset.to, duration: 0.8, ease: "power2.out", immediateRender: false, onUpdate: () => { num.textContent = String(Math.round(c.v)); } }, t - 0.04);
         });
-        tl.to("#s6-res", { opacity: 0, x: -60, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 14.230 - 0.12);
+        tl.to("#s6-res", { opacity: 0, x: -60, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 13.657 - 0.12);
 
-        tl.fromTo("#s6-w1", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.37);
-tl.fromTo("#s6-w2", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.67);
-tl.fromTo("#s6-w3", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.811);
-tl.fromTo("#s6-w4", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2.4)" }, 1.441);
-tl.fromTo("#s6-b0-d", { scale: 1 }, { scale: 1.035, duration: 2.162, ease: "none" }, 0.32);
-tl.to("#s6-b0", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 2.242);
-tl.fromTo("#s6-w5", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.392);
-tl.fromTo("#s6-w6", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.492);
-tl.fromTo("#s6-w7", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.832);
-tl.fromTo("#s6-w8", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.912);
-tl.fromTo("#s6-w9", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.112);
-tl.fromTo("#s6-w10", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.452);
-tl.fromTo("#s6-b1-d", { scale: 1 }, { scale: 1.035, duration: 1.781, ease: "none" }, 2.342);
-tl.to("#s6-b1", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 3.883);
-tl.fromTo("#s6-w11", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.033);
-tl.fromTo("#s6-w12", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.233);
-tl.fromTo("#s6-w13", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.313);
-tl.fromTo("#s6-w14", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.533);
-tl.fromTo("#s6-w15", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.853);
-tl.fromTo("#s6-b2-d", { scale: 1 }, { scale: 1.035, duration: 1.861, ease: "none" }, 3.983);
-tl.to("#s6-b2", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 5.604);
-tl.fromTo("#s6-w16", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.754);
-tl.fromTo("#s6-w17", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.974);
-tl.fromTo("#s6-w18", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.194);
-tl.fromTo("#s6-w19", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.395);
-tl.fromTo("#s6-w20", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.555);
-tl.fromTo("#s6-w21", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.855);
-tl.fromTo("#s6-b3-d", { scale: 1 }, { scale: 1.035, duration: 1.681, ease: "none" }, 5.704);
-tl.to("#s6-b3", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 7.145);
-tl.fromTo("#s6-w22", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 7.295);
-tl.fromTo("#s6-w23", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 7.455);
-tl.fromTo("#s6-w24", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 7.535);
-tl.fromTo("#s6-w25", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 7.716);
-tl.fromTo("#s6-w26", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 8.156);
-tl.fromTo("#s6-w27", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 8.296);
-tl.fromTo("#s6-w28", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 8.436);
-tl.fromTo("#s6-b4-d", { scale: 1 }, { scale: 1.035, duration: 1.942, ease: "none" }, 7.245);
-tl.to("#s6-b4", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 8.947);
-tl.fromTo("#s6-w29", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 9.097);
-tl.fromTo("#s6-w30", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 9.217);
-tl.fromTo("#s6-w31", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 9.357);
-tl.fromTo("#s6-w32", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 9.657);
-tl.fromTo("#s6-b5-d", { scale: 1 }, { scale: 1.035, duration: 1.16, ease: "none" }, 9.047);
-tl.to("#s6-b5", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 9.967);
-tl.fromTo("#s6-w33", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 10.117);
-tl.fromTo("#s6-w34", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 10.277);
-tl.fromTo("#s6-w35", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 10.397);
-tl.fromTo("#s6-w36", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 10.498);
-tl.fromTo("#s6-b6-d", { scale: 1 }, { scale: 1.035, duration: 4.303, ease: "none" }, 10.067);
-tl.to("#s6-b6", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 14.13);
+        tl.fromTo("#s6-w1", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.31);
+tl.fromTo("#s6-w2", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.611);
+tl.fromTo("#s6-w3", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.751);
+tl.fromTo("#s6-w4", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2.4)" }, 1.061);
+tl.fromTo("#s6-b0-d", { scale: 1 }, { scale: 1.035, duration: 1.762, ease: "none" }, 0.26);
+tl.to("#s6-b0", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 1.782);
+tl.fromTo("#s6-w5", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.932);
+tl.fromTo("#s6-w6", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.033);
+tl.fromTo("#s6-w7", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.293);
+tl.fromTo("#s6-w8", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.353);
+tl.fromTo("#s6-w9", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.533);
+tl.fromTo("#s6-w10", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.794);
+tl.fromTo("#s6-b1-d", { scale: 1 }, { scale: 1.035, duration: 1.542, ease: "none" }, 1.882);
+tl.to("#s6-b1", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 3.184);
+tl.fromTo("#s6-w11", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.334);
+tl.fromTo("#s6-w12", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.554);
+tl.fromTo("#s6-w13", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.715);
+tl.fromTo("#s6-w14", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.035);
+tl.fromTo("#s6-w15", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.315);
+tl.fromTo("#s6-b2-d", { scale: 1 }, { scale: 1.035, duration: 1.802, ease: "none" }, 3.284);
+tl.to("#s6-b2", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 4.846);
+tl.fromTo("#s6-w16", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.996);
+tl.fromTo("#s6-w17", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.237);
+tl.fromTo("#s6-w18", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.497);
+tl.fromTo("#s6-w19", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.717);
+tl.fromTo("#s6-w20", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.897);
+tl.fromTo("#s6-w21", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.218);
+tl.fromTo("#s6-b3-d", { scale: 1 }, { scale: 1.035, duration: 1.843, ease: "none" }, 4.946);
+tl.to("#s6-b3", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 6.549);
+tl.fromTo("#s6-w22", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.699);
+tl.fromTo("#s6-w23", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.879);
+tl.fromTo("#s6-w24", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.939);
+tl.fromTo("#s6-w25", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 7.179);
+tl.fromTo("#s6-w26", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 7.84);
+tl.fromTo("#s6-w27", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 7.98);
+tl.fromTo("#s6-w28", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 8.12);
+tl.fromTo("#s6-b4-d", { scale: 1 }, { scale: 1.035, duration: 2.322, ease: "none" }, 6.649);
+tl.to("#s6-b4", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 8.731);
+tl.fromTo("#s6-w29", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 8.881);
+tl.fromTo("#s6-w30", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 8.961);
+tl.fromTo("#s6-w31", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 9.102);
+tl.fromTo("#s6-w32", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 9.322);
+tl.fromTo("#s6-b5-d", { scale: 1 }, { scale: 1.035, duration: 1.122, ease: "none" }, 8.831);
+tl.to("#s6-b5", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 9.713);
+tl.fromTo("#s6-w33", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 9.863);
+tl.fromTo("#s6-w34", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 9.983);
+tl.fromTo("#s6-w35", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 10.083);
+tl.fromTo("#s6-w36", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 10.163);
+tl.fromTo("#s6-b6-d", { scale: 1 }, { scale: 1.035, duration: 3.984, ease: "none" }, 9.813);
+tl.to("#s6-b6", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 13.557);
         window.__timelines["s6"] = tl;
       </script>
     </template>

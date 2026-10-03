@@ -169,37 +169,37 @@
         // the lead writes at 9:04 PM...
         tl.fromTo("#s2-chat", { opacity: 0, x: 80, scale: 0.95 }, { opacity: 1, x: 0, scale: 1, duration: 0.7, ease: "expo.out" }, 0.05);
         tl.fromTo("#s2-t1", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.2);
-        tl.fromTo("#s2-lead", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)", transformOrigin: "0% 100%" }, 0.446 - 0.1);
+        tl.fromTo("#s2-lead", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)", transformOrigin: "0% 100%" }, 0.506 - 0.1);
         // ...and I answer the next day
-        tl.fromTo("#s2-skip", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 0.887 - 0.08);
-        tl.fromTo("#s2-me", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)", transformOrigin: "100% 100%" }, 1.327 + 0.02);
-        tl.fromTo("#s2-seen", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 1.528 - 0.05);
+        tl.fromTo("#s2-skip", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 0.946 - 0.08);
+        tl.fromTo("#s2-me", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)", transformOrigin: "100% 100%" }, 1.066 + 0.02);
+        tl.fromTo("#s2-seen", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 1.287 - 0.05);
         // they forget me: the lead fades away
-        tl.to("#s2-lead, #s2-head .av", { opacity: 0.18, filter: "grayscale(1)", duration: 0.9, ease: "power2.inOut" }, 1.528 + 0.1);
-        tl.fromTo("#s2-status", { opacity: 1 }, { opacity: 0.5, duration: 0.6, immediateRender: false }, 1.528 + 0.1);
-        tl.fromTo("#s2-gone", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.828 + 0.05);
+        tl.to("#s2-lead, #s2-head .av", { opacity: 0.18, filter: "grayscale(1)", duration: 0.9, ease: "power2.inOut" }, 1.287 + 0.1);
+        tl.fromTo("#s2-status", { opacity: 1 }, { opacity: 0.5, duration: 0.6, immediateRender: false }, 1.287 + 0.1);
+        tl.fromTo("#s2-gone", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.647 + 0.05);
         // all of that for nothing: the chat sinks into the dark
-        tl.to("#s2-chat", { opacity: 0, y: 90, scale: 0.9, filter: "blur(12px)", duration: 0.55, ease: "power2.in" }, 2.250);
+        tl.to("#s2-chat", { opacity: 0, y: 90, scale: 0.9, filter: "blur(12px)", duration: 0.55, ease: "power2.in" }, 2.028);
 
-        tl.fromTo("#s2-w1", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.175);
-tl.fromTo("#s2-w2", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.296);
-tl.fromTo("#s2-w3", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.396);
-tl.fromTo("#s2-w4", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.696);
-tl.fromTo("#s2-w5", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.837);
-tl.fromTo("#s2-w6", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.277);
-tl.fromTo("#s2-w7", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.478);
-tl.fromTo("#s2-w8", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.778);
-tl.fromTo("#s2-b0-d", { scale: 1 }, { scale: 1.035, duration: 2.365, ease: "none" }, 0.125);
-tl.to("#s2-b0", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 2.25);
-tl.fromTo("#s2-w9", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.4);
-tl.fromTo("#s2-w10", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.6);
-tl.fromTo("#s2-w11", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.74);
-tl.fromTo("#s2-w12", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.82);
-tl.fromTo("#s2-w13", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.582);
-tl.fromTo("#s2-w14", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.722);
-tl.to("#s2-w14", { opacity: 0.32, y: 10, filter: "blur(1.5px)", duration: 1.1, ease: "power1.inOut" }, 4.133);
-tl.fromTo("#s2-b1-d", { scale: 1 }, { scale: 1.035, duration: 2.088, ease: "none" }, 2.35);
-tl.to("#s2-b1", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 4.198);
+        tl.fromTo("#s2-w1", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.215);
+tl.fromTo("#s2-w2", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.335);
+tl.fromTo("#s2-w3", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.456);
+tl.fromTo("#s2-w4", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.756);
+tl.fromTo("#s2-w5", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.896);
+tl.fromTo("#s2-w6", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.016);
+tl.fromTo("#s2-w7", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.237);
+tl.fromTo("#s2-w8", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.597);
+tl.fromTo("#s2-b0-d", { scale: 1 }, { scale: 1.035, duration: 2.103, ease: "none" }, 0.165);
+tl.to("#s2-b0", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 2.028);
+tl.fromTo("#s2-w9", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.178);
+tl.fromTo("#s2-w10", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.899);
+tl.fromTo("#s2-w11", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.099);
+tl.fromTo("#s2-w12", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.199);
+tl.fromTo("#s2-w13", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.361);
+tl.fromTo("#s2-w14", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.541);
+tl.to("#s2-w14", { opacity: 0.32, y: 10, filter: "blur(1.5px)", duration: 1.1, ease: "power1.inOut" }, 4.992);
+tl.fromTo("#s2-b1-d", { scale: 1 }, { scale: 1.035, duration: 3.289, ease: "none" }, 2.128);
+tl.to("#s2-b1", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 5.177);
         window.__timelines["s2"] = tl;
       </script>
     </template>
