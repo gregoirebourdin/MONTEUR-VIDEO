@@ -27,6 +27,7 @@ ALIASES = {
 
 
 def words(text: str) -> list[str]:
+    text = re.sub(r"<[^>]+>", " ", text)
     text = text.lower().replace("many chat", "manychat").replace("many setter", "manysetter")
     text = text.replace("dot com", "dotcom").replace(".com", " dotcom")
     out = re.findall(r"[a-z0-9àâäéèêëïîôöùûüç$]+", text)
