@@ -4,5 +4,11 @@
    "try1: PASS []"
   ],
   "ok": true
+ },
+ "1": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
  }
 }
