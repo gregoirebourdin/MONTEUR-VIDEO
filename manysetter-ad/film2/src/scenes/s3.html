@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        {{fonts}}
+        #s3 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: var(--font-sans);
+        }
+        .s3-card {
+          position: absolute;
+          border-radius: 36px;
+          background: #161412;
+          box-shadow: 0 0 0 1px #ffffff14, 0 50px 100px -40px #000000e6, 0 0 140px -60px #ff611d55;
+        }
+        /* ---------- the job post ---------- */
+        #s3-job {
+          left: 1120px;
+          top: 250px;
+          width: 640px;
+          padding: 40px 40px 34px;
+        }
+        #s3-job .top {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+        #s3-job .tile {
+          width: 64px;
+          height: 64px;
+          border-radius: 18px;
+          background: linear-gradient(to bottom, #ff884d, #e64b15);
+          box-shadow: inset 0 1px 0 #ffffff40, 0 10px 24px -10px #e64b15;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+        }
+        #s3-job .tile .ms-ico {
+          width: 32px;
+          height: 32px;
+        }
+        #s3-job .ms-eyebrow {
+          zoom: 1.05;
+        }
+        #s3-job h3 {
+          margin-top: 26px;
+          font: 600 50px/1 var(--font-heading);
+          letter-spacing: -0.035em;
+          color: #faf9f8;
+        }
+        #s3-job .sub {
+          margin-top: 12px;
+          font: 400 20px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        #s3-job hr {
+          border: 0;
+          height: 1px;
+          background: #ffffff14;
+          margin: 30px 0 10px;
+        }
+        .s3-row {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          padding: 16px 0;
+        }
+        .s3-row .ic {
+          flex: none;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background: #ff611d1f;
+          box-shadow: inset 0 0 0 1px #ff611d55;
+          color: #ff905e;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s3-row .ic .ms-ico {
+          width: 26px;
+          height: 26px;
+        }
+        .s3-row b {
+          display: block;
+          font: 600 26px/1 var(--font-sans);
+          color: #faf9f8;
+          margin-bottom: 8px;
+        }
+        .s3-row span {
+          font: 400 18px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        .s3-row .cost {
+          margin-left: auto;
+          font: 600 18px/1 var(--font-sans);
+          color: #ff905e;
+        }
+        /* ---------- the cringe DM ---------- */
+        #s3-dm {
+          left: 1090px;
+          top: 250px;
+          width: 720px;
+          overflow: hidden;
+        }
+        #s3-dm .head {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          height: 96px;
+          padding: 0 30px;
+          border-bottom: 1px solid #ffffff12;
+        }
+        #s3-dm .head .av {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #e64b15, #943016);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font: 600 21px/1 var(--font-sans);
+          color: #fff;
+        }
+        #s3-dm .head b {
+          display: block;
+          font: 600 21px/1 var(--font-sans);
+          color: #fff;
+          margin-bottom: 7px;
+        }
+        #s3-dm .head span {
+          font: 400 16px/1 var(--font-sans);
+          color: var(--ink-300);
+        }
+        #s3-dm .head .ms-brand {
+          margin-left: auto;
+          width: 28px;
+          height: 28px;
+          color: var(--ink-400);
+        }
+        #s3-dm .body {
+          padding: 34px 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        #s3-lead {
+          align-self: flex-start;
+          max-width: 470px;
+          padding: 16px 22px;
+          border-radius: 28px;
+          border-bottom-left-radius: 8px;
+          background: #2a2825;
+          color: #faf9f8;
+          font: 400 23px/1.4 var(--font-sans);
+        }
+        #s3-by {
+          align-self: flex-end;
+          margin-top: 18px;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font: 500 15px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        #s3-by .ms-ico {
+          width: 16px;
+          height: 16px;
+        }
+        #s3-typing {
+          align-self: flex-end;
+          display: inline-flex;
+          gap: 8px;
+          padding: 22px 26px;
+          border-radius: 30px;
+          border-bottom-right-radius: 8px;
+          background: #faf9f8;
+        }
+        #s3-typing i {
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          background: var(--ink-500);
+        }
+        #s3-wrap {
+          position: relative;
+          align-self: flex-end;
+          margin-top: -86px;
+          margin-bottom: 6px;
+        }
+        #s3-cringe {
+          position: relative;
+          max-width: 600px;
+          padding: 26px 34px 30px;
+          border-radius: 38px;
+          border-bottom-right-radius: 10px;
+          background: #faf9f8;
+          color: var(--ink-900);
+          font: 500 50px/1.22 var(--font-sans);
+          letter-spacing: -0.01em;
+        }
+        .s3-cw {
+          display: inline-block;
+          opacity: 0;
+        }
+        #s3-strike {
+          position: absolute;
+          left: -30px;
+          top: -10px;
+          width: calc(100% + 60px);
+          height: calc(100% + 20px);
+          overflow: visible;
+          pointer-events: none;
+        }
+        #s3-strike path {
+          fill: none;
+          stroke: var(--brand-500);
+          stroke-width: 7px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      </style>
+      <div id="s3" data-composition-id="s3" data-width="1920" data-height="1080">
+        <div class="s3-card" id="s3-job">
+          <div class="top">
+            <span class="tile">{{i:user-plus}}</span>
+            <span class="ms-eyebrow dark">Now hiring</span>
+          </div>
+          <h3>Appointment setter</h3>
+          <div class="sub">Instagram DMs · Remote</div>
+          <hr />
+          <div class="s3-row" id="s3-r1"><span class="ic">{{i:graduation-cap}}</span><div><b>Train them</b><span>Your offer, your scripts, your objections</span></div></div>
+          <div class="s3-row" id="s3-r2"><span class="ic">{{i:percent}}</span><div><b>Pay commission</b><span>On every sale they close</span></div></div>
+        </div>
+        <div class="s3-card" id="s3-dm">
+          <div class="head">
+            <span class="av">S</span>
+            <div><b>sophie.k</b><span>Lead from your Reel</span></div>
+            {{b:instagram}}
+          </div>
+          <div class="body">
+            <div id="s3-lead">Hi! I'm interested in your program 🙂</div>
+            <span id="s3-by">{{i:user}}Sent by your new setter</span>
+            <span id="s3-typing"><i></i><i></i><i></i></span>
+            <div id="s3-wrap">
+              <div id="s3-cringe"><span class="s3-cw">Hey</span> <span class="s3-cw">babe!</span> <span class="s3-cw">😘</span> <span class="s3-cw">Ready</span> <span class="s3-cw">to</span> <span class="s3-cw">10x</span> <span class="s3-cw">your</span> <span class="s3-cw">life?</span> <span class="s3-cw">🚀🔥💸</span></div>
+              <svg id="s3-strike" viewBox="0 0 200 100" preserveAspectRatio="none"><path id="s3-strike-p" pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M8 78C40 62 70 50 100 44C130 38 160 30 194 18" /></svg>
+            </div>
+          </div>
+        </div>
+        {{kt}}
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // ---------- hiring a setter ----------
+        tl.fromTo("#s3-job", { opacity: 0, x: 90, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.75, ease: "expo.out" }, {{cue:P3.need}} - 0.15);
+        [["#s3-r1", {{cue:P3.train}}], ["#s3-r2", {{cue:P3.commission}}]].forEach(([row, t]) => {
+          tl.fromTo(row + " .ic", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.4)" }, t - 0.08);
+          tl.fromTo(row + " div", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, t - 0.04);
+        });
+        tl.to("#s3-job", { opacity: 0, x: 80, scale: 0.95, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, {{bout:1}});
+        // ---------- what if they reply... like that ----------
+        tl.fromTo("#s3-dm", { opacity: 0, x: 90, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.75, ease: "expo.out" }, {{cue:P3.what}} - 0.2);
+        tl.fromTo("#s3-lead", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)", transformOrigin: "0% 100%" }, {{cue:P3.reply}} - 0.1);
+        tl.fromTo("#s3-by", { opacity: 0 }, { opacity: 1, duration: 0.3 }, {{cue:P3.total}} - 0.1);
+        tl.fromTo("#s3-typing", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)", transformOrigin: "100% 100%" }, {{cue:P3.total}});
+        gsap.utils.toArray("#s3-typing i").forEach((dot, k) => {
+          tl.fromTo(dot, { y: 0 }, { keyframes: { y: [0, -8, 0, 0] }, duration: 0.5, repeat: 2, ease: "sine.inOut" }, {{cue:P3.total}} + 0.1 + k * 0.12);
+        });
+        tl.to("#s3-typing", { opacity: 0, scale: 0.8, duration: 0.15 }, {{cue:P3.hey}} - 0.2);
+        tl.fromTo("#s3-cringe", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.8)", transformOrigin: "100% 100%" }, {{cue:P3.hey}} - 0.16);
+        // the words land with the voice
+        const CW = [{{cue:P3.hey}}, {{cue:P3.babe}}, {{cue:P3.babe}} + 0.22, {{cue:P3.ready}}, {{cue:P3.to#3}}, {{cue:P3.tenx}}, {{cue:P3.your}}, {{cue:P3.life}}, {{end:P3.life}} + 0.05];
+        gsap.utils.toArray(".s3-cw").forEach((w, k) => {
+          tl.fromTo(w, { opacity: 0, y: 12, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, CW[k] - 0.04);
+        });
+        // Uh... no.
+        tl.to("#s3-strike-p", { strokeDashoffset: 0, duration: 0.28, ease: "power3.out" }, {{cue:P3.no}} - 0.02);
+        tl.to("#s3-dm", { keyframes: { x: [0, -14, 10, -6, 0] }, duration: 0.3, ease: "none" }, {{cue:P3.no}});
+        tl.to("#s3-dm", { opacity: 0, y: 220, rotation: 7, duration: 0.5, ease: "power3.in" }, {{hold}} - 0.55);
+
+        {{kt_js}}
+        window.__timelines["s3"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

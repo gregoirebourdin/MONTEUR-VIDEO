@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        {{fonts}}
+        #s9 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: var(--font-sans);
+          color: var(--ink-900);
+        }
+        #s9-all {
+          position: absolute;
+          inset: 0;
+        }
+        #s9-halo {
+          left: 160px;
+          top: -260px;
+          width: 1600px;
+          height: 1300px;
+          background: {{glow:255,186,151,0.55}};
+        }
+        #s9-tile {
+          position: absolute;
+          left: 494px;
+          top: 318px;
+          width: 150px;
+          height: 150px;
+        }
+        #s9-tile svg {
+          width: 150px;
+          height: 150px;
+          filter: drop-shadow(0 18px 30px #e64b1559);
+        }
+        #s9-word {
+          position: absolute;
+          left: 680px;
+          top: 326px;
+          font-size: 140px;
+          color: var(--ink-900);
+          white-space: nowrap;
+        }
+        .s9-ch {
+          display: inline-block;
+        }
+        #s9-url {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 862px;
+          display: flex;
+          justify-content: center;
+        }
+        #s9-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 16px;
+          height: 84px;
+          padding: 0 14px 0 30px;
+          border-radius: 999px;
+          background: #fff;
+          box-shadow: var(--shadow-float);
+          font: 600 36px/1 var(--font-sans);
+          letter-spacing: -0.01em;
+        }
+        #s9-pill > .ms-ico {
+          width: 32px;
+          height: 32px;
+          color: var(--ink-500);
+        }
+        #s9-pill .go {
+          width: 58px;
+          height: 58px;
+          border-radius: 50%;
+          background: linear-gradient(to bottom, var(--brand-500), var(--brand-600));
+          box-shadow: inset 0 1px 0 #ffffff47, 0 8px 18px -8px #e64b15;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s9-pill .go .ms-ico {
+          width: 28px;
+          height: 28px;
+          stroke-width: 2.4;
+        }
+        .s9-url-ch {
+          display: inline-block;
+        }
+        #s9-legal {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 30px;
+          text-align: center;
+          font: 400 17px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+      </style>
+      <div id="s9" data-composition-id="s9" data-width="1920" data-height="1080">
+        <div id="s9-halo" class="ms-glow"></div>
+        <div id="s9-all">
+          <div id="s9-tile" data-hf-motion-blur='{"samplesPerFrame": 10}'>{{logo}}</div>
+          <div id="s9-word" class="ms-display"><span class="s9-ch">M</span><span class="s9-ch">a</span><span class="s9-ch">n</span><span class="s9-ch">y</span><span class="s9-ch">S</span><span class="s9-ch">e</span><span class="s9-ch">t</span><span class="s9-ch">t</span><span class="s9-ch">e</span><span class="s9-ch">r</span></div>
+          <div id="s9-url"><span id="s9-pill">{{i:globe}}<span id="s9-url-t"><span class="s9-url-ch">manysetter</span><span class="s9-url-ch">.</span><span class="s9-url-ch">com</span></span><span class="go">{{i:arrow-right}}</span></span></div>
+          {{kt}}
+        </div>
+        <div id="s9-legal">ManySetter is not affiliated with or endorsed by Manychat or Meta.</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const MS = {{cue:P9.manysetter}};
+        tl.fromTo("#s9-halo", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" }, MS - 0.3);
+        tl.fromTo("#s9-tile", { opacity: 0, scale: 0.3, rotation: -14, y: 30 }, { opacity: 1, scale: 1, rotation: 0, y: 0, duration: 0.75, ease: "back.out(1.9)" }, MS - 0.12);
+        const chars = gsap.utils.toArray("#s9-word .s9-ch");
+        tl.fromTo(chars, { opacity: 0, x: (i) => (i - 4.5) * 28 + 40, filter: "blur(8px)" }, { opacity: 1, x: 0, filter: "blur(0px)", duration: 0.9, ease: "expo.out", stagger: 0.025 }, MS);
+        // manysetter dot com: the address types itself in three beats with the voice
+        tl.fromTo("#s9-pill", { opacity: 0, y: 40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.8)" }, {{cue:P9.manysetter#2}} - 0.15);
+        const U = [{{cue:P9.manysetter#2}}, {{cue:P9.dot}}, {{cue:P9.com}}];
+        gsap.utils.toArray(".s9-url-ch").forEach((c, k) => {
+          tl.fromTo(c, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, U[k] - 0.04);
+        });
+        tl.fromTo("#s9-pill .go", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2.4)" }, {{cue:P9.com}} + 0.15);
+        tl.fromTo("#s9-legal", { opacity: 0 }, { opacity: 1, duration: 0.6 }, {{cue:P9.com}} + 0.6);
+        // the end card breathes
+        tl.fromTo("#s9-all", { scale: 1 }, { scale: 1.03, duration: {{dur}} - MS, ease: "sine.inOut", transformOrigin: "50% 50%" }, MS);
+
+        {{kt_js}}
+        window.__timelines["s9"] = tl;
+      </script>
+      {{motionblur}}
+    </template>
+  </body>
+</html>

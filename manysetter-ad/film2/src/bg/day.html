@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <style>
+        #bgd-root {
+          position: absolute;
+          inset: 0;
+        }
+        #bgd-canvas {
+          -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 calc(var(--r, 0%) - 18%), transparent var(--r, 0%));
+          mask-image: radial-gradient(circle at 50% 50%, #000 calc(var(--r, 0%) - 18%), transparent var(--r, 0%));
+        }
+        #bgd-canvas .ms-grid {
+          -webkit-mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 15%, transparent 80%);
+          mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 15%, transparent 80%);
+        }
+        #bgd-mesh-a {
+          left: 900px;
+          top: -600px;
+          width: 1500px;
+          height: 1250px;
+          background: {{glow:255,186,151,0.62}};
+        }
+        #bgd-mesh-b {
+          left: -520px;
+          top: 460px;
+          width: 1400px;
+          height: 1150px;
+          background: {{glow:255,216,192,0.78}};
+        }
+        #bgd-sun {
+          left: 60px;
+          top: 160px;
+          width: 1800px;
+          height: 1400px;
+          background: {{glow:255,170,92,0.8}};
+        }
+        #bgd-sun-core {
+          left: 560px;
+          top: 440px;
+          width: 800px;
+          height: 800px;
+          background: {{glow:255,240,224,0.95}};
+        }
+      </style>
+      <div id="bgd-root" data-composition-id="bgd" data-width="1920" data-height="1080">
+        <div class="ms-canvas-light" id="bgd-canvas">
+          <div class="ms-grid" id="bgd-grid"></div>
+          <div id="bgd-mesh-a" class="ms-glow"></div>
+          <div id="bgd-mesh-b" class="ms-glow"></div>
+          <div id="bgd-sun" class="ms-glow"></div>
+          <div id="bgd-sun-core" class="ms-glow"></div>
+          <div class="ms-grain"></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const canvas = document.getElementById("bgd-canvas");
+        const bloom = { r: 0 };
+        const paint = () => canvas.style.setProperty("--r", bloom.r + "%");
+        paint();
+        const BLOOM = {{cue:P4.manysetter}} - 0.02;
+        tl.fromTo("#bgd-root", { opacity: 0 }, { opacity: 1, duration: 0.05 }, BLOOM);
+        tl.fromTo(bloom, { r: 0 }, { r: 140, duration: 1.0, ease: "power3.inOut", onUpdate: paint, immediateRender: false }, BLOOM);
+        // mesh blobs drift for the whole day
+        tl.fromTo("#bgd-mesh-a", { x: 0, y: 0 }, { x: -160, y: 70, duration: {{dur}}, ease: "sine.inOut" }, 0);
+        tl.fromTo("#bgd-mesh-b", { x: 0, y: 0 }, { x: 200, y: -60, duration: {{dur}}, ease: "sine.inOut" }, 0);
+        tl.fromTo("#bgd-grid", { y: 0 }, { y: -128, duration: {{dur}}, ease: "none" }, 0);
+        // next morning: the sun comes up behind the words, then settles for the offer
+        tl.fromTo("#bgd-sun, #bgd-sun-core", { opacity: 0, y: 520 }, { opacity: 1, y: 0, duration: 2.0, ease: "power2.out" }, {{abs:s7}} + 0.05);
+        tl.to("#bgd-sun, #bgd-sun-core", { opacity: 0.45, y: 260, duration: 2.0, ease: "power2.inOut" }, {{abs:s7}} + 2.3);
+        tl.to("#bgd-sun, #bgd-sun-core", { opacity: 0, y: 420, duration: 1.4, ease: "power2.inOut" }, {{abs:s8}} - 0.3);
+        window.__timelines["bgd"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

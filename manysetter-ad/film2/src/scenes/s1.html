@@ -1,0 +1,389 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        {{fonts}}
+        #s1 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        /* ---------- the Reel ---------- */
+        #s1-reel-wrap {
+          position: absolute;
+          left: 1240px;
+          top: 196px;
+          width: 380px;
+          height: 676px;
+        }
+        #s1-ring {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 560px;
+          height: 560px;
+          margin: -280px 0 0 -280px;
+          border-radius: 50%;
+          box-shadow: 0 0 0 3px #ff905e, 0 0 60px 10px #ff611d55;
+          opacity: 0;
+        }
+        #s1-reel {
+          position: absolute;
+          inset: 0;
+          border-radius: 40px;
+          overflow: hidden;
+          background: #1a1816;
+          box-shadow: 0 0 0 1px #ffffff14, 0 40px 90px -30px #000000cc, 0 0 120px -40px #ff611d66;
+        }
+        #s1-media {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(170deg, #3a2418 0%, #24170f 45%, #120d0a 100%);
+        }
+        #s1-media-glow {
+          left: -160px;
+          top: -60px;
+          width: 700px;
+          height: 640px;
+          background: {{glow:255,144,94,0.55}};
+        }
+        #s1-hook {
+          position: absolute;
+          left: 30px;
+          top: 150px;
+          font: 600 46px/1.02 var(--font-heading);
+          letter-spacing: -0.04em;
+          color: #fff7f2;
+        }
+        #s1-hook em {
+          font-style: normal;
+          color: #ffba97;
+        }
+        #s1-top {
+          position: absolute;
+          left: 24px;
+          top: 26px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font: 600 22px/1 var(--font-sans);
+          color: #fff;
+        }
+        #s1-top .ms-brand {
+          width: 26px;
+          height: 26px;
+        }
+        #s1-rail {
+          position: absolute;
+          right: 18px;
+          bottom: 150px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 22px;
+          color: #fff;
+          font: 600 15px/1 var(--font-sans);
+        }
+        #s1-rail div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
+        }
+        #s1-rail .ms-ico {
+          width: 34px;
+          height: 34px;
+          stroke-width: 2.2;
+        }
+        #s1-like-ico {
+          color: #ff611d;
+          fill: #ff611d;
+        }
+        #s1-foot {
+          position: absolute;
+          left: 22px;
+          right: 80px;
+          bottom: 28px;
+          color: #fff;
+          font: 400 17px/1.35 var(--font-sans);
+        }
+        #s1-foot .who {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 12px;
+          font-weight: 600;
+          font-size: 18px;
+        }
+        #s1-foot .av {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #ff884d, #e64b15);
+          box-shadow: 0 0 0 2px #1a1816, 0 0 0 4px #ff905e;
+        }
+        #s1-foot .follow {
+          margin-left: 4px;
+          padding: 6px 12px;
+          border-radius: 9px;
+          box-shadow: inset 0 0 0 1.5px #ffffffb3;
+          font: 600 14px/1 var(--font-sans);
+        }
+        #s1-heart {
+          position: absolute;
+          left: 50%;
+          top: 44%;
+          width: 170px;
+          height: 170px;
+          margin: -85px 0 0 -85px;
+          color: #fff;
+          fill: #fff;
+          filter: drop-shadow(0 10px 30px #00000080);
+          opacity: 0;
+        }
+        .s1-fh {
+          position: absolute;
+          right: 26px;
+          bottom: 330px;
+          width: 34px;
+          height: 34px;
+          color: #ff611d;
+          fill: #ff611d;
+          opacity: 0;
+        }
+        /* Manychat sends the link */
+        #s1-sends {
+          position: absolute;
+          left: 1188px;
+          top: 556px;
+          width: 484px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .s1-send {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          padding: 14px 18px;
+          border-radius: 20px;
+          background: #fdfcfbf2;
+          box-shadow: 0 0 0 1px #0d0c0a14, 0 18px 40px -16px #000000b3;
+          font: 500 19px/1.2 var(--font-sans);
+          color: var(--ink-900);
+          opacity: 0;
+        }
+        .s1-send .tile {
+          flex: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 12px;
+          background: var(--ink-900);
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s1-send .tile .ms-ico {
+          width: 20px;
+          height: 20px;
+        }
+        .s1-send b {
+          display: block;
+          font: 600 15px/1 var(--font-sans);
+          color: var(--ink-500);
+          margin-bottom: 5px;
+        }
+        .s1-send .ok {
+          margin-left: auto;
+          color: var(--emerald-500);
+        }
+        .s1-send .ok .ms-ico {
+          width: 22px;
+          height: 22px;
+          stroke-width: 2.6;
+        }
+        /* ---------- the flood of DMs ---------- */
+        #s1-rain {
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+        }
+        .s1-col {
+          position: absolute;
+          top: 0;
+          width: 410px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        .s1-n {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          height: 96px;
+          padding: 0 20px;
+          border-radius: 24px;
+          background: #1f1d1aee;
+          box-shadow: 0 0 0 1px #ffffff12, 0 20px 40px -20px #000000cc;
+          font: 400 19px/1.25 var(--font-sans);
+          color: #e6e5e3;
+        }
+        .s1-n .av {
+          flex: none;
+          width: 54px;
+          height: 54px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font: 600 20px/1 var(--font-sans);
+          color: #fff;
+          box-shadow: 0 0 0 2.5px #1f1d1a, 0 0 0 5px #ff905e;
+        }
+        .s1-n .tx {
+          flex: 1;
+          min-width: 0;
+        }
+        .s1-n b {
+          display: block;
+          font: 600 17px/1 var(--font-sans);
+          color: #fff;
+          margin-bottom: 7px;
+        }
+        .s1-n .tx span {
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .s1-n .dot {
+          flex: none;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #ff611d;
+          box-shadow: 0 0 12px #ff611d;
+        }
+        #s1-scrim {
+          position: absolute;
+          left: 160px;
+          top: 40px;
+          width: 1600px;
+          height: 1000px;
+          background: {{glow:13,12,10,0.92}};
+          opacity: 0;
+        }
+      </style>
+      <div id="s1" data-composition-id="s1" data-width="1920" data-height="1080">
+        <div id="s1-rain" data-layout-ignore></div>
+        <div id="s1-scrim" class="ms-glow"></div>
+        <div id="s1-reel-wrap">
+          <div id="s1-ring"></div>
+          <div id="s1-reel">
+            <div id="s1-media"><div id="s1-media-glow" class="ms-glow"></div></div>
+            <div id="s1-hook">3 mistakes<br />killing your<br /><em>sales</em> 👇</div>
+            <div id="s1-top">{{b:instagram}}Reels</div>
+            <div id="s1-rail">
+              <div><svg id="s1-like-ico" class="ms-ico" viewBox="0 0 24 24">{{heart}}</svg><span id="s1-likes">1.2K</span></div>
+              <div>{{i:message-circle}}<span id="s1-comments">86</span></div>
+              <div>{{i:send}}</div>
+            </div>
+            <div id="s1-foot">
+              <div class="who"><span class="av"></span>yourname<span class="follow">Follow</span></div>
+              Comment <b>LINK</b> and I'll send you my free guide 🔥
+            </div>
+            <svg id="s1-heart" viewBox="0 0 24 24">{{heart}}</svg>
+            <svg class="s1-fh" viewBox="0 0 24 24">{{heart}}</svg>
+            <svg class="s1-fh" viewBox="0 0 24 24">{{heart}}</svg>
+            <svg class="s1-fh" viewBox="0 0 24 24">{{heart}}</svg>
+            <svg class="s1-fh" viewBox="0 0 24 24">{{heart}}</svg>
+            <svg class="s1-fh" viewBox="0 0 24 24">{{heart}}</svg>
+            <svg class="s1-fh" viewBox="0 0 24 24">{{heart}}</svg>
+          </div>
+        </div>
+        <div id="s1-sends" data-layout-allow-overlap>
+          <div class="s1-send"><span class="tile">{{i:send}}</span><div><b>Manychat · just now</b>Here's your link 🔗</div><span class="ok">{{i:check}}</span></div>
+          <div class="s1-send"><span class="tile">{{i:send}}</span><div><b>Manychat · just now</b>Here's your link 🔗</div><span class="ok">{{i:check}}</span></div>
+          <div class="s1-send"><span class="tile">{{i:send}}</span><div><b>Manychat · just now</b>Here's your link 🔗</div><span class="ok">{{i:check}}</span></div>
+        </div>
+        {{kt}}
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+
+        // ---------- the flood: 4 columns of DM notifications (deterministic content) ----------
+        const NAMES = ["emma.fit", "jordan_t", "priya.coach", "lucas.mvmt", "sofia.rose", "noah.builds", "mia_wellness", "liam.grind", "ava.mindset", "ethan.k", "zoe.creates", "maxime.d", "chloe.life", "sam.runs", "nina.yoga", "theo.biz", "lea.glow", "ryan.hustle", "ines.flow", "adam.lift", "julia.co", "omar.fit", "kate.studio", "ben.r", "lily.vibes", "hugo.m", "sara.b", "alex.moves", "rose.daily", "tom.lifts", "elena.r", "matt.co"];
+        const MSGS = ["Hey! How much is it? 😍", "LINK 🙏", "Is this still available?", "How does it work?", "Interested!! 🙌", "Can you send more info?", "Price? 👀", "I need this 😭", "LINK", "Does it work for beginners?", "How do I join?", "Hey 👋 just commented", "Omg yes please", "Is there a payment plan?", "LINK 🔥", "When does it start?"];
+        const TINTS = ["#ff884d", "#e64b15", "#bc3a17", "#ff905e", "#943016", "#ff611d"];
+        const rain = document.getElementById("s1-rain");
+        const COLS = [
+          { x: 40, scale: 0.92, op: 0.62, blur: 1.2, speed: 1.0, phase: 0 },
+          { x: 500, scale: 1.0, op: 0.36, blur: 2.6, speed: 1.25, phase: 5 },
+          { x: 1010, scale: 0.9, op: 0.6, blur: 1.2, speed: 0.9, phase: 11 },
+          { x: 1470, scale: 1.0, op: 0.4, blur: 2.4, speed: 1.15, phase: 17 },
+        ];
+        COLS.forEach((c, ci) => {
+          const col = document.createElement("div");
+          col.className = "s1-col";
+          col.setAttribute("data-layout-allow-overlap", "");
+          col.id = "s1-col" + ci;
+          col.style.left = c.x + "px";
+          col.style.opacity = c.op;
+          col.style.filter = "blur(" + c.blur + "px)";
+          for (let k = 0; k < 16; k++) {
+            const n = (c.phase + k * 3) % NAMES.length;
+            const card = document.createElement("div");
+            card.className = "s1-n";
+            card.innerHTML = '<span class="av" style="background:linear-gradient(135deg,' + TINTS[(n + 1) % 6] + "," + TINTS[(n + 3) % 6] + ')">' + NAMES[n][0].toUpperCase() + '</span><div class="tx"><b>' + NAMES[n] + "</b><span>" + MSGS[(n * 7 + ci) % MSGS.length] + '</span></div><span class="dot"></span>';
+            col.appendChild(card);
+          }
+          rain.appendChild(col);
+          // drop in with the count, then keep falling
+          const FLOOD = {{cue:P1.126}} - 0.1;
+          tl.fromTo(col, { y: -1900, scale: c.scale }, { y: -720 + ci * 40, duration: 0.95, ease: "expo.out" }, FLOOD + ci * 0.06);
+          tl.to(col, { y: -720 + ci * 40 + 640 * c.speed, duration: {{hold}} - FLOOD - 1.0, ease: "none" }, FLOOD + 0.95 + ci * 0.06);
+        });
+
+        // ---------- the Reel ----------
+        tl.fromTo("#s1-reel-wrap", { opacity: 0, y: 140, scale: 0.92, rotation: 4 }, { opacity: 1, y: 0, scale: 1, rotation: 0, duration: 0.95, ease: "expo.out" }, 0.3);
+        const BOOM = {{cue:P1.boom}};
+        tl.fromTo("#s1-reel", { scale: 1 }, { keyframes: { scale: [1, 1.075, 0.985, 1] }, duration: 0.45, ease: "power2.out", immediateRender: false }, BOOM - 0.02);
+        tl.fromTo("#s1-ring", { opacity: 0.9, scale: 0.62 }, { opacity: 0, scale: 1.55, duration: 0.8, ease: "power2.out", immediateRender: false }, BOOM - 0.02);
+        tl.fromTo("#s1-heart", { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(2.6)" }, BOOM);
+        tl.to("#s1-heart", { opacity: 0, scale: 1.25, duration: 0.35, ease: "power2.in" }, BOOM + 0.75);
+        // it blew up: likes roll, hearts float up the rail
+        const likes = { v: 1.2 };
+        const likesEl = document.getElementById("s1-likes");
+        const comments = { v: 86 };
+        const commentsEl = document.getElementById("s1-comments");
+        tl.fromTo(likes, { v: 1.2 }, { v: 48.2, duration: 1.3, ease: "power2.out", immediateRender: false, onUpdate: () => { likesEl.textContent = likes.v.toFixed(1) + "K"; } }, {{cue:P1.blew}} - 0.05);
+        tl.fromTo(comments, { v: 86 }, { v: 3100, duration: 1.3, ease: "power2.out", immediateRender: false, onUpdate: () => { commentsEl.textContent = comments.v < 1000 ? String(Math.round(comments.v)) : (comments.v / 1000).toFixed(1) + "K"; } }, {{cue:P1.blew}});
+        gsap.utils.toArray(".s1-fh").forEach((h, k) => {
+          tl.fromTo(h, { opacity: 0, y: 0, x: 0, scale: 0.6 }, { opacity: 1, y: -60, x: (k % 2 ? -14 : 12), scale: 1, duration: 0.25, ease: "power2.out" }, {{cue:P1.blew}} + k * 0.09);
+          tl.to(h, { opacity: 0, y: -300 - k * 20, x: (k % 2 ? 18 : -20), duration: 0.9, ease: "power1.out" }, {{cue:P1.blew}} + k * 0.09 + 0.25);
+        });
+        // Manychat sends the link, three times, fast
+        gsap.utils.toArray(".s1-send").forEach((el, k) => {
+          tl.fromTo(el, { opacity: 0, y: -26, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, {{cue:P1.manychat}} + 0.04 + k * 0.3);
+        });
+        tl.fromTo("#s1-reel-wrap", { filter: "brightness(1)" }, { filter: "brightness(0.55)", duration: 0.4, ease: "power2.out", immediateRender: false }, {{cue:P1.manychat}});
+        // hand-off to the suspense beat
+        tl.to("#s1-reel-wrap, #s1-sends", { opacity: 0, y: 40, scale: 0.94, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, {{bout:2}});
+        // the flood
+        tl.fromTo("#s1-rain", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, {{cue:P1.126}} - 0.12);
+        tl.fromTo("#s1-scrim", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, {{cue:P1.126}} - 0.1);
+        tl.to("#s1-rain, #s1-scrim", { opacity: 0, duration: 0.3, ease: "power2.in" }, {{hold}} - 0.3);
+
+        {{kt_js}}
+        window.__timelines["s1"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

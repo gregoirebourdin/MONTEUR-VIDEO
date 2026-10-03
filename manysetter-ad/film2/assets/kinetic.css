@@ -1,0 +1,134 @@
+/* Kinetic VO typography: every spoken phrase is written on screen, word by word, on its cue. */
+
+.kt-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+.kt-beat {
+  position: absolute;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  word-spacing: 0.05em;
+  line-height: 1.04;
+  -webkit-font-smoothing: antialiased;
+}
+.kt-dark {
+  color: var(--ink-50);
+  --kt-acc: var(--brand-400);
+  --kt-soft: var(--ink-500);
+}
+.kt-light {
+  color: var(--ink-900);
+  --kt-acc: var(--brand-600);
+  --kt-soft: var(--ink-400);
+}
+.kt-left {
+  left: 140px;
+  width: 900px;
+  top: 50%;
+  translate: 0 -50%;
+  text-align: left;
+}
+.kt-center {
+  left: 120px;
+  right: 120px;
+  top: 50%;
+  translate: 0 -50%;
+  text-align: center;
+}
+.kt-top {
+  left: 120px;
+  right: 120px;
+  top: 118px;
+  text-align: center;
+}
+.kt-bottom {
+  left: 120px;
+  right: 120px;
+  bottom: 132px;
+  text-align: center;
+}
+.kt-drift,
+.kt-in {
+  display: block;
+}
+.kt-line {
+  display: block;
+  white-space: nowrap;
+}
+.kt-w {
+  position: relative;
+  display: inline-block;
+}
+.kt-clip {
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.1em 0.06em 0.2em;
+  margin: -0.1em -0.06em -0.2em;
+  vertical-align: top;
+}
+.kt-noclip {
+  display: inline-block;
+  vertical-align: top;
+}
+.kt-wi {
+  display: inline-block;
+  transform-origin: 0% 100%;
+}
+.kt-noclip .kt-wi {
+  transform-origin: 50% 60%;
+}
+.kt-acc {
+  color: var(--kt-acc);
+}
+.kt-soft {
+  color: var(--kt-soft);
+}
+.kt-grp {
+  position: relative;
+  display: inline-block;
+}
+.kt-count {
+  position: relative;
+  display: inline-block;
+}
+.kt-count .kt-sizer {
+  visibility: hidden;
+}
+.kt-count .kt-num {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+}
+.kt-tight {
+  line-height: 0.92;
+}
+.kt-mark {
+  position: absolute;
+  overflow: visible;
+  pointer-events: none;
+}
+.kt-mark.oval {
+  top: -0.12em;
+  left: -0.26em;
+  width: calc(100% + 0.52em);
+  height: calc(100% + 0.3em);
+}
+.kt-mark.under {
+  left: -0.03em;
+  top: 88%;
+  width: calc(100% + 0.06em);
+  height: 0.32em;
+}
+.kt-mark path {
+  fill: none;
+  stroke: var(--brand-500);
+  stroke-width: 2.6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

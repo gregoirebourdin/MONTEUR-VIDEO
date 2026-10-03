@@ -1,0 +1,811 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        @font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+        #s8 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: var(--font-sans);
+          color: var(--ink-900);
+        }
+        /* ---------- the button ---------- */
+        #s8-cta {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 476px;
+          display: flex;
+          justify-content: center;
+        }
+        #s8-btn {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          gap: 18px;
+          height: 124px;
+          padding: 0 52px 0 58px;
+          border-radius: 30px;
+          background: linear-gradient(to bottom, var(--brand-500), var(--brand-600));
+          box-shadow: inset 0 2px 0 0 #ffffff47, inset 0 0 0 2px #bc3a17, 0 3px 6px 0 #73281433, 0 24px 48px -18px #e64b15cc;
+          font: 600 46px/1 var(--font-sans);
+          letter-spacing: -0.01em;
+          color: #fff;
+          white-space: nowrap;
+        }
+        #s8-btn .ms-ico {
+          width: 40px;
+          height: 40px;
+          stroke-width: 2.4;
+        }
+        #s8-ripple {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 600px;
+          height: 600px;
+          margin: -300px 0 0 -300px;
+          border-radius: 50%;
+          box-shadow: 0 0 0 3px #ff905e;
+          opacity: 0;
+          pointer-events: none;
+        }
+        #s8-cursor {
+          position: absolute;
+          left: 1090px;
+          top: 560px;
+          width: 64px;
+          height: 64px;
+          filter: drop-shadow(0 6px 10px #0d0c0a40);
+        }
+        /* ---------- the maths ---------- */
+        #s8-math {
+          position: absolute;
+          left: 1080px;
+          top: 262px;
+          width: 700px;
+          border-radius: 30px;
+          background: #fff;
+          box-shadow: var(--shadow-float);
+          padding: 14px 34px 30px;
+        }
+        .s8-row {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          height: 140px;
+          border-bottom: 1px solid var(--ink-150);
+        }
+        .s8-row .ic {
+          flex: none;
+          width: 64px;
+          height: 64px;
+          border-radius: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s8-row .ic .ms-ico {
+          width: 30px;
+          height: 30px;
+        }
+        .s8-row .ic svg.ms-logo {
+          width: 64px;
+          height: 64px;
+        }
+        #s8-r1 .ic {
+          background: var(--emerald-50);
+          color: var(--emerald-600);
+          box-shadow: inset 0 0 0 1px #00bb7f40;
+        }
+        .s8-row b {
+          display: block;
+          font: 600 25px/1 var(--font-sans);
+          margin-bottom: 9px;
+        }
+        .s8-row span.sub {
+          font: 400 19px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .s8-row .amt {
+          margin-left: auto;
+          font: 600 64px/1 var(--font-heading);
+          letter-spacing: -0.035em;
+        }
+        #s8-r1 .amt {
+          color: var(--emerald-600);
+        }
+        #s8-res {
+          margin-top: 26px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          height: 84px;
+          padding: 0 26px;
+          border-radius: 22px;
+          background: var(--emerald-50);
+          box-shadow: inset 0 0 0 1.5px #00bb7f55;
+          font: 600 26px/1 var(--font-sans);
+          color: var(--emerald-700);
+        }
+        #s8-res .ck {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: var(--emerald-500);
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s8-res .ck .ms-ico {
+          width: 24px;
+          height: 24px;
+          stroke-width: 3;
+        }
+      </style>
+      <div id="s8" data-composition-id="s8" data-width="1920" data-height="1080">
+        <div id="s8-cta">
+          <div id="s8-btn"><span id="s8-ripple"></span>Build my setter free<svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div>
+        </div>
+        <svg id="s8-cursor" viewBox="0 0 32 32" data-hf-motion-blur='{"samplesPerFrame": 10}'><path d="M6 3.5 25.5 17.2l-8.6 1.3-4.6 7.6Z" fill="#1a1816" stroke="#fff" stroke-width="2" stroke-linejoin="round" /></svg>
+        <div id="s8-math">
+          <div class="s8-row" id="s8-r1"><span class="ic"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/> <circle cx="9" cy="7" r="4"/> <line x1="19" x2="19" y1="8" y2="14"/> <line x1="22" x2="16" y1="11" y2="11"/></svg></span><div><b>One new client</b><span class="sub">Your program</span></div><span class="amt">$1,500</span></div>
+          <div class="s8-row" id="s8-r2"><span class="ic"><svg class="ms-logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff884d" /><stop offset="1" stop-color="#e64b15" /></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#lg4)" /><g transform="translate(12.16 12.16) scale(1.6533)" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" /></g></svg></span><div><b>ManySetter, whole year</b><span class="sub">$119/mo × 12</span></div><span class="amt">$1,428</span></div>
+          <div id="s8-res"><span class="ck"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>Your setter pays for itself</div>
+        </div>
+        <div class="kt-layer">
+<div class="kt-beat kt-center kt-light" id="s8-b0" style="font-size: 150px; "><div class="kt-drift" id="s8-b0-d"><div class="kt-in" id="s8-b0-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w1">Got</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w2">a</span></span></span> <span class="kt-w kt-acc" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w3">Reel</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w4">coming</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w5">up?</span></span></span></span></div></div></div>
+<div class="kt-beat kt-top kt-light" id="s8-b1" style="font-size: 120px; "><div class="kt-drift" id="s8-b1-d"><div class="kt-in" id="s8-b1-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w6">Build</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w7">your</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w8">setter</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w9">for</span></span></span> <span class="kt-w kt-acc" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w10">free.</span></span></span></span></div></div></div>
+<div class="kt-beat kt-bottom kt-light" id="s8-b2" style="font-size: 72px; bottom: 250px"><div class="kt-drift" id="s8-b2-d"><div class="kt-in" id="s8-b2-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s8-w11">No</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s8-w12">card.</span></span></span></span></div></div></div>
+<div class="kt-beat kt-left kt-light" id="s8-b3" style="font-size: 112px; "><div class="kt-drift" id="s8-b3-d"><div class="kt-in" id="s8-b3-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w13">If</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w14">your</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w15">program's</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w16">$1,500,</span></span></span></span></div></div></div>
+<div class="kt-beat kt-left kt-light" id="s8-b4" style="font-size: 112px; "><div class="kt-drift" id="s8-b4-d"><div class="kt-in" id="s8-b4-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w17">one</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w18">new</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w19">client</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w20">pays</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w21">for</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w22">the</span></span></span> <span class="kt-grp" id="s8-g1-4"> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w23">whole</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s8-w24">year.</span></span></span> <svg class="kt-mark under" viewBox="0 0 200 20" preserveAspectRatio="none"><path id="s8-m1-4" pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M3 14.5C46 8.2 118 6.1 197 9.8" /></svg></span></span></div></div></div>
+</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // build your setter for free: the real button, clicked on "free"
+        const FREE = 2.333;
+        tl.fromTo("#s8-btn", { opacity: 0, y: 50, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.7)" }, 1.412 - 0.1);
+        tl.fromTo("#s8-cursor", { opacity: 0, x: 380, y: 260 }, { opacity: 1, x: 0, y: 0, duration: 0.75, ease: "power3.out" }, FREE - 0.85);
+        tl.to("#s8-cursor", { scale: 0.86, duration: 0.08, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "20% 15%" }, FREE - 0.06);
+        tl.to("#s8-btn", { keyframes: { scale: [1, 0.95, 1.03, 1] }, duration: 0.42, ease: "power2.out" }, FREE - 0.06);
+        tl.fromTo("#s8-ripple", { opacity: 0.9, scale: 0.3 }, { opacity: 0, scale: 1.3, duration: 0.8, ease: "power2.out", immediateRender: false }, FREE - 0.03);
+        tl.to("#s8-btn, #s8-cursor", { opacity: 0, y: -30, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 3.514);
+        // one new client pays for the whole year
+        tl.fromTo("#s8-math", { opacity: 0, x: 100, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "expo.out" }, 3.714 - 0.1);
+        tl.fromTo("#s8-r1 .amt", { opacity: 0, y: 30, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 4.315 - 0.05);
+        tl.fromTo("#s8-r1 > div, #s8-r1 .ic", { opacity: 0.25 }, { opacity: 1, duration: 0.3, immediateRender: true }, 5.497 - 0.08);
+        tl.fromTo("#s8-r2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 6.217 - 0.1);
+        tl.fromTo("#s8-res", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(2)" }, 6.998 - 0.08);
+        tl.fromTo("#s8-res .ck", { scale: 0 }, { scale: 1, duration: 0.45, ease: "back.out(3)" }, 6.998 + 0.12);
+        tl.to("#s8-math", { opacity: 0, x: 60, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 7.589 - 0.12);
+
+        tl.fromTo("#s8-w1", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.36);
+tl.fromTo("#s8-w2", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.521);
+tl.fromTo("#s8-w3", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.581);
+tl.fromTo("#s8-w4", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.761);
+tl.fromTo("#s8-w5", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.001);
+tl.fromTo("#s8-b0-d", { scale: 1 }, { scale: 1.035, duration: 1.142, ease: "none" }, 0.31);
+tl.to("#s8-b0", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 1.212);
+tl.fromTo("#s8-w6", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.362);
+tl.fromTo("#s8-w7", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.602);
+tl.fromTo("#s8-w8", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.742);
+tl.fromTo("#s8-w9", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.022);
+tl.fromTo("#s8-w10", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.283);
+tl.fromTo("#s8-b1-d", { scale: 1 }, { scale: 1.035, duration: 1.641, ease: "none" }, 1.312);
+tl.to("#s8-b1", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 2.713);
+tl.fromTo("#s8-w11", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2.4)" }, 2.873);
+tl.fromTo("#s8-w12", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2.4)" }, 3.054);
+tl.fromTo("#s8-b2-d", { scale: 1 }, { scale: 1.035, duration: 0.941, ease: "none" }, 2.813);
+tl.to("#s8-b2", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 3.514);
+tl.fromTo("#s8-w13", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.664);
+tl.fromTo("#s8-w14", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.724);
+tl.fromTo("#s8-w15", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.885);
+tl.fromTo("#s8-w16", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.265);
+tl.fromTo("#s8-b3-d", { scale: 1 }, { scale: 1.035, duration: 1.923, ease: "none" }, 3.614);
+tl.to("#s8-b3", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 5.297);
+tl.fromTo("#s8-w17", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.447);
+tl.fromTo("#s8-w18", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.627);
+tl.fromTo("#s8-w19", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.787);
+tl.fromTo("#s8-w20", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.167);
+tl.fromTo("#s8-w21", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.408);
+tl.fromTo("#s8-w22", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.508);
+tl.fromTo("#s8-w23", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.668);
+tl.fromTo("#s8-m1-4", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.72, ease: "power2.inOut" }, 6.818);
+tl.fromTo("#s8-w24", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.948);
+tl.fromTo("#s8-b4-d", { scale: 1 }, { scale: 1.035, duration: 2.332, ease: "none" }, 5.397);
+tl.to("#s8-b4", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 7.489);
+        window.__timelines["s8"] = tl;
+      </script>
+      <script>
+  (function () {
+    /* SHUTTER_SNIPPET_START */
+    if (!window._hfMbUid) window._hfMbUid = 0;
+    if (!window._hfMbAttached) window._hfMbAttached = new WeakSet();
+    if (!window._hfMbSkipped) window._hfMbSkipped = new WeakSet();
+    if (!window._hfMbProxies) window._hfMbProxies = new WeakSet();
+    if (!window._hfMbTimeline) window._hfMbTimeline = new WeakMap();
+    if (!window._hfMbWarned) window._hfMbWarned = new WeakSet();
+
+    // The declarative form. A copy of a target must not carry it, or the copy is swept
+    // as a target of its own; the group's own marker is `data-hf-motion-blur-group`.
+    var SWEEP_ATTR = "data-hf-motion-blur";
+    // About eight seconds. Long enough for an asynchronously mounted sub-composition, short
+    // enough that a page with a genuine mistake in it reports before anyone stops watching.
+    var POLL_MS = 32;
+    var POLL_TICKS = 250;
+    var SWEEP_SELECTOR = "[" + SWEEP_ATTR + "]";
+    var OPTION_KEYS = ["shutterAngle", "shutterPhase", "samplesPerFrame", "fps"];
+
+    // A copy is a deep clone, so the attribute rides along on the root AND on every marked
+    // descendant. Any one left behind is swept as a target of its own, which clones again.
+    var COPY_STRIP = [SWEEP_ATTR, "data-composition-id", "data-fps"];
+
+    function stripAttrs(el) {
+      for (var a = 0; a < COPY_STRIP.length; a++) el.removeAttribute(COPY_STRIP[a]);
+    }
+
+    function stripCopyAttrs(root) {
+      stripAttrs(root);
+      var inner = root.querySelectorAll("[" + COPY_STRIP.join("],[") + "]");
+      for (var i = 0; i < inner.length; i++) stripAttrs(inner[i]);
+    }
+
+    // Shutter length is measured in frames, so the snippet must know the composition
+    // frame rate: explicit option, else the target's OWN root, else the first root in
+    // the document, else 30. The target's root is what makes two compositions on one
+    // page read their own data-fps instead of sharing the first one written.
+    function resolveFps(optionFps, target) {
+      var explicit = Number(optionFps);
+      if (explicit > 0) return explicit;
+
+      var scoped = target ? target.closest("[data-composition-id][data-fps]") : null;
+      var root = scoped || document.querySelector("[data-composition-id][data-fps]");
+      var rootFps = root ? Number(root.getAttribute("data-fps")) : 0;
+      if (rootFps > 0) return rootFps;
+
+      return 30;
+    }
+
+    function numOption(value, fallback) {
+      return value !== undefined ? Number(value) : fallback;
+    }
+
+    // A resolved `transform` is either "none", a 2D matrix(a,b,c,d,e,f) or a 3D
+    // matrix3d of 16. Splitting the numbers into the linear part and the
+    // translation is what lets the deadband below use a pixel tolerance on the
+    // one and an angle/ratio tolerance on the other.
+    function parseTransform(value) {
+      if (!value || value === "none") return { linear: [1, 0, 0, 1], translate: [0, 0, 0] };
+      var nums = value
+        .slice(value.indexOf("(") + 1, -1)
+        .split(",")
+        .map(parseFloat);
+      if (nums.length === 16) {
+        return {
+          linear: [
+            nums[0],
+            nums[1],
+            nums[2],
+            nums[4],
+            nums[5],
+            nums[6],
+            nums[8],
+            nums[9],
+            nums[10],
+            nums[3],
+            nums[7],
+            nums[11],
+            nums[15],
+          ],
+          translate: [nums[12], nums[13], nums[14]],
+        };
+      }
+      return {
+        linear: [nums[0], nums[1], nums[2], nums[3]],
+        translate: [nums[4], nums[5], 0],
+      };
+    }
+
+    // Deadband: half a pixel of travel, a thousandth of a unit of linear change,
+    // about 0.06 degrees or 0.1% of scale. Below it the average is the source.
+    // The 2D and 3D forms have different arities, so a change of form counts as
+    // movement rather than being compared component by component.
+    function differs(a, b) {
+      if (a.linear.length !== b.linear.length) return true;
+      for (var i = 0; i < a.linear.length; i++) {
+        if (Math.abs(a.linear[i] - b.linear[i]) > 0.001) return true;
+      }
+      for (var j = 0; j < 3; j++) {
+        if (Math.abs(a.translate[j] - b.translate[j]) > 0.5) return true;
+      }
+      return false;
+    }
+
+    window.attachMotionBlur = function (selector, tl, opts) {
+      opts = opts || {};
+      var shutterAngle = numOption(opts.shutterAngle, 720);
+      var shutterPhase = numOption(opts.shutterPhase, -360);
+      var requestedSamples = numOption(opts.samplesPerFrame, 16);
+      var samples = Number.isFinite(requestedSamples)
+        ? Math.max(2, Math.min(64, Math.round(requestedSamples)))
+        : 16;
+      var items = Array.isArray(selector) ? selector : [selector];
+      var targets = items.reduce(function (acc, s) {
+        if (typeof s === "string") {
+          document.querySelectorAll(s).forEach(function (el) {
+            acc.push(el);
+          });
+        } else if (s instanceof Element) {
+          acc.push(s);
+        }
+        return acc;
+      }, []);
+
+      // `samples` counts sub-intervals of the shutter window, so there is one copy at
+      // every interval boundary — both ends of the window included — and each carries
+      // 1/samples of the source. That is what the reference export shows: the outermost
+      // copy sits exactly one frame away from the frame time, not half a step short.
+      var copies = samples + 1;
+      var alpha = String(1 / samples);
+
+      // A copy is styled by nothing that selected the original: dropping the id also
+      // drops every `#id` rule that gave it size, colour and font. So each copy carries
+      // its own resolved style inline. Chrome returns "" for a computed style's cssText,
+      // so the declarations are enumerated rather than taken wholesale.
+      function resolvedStyles(source, out) {
+        var cs = getComputedStyle(source);
+        var text = "";
+        for (var i = 0; i < cs.length; i++) {
+          text += cs[i] + ":" + cs.getPropertyValue(cs[i]) + ";";
+        }
+        // A copy is a still of one instant. Left live, an inherited transition or
+        // keyframe animation would carry it somewhere the timeline never sampled.
+        out.push(text + "transition:none;animation:none;");
+        for (var c = 0; c < source.children.length; c++) {
+          resolvedStyles(source.children[c], out);
+        }
+        return out;
+      }
+
+      function paintResolvedStyles(copy, styles, cursor) {
+        copy.style.cssText = styles[cursor.i++];
+        for (var c = 0; c < copy.children.length; c++) {
+          paintResolvedStyles(copy.children[c], styles, cursor);
+        }
+      }
+
+      // Perspective applies to a parent's children only, and a copy is a grandchild.
+      // Sharing the parent's 3D context would need preserve-3d on the group, which
+      // mix-blend-mode flattens, so each copy carries the perspective itself. See the
+      // header for what that does to the vanishing point.
+      function parentPerspective(el) {
+        var value = el.parentNode ? getComputedStyle(el.parentNode).perspective : "none";
+        return value && value !== "none" ? "perspective(" + value + ") " : "";
+      }
+
+      function attachOne(el) {
+        var group = document.createElement("div");
+        group.setAttribute("data-hf-motion-blur-group", "hf-mb-" + window._hfMbUid++);
+        group.style.cssText =
+          "position:absolute;left:0;top:0;width:0;height:0;isolation:isolate;pointer-events:none;display:none;";
+
+        var clones = [];
+        for (var k = 0; k < copies; k++) {
+          var clone = el.cloneNode(true);
+          clone.removeAttribute("id");
+          stripCopyAttrs(clone);
+          clones.push(clone);
+          group.appendChild(clone);
+        }
+        var s = {
+          el: el,
+          group: group,
+          clones: clones,
+          samples: [],
+          perspective: "",
+          watch: null,
+        };
+
+        // Resolved styles and the parent's perspective are px once read, so a
+        // container-relative element needs them again when its box changes. Per frame
+        // that would walk the whole subtree once per copy; on resize it costs nothing
+        // on a fixed-size render and keeps a live preview honest.
+        function snapshot() {
+          var styles = resolvedStyles(el, []);
+          s.perspective = parentPerspective(el);
+          for (var c = 0; c < clones.length; c++) {
+            paintResolvedStyles(clones[c], styles, { i: 0 });
+            clones[c].style.position = "absolute";
+            clones[c].style.margin = "0";
+            clones[c].style.opacity = alpha;
+            clones[c].style.mixBlendMode = "plus-lighter";
+          }
+        }
+
+        // Snapshot BEFORE the group enters the page, so a throw in the style walk leaves
+        // nothing behind: the record the rollback needs does not exist until it returns.
+        snapshot();
+        el.parentNode.insertBefore(group, el);
+        if (typeof ResizeObserver === "function") {
+          s.watch = new ResizeObserver(snapshot);
+          s.watch.observe(el);
+        }
+        return s;
+      }
+
+      var state = [];
+      // Every element this call marked. A throw inside `attachOne` never returns its
+      // record, so `state` alone cannot give the marks back.
+      var claimed = [];
+      try {
+        for (var q = 0; q < targets.length; q++) {
+          var candidate = targets[q];
+          // One group per element, whether a second call names it or one call names it
+          // twice: a second set of copies over the first would double the ink. Marked
+          // BEFORE the copies go in: inserting them runs custom-element reactions
+          // synchronously, and one that registers a timeline re-enters the write trap.
+          if (window._hfMbAttached.has(candidate)) continue;
+          window._hfMbAttached.add(candidate);
+          window._hfMbTimeline.set(candidate, tl);
+          claimed.push(candidate);
+          state.push(attachOne(candidate));
+        }
+      } catch (e) {
+        unmark(claimed);
+        discard(state);
+        throw e;
+      }
+      // Nothing to blur means nothing to seek: a tracker here would run the whole sample
+      // loop every frame over an empty set.
+      if (state.length === 0) return;
+
+      // One seek loop drives the whole call, so the window is ONE length, and it belongs
+      // to the composition of an element this call actually attached.
+      var fps = resolveFps(opts.fps, state[0].el);
+      for (var d = 1; d < state.length; d++) {
+        if (resolveFps(opts.fps, state[d].el) === fps) continue;
+        var line = "one call cannot blur compositions at different frame rates; using ";
+        console.warn("[motion-blur] " + line + fps, state[d].el);
+        break;
+      }
+
+      function readTransform(el) {
+        var cs = getComputedStyle(el);
+        return {
+          css: cs.transform,
+          origin: cs.transformOrigin,
+          opacity: cs.opacity,
+          parsed: parseTransform(cs.transform),
+        };
+      }
+
+      var scheduled = false;
+
+      function applyShutter() {
+        var shutterTime = shutterAngle / 360 / fps;
+        if (!(shutterTime > 0)) {
+          state.forEach(function (s) {
+            s.group.style.display = "none";
+          });
+          return;
+        }
+
+        var t0 = tl.time();
+        var duration = tl.duration();
+        var windowStart = t0 + shutterPhase / 360 / fps;
+
+        // Sample the real trajectory: seek to each sub-frame time with events
+        // suppressed (so no tween callbacks, including this tracker's, fire),
+        // read the resolved transform, then restore the frame time.
+        try {
+          for (var k = 0; k < copies; k++) {
+            var tk = windowStart + (k / samples) * shutterTime;
+            tl.time(Math.min(duration, Math.max(0, tk)), true);
+            state.forEach(function (s) {
+              s.samples[k] = readTransform(s.el);
+            });
+          }
+        } finally {
+          tl.time(t0, true);
+        }
+
+        state.forEach(function (s) {
+          var current = readTransform(s.el);
+          var moved = false;
+          for (var i = 0; i < copies; i++) {
+            if (differs(s.samples[i].parsed, current.parsed)) {
+              moved = true;
+              break;
+            }
+          }
+          if (!moved) {
+            s.group.style.display = "none";
+            return;
+          }
+
+          // The copies are absolutely positioned inside the group, and the group sits at
+          // the origin of the element's own containing block, so the element's offset box
+          // places them. Re-read every frame: a beat is free to move the box itself.
+          var left = s.el.offsetLeft + "px";
+          var top = s.el.offsetTop + "px";
+          var width = s.el.offsetWidth + "px";
+          var height = s.el.offsetHeight + "px";
+          for (var j = 0; j < copies; j++) {
+            var clone = s.clones[j];
+            clone.style.left = left;
+            clone.style.top = top;
+            clone.style.width = width;
+            clone.style.height = height;
+            clone.style.transformOrigin = s.samples[j].origin;
+            clone.style.transform =
+              s.perspective + (s.samples[j].css === "none" ? "" : s.samples[j].css);
+          }
+          // The copies are the element's own ink, so they have to carry its opacity too:
+          // a beat that moves and fades at once would otherwise leave a full-strength
+          // smear behind a vanishing element. It rides the group, not the copies, whose
+          // own opacity is the 1/N shutter weight.
+          s.group.style.opacity = current.opacity;
+          s.group.style.display = "";
+        });
+      }
+
+      // tl.eventCallback("onUpdate") is unavailable under the HyperFrames runtime proxy, so a
+      // tracker tween's onUpdate fires on every seek. Sampling is deferred to a microtask:
+      // seeking GSAP from inside its own render reads stale tween state, while the microtask
+      // runs after the seek returns and before the frame is captured or painted.
+      var _proxy = { t: 0 };
+      try {
+        tl.to(
+          _proxy,
+          {
+            t: 1,
+            duration: Math.max(tl.duration(), 0.1),
+            ease: "none",
+            onUpdate: function () {
+              if (scheduled) return;
+              scheduled = true;
+              Promise.resolve().then(function () {
+                scheduled = false;
+                applyShutter();
+              });
+            },
+          },
+          0,
+        );
+      } catch (e) {
+        unmark(claimed);
+        discard(state);
+        throw e;
+      }
+    };
+
+    // An empty attribute means defaults; anything else is a JSON options object. A value that
+    // is not an options object is skipped loudly rather than read as defaults, because a typo
+    // in it would otherwise render as a silently unblurred element.
+    function sweepOptions(el) {
+      var text = (el.getAttribute(SWEEP_ATTR) || "").trim();
+      if (text === "") return {};
+      var parsed = null;
+      try {
+        parsed = JSON.parse(text);
+      } catch (e) {
+        return refuse(el, "is not JSON: " + text);
+      }
+      // `null`, a number and a string all parse. None of them is a set of options.
+      if (parsed === null || typeof parsed !== "object" || Array.isArray(parsed)) {
+        return refuse(el, "is not a JSON object: " + text);
+      }
+      var bad = unknownKey(parsed);
+      if (bad !== null) return refuse(el, "names no such option: " + bad);
+      var wrong = nonNumber(parsed);
+      if (wrong !== null) return refuse(el, "needs a number for " + wrong);
+      return parsed;
+    }
+
+    // A misspelled key is the likeliest typo in a JSON object, and reading it as
+    // defaults is the silent no-op this attribute exists to remove.
+    function unknownKey(parsed) {
+      for (var key in parsed) {
+        if (OPTION_KEYS.indexOf(key) < 0) return key;
+      }
+      return null;
+    }
+
+    // A key with a value the shutter cannot use is the same silent no-op as a key it does
+    // not know: a non-numeric angle hides the smear, a non-numeric phase parks every copy
+    // at the timeline's start. JSON gives real numbers, so anything else is a typo.
+    function nonNumber(parsed) {
+      for (var i = 0; i < OPTION_KEYS.length; i++) {
+        var held = parsed[OPTION_KEYS[i]];
+        if (held === undefined) continue;
+        if (typeof held !== "number" || !Number.isFinite(held)) return OPTION_KEYS[i];
+      }
+      return null;
+    }
+
+    // A throw partway through an attach leaves an element blurred by nothing, so the copies
+    // go too, along with the observer that would otherwise keep walking a detached subtree
+    // on every resize of an element nothing blurs.
+    // The mark is what a second trigger reads, so it is the first thing to give back.
+    function unmark(els) {
+      for (var i = 0; i < els.length; i++) {
+        window._hfMbAttached.delete(els[i]);
+        window._hfMbTimeline.delete(els[i]);
+      }
+    }
+
+    function discard(state) {
+      for (var i = 0; i < state.length; i++) {
+        var s = state[i];
+        if (s.watch !== null) s.watch.disconnect();
+        if (s.group.parentNode !== null) s.group.parentNode.removeChild(s.group);
+      }
+    }
+
+    function refuse(el, why) {
+      window._hfMbSkipped.add(el);
+      console.warn("[motion-blur] " + SWEEP_ATTR + " " + why, el);
+      return null;
+    }
+
+    // An element belongs to the nearest composition above it, so a sub-composition's
+    // targets follow that sub-composition's own timeline.
+    function compositionOf(el) {
+      var host = el.closest("[data-composition-id]");
+      return host ? host.getAttribute("data-composition-id") : null;
+    }
+
+    // Anything else registered on the container is somebody else's bookkeeping: a
+    // timeline is the thing this snippet can seek and extend.
+    function isTimeline(value) {
+      return !!value && typeof value.time === "function" && typeof value.to === "function";
+    }
+
+    // Attached, or skipped as unparseable. Both are terminal, so a later trigger must not
+    // report or attach the element twice.
+    function handled(el) {
+      return window._hfMbAttached.has(el) || window._hfMbSkipped.has(el);
+    }
+
+    // The timeline registered for an element's own composition, or null. Read from the
+    // registry rather than taken from whoever wrote it, so every trigger agrees.
+    function timelineFor(el) {
+      var id = compositionOf(el);
+      if (id === null) return null;
+      var registry = window.__timelines;
+      var found = registry ? registry[id] : null;
+      return isTimeline(found) ? found : null;
+    }
+
+    // A marked element whose parent is not an Element has no target above it: the parent
+    // of a root is the Document, which has no `closest`.
+    function nestedInTarget(el) {
+      var parent = el.parentNode;
+      if (parent === null || typeof parent.closest !== "function") return false;
+      return parent.closest(SWEEP_SELECTOR) !== null;
+    }
+
+    // One owner of attaching one element. Answers whether the element still needs a trigger.
+    function claim(el) {
+      var tl = timelineFor(el);
+      if (handled(el)) {
+        var owner = window._hfMbTimeline.get(el);
+        // Re-registering a key with a DIFFERENT timeline leaves the copies driven by the one
+        // nobody seeks, which renders sharp and says nothing. Report it rather than guess.
+        var changed = tl !== null && owner !== undefined && owner !== tl;
+        if (changed && !window._hfMbWarned.has(el)) {
+          window._hfMbWarned.add(el);
+          console.warn(
+            "[motion-blur] a second timeline registered for this element; the copies still follow the first",
+            el,
+          );
+        }
+        return true;
+      }
+      // Its group would be inserted into the live outer element, so the outer target's
+      // style replay would walk a subtree its cursor no longer matches.
+      if (nestedInTarget(el)) {
+        refuse(el, "cannot blur a target inside another target; blur one of them");
+        return true;
+      }
+      var opts = sweepOptions(el);
+      if (opts === null) return true;
+      if (tl === null) return false;
+      window.attachMotionBlur(el, tl, opts);
+      return true;
+    }
+
+    // Returns the elements still waiting for their composition to register a timeline.
+    // The trap below runs this INSIDE the author's registration statement, so one bad
+    // target must not abort the rest of their composition script.
+    function sweep() {
+      var pending = [];
+      document.querySelectorAll(SWEEP_SELECTOR).forEach(function (el) {
+        try {
+          if (!claim(el)) pending.push(el);
+        } catch (e) {
+          window._hfMbSkipped.add(el);
+          console.warn("[motion-blur] could not blur this element: " + e, el);
+        }
+      });
+      return pending;
+    }
+
+    // Registering a timeline is the moment the author has finished building it, so trapping
+    // the write attaches before the renderer captures a frame. A microtask would be too
+    // early: it runs before the next `<script>` tag.
+    function registrationProxy(container) {
+      var proxy = new Proxy(container, {
+        set: function (target, key, value) {
+          target[key] = value;
+          if (typeof key === "string") sweep();
+          return true;
+        },
+      });
+      window._hfMbProxies.add(proxy);
+      return proxy;
+    }
+
+    function hookRegistration() {
+      var held = window.__timelines;
+      Object.defineProperty(window, "__timelines", {
+        configurable: true,
+        enumerable: true,
+        get: function () {
+          return held;
+        },
+        set: function (value) {
+          var container = !!value && typeof value === "object";
+          var fresh = container && !window._hfMbProxies.has(value);
+          held = fresh ? registrationProxy(value) : value;
+          if (fresh) sweep();
+        },
+      });
+      // A container assigned before this snippet ran is replayed through the setter, so a
+      // timeline already registered on it is swept too.
+      if (held !== undefined) window.__timelines = held;
+    }
+
+    // The trap above cannot see every registration: the runtime owns the registry object,
+    // wraps it per sub-composition, and mounts nested compositions asynchronously. So the
+    // registry is also POLLED, which needs no cooperation from whoever writes it.
+    function poll(ticks) {
+      var pending = sweep();
+      // The WHOLE budget, every time. Stopping the first tick nothing is pending kills the
+      // poll one tick into an ordinary page, which is before a late composition arrives.
+      if (ticks > 0) {
+        setTimeout(function () {
+          poll(ticks - 1);
+        }, POLL_MS);
+        return;
+      }
+      if (pending.length === 0) return;
+      var count = pending.length + " element(s) carry " + SWEEP_ATTR;
+      console.warn(
+        "[motion-blur] " + count + ", and no composition registered a timeline for them",
+        pending,
+      );
+    }
+
+    if (!window._hfMbHooked) {
+      window._hfMbHooked = true;
+      hookRegistration();
+      poll(POLL_TICKS);
+    }
+    /* SHUTTER_SNIPPET_END */
+  })();
+</script>
+    </template>
+  </body>
+</html>

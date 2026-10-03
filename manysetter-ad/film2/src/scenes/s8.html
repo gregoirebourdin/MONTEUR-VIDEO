@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        {{fonts}}
+        #s8 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: var(--font-sans);
+          color: var(--ink-900);
+        }
+        /* ---------- the button ---------- */
+        #s8-cta {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 476px;
+          display: flex;
+          justify-content: center;
+        }
+        #s8-btn {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+          gap: 18px;
+          height: 124px;
+          padding: 0 52px 0 58px;
+          border-radius: 30px;
+          background: linear-gradient(to bottom, var(--brand-500), var(--brand-600));
+          box-shadow: inset 0 2px 0 0 #ffffff47, inset 0 0 0 2px #bc3a17, 0 3px 6px 0 #73281433, 0 24px 48px -18px #e64b15cc;
+          font: 600 46px/1 var(--font-sans);
+          letter-spacing: -0.01em;
+          color: #fff;
+          white-space: nowrap;
+        }
+        #s8-btn .ms-ico {
+          width: 40px;
+          height: 40px;
+          stroke-width: 2.4;
+        }
+        #s8-ripple {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 600px;
+          height: 600px;
+          margin: -300px 0 0 -300px;
+          border-radius: 50%;
+          box-shadow: 0 0 0 3px #ff905e;
+          opacity: 0;
+          pointer-events: none;
+        }
+        #s8-cursor {
+          position: absolute;
+          left: 1090px;
+          top: 560px;
+          width: 64px;
+          height: 64px;
+          filter: drop-shadow(0 6px 10px #0d0c0a40);
+        }
+        /* ---------- the maths ---------- */
+        #s8-math {
+          position: absolute;
+          left: 1080px;
+          top: 262px;
+          width: 700px;
+          border-radius: 30px;
+          background: #fff;
+          box-shadow: var(--shadow-float);
+          padding: 14px 34px 30px;
+        }
+        .s8-row {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          height: 140px;
+          border-bottom: 1px solid var(--ink-150);
+        }
+        .s8-row .ic {
+          flex: none;
+          width: 64px;
+          height: 64px;
+          border-radius: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s8-row .ic .ms-ico {
+          width: 30px;
+          height: 30px;
+        }
+        .s8-row .ic svg.ms-logo {
+          width: 64px;
+          height: 64px;
+        }
+        #s8-r1 .ic {
+          background: var(--emerald-50);
+          color: var(--emerald-600);
+          box-shadow: inset 0 0 0 1px #00bb7f40;
+        }
+        .s8-row b {
+          display: block;
+          font: 600 25px/1 var(--font-sans);
+          margin-bottom: 9px;
+        }
+        .s8-row span.sub {
+          font: 400 19px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .s8-row .amt {
+          margin-left: auto;
+          font: 600 64px/1 var(--font-heading);
+          letter-spacing: -0.035em;
+        }
+        #s8-r1 .amt {
+          color: var(--emerald-600);
+        }
+        #s8-res {
+          margin-top: 26px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          height: 84px;
+          padding: 0 26px;
+          border-radius: 22px;
+          background: var(--emerald-50);
+          box-shadow: inset 0 0 0 1.5px #00bb7f55;
+          font: 600 26px/1 var(--font-sans);
+          color: var(--emerald-700);
+        }
+        #s8-res .ck {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: var(--emerald-500);
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s8-res .ck .ms-ico {
+          width: 24px;
+          height: 24px;
+          stroke-width: 3;
+        }
+      </style>
+      <div id="s8" data-composition-id="s8" data-width="1920" data-height="1080">
+        <div id="s8-cta">
+          <div id="s8-btn"><span id="s8-ripple"></span>Build my setter free{{i:arrow-right}}</div>
+        </div>
+        <svg id="s8-cursor" viewBox="0 0 32 32" data-hf-motion-blur='{"samplesPerFrame": 10}'><path d="M6 3.5 25.5 17.2l-8.6 1.3-4.6 7.6Z" fill="#1a1816" stroke="#fff" stroke-width="2" stroke-linejoin="round" /></svg>
+        <div id="s8-math">
+          <div class="s8-row" id="s8-r1"><span class="ic">{{i:user-plus}}</span><div><b>One new client</b><span class="sub">Your program</span></div><span class="amt">$1,500</span></div>
+          <div class="s8-row" id="s8-r2"><span class="ic">{{logo}}</span><div><b>ManySetter, whole year</b><span class="sub">$119/mo × 12</span></div><span class="amt">$1,428</span></div>
+          <div id="s8-res"><span class="ck">{{i:check}}</span>Your setter pays for itself</div>
+        </div>
+        {{kt}}
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // build your setter for free: the real button, clicked on "free"
+        const FREE = {{cue:P8.free}};
+        tl.fromTo("#s8-btn", { opacity: 0, y: 50, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "back.out(1.7)" }, {{cue:P8.build}} - 0.1);
+        tl.fromTo("#s8-cursor", { opacity: 0, x: 380, y: 260 }, { opacity: 1, x: 0, y: 0, duration: 0.75, ease: "power3.out" }, FREE - 0.85);
+        tl.to("#s8-cursor", { scale: 0.86, duration: 0.08, ease: "power2.out", yoyo: true, repeat: 1, transformOrigin: "20% 15%" }, FREE - 0.06);
+        tl.to("#s8-btn", { keyframes: { scale: [1, 0.95, 1.03, 1] }, duration: 0.42, ease: "power2.out" }, FREE - 0.06);
+        tl.fromTo("#s8-ripple", { opacity: 0.9, scale: 0.3 }, { opacity: 0, scale: 1.3, duration: 0.8, ease: "power2.out", immediateRender: false }, FREE - 0.03);
+        tl.to("#s8-btn, #s8-cursor", { opacity: 0, y: -30, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, {{bout:2}});
+        // one new client pays for the whole year
+        tl.fromTo("#s8-math", { opacity: 0, x: 100, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "expo.out" }, {{cue:P8.if}} - 0.1);
+        tl.fromTo("#s8-r1 .amt", { opacity: 0, y: 30, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, {{cue:P8.fifteen}} - 0.05);
+        tl.fromTo("#s8-r1 > div, #s8-r1 .ic", { opacity: 0.25 }, { opacity: 1, duration: 0.3, immediateRender: true }, {{cue:P8.one}} - 0.08);
+        tl.fromTo("#s8-r2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, {{cue:P8.pays}} - 0.1);
+        tl.fromTo("#s8-res", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(2)" }, {{cue:P8.year}} - 0.08);
+        tl.fromTo("#s8-res .ck", { scale: 0 }, { scale: 1, duration: 0.45, ease: "back.out(3)" }, {{cue:P8.year}} + 0.12);
+        tl.to("#s8-math", { opacity: 0, x: 60, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, {{hold}} - 0.12);
+
+        {{kt_js}}
+        window.__timelines["s8"] = tl;
+      </script>
+      {{motionblur}}
+    </template>
+  </body>
+</html>

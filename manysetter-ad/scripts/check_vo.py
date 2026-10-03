@@ -27,16 +27,35 @@ ALIASES = {
 }
 
 
-NUM = {"$1,500": "fifteen hundred dollar", "$1500": "fifteen hundred dollar", "1,500": "fifteen hundred", "1500": "fifteen hundred", "2": "two", "a.m.": "am", "a m": "am"}
+NUM = {
+    "$1,500 bucks": "fifteen hundred bucks",
+    "$1500 bucks": "fifteen hundred bucks",
+    "$1,500": "fifteen hundred dollar",
+    "$1500": "fifteen hundred dollar",
+    "1,500": "fifteen hundred",
+    "1500": "fifteen hundred",
+    "a hundred and twenty six": "126",
+    "a hundred twenty six": "126",
+    "one hundred and twenty six": "126",
+    "one hundred twenty six": "126",
+    "ten x": "10x",
+    "10 x": "10x",
+    "a.m.": "am",
+    "p.m.": "pm",
+    "2am": "two am",
+    "9pm": "9 pm",
+    "2": "two",
+}
 
 
 def words(text: str) -> list[str]:
     text = re.sub(r"<[^>]+>|\([^)]*\)|\[[^\]]*\]|\*[^*]*\*", " ", text)  # vocal tags, (laughs), [sighs]
-    for k, v in NUM.items():
-        text = text.replace(k, f" {v} ")
-    text = text.replace("-", " ")
-    text = text.lower().replace("many chat", "manychat").replace("many setter", "manysetter")
+    text = " " + text.replace("-", " ").lower() + " "
+    for k in sorted(NUM, key=len, reverse=True):  # whole tokens only, longest first
+        text = re.sub(r"(?<![\w$])" + re.escape(k) + r"(?![\w])", f" {NUM[k]} ", text)
+    text = text.replace("many chat", "manychat").replace("many setter", "manysetter")
     text = text.replace("dot com", "dotcom").replace(".com", " dotcom").replace("any time", "anytime")
+    text = text.replace("dm's", "dms").replace("dm s ", "dms ")
     out = re.findall(r"[a-z0-9àâäéèêëïîôöùûüç$]+", text)
     return [ALIASES.get(w, w) for w in out]
 

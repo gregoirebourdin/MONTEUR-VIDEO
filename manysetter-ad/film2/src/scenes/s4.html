@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        {{fonts}}
+        #s4 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        #s4-glow {
+          left: 260px;
+          top: -160px;
+          width: 1400px;
+          height: 1400px;
+          background: {{glow:230,75,21,0.42}};
+        }
+        #s4-flash {
+          position: absolute;
+          left: 360px;
+          top: -60px;
+          width: 1200px;
+          height: 1200px;
+          border-radius: 50%;
+          background: radial-gradient(closest-side, rgba(255,247,242,0.95) 0%, rgba(255,236,222,0.7) 25%, rgba(255,186,151,0.3) 50%, rgba(255,144,94,0) 75%);
+        }
+        #s4-lockup {
+          position: absolute;
+          inset: 0;
+        }
+        #s4-tile {
+          position: absolute;
+          left: 810px;
+          top: 390px;
+          width: 300px;
+          height: 300px;
+        }
+        #s4-tile svg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          overflow: visible;
+        }
+        #s4-spark {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 16px;
+          height: 16px;
+          margin: -8px 0 0 -8px;
+          border-radius: 50%;
+          background: #fff7f2;
+          box-shadow: 0 0 12px 4px #ffd8c0, 0 0 40px 14px #ff905e, 0 0 110px 40px #ff611d80;
+        }
+        #s4-word {
+          position: absolute;
+          left: 612px;
+          top: 468px;
+          font-size: 150px;
+          color: var(--ink-900);
+          white-space: nowrap;
+        }
+        .s4-ch {
+          display: inline-block;
+        }
+        #s4-q {
+          color: var(--brand-500);
+        }
+        /* ---------- the plug ---------- */
+        .s4-node {
+          position: absolute;
+          left: 1110px;
+          width: 660px;
+          height: 140px;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          padding: 0 30px;
+          border-radius: 30px;
+          background: #fff;
+          box-shadow: var(--shadow-float);
+          font-family: var(--font-sans);
+        }
+        #s4-mc {
+          top: 236px;
+        }
+        #s4-ms {
+          top: 664px;
+        }
+        .s4-node .tile {
+          flex: none;
+          width: 84px;
+          height: 84px;
+          border-radius: 22px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s4-mc .tile {
+          background: var(--ink-900);
+          color: #fff;
+        }
+        #s4-mc .tile .ms-ico {
+          width: 42px;
+          height: 42px;
+        }
+        #s4-ms .tile svg {
+          width: 84px;
+          height: 84px;
+        }
+        .s4-node b {
+          display: block;
+          font: 600 36px/1 var(--font-heading);
+          letter-spacing: -0.03em;
+          color: var(--ink-900);
+          margin-bottom: 10px;
+        }
+        .s4-node span.sub {
+          font: 400 21px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .s4-node .ms-chip {
+          margin-left: auto;
+          zoom: 1.7;
+        }
+        #s4-wire {
+          position: absolute;
+          left: 1436px;
+          top: 376px;
+          width: 8px;
+          height: 288px;
+          overflow: visible;
+        }
+        #s4-wire path {
+          fill: none;
+          stroke: var(--brand-500);
+          stroke-width: 4px;
+          stroke-linecap: round;
+          stroke-dasharray: 10 12;
+        }
+        #s4-plug {
+          position: absolute;
+          left: 1400px;
+          top: 480px;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background: linear-gradient(to bottom, #ff884d, #e64b15);
+          box-shadow: inset 0 1px 0 #ffffff40, 0 0 0 10px #ff611d1f, 0 16px 30px -10px #e64b15;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s4-plug .ms-ico {
+          width: 38px;
+          height: 38px;
+        }
+        #s4-voice {
+          position: absolute;
+          left: 1144px;
+          top: 830px;
+          display: inline-flex;
+          align-items: center;
+          gap: 14px;
+          height: 64px;
+          padding: 0 26px 0 20px;
+          border-radius: 999px;
+          background: var(--brand-50);
+          box-shadow: inset 0 0 0 1.5px #ff611d38;
+          font: 500 24px/1 var(--font-sans);
+          color: var(--brand-700);
+        }
+        #s4-voice .ms-ico {
+          width: 26px;
+          height: 26px;
+        }
+        #s4-voice .bars {
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          height: 30px;
+        }
+        #s4-voice .bars i {
+          display: block;
+          width: 4px;
+          height: 30px;
+          border-radius: 2px;
+          background: var(--brand-500);
+          transform-origin: 50% 50%;
+        }
+      </style>
+      <div id="s4" data-composition-id="s4" data-width="1920" data-height="1080">
+        <div id="s4-glow" class="ms-glow"></div>
+        <div id="s4-flash"></div>
+        <div id="s4-lockup">
+          <div id="s4-tile">
+            <svg viewBox="0 0 64 64">
+              <defs>
+                <linearGradient id="s4-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ff884d" />
+                  <stop offset="1" stop-color="#e64b15" />
+                </linearGradient>
+                <filter id="s4-blur-wide" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2" /></filter>
+                <filter id="s4-blur-mid" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="0.7" /></filter>
+                <filter id="s4-shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="2.5" stdDeviation="3" flood-color="#e64b15" flood-opacity="0.45" /></filter>
+              </defs>
+              <rect id="s4-fill" x="0.5" y="0.5" width="63" height="63" rx="15" fill="url(#s4-grad)" filter="url(#s4-shadow)" />
+              <rect id="s4-outline" x="0.5" y="0.5" width="63" height="63" rx="15" fill="none" stroke="#ff905e" stroke-opacity="0.32" stroke-width="0.35" />
+              <g transform="translate(12.16 12.16) scale(1.6533)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path class="s4-m" d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" stroke="#ff611d" stroke-width="4.5" filter="url(#s4-blur-wide)" opacity="0.9" />
+                <path class="s4-m" d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" stroke="#ff905e" stroke-width="2.6" filter="url(#s4-blur-mid)" />
+                <path class="s4-m" d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" stroke="#fff7f2" stroke-width="1.3" />
+                <path id="s4-m-final" d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" stroke="#ffffff" stroke-width="2.4" opacity="0" />
+              </g>
+            </svg>
+            <div id="s4-spark"></div>
+          </div>
+          <div id="s4-word" class="ms-display"><span class="s4-ch">M</span><span class="s4-ch">a</span><span class="s4-ch">n</span><span class="s4-ch">y</span><span class="s4-ch">S</span><span class="s4-ch">e</span><span class="s4-ch">t</span><span class="s4-ch">t</span><span class="s4-ch">e</span><span class="s4-ch">r</span><span class="s4-ch" id="s4-q">?</span></div>
+        </div>
+        <svg id="s4-wire" viewBox="0 0 8 288"><path id="s4-wire-p" d="M4 4V284" /></svg>
+        <div class="s4-node" id="s4-mc"><span class="tile">{{i:message-circle}}</span><div><b>Manychat</b><span class="sub">Your Reel automations</span></div><span class="ms-chip green" id="s4-conn"><span class="dot"></span>Connected</span></div>
+        <div class="s4-node" id="s4-ms">
+          <span class="tile"><svg viewBox="0 0 64 64"><rect x="0" y="0" width="64" height="64" rx="15" fill="url(#s4-grad)" /><g transform="translate(12.16 12.16) scale(1.6533)" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" /></g></svg></span>
+          <div><b>ManySetter</b><span class="sub">Your AI setter</span></div>
+          <span class="ms-chip green"><span class="dot"></span>Live</span>
+        </div>
+        <div id="s4-plug">{{i:plug-zap}}</div>
+        <div id="s4-voice">{{i:mic}}<span class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>Your tone. Your words.</div>
+        {{kt}}
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // M path vertices in tile pixels (300px tile), for the spark that leads the stroke
+        const map = (x, y) => [(12.16 + x * 1.6533) * 4.6875, (12.16 + y * 1.6533) * 4.6875];
+        const pts = [map(5.5, 17.5), map(5.5, 7.25), map(6.69, 6.76), map(12, 12.06), map(17.31, 6.76), map(18.5, 7.25), map(18.5, 17.5)];
+        const seg = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]));
+        const total = seg.reduce((a, b) => a + b, 0);
+        const at = (u) => {
+          let d = u * total;
+          for (let i = 0; i < seg.length; i++) {
+            if (d <= seg[i] || i === seg.length - 1) {
+              const k = Math.min(1, d / seg[i]);
+              return [pts[i][0] + (pts[i + 1][0] - pts[i][0]) * k, pts[i][1] + (pts[i + 1][1] - pts[i][1]) * k];
+            }
+            d -= seg[i];
+          }
+        };
+        const spark = document.getElementById("s4-spark");
+        const strokes = document.querySelectorAll(".s4-m");
+        const draw = { u: 0 };
+        const paint = () => {
+          strokes.forEach((p) => p.setAttribute("stroke-dashoffset", String(1 - draw.u)));
+          const [x, y] = at(draw.u);
+          spark.style.left = x + "px";
+          spark.style.top = y + "px";
+        };
+        paint();
+
+        const T0 = {{cue:P4.wait}} + 0.25; // a spark in the dark, right after "Wait…"
+        const MEET = {{cue:P4.manysetter}};
+        tl.fromTo("#s4-glow", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" }, T0);
+        tl.fromTo("#s4-outline", { opacity: 0 }, { opacity: 1, duration: 0.45 }, T0 + 0.1);
+        tl.fromTo("#s4-fill", { opacity: 0 }, { opacity: 0.1, duration: 0.45 }, T0 + 0.1);
+        tl.fromTo(spark, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power2.out" }, T0);
+        tl.fromTo(draw, { u: 0 }, { u: 1, duration: MEET - T0 - 0.05, ease: "power2.inOut", onUpdate: paint }, T0 + 0.05);
+        // "ManySetter?": the tile lights up and the light floods the frame (the day layer blooms underneath)
+        tl.to(spark, { opacity: 0, scale: 2.4, duration: 0.35, ease: "power2.out" }, MEET - 0.05);
+        tl.to("#s4-fill", { opacity: 1, duration: 0.3, ease: "power2.out" }, MEET - 0.1);
+        tl.to("#s4-outline", { opacity: 0, duration: 0.3 }, MEET - 0.1);
+        tl.to("#s4-m-final", { opacity: 1, duration: 0.25 }, MEET - 0.05);
+        tl.to(".s4-m", { opacity: 0, duration: 0.35 }, MEET);
+        tl.fromTo("#s4-flash", { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1.2, duration: 0.35, ease: "power2.out" }, MEET - 0.05);
+        tl.to("#s4-flash", { opacity: 0, scale: 2.2, duration: 0.7, ease: "power2.in" }, MEET + 0.32);
+        tl.to("#s4-glow", { opacity: 0, duration: 0.6 }, MEET + 0.2);
+        // lockup: the tile glides left and the wordmark sets in
+        tl.to("#s4-tile", { x: -463, scale: 0.5, duration: 0.8, ease: "expo.inOut" }, MEET - 0.1);
+        const chars = gsap.utils.toArray("#s4-word .s4-ch");
+        tl.fromTo(chars, { opacity: 0, x: (i) => (i - 5) * 30 + 40 }, { opacity: 1, x: 0, duration: 1.0, ease: "expo.out", stagger: 0.022 }, MEET + 0.22);
+        tl.fromTo("#s4-q", { scale: 0.3, rotation: -20 }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(3)", immediateRender: false }, MEET + 0.35);
+        tl.fromTo("#s4-lockup", { scale: 1 }, { scale: 1.035, duration: {{cue:P4.an}} - 0.34 - MEET, ease: "sine.inOut", transformOrigin: "50% 50%" }, MEET);
+        tl.to("#s4-lockup", { opacity: 0, y: -60, scale: 0.94, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, {{cue:P4.an}} - 0.32);
+        // the plug: ManySetter appears, the wire runs up, Manychat connects
+        tl.fromTo("#s4-ms", { opacity: 0, y: 60, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "expo.out" }, {{cue:P4.ai}} - 0.05);
+        tl.fromTo("#s4-mc", { opacity: 0, y: -50, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.7, ease: "expo.out" }, {{cue:P4.plugs}} - 0.05);
+        tl.fromTo("#s4-wire", { clipPath: "inset(100% 0 0 0)" }, { clipPath: "inset(0% 0 0 0)", duration: 0.75, ease: "power2.inOut" }, {{cue:P4.into}} - 0.2);
+        tl.fromTo("#s4-wire-p", { strokeDashoffset: 0 }, { strokeDashoffset: -110, duration: {{dur}} - {{cue:P4.into}}, ease: "none" }, {{cue:P4.into}} - 0.2);
+        tl.fromTo("#s4-plug", { opacity: 0, scale: 0.2, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.55, ease: "back.out(2.4)" }, {{cue:P4.manychat}} - 0.02);
+        tl.fromTo("#s4-conn", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.2)" }, {{cue:P4.manychat}} + 0.18);
+        // ...and talks exactly like me
+        tl.fromTo("#s4-voice", { opacity: 0, y: 24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.8)" }, {{cue:P4.talks}} - 0.05);
+        gsap.utils.toArray("#s4-voice .bars i").forEach((bar, k) => {
+          tl.fromTo(bar, { scaleY: 0.25 }, { keyframes: { scaleY: [0.25, 0.9 - (k % 3) * 0.2, 0.35, 1 - (k % 2) * 0.4, 0.3] }, duration: 1.3, ease: "sine.inOut" }, {{cue:P4.talks}} + 0.1 + k * 0.04);
+        });
+        tl.to("#s4-mc, #s4-ms, #s4-wire, #s4-plug, #s4-voice", { opacity: 0, x: 60, filter: "blur(8px)", duration: 0.3, ease: "power2.in" }, {{hold}} - 0.3);
+
+        {{kt_js}}
+        window.__timelines["s4"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

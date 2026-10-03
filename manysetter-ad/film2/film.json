@@ -1,0 +1,2268 @@
+{
+ "total": 90.27,
+ "scenes": [
+  {
+   "id": "s1",
+   "part": "P1",
+   "start": 0.0,
+   "end": 11.715
+  },
+  {
+   "id": "s2",
+   "part": "P2",
+   "start": 11.715,
+   "end": 16.992
+  },
+  {
+   "id": "s3",
+   "part": "P3",
+   "start": 16.992,
+   "end": 28.434
+  },
+  {
+   "id": "s4",
+   "part": "P4",
+   "start": 28.434,
+   "end": 36.556
+  },
+  {
+   "id": "s5",
+   "part": "P5",
+   "start": 36.556,
+   "end": 51.592
+  },
+  {
+   "id": "s6",
+   "part": "P6",
+   "start": 51.592,
+   "end": 65.249
+  },
+  {
+   "id": "s7",
+   "part": "P7",
+   "start": 65.249,
+   "end": 73.057
+  },
+  {
+   "id": "s8",
+   "part": "P8",
+   "start": 73.057,
+   "end": 80.646
+  },
+  {
+   "id": "s9",
+   "part": "P9",
+   "start": 80.646,
+   "end": 90.27
+  }
+ ],
+ "beats": [
+  {
+   "scene": "s1",
+   "i": 0,
+   "t": "I posted a *Reel.",
+   "in": 0.731,
+   "out": 1.472,
+   "ui": false
+  },
+  {
+   "scene": "s1",
+   "i": 1,
+   "t": "Boom,!slam | it blew up.",
+   "in": 1.672,
+   "out": 3.0749999999999997,
+   "ui": false
+  },
+  {
+   "scene": "s1",
+   "i": 2,
+   "t": "Manychat sent | the links,",
+   "in": 3.275,
+   "out": 4.117,
+   "ui": false
+  },
+  {
+   "scene": "s1",
+   "i": 3,
+   "t": "and I got\u2026",
+   "in": 4.317,
+   "out": 5.379,
+   "ui": false
+  },
+  {
+   "scene": "s1",
+   "i": 4,
+   "t": "*126!count | DMs!!slam",
+   "in": 5.579,
+   "out": 7.8839999999999995,
+   "ui": false
+  },
+  {
+   "scene": "s1",
+   "i": 5,
+   "t": "How am I supposed | to pitch my offer | to all of them?",
+   "in": 8.084,
+   "out": 10.368,
+   "ui": false
+  },
+  {
+   "scene": "s1",
+   "i": 6,
+   "t": "It's!slam *9!slam *p.m.!!slam",
+   "in": 10.568,
+   "out": 11.615,
+   "ui": false
+  },
+  {
+   "scene": "s2",
+   "i": 0,
+   "t": "If I reply too *late, | they'll forget me!",
+   "in": 11.98,
+   "out": 13.743,
+   "ui": false
+  },
+  {
+   "scene": "s2",
+   "i": 1,
+   "t": "So all of that\u2026 | for nothing?!sink",
+   "in": 13.943,
+   "out": 16.892,
+   "ui": false
+  },
+  {
+   "scene": "s3",
+   "i": 0,
+   "t": "Quick,!slam | I need to hire | a *setter.",
+   "in": 17.217,
+   "out": 18.54,
+   "ui": false
+  },
+  {
+   "scene": "s3",
+   "i": 1,
+   "t": "But I have to | train them, | pay them | commission\u2026",
+   "in": 18.74,
+   "out": 21.504,
+   "ui": false
+  },
+  {
+   "scene": "s3",
+   "i": 2,
+   "t": "and what if | they reply with | total *cringe like",
+   "in": 21.704,
+   "out": 27.333000000000002,
+   "ui": false
+  },
+  {
+   "scene": "s3",
+   "i": 3,
+   "t": "Hey babe! Ready to ten-x your life?",
+   "in": 24.849,
+   "out": null,
+   "ui": true
+  },
+  {
+   "scene": "s3",
+   "i": 4,
+   "t": "Uh\u2026!pop | *no.!slam",
+   "in": 27.533,
+   "out": 28.334,
+   "ui": false
+  },
+  {
+   "scene": "s4",
+   "i": 0,
+   "t": "Wait\u2026 | what's this?",
+   "in": 28.814,
+   "out": 30.78,
+   "ui": false
+  },
+  {
+   "scene": "s4",
+   "i": 1,
+   "t": "ManySetter?",
+   "in": 30.939,
+   "out": null,
+   "ui": true
+  },
+  {
+   "scene": "s4",
+   "i": 2,
+   "t": "An *AI setter | that plugs into | my Manychat\u2026",
+   "in": 32.162,
+   "out": 34.948,
+   "ui": false
+  },
+  {
+   "scene": "s4",
+   "i": 3,
+   "t": "and talks exactly | {like me?}~o",
+   "in": 35.148,
+   "out": 36.455999999999996,
+   "ui": false
+  },
+  {
+   "scene": "s5",
+   "i": 0,
+   "t": "Okay,!pop | let's try.",
+   "in": 36.881,
+   "out": 38.221999999999994,
+   "ui": false
+  },
+  {
+   "scene": "s5",
+   "i": 1,
+   "t": "I give it | my *sales page\u2026",
+   "in": 38.422,
+   "out": 39.983999999999995,
+   "ui": false
+  },
+  {
+   "scene": "s5",
+   "i": 2,
+   "t": "two minutes later,",
+   "in": 40.184,
+   "out": 40.724,
+   "ui": false
+  },
+  {
+   "scene": "s5",
+   "i": 3,
+   "t": "it knows my offer | {by heart.}~u",
+   "in": 40.924,
+   "out": 42.324999999999996,
+   "ui": false
+  },
+  {
+   "scene": "s5",
+   "i": 4,
+   "t": "It answers | every DM,",
+   "in": 42.525,
+   "out": 43.986999999999995,
+   "ui": false
+  },
+  {
+   "scene": "s5",
+   "i": 5,
+   "t": "handles the | \u201cI need to | think about it\u201d",
+   "in": 44.187,
+   "out": 45.808,
+   "ui": false
+  },
+  {
+   "scene": "s5",
+   "i": 6,
+   "t": "and when | someone's a *fit,",
+   "in": 46.008,
+   "out": 46.888999999999996,
+   "ui": false
+  },
+  {
+   "scene": "s5",
+   "i": 7,
+   "t": "it *books | the call.",
+   "in": 47.089,
+   "out": 48.129999999999995,
+   "ui": false
+  },
+  {
+   "scene": "s5",
+   "i": 8,
+   "t": "Right in | the {DM.}~o",
+   "in": 48.33,
+   "out": 49.830999999999996,
+   "ui": false
+  },
+  {
+   "scene": "s5",
+   "i": 9,
+   "t": "Wait\u2026!soft | seriously?!slam",
+   "in": 50.031,
+   "out": 51.492,
+   "ui": false
+  },
+  {
+   "scene": "s6",
+   "i": 0,
+   "t": "Oh, and it's | *sneaky.!pop",
+   "in": 51.952,
+   "out": 53.373999999999995,
+   "ui": false
+  },
+  {
+   "scene": "s6",
+   "i": 1,
+   "t": "It waits a beat | before replying\u2026",
+   "in": 53.574,
+   "out": 54.775999999999996,
+   "ui": false
+  },
+  {
+   "scene": "s6",
+   "i": 2,
+   "t": "like a real | *human would.",
+   "in": 54.976,
+   "out": 56.437999999999995,
+   "ui": false
+  },
+  {
+   "scene": "s6",
+   "i": 3,
+   "t": "Every lead gets | an *AI summary,",
+   "in": 56.638,
+   "out": 58.141,
+   "ui": false
+  },
+  {
+   "scene": "s6",
+   "i": 4,
+   "t": "so I know exactly | who I'm calling.",
+   "in": 58.341,
+   "out": 60.323,
+   "ui": false
+  },
+  {
+   "scene": "s6",
+   "i": 5,
+   "t": "And my | sales team?",
+   "in": 60.523,
+   "out": 61.305,
+   "ui": false
+  },
+  {
+   "scene": "s6",
+   "i": 6,
+   "t": "They get | the *stats.",
+   "in": 61.505,
+   "out": 65.149,
+   "ui": false
+  },
+  {
+   "scene": "s6",
+   "i": 7,
+   "t": "Conversations, qualified leads, calls booked.",
+   "in": 62.446,
+   "out": null,
+   "ui": true
+  },
+  {
+   "scene": "s7",
+   "i": 0,
+   "t": "Next morning.",
+   "in": 65.79,
+   "out": 66.372,
+   "ui": false
+  },
+  {
+   "scene": "s7",
+   "i": 1,
+   "t": "Coffee in hand\u2026",
+   "in": 66.572,
+   "out": 67.334,
+   "ui": false
+  },
+  {
+   "scene": "s7",
+   "i": 2,
+   "t": "and the calls | are already | in my *calendar.",
+   "in": 67.534,
+   "out": 69.539,
+   "ui": false
+  },
+  {
+   "scene": "s7",
+   "i": 3,
+   "t": "No setter.!slam | No commission.!slam",
+   "in": 69.739,
+   "out": 71.243,
+   "ui": false
+  },
+  {
+   "scene": "s7",
+   "i": 4,
+   "t": "And it still | sounds {like me.}~o",
+   "in": 71.443,
+   "out": 72.95700000000001,
+   "ui": false
+  },
+  {
+   "scene": "s8",
+   "i": 0,
+   "t": "Got a *Reel | coming up?",
+   "in": 73.467,
+   "out": 74.26899999999999,
+   "ui": false
+  },
+  {
+   "scene": "s8",
+   "i": 1,
+   "t": "Build your setter | for *free.",
+   "in": 74.469,
+   "out": 75.77,
+   "ui": false
+  },
+  {
+   "scene": "s8",
+   "i": 2,
+   "t": "No card.!pop",
+   "in": 75.97,
+   "out": 76.571,
+   "ui": false
+  },
+  {
+   "scene": "s8",
+   "i": 3,
+   "t": "If your program's | [[$1,500,||fifteen hundred bucks,]]",
+   "in": 76.771,
+   "out": 78.354,
+   "ui": false
+  },
+  {
+   "scene": "s8",
+   "i": 4,
+   "t": "one new client | pays for | the {whole year.}~u",
+   "in": 78.554,
+   "out": 80.546,
+   "ui": false
+  },
+  {
+   "scene": "s9",
+   "i": 0,
+   "t": "ManySetter.",
+   "in": 81.057,
+   "out": null,
+   "ui": true
+  },
+  {
+   "scene": "s9",
+   "i": 1,
+   "t": "Your DMs on *autopilot\u2026 | in your {voice.}~u",
+   "in": 81.841,
+   "out": null,
+   "ui": false
+  },
+  {
+   "scene": "s9",
+   "i": 2,
+   "t": "ManySetter dot com.",
+   "in": 84.934,
+   "out": null,
+   "ui": true
+  }
+ ],
+ "events": [
+  {
+   "t": 0.731,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "I"
+  },
+  {
+   "t": 0.831,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "posted"
+  },
+  {
+   "t": 1.131,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "a"
+  },
+  {
+   "t": 1.191,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": true,
+   "w": "Reel."
+  },
+  {
+   "t": 1.472,
+   "kind": "exit",
+   "scene": "s1"
+  },
+  {
+   "t": 1.672,
+   "kind": "slam",
+   "scene": "s1",
+   "acc": false,
+   "w": "Boom,"
+  },
+  {
+   "t": 2.073,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "it"
+  },
+  {
+   "t": 2.153,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "blew"
+  },
+  {
+   "t": 2.394,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "up."
+  },
+  {
+   "t": 3.075,
+   "kind": "exit",
+   "scene": "s1"
+  },
+  {
+   "t": 3.275,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "Manychat"
+  },
+  {
+   "t": 3.796,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "sent"
+  },
+  {
+   "t": 3.956,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "the"
+  },
+  {
+   "t": 4.077,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "links,"
+  },
+  {
+   "t": 4.117,
+   "kind": "exit",
+   "scene": "s1"
+  },
+  {
+   "t": 4.317,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "and"
+  },
+  {
+   "t": 4.417,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "I"
+  },
+  {
+   "t": 4.497,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "got\u2026"
+  },
+  {
+   "t": 5.379,
+   "kind": "exit",
+   "scene": "s1"
+  },
+  {
+   "t": 5.579,
+   "kind": "count",
+   "scene": "s1",
+   "acc": true,
+   "w": "126"
+  },
+  {
+   "t": 6.401,
+   "kind": "slam",
+   "scene": "s1",
+   "acc": false,
+   "w": "DMs!"
+  },
+  {
+   "t": 7.884,
+   "kind": "exit",
+   "scene": "s1"
+  },
+  {
+   "t": 8.084,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "How"
+  },
+  {
+   "t": 8.304,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "am"
+  },
+  {
+   "t": 8.444,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "I"
+  },
+  {
+   "t": 8.524,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "supposed"
+  },
+  {
+   "t": 8.845,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "to"
+  },
+  {
+   "t": 8.925,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "pitch"
+  },
+  {
+   "t": 9.125,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "my"
+  },
+  {
+   "t": 9.346,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "offer"
+  },
+  {
+   "t": 9.626,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "to"
+  },
+  {
+   "t": 10.047,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "all"
+  },
+  {
+   "t": 10.227,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "of"
+  },
+  {
+   "t": 10.328,
+   "kind": "rise",
+   "scene": "s1",
+   "acc": false,
+   "w": "them?"
+  },
+  {
+   "t": 10.368,
+   "kind": "exit",
+   "scene": "s1"
+  },
+  {
+   "t": 10.568,
+   "kind": "slam",
+   "scene": "s1",
+   "acc": false,
+   "w": "It's"
+  },
+  {
+   "t": 10.768,
+   "kind": "slam",
+   "scene": "s1",
+   "acc": true,
+   "w": "9"
+  },
+  {
+   "t": 11.029,
+   "kind": "slam",
+   "scene": "s1",
+   "acc": true,
+   "w": "p.m.!"
+  },
+  {
+   "t": 11.615,
+   "kind": "exit",
+   "scene": "s1"
+  },
+  {
+   "t": 11.98,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "If"
+  },
+  {
+   "t": 12.1,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "I"
+  },
+  {
+   "t": 12.221,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "reply"
+  },
+  {
+   "t": 12.521,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "too"
+  },
+  {
+   "t": 12.661,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": true,
+   "w": "late,"
+  },
+  {
+   "t": 12.781,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "they'll"
+  },
+  {
+   "t": 13.002,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "forget"
+  },
+  {
+   "t": 13.362,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "me!"
+  },
+  {
+   "t": 13.743,
+   "kind": "exit",
+   "scene": "s2"
+  },
+  {
+   "t": 13.943,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "So"
+  },
+  {
+   "t": 14.664,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "all"
+  },
+  {
+   "t": 14.864,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "of"
+  },
+  {
+   "t": 14.964,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "that\u2026"
+  },
+  {
+   "t": 16.126,
+   "kind": "rise",
+   "scene": "s2",
+   "acc": false,
+   "w": "for"
+  },
+  {
+   "t": 16.306,
+   "kind": "sink",
+   "scene": "s2",
+   "acc": false,
+   "w": "nothing?"
+  },
+  {
+   "t": 16.892,
+   "kind": "exit",
+   "scene": "s2"
+  },
+  {
+   "t": 17.217,
+   "kind": "slam",
+   "scene": "s3",
+   "acc": false,
+   "w": "Quick,"
+  },
+  {
+   "t": 17.718,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "I"
+  },
+  {
+   "t": 17.798,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "need"
+  },
+  {
+   "t": 17.938,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "to"
+  },
+  {
+   "t": 17.998,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "hire"
+  },
+  {
+   "t": 18.219,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "a"
+  },
+  {
+   "t": 18.299,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": true,
+   "w": "setter."
+  },
+  {
+   "t": 18.54,
+   "kind": "exit",
+   "scene": "s3"
+  },
+  {
+   "t": 18.74,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "But"
+  },
+  {
+   "t": 19.481,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "I"
+  },
+  {
+   "t": 19.581,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "have"
+  },
+  {
+   "t": 19.741,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "to"
+  },
+  {
+   "t": 19.901,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "train"
+  },
+  {
+   "t": 20.202,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "them,"
+  },
+  {
+   "t": 20.462,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "pay"
+  },
+  {
+   "t": 20.642,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "them"
+  },
+  {
+   "t": 20.803,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "commission\u2026"
+  },
+  {
+   "t": 21.504,
+   "kind": "exit",
+   "scene": "s3"
+  },
+  {
+   "t": 21.704,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "and"
+  },
+  {
+   "t": 22.325,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "what"
+  },
+  {
+   "t": 22.485,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "if"
+  },
+  {
+   "t": 22.565,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "they"
+  },
+  {
+   "t": 22.706,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "reply"
+  },
+  {
+   "t": 23.026,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "with"
+  },
+  {
+   "t": 23.266,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "total"
+  },
+  {
+   "t": 23.587,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": true,
+   "w": "cringe"
+  },
+  {
+   "t": 24.008,
+   "kind": "rise",
+   "scene": "s3",
+   "acc": false,
+   "w": "like"
+  },
+  {
+   "t": 27.333,
+   "kind": "exit",
+   "scene": "s3"
+  },
+  {
+   "t": 27.533,
+   "kind": "pop",
+   "scene": "s3",
+   "acc": false,
+   "w": "Uh\u2026"
+  },
+  {
+   "t": 27.873,
+   "kind": "slam",
+   "scene": "s3",
+   "acc": true,
+   "w": "no."
+  },
+  {
+   "t": 28.334,
+   "kind": "exit",
+   "scene": "s3"
+  },
+  {
+   "t": 28.814,
+   "kind": "soft",
+   "scene": "s4",
+   "acc": false,
+   "w": "Wait\u2026"
+  },
+  {
+   "t": 29.837,
+   "kind": "soft",
+   "scene": "s4",
+   "acc": false,
+   "w": "what's"
+  },
+  {
+   "t": 30.037,
+   "kind": "soft",
+   "scene": "s4",
+   "acc": false,
+   "w": "this?"
+  },
+  {
+   "t": 30.78,
+   "kind": "exit",
+   "scene": "s4"
+  },
+  {
+   "t": 32.162,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "An"
+  },
+  {
+   "t": 32.382,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": true,
+   "w": "AI"
+  },
+  {
+   "t": 32.723,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "setter"
+  },
+  {
+   "t": 33.024,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "that"
+  },
+  {
+   "t": 33.164,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "plugs"
+  },
+  {
+   "t": 33.505,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "into"
+  },
+  {
+   "t": 33.745,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "my"
+  },
+  {
+   "t": 33.885,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "Manychat\u2026"
+  },
+  {
+   "t": 34.948,
+   "kind": "exit",
+   "scene": "s4"
+  },
+  {
+   "t": 35.148,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "and"
+  },
+  {
+   "t": 35.309,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "talks"
+  },
+  {
+   "t": 35.589,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "exactly"
+  },
+  {
+   "t": 35.95,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "like"
+  },
+  {
+   "t": 36.05,
+   "kind": "mark",
+   "scene": "s4"
+  },
+  {
+   "t": 36.13,
+   "kind": "rise",
+   "scene": "s4",
+   "acc": false,
+   "w": "me?"
+  },
+  {
+   "t": 36.456,
+   "kind": "exit",
+   "scene": "s4"
+  },
+  {
+   "t": 36.881,
+   "kind": "pop",
+   "scene": "s5",
+   "acc": false,
+   "w": "Okay,"
+  },
+  {
+   "t": 37.201,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "let's"
+  },
+  {
+   "t": 37.382,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "try."
+  },
+  {
+   "t": 38.222,
+   "kind": "exit",
+   "scene": "s5"
+  },
+  {
+   "t": 38.422,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "I"
+  },
+  {
+   "t": 38.502,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "give"
+  },
+  {
+   "t": 38.642,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "it"
+  },
+  {
+   "t": 38.723,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "my"
+  },
+  {
+   "t": 38.843,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": true,
+   "w": "sales"
+  },
+  {
+   "t": 39.103,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "page\u2026"
+  },
+  {
+   "t": 39.984,
+   "kind": "exit",
+   "scene": "s5"
+  },
+  {
+   "t": 40.184,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "two"
+  },
+  {
+   "t": 40.384,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "minutes"
+  },
+  {
+   "t": 40.624,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "later,"
+  },
+  {
+   "t": 40.724,
+   "kind": "exit",
+   "scene": "s5"
+  },
+  {
+   "t": 40.924,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "it"
+  },
+  {
+   "t": 40.984,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "knows"
+  },
+  {
+   "t": 41.184,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "my"
+  },
+  {
+   "t": 41.324,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "offer"
+  },
+  {
+   "t": 41.565,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "by"
+  },
+  {
+   "t": 41.665,
+   "kind": "mark",
+   "scene": "s5"
+  },
+  {
+   "t": 41.725,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "heart."
+  },
+  {
+   "t": 42.325,
+   "kind": "exit",
+   "scene": "s5"
+  },
+  {
+   "t": 42.525,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "It"
+  },
+  {
+   "t": 42.705,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "answers"
+  },
+  {
+   "t": 43.286,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "every"
+  },
+  {
+   "t": 43.606,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "DM,"
+  },
+  {
+   "t": 43.987,
+   "kind": "exit",
+   "scene": "s5"
+  },
+  {
+   "t": 44.187,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "handles"
+  },
+  {
+   "t": 44.567,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "the"
+  },
+  {
+   "t": 44.867,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "\u201cI"
+  },
+  {
+   "t": 44.927,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "need"
+  },
+  {
+   "t": 45.087,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "to"
+  },
+  {
+   "t": 45.167,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "think"
+  },
+  {
+   "t": 45.367,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "about"
+  },
+  {
+   "t": 45.628,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "it\u201d"
+  },
+  {
+   "t": 45.808,
+   "kind": "exit",
+   "scene": "s5"
+  },
+  {
+   "t": 46.008,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "and"
+  },
+  {
+   "t": 46.108,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "when"
+  },
+  {
+   "t": 46.268,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "someone's"
+  },
+  {
+   "t": 46.588,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "a"
+  },
+  {
+   "t": 46.668,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": true,
+   "w": "fit,"
+  },
+  {
+   "t": 46.889,
+   "kind": "exit",
+   "scene": "s5"
+  },
+  {
+   "t": 47.089,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "it"
+  },
+  {
+   "t": 47.289,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": true,
+   "w": "books"
+  },
+  {
+   "t": 47.589,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "the"
+  },
+  {
+   "t": 47.689,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "call."
+  },
+  {
+   "t": 48.13,
+   "kind": "exit",
+   "scene": "s5"
+  },
+  {
+   "t": 48.33,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "Right"
+  },
+  {
+   "t": 48.71,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "in"
+  },
+  {
+   "t": 48.79,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "the"
+  },
+  {
+   "t": 48.89,
+   "kind": "rise",
+   "scene": "s5",
+   "acc": false,
+   "w": "DM."
+  },
+  {
+   "t": 48.99,
+   "kind": "mark",
+   "scene": "s5"
+  },
+  {
+   "t": 49.831,
+   "kind": "exit",
+   "scene": "s5"
+  },
+  {
+   "t": 50.031,
+   "kind": "soft",
+   "scene": "s5",
+   "acc": false,
+   "w": "Wait\u2026"
+  },
+  {
+   "t": 50.691,
+   "kind": "slam",
+   "scene": "s5",
+   "acc": false,
+   "w": "seriously?"
+  },
+  {
+   "t": 51.492,
+   "kind": "exit",
+   "scene": "s5"
+  },
+  {
+   "t": 51.952,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "Oh,"
+  },
+  {
+   "t": 52.253,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "and"
+  },
+  {
+   "t": 52.393,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "it's"
+  },
+  {
+   "t": 52.693,
+   "kind": "pop",
+   "scene": "s6",
+   "acc": true,
+   "w": "sneaky."
+  },
+  {
+   "t": 53.374,
+   "kind": "exit",
+   "scene": "s6"
+  },
+  {
+   "t": 53.574,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "It"
+  },
+  {
+   "t": 53.675,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "waits"
+  },
+  {
+   "t": 53.935,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "a"
+  },
+  {
+   "t": 53.995,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "beat"
+  },
+  {
+   "t": 54.175,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "before"
+  },
+  {
+   "t": 54.436,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "replying\u2026"
+  },
+  {
+   "t": 54.776,
+   "kind": "exit",
+   "scene": "s6"
+  },
+  {
+   "t": 54.976,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "like"
+  },
+  {
+   "t": 55.196,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "a"
+  },
+  {
+   "t": 55.357,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "real"
+  },
+  {
+   "t": 55.677,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": true,
+   "w": "human"
+  },
+  {
+   "t": 55.957,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "would."
+  },
+  {
+   "t": 56.438,
+   "kind": "exit",
+   "scene": "s6"
+  },
+  {
+   "t": 56.638,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "Every"
+  },
+  {
+   "t": 56.879,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "lead"
+  },
+  {
+   "t": 57.139,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "gets"
+  },
+  {
+   "t": 57.359,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "an"
+  },
+  {
+   "t": 57.539,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": true,
+   "w": "AI"
+  },
+  {
+   "t": 57.86,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "summary,"
+  },
+  {
+   "t": 58.141,
+   "kind": "exit",
+   "scene": "s6"
+  },
+  {
+   "t": 58.341,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "so"
+  },
+  {
+   "t": 58.521,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "I"
+  },
+  {
+   "t": 58.581,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "know"
+  },
+  {
+   "t": 58.821,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "exactly"
+  },
+  {
+   "t": 59.482,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "who"
+  },
+  {
+   "t": 59.622,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "I'm"
+  },
+  {
+   "t": 59.762,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "calling."
+  },
+  {
+   "t": 60.323,
+   "kind": "exit",
+   "scene": "s6"
+  },
+  {
+   "t": 60.523,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "And"
+  },
+  {
+   "t": 60.603,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "my"
+  },
+  {
+   "t": 60.744,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "sales"
+  },
+  {
+   "t": 60.964,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "team?"
+  },
+  {
+   "t": 61.305,
+   "kind": "exit",
+   "scene": "s6"
+  },
+  {
+   "t": 61.505,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "They"
+  },
+  {
+   "t": 61.625,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "get"
+  },
+  {
+   "t": 61.725,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": false,
+   "w": "the"
+  },
+  {
+   "t": 61.805,
+   "kind": "rise",
+   "scene": "s6",
+   "acc": true,
+   "w": "stats."
+  },
+  {
+   "t": 65.149,
+   "kind": "exit",
+   "scene": "s6"
+  },
+  {
+   "t": 65.79,
+   "kind": "soft",
+   "scene": "s7",
+   "acc": false,
+   "w": "Next"
+  },
+  {
+   "t": 66.01,
+   "kind": "soft",
+   "scene": "s7",
+   "acc": false,
+   "w": "morning."
+  },
+  {
+   "t": 66.372,
+   "kind": "exit",
+   "scene": "s7"
+  },
+  {
+   "t": 66.572,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "Coffee"
+  },
+  {
+   "t": 66.892,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "in"
+  },
+  {
+   "t": 66.993,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "hand\u2026"
+  },
+  {
+   "t": 67.334,
+   "kind": "exit",
+   "scene": "s7"
+  },
+  {
+   "t": 67.534,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "and"
+  },
+  {
+   "t": 67.654,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "the"
+  },
+  {
+   "t": 67.774,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "calls"
+  },
+  {
+   "t": 68.135,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "are"
+  },
+  {
+   "t": 68.356,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "already"
+  },
+  {
+   "t": 68.717,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "in"
+  },
+  {
+   "t": 68.797,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "my"
+  },
+  {
+   "t": 68.937,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": true,
+   "w": "calendar."
+  },
+  {
+   "t": 69.539,
+   "kind": "exit",
+   "scene": "s7"
+  },
+  {
+   "t": 69.739,
+   "kind": "slam",
+   "scene": "s7",
+   "acc": false,
+   "w": "No"
+  },
+  {
+   "t": 69.9,
+   "kind": "slam",
+   "scene": "s7",
+   "acc": false,
+   "w": "setter."
+  },
+  {
+   "t": 70.481,
+   "kind": "slam",
+   "scene": "s7",
+   "acc": false,
+   "w": "No"
+  },
+  {
+   "t": 70.621,
+   "kind": "slam",
+   "scene": "s7",
+   "acc": false,
+   "w": "commission."
+  },
+  {
+   "t": 71.243,
+   "kind": "exit",
+   "scene": "s7"
+  },
+  {
+   "t": 71.443,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "And"
+  },
+  {
+   "t": 71.564,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "it"
+  },
+  {
+   "t": 71.784,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "still"
+  },
+  {
+   "t": 72.145,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "sounds"
+  },
+  {
+   "t": 72.406,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "like"
+  },
+  {
+   "t": 72.506,
+   "kind": "mark",
+   "scene": "s7"
+  },
+  {
+   "t": 72.586,
+   "kind": "rise",
+   "scene": "s7",
+   "acc": false,
+   "w": "me."
+  },
+  {
+   "t": 72.957,
+   "kind": "exit",
+   "scene": "s7"
+  },
+  {
+   "t": 73.467,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "Got"
+  },
+  {
+   "t": 73.628,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "a"
+  },
+  {
+   "t": 73.688,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": true,
+   "w": "Reel"
+  },
+  {
+   "t": 73.868,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "coming"
+  },
+  {
+   "t": 74.108,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "up?"
+  },
+  {
+   "t": 74.269,
+   "kind": "exit",
+   "scene": "s8"
+  },
+  {
+   "t": 74.469,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "Build"
+  },
+  {
+   "t": 74.709,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "your"
+  },
+  {
+   "t": 74.849,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "setter"
+  },
+  {
+   "t": 75.129,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "for"
+  },
+  {
+   "t": 75.39,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": true,
+   "w": "free."
+  },
+  {
+   "t": 75.77,
+   "kind": "exit",
+   "scene": "s8"
+  },
+  {
+   "t": 75.97,
+   "kind": "pop",
+   "scene": "s8",
+   "acc": false,
+   "w": "No"
+  },
+  {
+   "t": 76.151,
+   "kind": "pop",
+   "scene": "s8",
+   "acc": false,
+   "w": "card."
+  },
+  {
+   "t": 76.571,
+   "kind": "exit",
+   "scene": "s8"
+  },
+  {
+   "t": 76.771,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "If"
+  },
+  {
+   "t": 76.831,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "your"
+  },
+  {
+   "t": 76.992,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "program's"
+  },
+  {
+   "t": 77.372,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "$1,500,"
+  },
+  {
+   "t": 78.354,
+   "kind": "exit",
+   "scene": "s8"
+  },
+  {
+   "t": 78.554,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "one"
+  },
+  {
+   "t": 78.734,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "new"
+  },
+  {
+   "t": 78.894,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "client"
+  },
+  {
+   "t": 79.274,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "pays"
+  },
+  {
+   "t": 79.515,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "for"
+  },
+  {
+   "t": 79.615,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "the"
+  },
+  {
+   "t": 79.775,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "whole"
+  },
+  {
+   "t": 79.875,
+   "kind": "mark",
+   "scene": "s8"
+  },
+  {
+   "t": 80.055,
+   "kind": "rise",
+   "scene": "s8",
+   "acc": false,
+   "w": "year."
+  },
+  {
+   "t": 80.546,
+   "kind": "exit",
+   "scene": "s8"
+  },
+  {
+   "t": 81.841,
+   "kind": "rise",
+   "scene": "s9",
+   "acc": false,
+   "w": "Your"
+  },
+  {
+   "t": 82.021,
+   "kind": "rise",
+   "scene": "s9",
+   "acc": false,
+   "w": "DMs"
+  },
+  {
+   "t": 82.463,
+   "kind": "rise",
+   "scene": "s9",
+   "acc": false,
+   "w": "on"
+  },
+  {
+   "t": 82.745,
+   "kind": "rise",
+   "scene": "s9",
+   "acc": true,
+   "w": "autopilot\u2026"
+  },
+  {
+   "t": 83.649,
+   "kind": "rise",
+   "scene": "s9",
+   "acc": false,
+   "w": "in"
+  },
+  {
+   "t": 83.829,
+   "kind": "rise",
+   "scene": "s9",
+   "acc": false,
+   "w": "your"
+  },
+  {
+   "t": 84.071,
+   "kind": "rise",
+   "scene": "s9",
+   "acc": false,
+   "w": "voice."
+  },
+  {
+   "t": 84.171,
+   "kind": "mark",
+   "scene": "s9"
+  }
+ ]
+}

@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        @font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+        #s7 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: var(--font-sans);
+          color: var(--ink-900);
+        }
+        .s7-ico {
+          position: absolute;
+          left: 875px;
+          top: 196px;
+          width: 170px;
+          height: 170px;
+          overflow: visible;
+        }
+        .s7-ico svg {
+          width: 170px;
+          height: 170px;
+          fill: none;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          overflow: visible;
+        }
+        #s7-sun svg {
+          stroke: var(--brand-500);
+          stroke-width: 1.6;
+        }
+        #s7-cup svg {
+          stroke: var(--ink-900);
+          stroke-width: 1.6;
+        }
+        #s7-steam {
+          position: absolute;
+          left: 32px;
+          top: -84px;
+          width: 90px;
+          height: 98px;
+          overflow: visible;
+        }
+        #s7-steam path {
+          fill: none;
+          stroke: var(--ink-400);
+          stroke-width: 3px;
+          stroke-linecap: round;
+        }
+        /* ---------- the calendar ---------- */
+        #s7-cal {
+          position: absolute;
+          left: 1080px;
+          top: 196px;
+          width: 700px;
+          border-radius: 30px;
+          background: #fff;
+          box-shadow: var(--shadow-float);
+          overflow: hidden;
+        }
+        #s7-cal .head {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          height: 92px;
+          padding: 0 30px;
+          border-bottom: 1px solid var(--ink-150);
+        }
+        #s7-cal .head .ms-ico {
+          width: 28px;
+          height: 28px;
+          color: var(--ink-500);
+        }
+        #s7-cal .head .ttl {
+          font: 600 30px/1 var(--font-heading);
+          letter-spacing: -0.03em;
+        }
+        #s7-cal .head .ms-chip {
+          margin-left: auto;
+          zoom: 1.65;
+        }
+        #s7-grid {
+          position: relative;
+          margin: 20px 30px 30px;
+          height: 440px;
+        }
+        .s7-hr {
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 110px;
+          border-top: 1px solid var(--ink-150);
+        }
+        .s7-hr span {
+          position: absolute;
+          left: 0;
+          top: 10px;
+          font: 500 17px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .s7-ev {
+          position: absolute;
+          left: 96px;
+          right: 0;
+          height: 84px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 0 20px 0 24px;
+          border-radius: 16px;
+          background: var(--brand-50);
+          box-shadow: inset 4px 0 0 var(--brand-500), inset 0 0 0 1px #ff611d2e;
+        }
+        .s7-ev b {
+          display: block;
+          font: 600 22px/1 var(--font-sans);
+          margin-bottom: 8px;
+        }
+        .s7-ev span {
+          font: 400 18px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .s7-ev .by {
+          margin-left: auto;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font: 500 15px/1 var(--font-sans);
+          color: var(--brand-700);
+        }
+        .s7-ev .by svg {
+          width: 30px;
+          height: 30px;
+        }
+      </style>
+      <div id="s7" data-composition-id="s7" data-width="1920" data-height="1080">
+        <div class="s7-ico" id="s7-sun"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/> <path d="M12 2v2"/> <path d="M12 20v2"/> <path d="m4.93 4.93 1.41 1.41"/> <path d="m17.66 17.66 1.41 1.41"/> <path d="M2 12h2"/> <path d="M20 12h2"/> <path d="m6.34 17.66-1.41 1.41"/> <path d="m19.07 4.93-1.41 1.41"/></svg></div>
+        <div class="s7-ico" id="s7-cup">
+          <svg id="s7-steam" viewBox="0 0 64 70"><path d="M14 66C8 56 20 48 14 38" pathLength="1" stroke-dasharray="1 2" /><path d="M32 66C26 54 38 46 32 34" pathLength="1" stroke-dasharray="1 2" /><path d="M50 66C44 56 56 48 50 38" pathLength="1" stroke-dasharray="1 2" /></svg>
+          <svg viewBox="0 0 24 24"><path d="M10 2v2"/> <path d="M14 2v2"/> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/> <path d="M6 2v2"/></svg>
+        </div>
+        <div id="s7-cal">
+          <div class="head"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="M8 13h.01"></path><path d="M12 13h.01"></path><path d="M16 13h.01"></path><path d="M8 17h.01"></path><path d="M12 17h.01"></path><path d="M16 17h.01"></path></svg><span class="ttl">Today</span><span class="ms-chip orange">Wed, Oct 15</span></div>
+          <div id="s7-grid">
+            <div class="s7-hr" style="top: 0"><span>9 AM</span></div>
+            <div class="s7-hr" style="top: 110px"><span>10 AM</span></div>
+            <div class="s7-hr" style="top: 220px"><span>11 AM</span></div>
+            <div class="s7-hr" style="top: 330px"><span>12 PM</span></div>
+            <div class="s7-ev" style="top: 56px"><div><b>Discovery call</b><span>Emma R. · 9:30 AM</span></div><span class="by"><svg class="ms-logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff884d" /><stop offset="1" stop-color="#e64b15" /></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#lg1)" /><g transform="translate(12.16 12.16) scale(1.6533)" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" /></g></svg></span></div>
+            <div class="s7-ev" style="top: 166px"><div><b>Discovery call</b><span>Jordan T. · 10:30 AM</span></div><span class="by"><svg class="ms-logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff884d" /><stop offset="1" stop-color="#e64b15" /></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#lg2)" /><g transform="translate(12.16 12.16) scale(1.6533)" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" /></g></svg></span></div>
+            <div class="s7-ev" style="top: 304px"><div><b>Discovery call</b><span>Priya K. · 11:45 AM</span></div><span class="by"><svg class="ms-logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff884d" /><stop offset="1" stop-color="#e64b15" /></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#lg3)" /><g transform="translate(12.16 12.16) scale(1.6533)" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 17.5V7.25c0-.62.75-.93 1.19-.49L12 12.06l5.31-5.3c.44-.44 1.19-.13 1.19.49V17.5" /></g></svg></span></div>
+          </div>
+        </div>
+        <div class="kt-layer">
+<div class="kt-beat kt-center kt-light" id="s7-b0" style="font-size: 160px; "><div class="kt-drift" id="s7-b0-d"><div class="kt-in" id="s7-b0-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s7-w1">Next</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s7-w2">morning.</span></span></span></span></div></div></div>
+<div class="kt-beat kt-center kt-light" id="s7-b1" style="font-size: 150px; "><div class="kt-drift" id="s7-b1-d"><div class="kt-in" id="s7-b1-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w3">Coffee</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w4">in</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w5">hand…</span></span></span></span></div></div></div>
+<div class="kt-beat kt-left kt-light" id="s7-b2" style="font-size: 108px; "><div class="kt-drift" id="s7-b2-d"><div class="kt-in" id="s7-b2-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w6">and</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w7">the</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w8">calls</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w9">are</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w10">already</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w11">in</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w12">my</span></span></span> <span class="kt-w kt-acc" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w13">calendar.</span></span></span></span></div></div></div>
+<div class="kt-beat kt-left kt-light" id="s7-b3" style="font-size: 120px; "><div class="kt-drift" id="s7-b3-d"><div class="kt-in" id="s7-b3-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s7-w14">No</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s7-w15">setter.</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s7-w16">No</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s7-w17">commission.</span></span></span></span></div></div></div>
+<div class="kt-beat kt-left kt-light" id="s7-b4" style="font-size: 120px; "><div class="kt-drift" id="s7-b4-d"><div class="kt-in" id="s7-b4-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w18">And</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w19">it</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w20">still</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w21">sounds</span></span></span> <span class="kt-grp" id="s7-g1-4"> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w22">like</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s7-w23">me.</span></span></span> <svg class="kt-mark oval" viewBox="0 0 200 64" preserveAspectRatio="none"><path id="s7-m1-4" pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M166 5C130 3 70 3 26 5.5C11 6.5 3 19 3 32C3 46 9.9 58 26 59.5C70 61.5 130 61.5 174 59C190.1 58 197 45 197 30.5C197 17 189 7 170 6C150 5 120 6 96 8" /></svg></span></span></div></div></div>
+</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // next morning: the sun comes up over the words
+        tl.fromTo("#s7-sun", { opacity: 0, y: 120, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "expo.out" }, 0.541 - 0.3);
+        tl.fromTo("#s7-sun svg", { rotation: 0 }, { rotation: 50, duration: 1.8, ease: "none" }, 0.541 - 0.25);
+        tl.to("#s7-sun", { opacity: 0, scale: 0.6, y: -20, duration: 0.25, ease: "power2.in" }, 1.123);
+        // coffee in hand
+        tl.fromTo("#s7-cup", { opacity: 0, y: 40, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.8)" }, 1.323 - 0.12);
+        gsap.utils.toArray("#s7-steam path").forEach((p, k) => {
+          tl.fromTo(p, { strokeDashoffset: 1, opacity: 0.9 }, { strokeDashoffset: -1, opacity: 0.3, duration: 1.1, ease: "power1.inOut" }, 1.323 + 0.15 + k * 0.12);
+        });
+        tl.to("#s7-cup", { opacity: 0, scale: 0.7, y: -20, duration: 0.25, ease: "power2.in" }, 2.085);
+        // the calls are already in my calendar
+        tl.fromTo("#s7-cal", { opacity: 0, x: 100, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "expo.out" }, 2.285 - 0.2);
+        const EV = [2.525, 3.107, 3.688];
+        gsap.utils.toArray(".s7-ev").forEach((ev, k) => {
+          tl.fromTo(ev, { opacity: 0, y: -46, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.9)" }, EV[k] - 0.02);
+        });
+        tl.fromTo("#s7-cal", { scale: 1 }, { scale: 1.03, duration: 7.808 - 3.688 - 0.5, ease: "sine.inOut", immediateRender: false }, 3.688 + 0.3);
+        tl.to("#s7-cal", { opacity: 0, x: 60, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, 7.808 - 0.15);
+
+        tl.fromTo("#s7-w1", { opacity: 0, y: 14, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.55, ease: "power2.out" }, 0.481);
+tl.fromTo("#s7-w2", { opacity: 0, y: 14, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.55, ease: "power2.out" }, 0.701);
+tl.fromTo("#s7-b0-d", { scale: 1 }, { scale: 1.035, duration: 0.922, ease: "none" }, 0.441);
+tl.to("#s7-b0", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 1.123);
+tl.fromTo("#s7-w3", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.273);
+tl.fromTo("#s7-w4", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.593);
+tl.fromTo("#s7-w5", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.694);
+tl.fromTo("#s7-b1-d", { scale: 1 }, { scale: 1.035, duration: 1.102, ease: "none" }, 1.223);
+tl.to("#s7-b1", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 2.085);
+tl.fromTo("#s7-w6", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.235);
+tl.fromTo("#s7-w7", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.355);
+tl.fromTo("#s7-w8", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.475);
+tl.fromTo("#s7-w9", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.836);
+tl.fromTo("#s7-w10", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.057);
+tl.fromTo("#s7-w11", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.418);
+tl.fromTo("#s7-w12", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.498);
+tl.fromTo("#s7-w13", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.638);
+tl.fromTo("#s7-b2-d", { scale: 1 }, { scale: 1.035, duration: 2.345, ease: "none" }, 2.185);
+tl.to("#s7-b2", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 4.29);
+tl.fromTo("#s7-w14", { opacity: 0, scale: 1.85, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.34, ease: "power4.out" }, 4.46);
+tl.fromTo("#s7-w15", { opacity: 0, scale: 1.85, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.34, ease: "power4.out" }, 4.621);
+tl.fromTo("#s7-w16", { opacity: 0, scale: 1.85, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.34, ease: "power4.out" }, 5.202);
+tl.fromTo("#s7-w17", { opacity: 0, scale: 1.85, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.34, ease: "power4.out" }, 5.342);
+tl.fromTo("#s7-b3-in", { x: 0, y: 0 }, { keyframes: { x: [0, -10, 8, -4, 2, 0], y: [0, 5, -4, 2, -1, 0] }, duration: 0.141, ease: "none", immediateRender: false }, 4.5);
+tl.fromTo("#s7-b3-in", { x: 0, y: 0 }, { keyframes: { x: [0, -10, 8, -4, 2, 0], y: [0, 5, -4, 2, -1, 0] }, duration: 0.26, ease: "none", immediateRender: false }, 4.661);
+tl.fromTo("#s7-b3-in", { x: 0, y: 0 }, { keyframes: { x: [0, -10, 8, -4, 2, 0], y: [0, 5, -4, 2, -1, 0] }, duration: 0.12, ease: "none", immediateRender: false }, 5.242);
+tl.fromTo("#s7-b3-in", { x: 0, y: 0 }, { keyframes: { x: [0, -10, 8, -4, 2, 0], y: [0, 5, -4, 2, -1, 0] }, duration: 0.26, ease: "none", immediateRender: false }, 5.382);
+tl.fromTo("#s7-b3-d", { scale: 1 }, { scale: 1.035, duration: 1.844, ease: "none" }, 4.39);
+tl.to("#s7-b3", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 5.994);
+tl.fromTo("#s7-w18", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.144);
+tl.fromTo("#s7-w19", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.265);
+tl.fromTo("#s7-w20", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.485);
+tl.fromTo("#s7-w21", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.846);
+tl.fromTo("#s7-w22", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 7.107);
+tl.fromTo("#s7-m1-4", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.72, ease: "power2.inOut" }, 7.257);
+tl.fromTo("#s7-w23", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 7.287);
+tl.fromTo("#s7-b4-d", { scale: 1 }, { scale: 1.035, duration: 1.854, ease: "none" }, 6.094);
+tl.to("#s7-b4", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 7.708);
+        window.__timelines["s7"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

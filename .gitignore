@@ -15,3 +15,9 @@ manysetter-ad/film/snapshots/
 manysetter-ad/film/.hyperframes/
 manysetter-ad/film/renders/
 manysetter-ad/film/renders/*_raw.mp4
+manysetter-ad/film2/snapshots/
+manysetter-ad/film2/.hyperframes/
+manysetter-ad/film2/renders/*_raw.mp4
+manysetter-ad/film2/renders/*.log
+manysetter-ad/film2/renders/work-*/
+manysetter-ad/film2/renders/.*

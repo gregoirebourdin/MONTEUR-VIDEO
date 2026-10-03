@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <style>
+        #bgd-root {
+          position: absolute;
+          inset: 0;
+        }
+        #bgd-canvas {
+          -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 calc(var(--r, 0%) - 18%), transparent var(--r, 0%));
+          mask-image: radial-gradient(circle at 50% 50%, #000 calc(var(--r, 0%) - 18%), transparent var(--r, 0%));
+        }
+        #bgd-canvas .ms-grid {
+          -webkit-mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 15%, transparent 80%);
+          mask-image: radial-gradient(ellipse 62% 62% at 50% 50%, #000 15%, transparent 80%);
+        }
+        #bgd-mesh-a {
+          left: 900px;
+          top: -600px;
+          width: 1500px;
+          height: 1250px;
+          background: radial-gradient(closest-side, rgba(255,186,151,0.6200) 0%, rgba(255,186,151,0.5723) 10%, rgba(255,186,151,0.4502) 20%, rgba(255,186,151,0.3018) 30%, rgba(255,186,151,0.1724) 40%, rgba(255,186,151,0.0839) 50%, rgba(255,186,151,0.0348) 60%, rgba(255,186,151,0.0123) 70%, rgba(255,186,151,0.0037) 80%, rgba(255,186,151,0.0010) 90%, rgba(255,186,151,0) 100%);
+        }
+        #bgd-mesh-b {
+          left: -520px;
+          top: 460px;
+          width: 1400px;
+          height: 1150px;
+          background: radial-gradient(closest-side, rgba(255,216,192,0.7800) 0%, rgba(255,216,192,0.7200) 10%, rgba(255,216,192,0.5664) 20%, rgba(255,216,192,0.3797) 30%, rgba(255,216,192,0.2169) 40%, rgba(255,216,192,0.1056) 50%, rgba(255,216,192,0.0438) 60%, rgba(255,216,192,0.0155) 70%, rgba(255,216,192,0.0047) 80%, rgba(255,216,192,0.0012) 90%, rgba(255,216,192,0) 100%);
+        }
+        #bgd-sun {
+          left: 60px;
+          top: 160px;
+          width: 1800px;
+          height: 1400px;
+          background: radial-gradient(closest-side, rgba(255,170,92,0.8000) 0%, rgba(255,170,92,0.7385) 10%, rgba(255,170,92,0.5809) 20%, rgba(255,170,92,0.3894) 30%, rgba(255,170,92,0.2224) 40%, rgba(255,170,92,0.1083) 50%, rgba(255,170,92,0.0449) 60%, rgba(255,170,92,0.0159) 70%, rgba(255,170,92,0.0048) 80%, rgba(255,170,92,0.0012) 90%, rgba(255,170,92,0) 100%);
+        }
+        #bgd-sun-core {
+          left: 560px;
+          top: 440px;
+          width: 800px;
+          height: 800px;
+          background: radial-gradient(closest-side, rgba(255,240,224,0.9500) 0%, rgba(255,240,224,0.8770) 10%, rgba(255,240,224,0.6898) 20%, rgba(255,240,224,0.4624) 30%, rgba(255,240,224,0.2641) 40%, rgba(255,240,224,0.1286) 50%, rgba(255,240,224,0.0533) 60%, rgba(255,240,224,0.0188) 70%, rgba(255,240,224,0.0057) 80%, rgba(255,240,224,0.0015) 90%, rgba(255,240,224,0) 100%);
+        }
+      </style>
+      <div id="bgd-root" data-composition-id="bgd" data-width="1920" data-height="1080">
+        <div class="ms-canvas-light" id="bgd-canvas">
+          <div class="ms-grid" id="bgd-grid"></div>
+          <div id="bgd-mesh-a" class="ms-glow"></div>
+          <div id="bgd-mesh-b" class="ms-glow"></div>
+          <div id="bgd-sun" class="ms-glow"></div>
+          <div id="bgd-sun-core" class="ms-glow"></div>
+          <div class="ms-grain"></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const canvas = document.getElementById("bgd-canvas");
+        const bloom = { r: 0 };
+        const paint = () => canvas.style.setProperty("--r", bloom.r + "%");
+        paint();
+        const BLOOM = 2.505 - 0.02;
+        tl.fromTo("#bgd-root", { opacity: 0 }, { opacity: 1, duration: 0.05 }, BLOOM);
+        tl.fromTo(bloom, { r: 0 }, { r: 140, duration: 1.0, ease: "power3.inOut", onUpdate: paint, immediateRender: false }, BLOOM);
+        // mesh blobs drift for the whole day
+        tl.fromTo("#bgd-mesh-a", { x: 0, y: 0 }, { x: -160, y: 70, duration: 61.836, ease: "sine.inOut" }, 0);
+        tl.fromTo("#bgd-mesh-b", { x: 0, y: 0 }, { x: 200, y: -60, duration: 61.836, ease: "sine.inOut" }, 0);
+        tl.fromTo("#bgd-grid", { y: 0 }, { y: -128, duration: 61.836, ease: "none" }, 0);
+        // next morning: the sun comes up behind the words, then settles for the offer
+        tl.fromTo("#bgd-sun, #bgd-sun-core", { opacity: 0, y: 520 }, { opacity: 1, y: 0, duration: 2.0, ease: "power2.out" }, 36.815 + 0.05);
+        tl.to("#bgd-sun, #bgd-sun-core", { opacity: 0.45, y: 260, duration: 2.0, ease: "power2.inOut" }, 36.815 + 2.3);
+        tl.to("#bgd-sun, #bgd-sun-core", { opacity: 0, y: 420, duration: 1.4, ease: "power2.inOut" }, 44.623 - 0.3);
+        window.__timelines["bgd"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,416 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        {{fonts}}
+        #s6 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: var(--font-sans);
+          color: var(--ink-900);
+        }
+        .s6-win {
+          position: absolute;
+          left: 1080px;
+          width: 700px;
+          border-radius: 30px;
+          background: #fff;
+          box-shadow: var(--shadow-float);
+          overflow: hidden;
+        }
+        .s6-head {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          height: 92px;
+          padding: 0 30px;
+          border-bottom: 1px solid var(--ink-150);
+        }
+        .s6-head .ttl {
+          font: 600 30px/1 var(--font-heading);
+          letter-spacing: -0.03em;
+        }
+        .s6-head > .ms-ico {
+          width: 28px;
+          height: 28px;
+          color: var(--ink-500);
+        }
+        .s6-head .right {
+          margin-left: auto;
+          display: flex;
+          gap: 8px;
+        }
+        .s6-head .ms-chip {
+          zoom: 1.65;
+        }
+        /* ---------- Reply delay ---------- */
+        #s6-set {
+          top: 230px;
+        }
+        #s6-set .body {
+          padding: 30px;
+        }
+        #s6-set h4 {
+          font: 600 26px/1 var(--font-sans);
+        }
+        #s6-set p {
+          margin-top: 10px;
+          font: 400 19px/1.4 var(--font-sans);
+          color: var(--ink-500);
+        }
+        #s6-seg {
+          position: relative;
+          margin-top: 22px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          height: 64px;
+          padding: 6px;
+          border-radius: 18px;
+          background: var(--ink-100);
+          box-shadow: inset 0 0 0 1px var(--ink-150);
+        }
+        #s6-pill {
+          position: absolute;
+          left: 6px;
+          top: 6px;
+          width: calc((100% - 12px) / 3);
+          height: 52px;
+          border-radius: 13px;
+          background: #fff;
+          box-shadow: 0 0 0 1px #0d0c0a0f, 0 2px 6px -2px #0d0c0a26;
+        }
+        #s6-seg span {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          font: 500 20px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        #s6-seg span .ms-ico {
+          width: 20px;
+          height: 20px;
+        }
+        #s6-human {
+          color: var(--ink-900) !important;
+        }
+        #s6-prev {
+          margin-top: 26px;
+          padding: 22px;
+          border-radius: 22px;
+          background: var(--ink-50);
+          box-shadow: inset 0 0 0 1px var(--ink-150);
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .s6-b {
+          max-width: 440px;
+          padding: 14px 20px;
+          border-radius: 24px;
+          font: 400 21px/1.4 var(--font-sans);
+        }
+        .s6-b.lead {
+          align-self: flex-start;
+          border-bottom-left-radius: 8px;
+          background: #fff;
+          box-shadow: inset 0 0 0 1.5px var(--ink-200);
+        }
+        .s6-b.me {
+          align-self: flex-end;
+          border-bottom-right-radius: 8px;
+          background: var(--ink-900);
+          color: #fff;
+        }
+        #s6-slot {
+          position: relative;
+          align-self: flex-end;
+          height: 58px;
+          width: 330px;
+        }
+        #s6-typing {
+          position: absolute;
+          right: 0;
+          top: 0;
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          height: 58px;
+          padding: 0 22px;
+          border-radius: 24px;
+          border-bottom-right-radius: 8px;
+          background: var(--ink-900);
+        }
+        #s6-typing i {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #fff;
+        }
+        #s6-reply {
+          position: absolute;
+          right: 0;
+          top: 0;
+          white-space: nowrap;
+        }
+        /* ---------- AI summary ---------- */
+        #s6-lead {
+          top: 250px;
+        }
+        #s6-lead .s6-head .av {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #e64b15, #943016);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font: 600 20px/1 var(--font-sans);
+          color: #fff;
+        }
+        #s6-lead .who b {
+          display: block;
+          font: 600 22px/1 var(--font-sans);
+          margin-bottom: 6px;
+        }
+        #s6-lead .who span {
+          font: 400 16px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        #s6-lead .body {
+          padding: 28px 30px 30px;
+        }
+        #s6-sum {
+          border-radius: 22px;
+          background: #fff7f299;
+          box-shadow: inset 0 0 0 1.5px #ff611d38;
+          padding: 22px 26px 26px;
+        }
+        #s6-sum .h {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font: 600 21px/1 var(--font-sans);
+        }
+        #s6-sum .h .ms-ico {
+          width: 22px;
+          height: 22px;
+          color: var(--brand-600);
+        }
+        #s6-sum p {
+          margin-top: 14px;
+          font: 400 23px/1.5 var(--font-sans);
+          color: var(--ink-800);
+        }
+        .s6-ln {
+          display: block;
+        }
+        .s6-hl {
+          position: relative;
+          z-index: 0;
+          white-space: nowrap;
+        }
+        .s6-hl i {
+          position: absolute;
+          left: -4px;
+          right: -4px;
+          top: 8%;
+          bottom: 4%;
+          border-radius: 6px;
+          background: #ffd8c0;
+          transform-origin: 0 50%;
+          z-index: 0;
+        }
+        .s6-hl b {
+          position: relative;
+          z-index: 1;
+          font-weight: 600;
+        }
+        #s6-next {
+          margin-top: 18px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          font: 500 20px/1 var(--font-sans);
+          color: var(--ink-600);
+        }
+        #s6-next .ms-ico {
+          width: 22px;
+          height: 22px;
+          color: var(--emerald-600);
+        }
+        /* ---------- Results ---------- */
+        #s6-res {
+          top: 200px;
+        }
+        #s6-res .body {
+          padding: 24px 30px 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .s6-stat {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          height: 132px;
+          padding: 0 28px;
+          border-radius: 22px;
+          background: var(--ink-50);
+          box-shadow: inset 0 0 0 1px var(--ink-150);
+        }
+        .s6-stat .ic {
+          flex: none;
+          width: 64px;
+          height: 64px;
+          border-radius: 18px;
+          background: #fff;
+          box-shadow: var(--shadow-card);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--ink-500);
+        }
+        .s6-stat .ic .ms-ico {
+          width: 30px;
+          height: 30px;
+        }
+        .s6-stat .lbl {
+          font: 500 26px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        .s6-stat .num {
+          margin-left: auto;
+          font: 600 64px/1 var(--font-heading);
+          letter-spacing: -0.03em;
+          color: var(--ink-900);
+          min-width: 130px;
+          text-align: right;
+        }
+        .s6-stat .spark {
+          width: 120px;
+          height: 52px;
+          overflow: visible;
+        }
+        .s6-stat .spark path {
+          fill: none;
+          stroke: var(--brand-500);
+          stroke-width: 3px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        .s6-stat .ring {
+          position: absolute;
+          inset: 0;
+          border-radius: 22px;
+          box-shadow: inset 0 0 0 2px var(--brand-500), 0 14px 34px -16px #e64b1580;
+          opacity: 0;
+        }
+      </style>
+      <div id="s6" data-composition-id="s6" data-width="1920" data-height="1080">
+        <div class="s6-win" id="s6-set">
+          <div class="s6-head">{{i:settings}}<span class="ttl">Setter settings</span></div>
+          <div class="body">
+            <h4>Reply delay</h4>
+            <p>Waits a moment before answering, the way a person would.</p>
+            <div id="s6-seg">
+              <div id="s6-pill"></div>
+              <span>{{i:zap}}Instant</span>
+              <span id="s6-human">{{i:hourglass}}Human-like</span>
+              <span>{{i:settings}}Custom</span>
+            </div>
+            <div id="s6-prev">
+              <div class="s6-b lead">Hey! Quick question 🙂</div>
+              <div id="s6-slot">
+                <span id="s6-typing"><i></i><i></i><i></i></span>
+                <div class="s6-b me" id="s6-reply">Of course! What's on your mind?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="s6-win" id="s6-lead">
+          <div class="s6-head">
+            <span class="av">E</span>
+            <div class="who"><b>emma.fit</b><span>Lead · from your Reel</span></div>
+            <span class="right"><span class="ms-chip green"><span class="dot"></span>Qualified</span></span>
+          </div>
+          <div class="body">
+            <div id="s6-sum">
+              <div class="h">{{i:sparkles}}AI summary</div>
+              <p>
+                <span class="s6-ln">Fitness coach, 2 years in. Wants to</span>
+                <span class="s6-ln">launch a group program this quarter.</span>
+                <span class="s6-ln"><span class="s6-hl" id="s6-hl1"><i></i><b>Budget confirmed</b></span>, ready to start.</span>
+              </p>
+              <div id="s6-next">{{i:calendar-check}}<span>Discovery call · <span class="s6-hl" id="s6-hl2"><i></i><b>Tue 4:30 PM</b></span></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="s6-win" id="s6-res">
+          <div class="s6-head">{{i:chart-column}}<span class="ttl">Results</span><span class="right"><span class="ms-chip" id="s6-week">This week</span><span class="ms-chip orange" id="s6-team">{{i:users}}Sales team</span></span></div>
+          <div class="body">
+            <div class="s6-stat" id="s6-st1"><span class="ring"></span><span class="ic">{{i:messages-square}}</span><span class="lbl">Conversations</span><span class="num" data-to="126">–</span></div>
+            <div class="s6-stat" id="s6-st2"><span class="ring"></span><span class="ic">{{i:badge-check}}</span><span class="lbl">Qualified leads</span><span class="num" data-to="41">–</span></div>
+            <div class="s6-stat" id="s6-st3"><span class="ring"></span><span class="ic">{{i:calendar-check}}</span><span class="lbl">Calls booked</span><span class="num" data-to="17">–</span></div>
+          </div>
+        </div>
+        {{kt}}
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const enter = (sel, t) => tl.fromTo(sel, { opacity: 0, x: 100, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "expo.out" }, t);
+        const leave = (sel, t) => tl.to(sel, { opacity: 0, x: -60, scale: 0.95, filter: "blur(10px)", duration: 0.35, ease: "power2.in" }, t);
+
+        // ---------- it waits a beat before replying ----------
+        enter("#s6-set", {{cue:P6.it}} - 0.25);
+        tl.fromTo("#s6-pill", { x: 0 }, { x: 209, duration: 0.55, ease: "back.out(1.6)" }, {{cue:P6.waits}});
+        tl.fromTo("#s6-typing", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", transformOrigin: "100% 100%" }, {{cue:P6.before}} - 0.05);
+        gsap.utils.toArray("#s6-typing i").forEach((dot, k) => {
+          tl.fromTo(dot, { y: 0 }, { keyframes: { y: [0, -7, 0, 0] }, duration: 0.45, repeat: 2, ease: "sine.inOut" }, {{cue:P6.before}} + 0.15 + k * 0.11);
+        });
+        tl.to("#s6-typing", { opacity: 0, scale: 0.7, duration: 0.15 }, {{cue:P6.would}} - 0.25);
+        tl.fromTo("#s6-reply", { opacity: 0, y: 16, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)", transformOrigin: "100% 100%" }, {{cue:P6.would}} - 0.12);
+        leave("#s6-set", {{bout:2}} - 0.05);
+
+        // ---------- every lead gets an AI summary ----------
+        enter("#s6-lead", {{cue:P6.every}} - 0.2);
+        tl.fromTo("#s6-sum", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, {{cue:P6.ai}} - 0.15);
+        gsap.utils.toArray("#s6-sum .s6-ln, #s6-next").forEach((ln, k) => {
+          tl.fromTo(ln, { opacity: 0, x: -16, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, x: 0, clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.out" }, {{cue:P6.summary}} + k * 0.16);
+        });
+        tl.fromTo("#s6-hl1 i", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, {{cue:P6.exactly}} - 0.05);
+        tl.fromTo("#s6-hl2 i", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, {{cue:P6.calling}} - 0.1);
+        leave("#s6-lead", {{bout:4}} - 0.05);
+
+        // ---------- and my sales team gets the stats ----------
+        enter("#s6-res", {{cue:P6.and#2}} - 0.15);
+        tl.fromTo("#s6-team", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2.4)" }, {{cue:P6.team}} - 0.08);
+        tl.fromTo(".s6-stat", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out", stagger: 0.08 }, {{cue:P6.and#2}} + 0.15);
+        [["#s6-st1", {{cue:P6.conversations}}, {{cue:P6.qualified}}], ["#s6-st2", {{cue:P6.qualified}}, {{cue:P6.calls}}], ["#s6-st3", {{cue:P6.calls}}, {{hold}} - 0.3]].forEach(([id, t, t2]) => {
+          const row = document.querySelector(id);
+          const num = row.querySelector(".num");
+          const lbl = row.querySelector(".lbl");
+          const c = { v: 0 };
+          tl.fromTo(row, { scale: 1 }, { keyframes: { scale: [1, 1.04, 1] }, duration: 0.45, ease: "power2.out", immediateRender: false }, t - 0.06);
+          tl.fromTo(row.querySelector(".ring"), { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, t - 0.06);
+          tl.to(row.querySelector(".ring"), { opacity: 0, duration: 0.3 }, t2 - 0.1);
+          tl.fromTo(lbl, { color: "#a3a09d" }, { color: "#1a1816", duration: 0.2, immediateRender: false }, t - 0.06);
+          tl.fromTo(c, { v: 0 }, { v: +num.dataset.to, duration: 0.8, ease: "power2.out", immediateRender: false, onUpdate: () => { num.textContent = String(Math.round(c.v)); } }, t - 0.04);
+        });
+        tl.to("#s6-res", { opacity: 0, x: -60, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, {{hold}} - 0.12);
+
+        {{kt_js}}
+        window.__timelines["s6"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

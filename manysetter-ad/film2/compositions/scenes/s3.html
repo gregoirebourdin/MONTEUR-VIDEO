@@ -1,0 +1,339 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        @font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+        #s3 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: var(--font-sans);
+        }
+        .s3-card {
+          position: absolute;
+          border-radius: 36px;
+          background: #161412;
+          box-shadow: 0 0 0 1px #ffffff14, 0 50px 100px -40px #000000e6, 0 0 140px -60px #ff611d55;
+        }
+        /* ---------- the job post ---------- */
+        #s3-job {
+          left: 1120px;
+          top: 250px;
+          width: 640px;
+          padding: 40px 40px 34px;
+        }
+        #s3-job .top {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+        #s3-job .tile {
+          width: 64px;
+          height: 64px;
+          border-radius: 18px;
+          background: linear-gradient(to bottom, #ff884d, #e64b15);
+          box-shadow: inset 0 1px 0 #ffffff40, 0 10px 24px -10px #e64b15;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+        }
+        #s3-job .tile .ms-ico {
+          width: 32px;
+          height: 32px;
+        }
+        #s3-job .ms-eyebrow {
+          zoom: 1.05;
+        }
+        #s3-job h3 {
+          margin-top: 26px;
+          font: 600 50px/1 var(--font-heading);
+          letter-spacing: -0.035em;
+          color: #faf9f8;
+        }
+        #s3-job .sub {
+          margin-top: 12px;
+          font: 400 20px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        #s3-job hr {
+          border: 0;
+          height: 1px;
+          background: #ffffff14;
+          margin: 30px 0 10px;
+        }
+        .s3-row {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          padding: 16px 0;
+        }
+        .s3-row .ic {
+          flex: none;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background: #ff611d1f;
+          box-shadow: inset 0 0 0 1px #ff611d55;
+          color: #ff905e;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .s3-row .ic .ms-ico {
+          width: 26px;
+          height: 26px;
+        }
+        .s3-row b {
+          display: block;
+          font: 600 26px/1 var(--font-sans);
+          color: #faf9f8;
+          margin-bottom: 8px;
+        }
+        .s3-row span {
+          font: 400 18px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        .s3-row .cost {
+          margin-left: auto;
+          font: 600 18px/1 var(--font-sans);
+          color: #ff905e;
+        }
+        /* ---------- the cringe DM ---------- */
+        #s3-dm {
+          left: 1090px;
+          top: 250px;
+          width: 720px;
+          overflow: hidden;
+        }
+        #s3-dm .head {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          height: 96px;
+          padding: 0 30px;
+          border-bottom: 1px solid #ffffff12;
+        }
+        #s3-dm .head .av {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #e64b15, #943016);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font: 600 21px/1 var(--font-sans);
+          color: #fff;
+        }
+        #s3-dm .head b {
+          display: block;
+          font: 600 21px/1 var(--font-sans);
+          color: #fff;
+          margin-bottom: 7px;
+        }
+        #s3-dm .head span {
+          font: 400 16px/1 var(--font-sans);
+          color: var(--ink-300);
+        }
+        #s3-dm .head .ms-brand {
+          margin-left: auto;
+          width: 28px;
+          height: 28px;
+          color: var(--ink-400);
+        }
+        #s3-dm .body {
+          padding: 34px 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        #s3-lead {
+          align-self: flex-start;
+          max-width: 470px;
+          padding: 16px 22px;
+          border-radius: 28px;
+          border-bottom-left-radius: 8px;
+          background: #2a2825;
+          color: #faf9f8;
+          font: 400 23px/1.4 var(--font-sans);
+        }
+        #s3-by {
+          align-self: flex-end;
+          margin-top: 18px;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font: 500 15px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        #s3-by .ms-ico {
+          width: 16px;
+          height: 16px;
+        }
+        #s3-typing {
+          align-self: flex-end;
+          display: inline-flex;
+          gap: 8px;
+          padding: 22px 26px;
+          border-radius: 30px;
+          border-bottom-right-radius: 8px;
+          background: #faf9f8;
+        }
+        #s3-typing i {
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          background: var(--ink-500);
+        }
+        #s3-wrap {
+          position: relative;
+          align-self: flex-end;
+          margin-top: -86px;
+          margin-bottom: 6px;
+        }
+        #s3-cringe {
+          position: relative;
+          max-width: 600px;
+          padding: 26px 34px 30px;
+          border-radius: 38px;
+          border-bottom-right-radius: 10px;
+          background: #faf9f8;
+          color: var(--ink-900);
+          font: 500 50px/1.22 var(--font-sans);
+          letter-spacing: -0.01em;
+        }
+        .s3-cw {
+          display: inline-block;
+          opacity: 0;
+        }
+        #s3-strike {
+          position: absolute;
+          left: -30px;
+          top: -10px;
+          width: calc(100% + 60px);
+          height: calc(100% + 20px);
+          overflow: visible;
+          pointer-events: none;
+        }
+        #s3-strike path {
+          fill: none;
+          stroke: var(--brand-500);
+          stroke-width: 7px;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      </style>
+      <div id="s3" data-composition-id="s3" data-width="1920" data-height="1080">
+        <div class="s3-card" id="s3-job">
+          <div class="top">
+            <span class="tile"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/> <circle cx="9" cy="7" r="4"/> <line x1="19" x2="19" y1="8" y2="14"/> <line x1="22" x2="16" y1="11" y2="11"/></svg></span>
+            <span class="ms-eyebrow dark">Now hiring</span>
+          </div>
+          <h3>Appointment setter</h3>
+          <div class="sub">Instagram DMs · Remote</div>
+          <hr />
+          <div class="s3-row" id="s3-r1"><span class="ic"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/> <path d="M22 10v6"/> <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><div><b>Train them</b><span>Your offer, your scripts, your objections</span></div></div>
+          <div class="s3-row" id="s3-r2"><span class="ic"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="19" x2="5" y1="5" y2="19"/> <circle cx="6.5" cy="6.5" r="2.5"/> <circle cx="17.5" cy="17.5" r="2.5"/></svg></span><div><b>Pay commission</b><span>On every sale they close</span></div></div>
+        </div>
+        <div class="s3-card" id="s3-dm">
+          <div class="head">
+            <span class="av">S</span>
+            <div><b>sophie.k</b><span>Lead from your Reel</span></div>
+            <svg class="ms-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg>
+          </div>
+          <div class="body">
+            <div id="s3-lead">Hi! I'm interested in your program 🙂</div>
+            <span id="s3-by"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/> <circle cx="12" cy="7" r="4"/></svg>Sent by your new setter</span>
+            <span id="s3-typing"><i></i><i></i><i></i></span>
+            <div id="s3-wrap">
+              <div id="s3-cringe"><span class="s3-cw">Hey</span> <span class="s3-cw">babe!</span> <span class="s3-cw">😘</span> <span class="s3-cw">Ready</span> <span class="s3-cw">to</span> <span class="s3-cw">10x</span> <span class="s3-cw">your</span> <span class="s3-cw">life?</span> <span class="s3-cw">🚀🔥💸</span></div>
+              <svg id="s3-strike" viewBox="0 0 200 100" preserveAspectRatio="none"><path id="s3-strike-p" pathLength="1" stroke-dasharray="1 2" stroke-dashoffset="1" d="M8 78C40 62 70 50 100 44C130 38 160 30 194 18" /></svg>
+            </div>
+          </div>
+        </div>
+        <div class="kt-layer">
+<div class="kt-beat kt-left kt-dark" id="s3-b0" style="font-size: 120px; "><div class="kt-drift" id="s3-b0-d"><div class="kt-in" id="s3-b0-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s3-w1">Quick,</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w2">I</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w3">need</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w4">to</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w5">hire</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w6">a</span></span></span> <span class="kt-w kt-acc" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w7">setter.</span></span></span></span></div></div></div>
+<div class="kt-beat kt-left kt-dark" id="s3-b1" style="font-size: 104px; "><div class="kt-drift" id="s3-b1-d"><div class="kt-in" id="s3-b1-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w8">But</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w9">I</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w10">have</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w11">to</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w12">train</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w13">them,</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w14">pay</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w15">them</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w16">commission…</span></span></span></span></div></div></div>
+<div class="kt-beat kt-left kt-dark" id="s3-b2" style="font-size: 104px; "><div class="kt-drift" id="s3-b2-d"><div class="kt-in" id="s3-b2-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w17">and</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w18">what</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w19">if</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w20">they</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w21">reply</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w22">with</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w23">total</span></span></span> <span class="kt-w kt-acc" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w24">cringe</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s3-w25">like</span></span></span></span></div></div></div>
+<div class="kt-beat kt-left kt-dark" id="s3-b4" style="font-size: 200px; "><div class="kt-drift" id="s3-b4-d"><div class="kt-in" id="s3-b4-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s3-w26">Uh…</span></span></span></span><span class="kt-line"><span class="kt-w kt-acc" data-layout-allow-overflow><span class="kt-noclip"><span class="kt-wi" id="s3-w27">no.</span></span></span></span></div></div></div>
+</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // ---------- hiring a setter ----------
+        tl.fromTo("#s3-job", { opacity: 0, x: 90, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.75, ease: "expo.out" }, 0.806 - 0.15);
+        [["#s3-r1", 2.909], ["#s3-r2", 3.811]].forEach(([row, t]) => {
+          tl.fromTo(row + " .ic", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2.4)" }, t - 0.08);
+          tl.fromTo(row + " div", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, t - 0.04);
+        });
+        tl.to("#s3-job", { opacity: 0, x: 80, scale: 0.95, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, 4.512);
+        // ---------- what if they reply... like that ----------
+        tl.fromTo("#s3-dm", { opacity: 0, x: 90, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.75, ease: "expo.out" }, 5.333 - 0.2);
+        tl.fromTo("#s3-lead", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)", transformOrigin: "0% 100%" }, 5.714 - 0.1);
+        tl.fromTo("#s3-by", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 6.274 - 0.1);
+        tl.fromTo("#s3-typing", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2)", transformOrigin: "100% 100%" }, 6.274);
+        gsap.utils.toArray("#s3-typing i").forEach((dot, k) => {
+          tl.fromTo(dot, { y: 0 }, { keyframes: { y: [0, -8, 0, 0] }, duration: 0.5, repeat: 2, ease: "sine.inOut" }, 6.274 + 0.1 + k * 0.12);
+        });
+        tl.to("#s3-typing", { opacity: 0, scale: 0.8, duration: 0.15 }, 7.857 - 0.2);
+        tl.fromTo("#s3-cringe", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.8)", transformOrigin: "100% 100%" }, 7.857 - 0.16);
+        // the words land with the voice
+        const CW = [7.857, 8.077, 8.077 + 0.22, 8.598, 8.838, 8.999, 9.359, 9.499, 9.660 + 0.05];
+        gsap.utils.toArray(".s3-cw").forEach((w, k) => {
+          tl.fromTo(w, { opacity: 0, y: 12, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, CW[k] - 0.04);
+        });
+        // Uh... no.
+        tl.to("#s3-strike-p", { strokeDashoffset: 0, duration: 0.28, ease: "power3.out" }, 10.881 - 0.02);
+        tl.to("#s3-dm", { keyframes: { x: [0, -14, 10, -6, 0] }, duration: 0.3, ease: "none" }, 10.881);
+        tl.to("#s3-dm", { opacity: 0, y: 220, rotation: 7, duration: 0.5, ease: "power3.in" }, 11.442 - 0.55);
+
+        tl.fromTo("#s3-w1", { opacity: 0, scale: 1.85, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.34, ease: "power4.out" }, 0.195);
+tl.fromTo("#s3-w2", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.676);
+tl.fromTo("#s3-w3", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.756);
+tl.fromTo("#s3-w4", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.896);
+tl.fromTo("#s3-w5", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.956);
+tl.fromTo("#s3-w6", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.177);
+tl.fromTo("#s3-w7", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.257);
+tl.fromTo("#s3-b0-in", { x: 0, y: 0 }, { keyframes: { x: [0, -10, 8, -4, 2, 0], y: [0, 5, -4, 2, -1, 0] }, duration: 0.26, ease: "none", immediateRender: false }, 0.235);
+tl.fromTo("#s3-b0-d", { scale: 1 }, { scale: 1.035, duration: 1.663, ease: "none" }, 0.125);
+tl.to("#s3-b0", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 1.548);
+tl.fromTo("#s3-w8", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.698);
+tl.fromTo("#s3-w9", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.439);
+tl.fromTo("#s3-w10", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.539);
+tl.fromTo("#s3-w11", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.699);
+tl.fromTo("#s3-w12", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.859);
+tl.fromTo("#s3-w13", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.16);
+tl.fromTo("#s3-w14", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.42);
+tl.fromTo("#s3-w15", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.6);
+tl.fromTo("#s3-w16", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.761);
+tl.fromTo("#s3-b1-d", { scale: 1 }, { scale: 1.035, duration: 3.104, ease: "none" }, 1.648);
+tl.to("#s3-b1", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 4.512);
+tl.fromTo("#s3-w17", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.662);
+tl.fromTo("#s3-w18", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.283);
+tl.fromTo("#s3-w19", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.443);
+tl.fromTo("#s3-w20", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.523);
+tl.fromTo("#s3-w21", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.664);
+tl.fromTo("#s3-w22", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 5.984);
+tl.fromTo("#s3-w23", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.224);
+tl.fromTo("#s3-w24", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.545);
+tl.fromTo("#s3-w25", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 6.966);
+tl.fromTo("#s3-b2-d", { scale: 1 }, { scale: 1.05, duration: 5.969, ease: "none" }, 4.612);
+tl.to("#s3-b2", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 10.341);
+tl.fromTo("#s3-w26", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2.4)" }, 10.501);
+tl.fromTo("#s3-w27", { opacity: 0, scale: 1.85, filter: "blur(16px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.34, ease: "power4.out" }, 10.851);
+tl.fromTo("#s3-b4-in", { x: 0, y: 0 }, { keyframes: { x: [0, -10, 8, -4, 2, 0], y: [0, 5, -4, 2, -1, 0] }, duration: 0.26, ease: "none", immediateRender: false }, 10.891);
+tl.fromTo("#s3-b4-d", { scale: 1 }, { scale: 1.035, duration: 1.141, ease: "none" }, 10.441);
+tl.to("#s3-b4", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 11.342);
+        window.__timelines["s3"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

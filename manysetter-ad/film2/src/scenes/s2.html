@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        {{fonts}}
+        #s2 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        #s2-chat {
+          position: absolute;
+          left: 1110px;
+          top: 300px;
+          width: 660px;
+          border-radius: 36px;
+          background: #161412;
+          box-shadow: 0 0 0 1px #ffffff14, 0 50px 100px -40px #000000e6, 0 0 140px -60px #ff611d55;
+          overflow: hidden;
+          font-family: var(--font-sans);
+        }
+        #s2-head {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          height: 96px;
+          padding: 0 28px;
+          border-bottom: 1px solid #ffffff12;
+        }
+        #s2-head .av {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #ff905e, #bc3a17);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font: 600 21px/1 var(--font-sans);
+          color: #fff;
+        }
+        #s2-head b {
+          display: block;
+          font: 600 21px/1 var(--font-sans);
+          color: #fff;
+          margin-bottom: 7px;
+        }
+        #s2-head span {
+          font: 400 16px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        #s2-head .ms-brand {
+          margin-left: auto;
+          width: 28px;
+          height: 28px;
+          color: var(--ink-400);
+        }
+        #s2-body {
+          position: relative;
+          padding: 30px 28px 34px;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .s2-time {
+          align-self: center;
+          font: 500 15px/1 var(--font-sans);
+          color: var(--ink-500);
+          letter-spacing: 0.01em;
+        }
+        .s2-bub {
+          max-width: 470px;
+          padding: 16px 22px;
+          border-radius: 28px;
+          font: 400 23px/1.4 var(--font-sans);
+        }
+        #s2-lead {
+          align-self: flex-start;
+          display: flex;
+          align-items: flex-end;
+          gap: 12px;
+        }
+        #s2-lead .av {
+          flex: none;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #ff905e, #bc3a17);
+        }
+        #s2-lead .s2-bub {
+          background: #2a2825;
+          color: #faf9f8;
+          border-bottom-left-radius: 8px;
+        }
+        #s2-skip {
+          align-self: center;
+          margin: 14px 0 6px;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          height: 42px;
+          padding: 0 18px;
+          border-radius: 999px;
+          background: #ff611d1f;
+          box-shadow: inset 0 0 0 1px #ff611d55;
+          font: 600 17px/1 var(--font-sans);
+          color: #ffba97;
+        }
+        #s2-skip .ms-ico {
+          width: 19px;
+          height: 19px;
+        }
+        #s2-me {
+          align-self: flex-end;
+          background: #faf9f8;
+          color: var(--ink-900);
+          border-bottom-right-radius: 8px;
+        }
+        #s2-seen {
+          align-self: flex-end;
+          font: 500 15px/1 var(--font-sans);
+          color: var(--ink-500);
+          margin-top: -4px;
+        }
+        #s2-gone {
+          align-self: center;
+          margin-top: 24px;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          font: 500 18px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        #s2-gone .ms-ico {
+          width: 20px;
+          height: 20px;
+        }
+      </style>
+      <div id="s2" data-composition-id="s2" data-width="1920" data-height="1080">
+        <div id="s2-chat">
+          <div id="s2-head">
+            <span class="av">J</span>
+            <div><b>jess.moves</b><span id="s2-status">Active now</span></div>
+            {{b:instagram}}
+          </div>
+          <div id="s2-body">
+            <span class="s2-time" id="s2-t1">Today 9:04 PM</span>
+            <div id="s2-lead"><span class="av"></span><div class="s2-bub">Hey!! Is your coaching still open? 😍</div></div>
+            <span id="s2-skip">{{i:clock}}Next day · 2:17 PM</span>
+            <div class="s2-bub" id="s2-me">So sorry for the late reply! 🙏</div>
+            <span id="s2-seen">Seen</span>
+            <span id="s2-gone">{{i:moon}}No reply</span>
+          </div>
+        </div>
+        {{kt}}
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // the lead writes at 9:04 PM...
+        tl.fromTo("#s2-chat", { opacity: 0, x: 80, scale: 0.95 }, { opacity: 1, x: 0, scale: 1, duration: 0.7, ease: "expo.out" }, 0.05);
+        tl.fromTo("#s2-t1", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.2);
+        tl.fromTo("#s2-lead", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)", transformOrigin: "0% 100%" }, {{cue:P2.reply}} - 0.1);
+        // ...and I answer the next day
+        tl.fromTo("#s2-skip", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, {{cue:P2.late}} - 0.08);
+        tl.fromTo("#s2-me", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)", transformOrigin: "100% 100%" }, {{cue:P2.theyll}} + 0.02);
+        tl.fromTo("#s2-seen", { opacity: 0 }, { opacity: 1, duration: 0.25 }, {{cue:P2.forget}} - 0.05);
+        // they forget me: the lead fades away
+        tl.to("#s2-lead, #s2-head .av", { opacity: 0.18, filter: "grayscale(1)", duration: 0.9, ease: "power2.inOut" }, {{cue:P2.forget}} + 0.1);
+        tl.fromTo("#s2-status", { opacity: 1 }, { opacity: 0.5, duration: 0.6, immediateRender: false }, {{cue:P2.forget}} + 0.1);
+        tl.fromTo("#s2-gone", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, {{cue:P2.me}} + 0.05);
+        // all of that for nothing: the chat sinks into the dark
+        tl.to("#s2-chat", { opacity: 0, y: 90, scale: 0.9, filter: "blur(12px)", duration: 0.55, ease: "power2.in" }, {{bout:0}});
+
+        {{kt_js}}
+        window.__timelines["s2"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        @font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-500.woff2") format("woff2"); font-weight: 500; font-display: block; }
+@font-face { font-family: "Nohemi"; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-var.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+        #s2 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        #s2-chat {
+          position: absolute;
+          left: 1110px;
+          top: 300px;
+          width: 660px;
+          border-radius: 36px;
+          background: #161412;
+          box-shadow: 0 0 0 1px #ffffff14, 0 50px 100px -40px #000000e6, 0 0 140px -60px #ff611d55;
+          overflow: hidden;
+          font-family: var(--font-sans);
+        }
+        #s2-head {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          height: 96px;
+          padding: 0 28px;
+          border-bottom: 1px solid #ffffff12;
+        }
+        #s2-head .av {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #ff905e, #bc3a17);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font: 600 21px/1 var(--font-sans);
+          color: #fff;
+        }
+        #s2-head b {
+          display: block;
+          font: 600 21px/1 var(--font-sans);
+          color: #fff;
+          margin-bottom: 7px;
+        }
+        #s2-head span {
+          font: 400 16px/1 var(--font-sans);
+          color: var(--ink-400);
+        }
+        #s2-head .ms-brand {
+          margin-left: auto;
+          width: 28px;
+          height: 28px;
+          color: var(--ink-400);
+        }
+        #s2-body {
+          position: relative;
+          padding: 30px 28px 34px;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+        }
+        .s2-time {
+          align-self: center;
+          font: 500 15px/1 var(--font-sans);
+          color: var(--ink-500);
+          letter-spacing: 0.01em;
+        }
+        .s2-bub {
+          max-width: 470px;
+          padding: 16px 22px;
+          border-radius: 28px;
+          font: 400 23px/1.4 var(--font-sans);
+        }
+        #s2-lead {
+          align-self: flex-start;
+          display: flex;
+          align-items: flex-end;
+          gap: 12px;
+        }
+        #s2-lead .av {
+          flex: none;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #ff905e, #bc3a17);
+        }
+        #s2-lead .s2-bub {
+          background: #2a2825;
+          color: #faf9f8;
+          border-bottom-left-radius: 8px;
+        }
+        #s2-skip {
+          align-self: center;
+          margin: 14px 0 6px;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          height: 42px;
+          padding: 0 18px;
+          border-radius: 999px;
+          background: #ff611d1f;
+          box-shadow: inset 0 0 0 1px #ff611d55;
+          font: 600 17px/1 var(--font-sans);
+          color: #ffba97;
+        }
+        #s2-skip .ms-ico {
+          width: 19px;
+          height: 19px;
+        }
+        #s2-me {
+          align-self: flex-end;
+          background: #faf9f8;
+          color: var(--ink-900);
+          border-bottom-right-radius: 8px;
+        }
+        #s2-seen {
+          align-self: flex-end;
+          font: 500 15px/1 var(--font-sans);
+          color: var(--ink-500);
+          margin-top: -4px;
+        }
+        #s2-gone {
+          align-self: center;
+          margin-top: 24px;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          font: 500 18px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        #s2-gone .ms-ico {
+          width: 20px;
+          height: 20px;
+        }
+      </style>
+      <div id="s2" data-composition-id="s2" data-width="1920" data-height="1080">
+        <div id="s2-chat">
+          <div id="s2-head">
+            <span class="av">J</span>
+            <div><b>jess.moves</b><span id="s2-status">Active now</span></div>
+            <svg class="ms-brand" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg>
+          </div>
+          <div id="s2-body">
+            <span class="s2-time" id="s2-t1">Today 9:04 PM</span>
+            <div id="s2-lead"><span class="av"></span><div class="s2-bub">Hey!! Is your coaching still open? 😍</div></div>
+            <span id="s2-skip"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/> <path d="M12 6v6l4 2"/></svg>Next day · 2:17 PM</span>
+            <div class="s2-bub" id="s2-me">So sorry for the late reply! 🙏</div>
+            <span id="s2-seen">Seen</span>
+            <span id="s2-gone"><svg class="ms-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>No reply</span>
+          </div>
+        </div>
+        <div class="kt-layer">
+<div class="kt-beat kt-left kt-dark" id="s2-b0" style="font-size: 112px; "><div class="kt-drift" id="s2-b0-d"><div class="kt-in" id="s2-b0-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w1">If</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w2">I</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w3">reply</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w4">too</span></span></span> <span class="kt-w kt-acc" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w5">late,</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w6">they'll</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w7">forget</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w8">me!</span></span></span></span></div></div></div>
+<div class="kt-beat kt-center kt-dark" id="s2-b1" style="font-size: 150px; "><div class="kt-drift" id="s2-b1-d"><div class="kt-in" id="s2-b1-in"><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w9">So</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w10">all</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w11">of</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w12">that…</span></span></span></span><span class="kt-line"><span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w13">for</span></span></span> <span class="kt-w" data-layout-allow-overflow><span class="kt-clip"><span class="kt-wi" id="s2-w14">nothing?</span></span></span></span></div></div></div>
+</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // the lead writes at 9:04 PM...
+        tl.fromTo("#s2-chat", { opacity: 0, x: 80, scale: 0.95 }, { opacity: 1, x: 0, scale: 1, duration: 0.7, ease: "expo.out" }, 0.05);
+        tl.fromTo("#s2-t1", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0.2);
+        tl.fromTo("#s2-lead", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)", transformOrigin: "0% 100%" }, 0.506 - 0.1);
+        // ...and I answer the next day
+        tl.fromTo("#s2-skip", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 0.946 - 0.08);
+        tl.fromTo("#s2-me", { opacity: 0, y: 24, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)", transformOrigin: "100% 100%" }, 1.066 + 0.02);
+        tl.fromTo("#s2-seen", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 1.287 - 0.05);
+        // they forget me: the lead fades away
+        tl.to("#s2-lead, #s2-head .av", { opacity: 0.18, filter: "grayscale(1)", duration: 0.9, ease: "power2.inOut" }, 1.287 + 0.1);
+        tl.fromTo("#s2-status", { opacity: 1 }, { opacity: 0.5, duration: 0.6, immediateRender: false }, 1.287 + 0.1);
+        tl.fromTo("#s2-gone", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.647 + 0.05);
+        // all of that for nothing: the chat sinks into the dark
+        tl.to("#s2-chat", { opacity: 0, y: 90, scale: 0.9, filter: "blur(12px)", duration: 0.55, ease: "power2.in" }, 2.028);
+
+        tl.fromTo("#s2-w1", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.215);
+tl.fromTo("#s2-w2", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.335);
+tl.fromTo("#s2-w3", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.456);
+tl.fromTo("#s2-w4", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.756);
+tl.fromTo("#s2-w5", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 0.896);
+tl.fromTo("#s2-w6", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.016);
+tl.fromTo("#s2-w7", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.237);
+tl.fromTo("#s2-w8", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 1.597);
+tl.fromTo("#s2-b0-d", { scale: 1 }, { scale: 1.035, duration: 2.103, ease: "none" }, 0.165);
+tl.to("#s2-b0", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 2.028);
+tl.fromTo("#s2-w9", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.178);
+tl.fromTo("#s2-w10", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 2.899);
+tl.fromTo("#s2-w11", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.099);
+tl.fromTo("#s2-w12", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 3.199);
+tl.fromTo("#s2-w13", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.361);
+tl.fromTo("#s2-w14", { yPercent: 140, rotation: 5 }, { yPercent: 0, rotation: 0, duration: 0.62, ease: "expo.out" }, 4.541);
+tl.to("#s2-w14", { opacity: 0.32, y: 10, filter: "blur(1.5px)", duration: 1.1, ease: "power1.inOut" }, 4.992);
+tl.fromTo("#s2-b1-d", { scale: 1 }, { scale: 1.035, duration: 3.289, ease: "none" }, 2.128);
+tl.to("#s2-b1", { opacity: 0, y: -34, filter: "blur(10px)", duration: 0.24, ease: "power2.in" }, 5.177);
+        window.__timelines["s2"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

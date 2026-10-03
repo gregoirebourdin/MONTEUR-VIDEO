@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/ms.css" />
+      <link rel="stylesheet" href="assets/kinetic.css" />
+      <style>
+        {{fonts}}
+        #s7 {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          font-family: var(--font-sans);
+          color: var(--ink-900);
+        }
+        .s7-ico {
+          position: absolute;
+          left: 875px;
+          top: 196px;
+          width: 170px;
+          height: 170px;
+          overflow: visible;
+        }
+        .s7-ico svg {
+          width: 170px;
+          height: 170px;
+          fill: none;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          overflow: visible;
+        }
+        #s7-sun svg {
+          stroke: var(--brand-500);
+          stroke-width: 1.6;
+        }
+        #s7-cup svg {
+          stroke: var(--ink-900);
+          stroke-width: 1.6;
+        }
+        #s7-steam {
+          position: absolute;
+          left: 32px;
+          top: -84px;
+          width: 90px;
+          height: 98px;
+          overflow: visible;
+        }
+        #s7-steam path {
+          fill: none;
+          stroke: var(--ink-400);
+          stroke-width: 3px;
+          stroke-linecap: round;
+        }
+        /* ---------- the calendar ---------- */
+        #s7-cal {
+          position: absolute;
+          left: 1080px;
+          top: 196px;
+          width: 700px;
+          border-radius: 30px;
+          background: #fff;
+          box-shadow: var(--shadow-float);
+          overflow: hidden;
+        }
+        #s7-cal .head {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          height: 92px;
+          padding: 0 30px;
+          border-bottom: 1px solid var(--ink-150);
+        }
+        #s7-cal .head .ms-ico {
+          width: 28px;
+          height: 28px;
+          color: var(--ink-500);
+        }
+        #s7-cal .head .ttl {
+          font: 600 30px/1 var(--font-heading);
+          letter-spacing: -0.03em;
+        }
+        #s7-cal .head .ms-chip {
+          margin-left: auto;
+          zoom: 1.65;
+        }
+        #s7-grid {
+          position: relative;
+          margin: 20px 30px 30px;
+          height: 440px;
+        }
+        .s7-hr {
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 110px;
+          border-top: 1px solid var(--ink-150);
+        }
+        .s7-hr span {
+          position: absolute;
+          left: 0;
+          top: 10px;
+          font: 500 17px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .s7-ev {
+          position: absolute;
+          left: 96px;
+          right: 0;
+          height: 84px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 0 20px 0 24px;
+          border-radius: 16px;
+          background: var(--brand-50);
+          box-shadow: inset 4px 0 0 var(--brand-500), inset 0 0 0 1px #ff611d2e;
+        }
+        .s7-ev b {
+          display: block;
+          font: 600 22px/1 var(--font-sans);
+          margin-bottom: 8px;
+        }
+        .s7-ev span {
+          font: 400 18px/1 var(--font-sans);
+          color: var(--ink-500);
+        }
+        .s7-ev .by {
+          margin-left: auto;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font: 500 15px/1 var(--font-sans);
+          color: var(--brand-700);
+        }
+        .s7-ev .by svg {
+          width: 30px;
+          height: 30px;
+        }
+      </style>
+      <div id="s7" data-composition-id="s7" data-width="1920" data-height="1080">
+        <div class="s7-ico" id="s7-sun"><svg viewBox="0 0 24 24">{{sun}}</svg></div>
+        <div class="s7-ico" id="s7-cup">
+          <svg id="s7-steam" viewBox="0 0 64 70"><path d="M14 66C8 56 20 48 14 38" pathLength="1" stroke-dasharray="1 2" /><path d="M32 66C26 54 38 46 32 34" pathLength="1" stroke-dasharray="1 2" /><path d="M50 66C44 56 56 48 50 38" pathLength="1" stroke-dasharray="1 2" /></svg>
+          <svg viewBox="0 0 24 24">{{coffee}}</svg>
+        </div>
+        <div id="s7-cal">
+          <div class="head">{{i:calendar-days}}<span class="ttl">Today</span><span class="ms-chip orange">Wed, Oct 15</span></div>
+          <div id="s7-grid">
+            <div class="s7-hr" style="top: 0"><span>9 AM</span></div>
+            <div class="s7-hr" style="top: 110px"><span>10 AM</span></div>
+            <div class="s7-hr" style="top: 220px"><span>11 AM</span></div>
+            <div class="s7-hr" style="top: 330px"><span>12 PM</span></div>
+            <div class="s7-ev" style="top: 56px"><div><b>Discovery call</b><span>Emma R. · 9:30 AM</span></div><span class="by">{{logo}}</span></div>
+            <div class="s7-ev" style="top: 166px"><div><b>Discovery call</b><span>Jordan T. · 10:30 AM</span></div><span class="by">{{logo}}</span></div>
+            <div class="s7-ev" style="top: 304px"><div><b>Discovery call</b><span>Priya K. · 11:45 AM</span></div><span class="by">{{logo}}</span></div>
+          </div>
+        </div>
+        {{kt}}
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // next morning: the sun comes up over the words
+        tl.fromTo("#s7-sun", { opacity: 0, y: 120, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "expo.out" }, {{cue:P7.next}} - 0.3);
+        tl.fromTo("#s7-sun svg", { rotation: 0 }, { rotation: 50, duration: 1.8, ease: "none" }, {{cue:P7.next}} - 0.25);
+        tl.to("#s7-sun", { opacity: 0, scale: 0.6, y: -20, duration: 0.25, ease: "power2.in" }, {{bout:0}});
+        // coffee in hand
+        tl.fromTo("#s7-cup", { opacity: 0, y: 40, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "back.out(1.8)" }, {{cue:P7.coffee}} - 0.12);
+        gsap.utils.toArray("#s7-steam path").forEach((p, k) => {
+          tl.fromTo(p, { strokeDashoffset: 1, opacity: 0.9 }, { strokeDashoffset: -1, opacity: 0.3, duration: 1.1, ease: "power1.inOut" }, {{cue:P7.coffee}} + 0.15 + k * 0.12);
+        });
+        tl.to("#s7-cup", { opacity: 0, scale: 0.7, y: -20, duration: 0.25, ease: "power2.in" }, {{bout:1}});
+        // the calls are already in my calendar
+        tl.fromTo("#s7-cal", { opacity: 0, x: 100, scale: 0.94 }, { opacity: 1, x: 0, scale: 1, duration: 0.8, ease: "expo.out" }, {{cue:P7.and}} - 0.2);
+        const EV = [{{cue:P7.calls}}, {{cue:P7.already}}, {{cue:P7.calendar}}];
+        gsap.utils.toArray(".s7-ev").forEach((ev, k) => {
+          tl.fromTo(ev, { opacity: 0, y: -46, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.9)" }, EV[k] - 0.02);
+        });
+        tl.fromTo("#s7-cal", { scale: 1 }, { scale: 1.03, duration: {{hold}} - {{cue:P7.calendar}} - 0.5, ease: "sine.inOut", immediateRender: false }, {{cue:P7.calendar}} + 0.3);
+        tl.to("#s7-cal", { opacity: 0, x: 60, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, {{hold}} - 0.15);
+
+        {{kt_js}}
+        window.__timelines["s7"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
