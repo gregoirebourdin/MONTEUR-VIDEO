@@ -1,0 +1,1689 @@
+1
+00:00:00,570 --> 00:00:01,970
+Bonjour à tous et à toutes, aujourd'hui
+
+2
+00:00:01,970 --> 00:00:03,990
+on se retrouve pour une
+nouvelle vidéo YouTube
+
+3
+00:00:03,990 --> 00:00:06,630
+excellente, puisqu'aujourd'hui on va
+
+4
+00:00:06,630 --> 00:00:08,930
+créer ni plus ni moins qu'un setter IA
+
+5
+00:00:08,930 --> 00:00:12,270
+qui va être branché sur
+notre Instagram et qui va
+
+6
+00:00:12,270 --> 00:00:15,370
+nous ramener des calls
+dans notre calendrier,
+
+7
+00:00:15,590 --> 00:00:16,810
+c'est aussi simple que ça.
+
+8
+00:00:17,350 --> 00:00:18,790
+Alors, pourquoi cette vidéo ?
+
+9
+00:00:18,790 --> 00:00:21,450
+Parce qu'aujourd'hui, je
+vois énormément de tutoriels
+
+10
+00:00:21,450 --> 00:00:23,990
+dans les communautés, ou même sur YouTube,
+
+11
+00:00:23,990 --> 00:00:26,050
+qui nous apprennent à faire des flows
+
+12
+00:00:26,050 --> 00:00:28,590
+ManyChat pour créer des
+setters IA. Et le problème,
+
+13
+00:00:28,590 --> 00:00:30,230
+c'est que la plupart du temps,
+
+14
+00:00:30,550 --> 00:00:32,170
+les setters IA que l'on nous
+
+15
+00:00:32,170 --> 00:00:33,570
+montre ressemblent à ça.
+
+16
+00:00:34,490 --> 00:00:37,350
+Très clairement, personne
+sur cette planète
+
+17
+00:00:37,350 --> 00:00:39,770
+n'a assez d'énergie ni de temps pour
+
+18
+00:00:39,770 --> 00:00:42,830
+entretenir ce genre de scénario tout en se
+
+19
+00:00:42,830 --> 00:00:45,790
+concentrant sérieusement
+sur l'aspect sales, sur
+
+20
+00:00:45,790 --> 00:00:48,930
+l'aspect setting et
+sur les performances de
+
+21
+00:00:48,930 --> 00:00:52,250
+notre setter IA en matière
+de prise de rendez-vous.
+
+22
+00:00:52,390 --> 00:00:53,690
+Donc ce que je vous
+
+23
+00:00:53,970 --> 00:00:55,570
+propose aujourd'hui, c'est de vous
+
+24
+00:00:55,570 --> 00:00:57,950
+montrer une méthode super simple qui va
+
+25
+00:00:57,950 --> 00:01:01,190
+vous permettre, en à peine neuf
+minutes, de créer le meilleur
+
+26
+00:01:01,190 --> 00:01:03,489
+setter IA que vous ayez jamais utilisé.
+
+27
+00:01:03,769 --> 00:01:04,670
+Vous êtes prêts ?
+
+28
+00:01:04,670 --> 00:01:06,230
+C'est parti !
+
+29
+00:01:06,230 --> 00:01:09,790
+Étape numéro 1 : avoir un compte ManyChat,
+
+30
+00:01:09,790 --> 00:01:12,950
+bien évidemment, un compte
+
+31
+00:01:12,950 --> 00:01:15,270
+Instagram pour pouvoir le tester,
+
+32
+00:01:15,270 --> 00:01:17,050
+et un Calendly.
+
+33
+00:01:18,030 --> 00:01:19,370
+Une fois que vous avez
+
+34
+00:01:19,370 --> 00:01:21,510
+ça, vous allez vous rendre sur
+
+35
+00:01:21,510 --> 00:01:25,270
+ce site, il s'appelle manysetter.com.
+Vous aurez le lien dans
+
+36
+00:01:25,270 --> 00:01:27,530
+la description ci-dessous, et il va
+
+37
+00:01:27,530 --> 00:01:30,770
+vous permettre de créer
+votre setter gratuitement.
+
+38
+00:01:31,210 --> 00:01:33,690
+Donc ce qui est ultra bien, c'est que
+
+39
+00:01:33,690 --> 00:01:36,470
+vous allez pouvoir tout gérer depuis ce
+
+40
+00:01:36,470 --> 00:01:36,810
+site-là.
+
+41
+00:01:37,110 --> 00:01:39,330
+Vous allez sortir toute la partie
+
+42
+00:01:39,330 --> 00:01:42,170
+sales, et toute la partie
+qui fait le cœur du
+
+43
+00:01:42,170 --> 00:01:45,090
+setting, en dehors de
+ManyChat, et c'est ce qui
+
+44
+00:01:45,090 --> 00:01:46,510
+va rendre le flow
+
+45
+00:01:46,510 --> 00:01:48,970
+tellement simple que vous n'aurez plus
+
+46
+00:01:48,970 --> 00:01:52,430
+besoin que de deux étapes, au
+lieu des mille et une étapes
+
+47
+00:01:52,430 --> 00:01:54,130
+et des mille et une conditions
+
+48
+00:01:54,130 --> 00:01:55,730
+que l'on a d'habitude
+
+49
+00:01:55,730 --> 00:01:57,250
+dans un flow ManyChat.
+
+50
+00:01:57,390 --> 00:02:00,130
+Donc on commence
+directement : on va cliquer
+
+51
+00:02:00,130 --> 00:02:02,570
+sur « Create my ManyChat setter ».
+
+52
+00:02:03,930 --> 00:02:05,610
+Une fois que vous avez cliqué
+
+53
+00:02:06,070 --> 00:02:08,630
+là-dessus, vous allez être
+redirigé vers une page de
+
+54
+00:02:08,630 --> 00:02:09,030
+connexion.
+
+55
+00:02:09,190 --> 00:02:10,970
+En l'occurrence, je suis déjà connecté,
+
+56
+00:02:10,970 --> 00:02:13,050
+mais vous allez tout simplement entrer
+
+57
+00:02:13,050 --> 00:02:15,650
+votre email, puis recevoir
+un code que vous allez
+
+58
+00:02:15,650 --> 00:02:18,490
+récupérer dans votre
+boîte mail et coller dans
+
+59
+00:02:18,490 --> 00:02:18,610
+ManySetter.
+
+60
+00:02:18,670 --> 00:02:20,090
+Une fois que c'est fait, vous
+
+61
+00:02:20,090 --> 00:02:22,250
+allez tout simplement
+créer un nouveau workspace.
+
+62
+00:02:23,010 --> 00:02:25,190
+Donc pour la démo, je vais l'appeler
+
+63
+00:02:25,770 --> 00:02:28,570
+« ManyChat Test ».
+
+64
+00:02:29,030 --> 00:02:30,650
+Tout simplement. Je crée le workspace.
+
+65
+00:02:32,170 --> 00:02:33,610
+À partir de ce moment-là, ManySetter
+
+66
+00:02:33,610 --> 00:02:35,990
+nous propose de créer
+directement notre setter.
+
+67
+00:02:36,130 --> 00:02:37,410
+Donc allons-y.
+
+68
+00:02:38,310 --> 00:02:40,990
+Nous cliquons sur « Setup
+setter », et une fois
+
+69
+00:02:40,990 --> 00:02:43,550
+que c'est fait,
+l'application va vous poser
+
+70
+00:02:43,550 --> 00:02:45,930
+une question assez pertinente : est-ce que
+
+71
+00:02:45,930 --> 00:02:47,710
+vous faites du setting pour un
+
+72
+00:02:47,710 --> 00:02:49,790
+client ou pour votre propre business ?
+
+73
+00:02:49,790 --> 00:02:51,150
+Nous, en l'occurrence, c'est pour notre
+
+74
+00:02:51,150 --> 00:02:52,830
+propre business, donc
+nous cliquons là-dessus.
+
+75
+00:02:54,170 --> 00:02:57,690
+Nous voulons créer un
+setter sur Instagram.
+
+76
+00:02:57,970 --> 00:03:00,490
+Donc pour l'exemple, nous allons l'appeler
+
+77
+00:03:00,490 --> 00:03:01,970
+« Instagram setter ».
+
+78
+00:03:02,830 --> 00:03:09,110
+Je clique sur « Suivant », et là, on
+arrive à la connexion avec ManyChat,
+
+79
+00:03:09,110 --> 00:03:12,130
+ce qui va rendre l'utilisation
+
+80
+00:03:12,130 --> 00:03:14,130
+encore plus simple.
+
+81
+00:03:14,610 --> 00:03:15,970
+Tout simplement, vous avez ici des vidéos
+
+82
+00:03:15,970 --> 00:03:17,710
+que vous pouvez regarder,
+mais moi, je vais vous
+
+83
+00:03:17,710 --> 00:03:18,650
+le montrer directement ici.
+
+84
+00:03:19,050 --> 00:03:22,650
+Vous allez cliquer sur «
+Copier » pour récupérer le
+
+85
+00:03:22,650 --> 00:03:25,450
+code, puis cliquer sur
+« Install in ManyChat
+
+86
+00:03:25,450 --> 00:03:25,710
+».
+
+87
+00:03:26,590 --> 00:03:28,290
+Là, une page va s'ouvrir, la page
+
+88
+00:03:28,290 --> 00:03:30,390
+de ManyChat, qui va vous
+proposer directement
+
+89
+00:03:30,390 --> 00:03:31,950
+d'installer l'application.
+
+90
+00:03:32,610 --> 00:03:34,110
+Vous avez juste à cliquer sur
+
+91
+00:03:34,110 --> 00:03:35,910
+le bouton « Installer », en dessous.
+
+92
+00:03:35,910 --> 00:03:39,290
+Ici, on nous demande sur quel compte on
+
+93
+00:03:39,290 --> 00:03:40,830
+veut installer
+
+94
+00:03:40,830 --> 00:03:42,170
+notre setter IA.
+
+95
+00:03:42,430 --> 00:03:45,250
+Vous allez sélectionner
+le vôtre, bien entendu,
+
+96
+00:03:45,250 --> 00:03:47,450
+celui sur lequel vos réseaux sont
+
+97
+00:03:47,450 --> 00:03:48,110
+connectés.
+
+98
+00:03:48,390 --> 00:03:51,150
+Aujourd'hui, ce tutoriel
+porte sur Instagram, mais
+
+99
+00:03:51,150 --> 00:03:53,050
+vous allez aussi pouvoir l'utiliser
+
+100
+00:03:53,050 --> 00:03:56,330
+sur WhatsApp, Telegram, Messenger,
+et Instagram, bien entendu.
+
+101
+00:03:56,710 --> 00:04:00,470
+Donc vous cliquez sur «
+Installer », et là, directement,
+
+102
+00:04:00,610 --> 00:04:03,890
+vous allez voir que ManyChat nous dit que
+
+103
+00:04:03,890 --> 00:04:06,090
+l'application a bien été installée.
+
+104
+00:04:06,330 --> 00:04:09,270
+Vous allez vous rendre dans les
+
+105
+00:04:09,270 --> 00:04:11,850
+paramètres de l'app, et c'est dans
+
+106
+00:04:11,850 --> 00:04:15,910
+ces paramètres que nous
+allons coller le code de
+
+107
+00:04:15,910 --> 00:04:16,709
+ManySetter.
+
+108
+00:04:19,410 --> 00:04:21,950
+Une fois que le code est collé, vous
+
+109
+00:04:21,950 --> 00:04:24,150
+allez pouvoir cliquer sur « Save ».
+
+110
+00:04:28,630 --> 00:04:30,930
+Parfait, comme vous pouvez le voir, tout
+
+111
+00:04:30,930 --> 00:04:32,190
+a bien été sauvegardé.
+
+112
+00:04:32,330 --> 00:04:36,510
+Maintenant, ManySetter
+est connecté à votre
+
+113
+00:04:36,510 --> 00:04:36,810
+ManyChat.
+
+114
+00:04:37,770 --> 00:04:41,810
+Donc nous retournons sur la
+configuration de notre workspace, et
+
+115
+00:04:41,810 --> 00:04:44,210
+hop, comme vous pouvez le voir,
+
+116
+00:04:44,670 --> 00:04:46,230
+ManySetter est bien connecté.
+
+117
+00:04:46,710 --> 00:04:48,690
+Maintenant, ManySetter nous
+
+118
+00:04:49,770 --> 00:04:53,470
+dit qu'il faut ajouter
+ManySetter dans un flow
+
+119
+00:04:53,470 --> 00:04:53,750
+ManyChat.
+
+120
+00:04:53,890 --> 00:04:55,570
+C'est super intéressant, puisque c'est
+
+121
+00:04:55,570 --> 00:04:56,730
+là que tout va se jouer.
+
+122
+00:04:57,070 --> 00:05:00,390
+Au lieu de devoir utiliser
+des milliers de modules,
+
+123
+00:05:00,390 --> 00:05:03,190
+des milliers d'applications, nous allons
+
+124
+00:05:03,190 --> 00:05:06,310
+juste nous rendre dans
+nos automatisations.
+
+125
+00:05:06,570 --> 00:05:08,190
+Comme vous pouvez le
+
+126
+00:05:08,190 --> 00:05:11,790
+voir, j'ai créé un flow
+plus que basique pour faire
+
+127
+00:05:11,790 --> 00:05:13,170
+le test aujourd'hui.
+
+128
+00:05:14,190 --> 00:05:16,730
+Et ce flow-là consiste tout simplement à
+
+129
+00:05:16,730 --> 00:05:20,210
+détecter si un utilisateur sur
+Instagram nous envoie un message
+
+130
+00:05:20,210 --> 00:05:23,190
+contenant l'une de ces
+lettres, pour répondre
+
+131
+00:05:23,190 --> 00:05:25,130
+à tout le monde, bien évidemment,
+
+132
+00:05:25,130 --> 00:05:26,530
+dans le cadre du test.
+
+133
+00:05:27,050 --> 00:05:28,390
+Donc, comme on peut le
+
+134
+00:05:28,390 --> 00:05:31,770
+voir ici, nous allons supprimer
+directement « Send Message ».
+
+135
+00:05:33,770 --> 00:05:36,650
+Voilà, et nous allons
+choisir une autre étape.
+
+136
+00:05:37,090 --> 00:05:39,950
+Nous allons tout simplement
+cliquer sur « Action », ici.
+
+137
+00:05:40,890 --> 00:05:41,490
+Donc je clique.
+
+138
+00:05:42,190 --> 00:05:45,450
+Automatiquement, vous allez
+pouvoir cliquer sur « Action »,
+
+139
+00:05:45,450 --> 00:05:47,990
+juste ici, et sélectionner,
+comme vous pouvez
+
+140
+00:05:48,230 --> 00:05:51,090
+le voir, l'application qui
+est directement proposée.
+
+141
+00:05:51,390 --> 00:05:52,630
+Il n'y a pas plus simple.
+
+142
+00:05:52,950 --> 00:05:54,790
+Vous cliquez sur « Start conversation ».
+
+143
+00:05:55,890 --> 00:05:57,970
+Et une fois que c'est fait,
+
+144
+00:05:57,970 --> 00:06:03,330
+ManySetter va vous proposer quelques
+champs, notamment le canal que vous
+
+145
+00:06:03,330 --> 00:06:04,650
+allez utiliser.
+
+146
+00:06:04,830 --> 00:06:06,590
+En l'occurrence, pour
+nous, ça va être Instagram.
+
+147
+00:06:07,030 --> 00:06:09,030
+Donc on clique ici, et on va sélectionner
+
+148
+00:06:09,890 --> 00:06:12,070
+notre setter, qui est
+juste ici : « Instagram
+
+149
+00:06:12,070 --> 00:06:12,450
+Setter ».
+
+150
+00:06:12,750 --> 00:06:13,530
+Une fois que
+
+151
+00:06:13,530 --> 00:06:18,270
+c'est fait, vous allez cliquer sur
+« Save », et juste ici, « Update ».
+
+152
+00:06:20,190 --> 00:06:20,590
+Parfait.
+
+153
+00:06:21,350 --> 00:06:22,470
+Tout est maintenant connecté.
+
+154
+00:06:22,630 --> 00:06:26,190
+Nous allons juste retourner sur ManySetter
+
+155
+00:06:26,190 --> 00:06:28,550
+pour voir comment il réagit à
+
+156
+00:06:28,550 --> 00:06:28,670
+ça.
+
+157
+00:06:28,670 --> 00:06:31,500
+C'est parfait.
+
+158
+00:06:32,100 --> 00:06:34,940
+Maintenant, nous allons pouvoir
+cliquer sur « Continue ».
+
+159
+00:06:36,000 --> 00:06:37,760
+Une fois que vous avez cliqué
+
+160
+00:06:38,000 --> 00:06:41,000
+sur « Continue », on
+voit que l'application
+
+161
+00:06:41,000 --> 00:06:43,340
+nous demande où l'on veut recevoir
+
+162
+00:06:43,340 --> 00:06:44,220
+nos appels.
+
+163
+00:06:44,680 --> 00:06:47,200
+Tout simplement, là, vous pouvez choisir
+
+164
+00:06:47,200 --> 00:06:50,420
+d'intégrer vos outils, pour
+que le setter, rien qu'en
+
+165
+00:06:50,420 --> 00:06:53,760
+parlant avec votre lead,
+puisse booker l'appel à sa
+
+166
+00:06:53,760 --> 00:06:55,160
+place, au lieu de le
+
+167
+00:06:55,160 --> 00:06:56,300
+renvoyer vers un lien.
+
+168
+00:06:56,620 --> 00:06:59,480
+En l'occurrence, pour garder
+ce tuto beaucoup plus
+
+169
+00:06:59,480 --> 00:07:01,060
+court, et ne pas montrer de
+
+170
+00:07:01,060 --> 00:07:02,960
+clés d'API dans ce tutoriel, je vais
+
+171
+00:07:02,960 --> 00:07:04,800
+tout simplement utiliser un lien.
+
+172
+00:07:05,220 --> 00:07:07,140
+Donc je clique sur « Other link
+
+173
+00:07:07,140 --> 00:07:10,720
+», et je vais aller
+directement dans mon Calendly,
+
+174
+00:07:10,720 --> 00:07:12,960
+juste ici, pour récupérer mon lien.
+
+175
+00:07:14,380 --> 00:07:14,940
+Voilà.
+
+176
+00:07:15,440 --> 00:07:21,370
+Je clique sur « Copier le
+lien », je reviens dans
+
+177
+00:07:21,370 --> 00:07:24,030
+ManySetter et je colle.
+
+178
+00:07:25,630 --> 00:07:27,230
+Une fois que c'est fait,
+
+179
+00:07:27,230 --> 00:07:29,230
+vous pouvez voir directement sur votre
+
+180
+00:07:29,230 --> 00:07:31,750
+écran qu'on vous propose des follow-ups.
+
+181
+00:07:32,010 --> 00:07:33,810
+Vous avez donc plusieurs choix.
+
+182
+00:07:35,030 --> 00:07:38,490
+Soit vous les activez, soit vous
+les désactivez, et on verra un
+
+183
+00:07:38,490 --> 00:07:39,610
+peu plus tard comment
+
+184
+00:07:39,610 --> 00:07:40,690
+les personnaliser.
+
+185
+00:07:41,230 --> 00:07:43,230
+Mais comme vous pouvez le voir, sur
+
+186
+00:07:43,230 --> 00:07:44,910
+votre gauche, il y a un onglet
+
+187
+00:07:44,910 --> 00:07:46,090
+dont on ne s'est pas
+
+188
+00:07:46,090 --> 00:07:48,470
+encore servi, qui
+s'appelle « Offer & fit ».
+
+189
+00:07:48,670 --> 00:07:49,710
+Je vous invite à cliquer dessus.
+
+190
+00:07:50,570 --> 00:07:52,810
+Et là, ça va être super simple.
+
+191
+00:07:53,110 --> 00:07:56,890
+Vous allez pouvoir écrire votre
+offre, écrire ce que vous vendez,
+
+192
+00:07:56,890 --> 00:07:59,270
+ce que vous voulez proposer, et donner
+
+193
+00:07:59,270 --> 00:08:02,350
+du contexte pour que tout
+votre script de setting
+
+194
+00:08:02,350 --> 00:08:05,090
+et tout votre setter IA soient au courant
+
+195
+00:08:05,090 --> 00:08:06,410
+de ce que vous faites.
+
+196
+00:08:06,770 --> 00:08:10,890
+Donc moi, par exemple,
+je vais écrire : « I
+
+197
+00:08:10,890 --> 00:08:20,740
+sell to help people in e-com
+
+198
+00:08:23,210 --> 00:08:29,530
+enrich their e-commerce
+with winner products. »
+
+199
+00:08:30,510 --> 00:08:31,789
+Comme vous le voyez ici,
+
+200
+00:08:31,789 --> 00:08:33,650
+vous pouvez ajouter des liens, des
+
+201
+00:08:33,650 --> 00:08:36,470
+PDF, tout ce qui convient à
+votre business, finalement.
+
+202
+00:08:36,970 --> 00:08:39,409
+Ensuite, vous allez pouvoir ajouter
+ici des critères, qui ne sont pas
+
+203
+00:08:39,409 --> 00:08:40,570
+obligatoires, mais vous pouvez
+
+204
+00:08:40,570 --> 00:08:46,430
+par exemple mettre « I can invest 3k »
+
+205
+00:08:46,430 --> 00:08:50,450
+et « not a full beginner ».
+
+206
+00:08:53,050 --> 00:08:55,230
+Et une fois que vous avez
+rempli vos informations, vous
+
+207
+00:08:55,230 --> 00:08:57,130
+allez tout simplement
+pouvoir cliquer sur «
+
+208
+00:08:57,130 --> 00:08:57,570
+Continue ».
+
+209
+00:08:58,830 --> 00:09:00,490
+Et ici, comme vous
+
+210
+00:09:00,490 --> 00:09:02,150
+pouvez le voir, il y a un
+
+211
+00:09:02,150 --> 00:09:06,870
+chargement qui va se lancer pour
+générer directement votre script
+
+212
+00:09:06,870 --> 00:09:09,390
+de setting, ainsi que tout le
+
+213
+00:09:09,390 --> 00:09:14,110
+contexte dont il va avoir besoin
+pour être le meilleur setter IA.
+
+214
+00:09:15,350 --> 00:09:18,850
+Généralement, ça prend entre une
+et trois minutes, ce n'est pas
+
+215
+00:09:18,850 --> 00:09:20,890
+très long, mais comme vous pouvez le
+
+216
+00:09:20,890 --> 00:09:22,090
+voir, tout est en train
+
+217
+00:09:22,090 --> 00:09:22,990
+de se charger.
+
+218
+00:09:23,630 --> 00:09:28,510
+Et voilà le playbook, enfin terminé.
+
+219
+00:09:28,730 --> 00:09:32,590
+Vous allez pouvoir cliquer sur «
+Continue » et finir le setup de
+
+220
+00:09:32,590 --> 00:09:33,470
+votre workspace.
+
+221
+00:09:34,050 --> 00:09:37,530
+Donc comme vous pouvez le voir, ici,
+
+222
+00:09:37,530 --> 00:09:41,410
+vous pouvez directement
+essayer votre setter.
+
+223
+00:09:41,710 --> 00:09:43,270
+Alors c'est
+
+224
+00:09:43,270 --> 00:09:53,270
+super, parce que vous allez
+pouvoir écrire, et vous allez ainsi
+
+225
+00:09:53,270 --> 00:09:57,890
+pouvoir discuter avec votre setter.
+
+226
+00:09:58,550 --> 00:09:59,850
+Et là, comme on peut
+
+227
+00:09:59,850 --> 00:10:04,670
+le voir, les questions sont déjà très
+intéressantes, et vous pouvez continuer à
+
+228
+00:10:04,670 --> 00:10:05,850
+discuter avec lui.
+
+229
+00:10:06,050 --> 00:10:08,650
+Si vous n'aimez pas les réponses qu'il
+
+230
+00:10:08,650 --> 00:10:11,290
+vous donne, vous pouvez cliquer
+
+231
+00:10:11,290 --> 00:10:15,490
+directement ici, dans ce petit
+espace, et demander par exemple
+
+232
+00:10:24,140 --> 00:10:27,180
+et écrire ici : « I want a better
+
+233
+00:10:27,180 --> 00:10:30,020
+tone with emoji, face and hands. »
+
+234
+00:10:30,240 --> 00:10:34,880
+Vous pouvez directement
+envoyer votre message, et vous
+
+235
+00:10:34,880 --> 00:10:39,180
+allez pouvoir améliorer
+votre script au fur et à
+
+236
+00:10:39,180 --> 00:10:39,840
+mesure.
+
+237
+00:10:40,800 --> 00:10:42,200
+Comme on
+
+238
+00:10:42,200 --> 00:10:43,940
+peut le
+
+239
+00:10:43,940 --> 00:10:57,750
+voir, le script de setting s'est bien
+mis à jour, et si je repose la question,
+
+240
+00:10:57,750 --> 00:11:01,050
+hop, il me répond avec les mises à
+
+241
+00:11:01,050 --> 00:11:03,890
+jour appliquées automatiquement.
+
+242
+00:11:04,330 --> 00:11:06,990
+Avec cet outil, vous avez directement 14
+
+243
+00:11:06,990 --> 00:11:10,050
+jours d'essai gratuit,
+donc vous pouvez tout à
+
+244
+00:11:10,050 --> 00:11:12,510
+fait le tester sur vos premiers leads.
+
+245
+00:11:12,610 --> 00:11:16,810
+Vous avez 500 réponses IA,
+donc vous pouvez largement
+
+246
+00:11:16,810 --> 00:11:20,530
+tester et obtenir vos premiers appels.
+
+247
+00:11:20,970 --> 00:11:22,610
+Et on va faire le tour très
+
+248
+00:11:22,610 --> 00:11:24,650
+rapidement, pour que
+vous puissiez comprendre
+
+249
+00:11:24,650 --> 00:11:25,750
+à quoi ça sert.
+
+250
+00:11:25,810 --> 00:11:26,690
+Comme vous pouvez le
+
+251
+00:11:26,690 --> 00:11:27,770
+voir ici, on a l'historique
+
+252
+00:11:27,770 --> 00:11:29,710
+de ce qu'on lui a demandé,
+pour qu'il s'entraîne
+
+253
+00:11:29,710 --> 00:11:31,530
+et qu'il devienne un meilleur setter.
+
+254
+00:11:31,610 --> 00:11:34,270
+Donc vous pourrez toujours le tester ici
+
+255
+00:11:34,270 --> 00:11:36,910
+avant de le brancher
+sur vos clients ou sur
+
+256
+00:11:36,910 --> 00:11:38,290
+votre compte Instagram.
+
+257
+00:11:38,850 --> 00:11:40,670
+Et vous allez retrouver ici, dans
+
+258
+00:11:40,670 --> 00:11:41,870
+l'onglet « Playbook »,
+
+259
+00:11:42,850 --> 00:11:44,650
+absolument tout ce qui est lié au
+
+260
+00:11:44,650 --> 00:11:45,650
+script de setting.
+
+261
+00:11:45,830 --> 00:11:47,270
+Vous avez votre script
+
+262
+00:11:47,270 --> 00:11:51,030
+de setting, qui est juste
+ici, vous avez l'offre, les
+
+263
+00:11:52,290 --> 00:11:55,130
+critères, votre voix, les objections, le
+
+264
+00:11:55,130 --> 00:11:56,650
+contexte, absolument tout.
+
+265
+00:11:57,070 --> 00:11:59,050
+Je vous laisserai regarder ce que
+
+266
+00:11:59,050 --> 00:12:01,950
+l'IA a généré pour vous, mais globalement,
+
+267
+00:12:01,950 --> 00:12:04,550
+vous allez avoir des
+rendez-vous qualifiés.
+
+268
+00:12:04,930 --> 00:12:06,330
+Quand vous allez ici, dans
+
+269
+00:12:06,330 --> 00:12:09,410
+l'onglet « Booking & follow-ups
+», vous pouvez connecter
+
+270
+00:12:09,410 --> 00:12:10,630
+votre calendrier
+
+271
+00:12:10,790 --> 00:12:15,010
+beaucoup plus en profondeur qu'avec
+un simple lien de réservation
+
+272
+00:12:15,130 --> 00:12:17,930
+: vous allez pouvoir mettre la clé API de
+
+273
+00:12:17,930 --> 00:12:18,890
+votre calendrier.
+
+274
+00:12:19,370 --> 00:12:20,190
+Mais ça, on l'a déjà fait.
+
+275
+00:12:20,310 --> 00:12:22,510
+Vous pouvez voir ici
+les follow-ups, qui sont
+
+276
+00:12:22,510 --> 00:12:24,110
+beaucoup plus complets que ce que
+
+277
+00:12:24,110 --> 00:12:25,390
+l'on avait dans l'onboarding.
+
+278
+00:12:25,950 --> 00:12:29,130
+Parce qu'ici, vous pouvez non seulement
+
+279
+00:12:29,130 --> 00:12:31,790
+laisser l'IA écrire le follow-up que
+
+280
+00:12:31,790 --> 00:12:34,590
+vous voulez, dans la fenêtre de 24
+
+281
+00:12:34,590 --> 00:12:36,110
+heures de ManyChat,
+
+282
+00:12:36,470 --> 00:12:38,050
+mais vous pouvez aussi
+
+283
+00:12:38,050 --> 00:12:41,450
+l'écrire vous-même, ou même
+enregistrer une note vocale,
+
+284
+00:12:42,070 --> 00:12:44,830
+pour que les follow-ups soient encore plus
+
+285
+00:12:44,830 --> 00:12:46,630
+personnalisés et que la personne ne
+
+286
+00:12:46,630 --> 00:12:50,710
+se doute absolument pas qu'une IA
+se cache derrière les messages.
+
+287
+00:12:51,830 --> 00:12:54,750
+Et ici, vous avez les settings, tout
+
+288
+00:12:55,070 --> 00:12:57,050
+ce qui vous permet de gérer,
+
+289
+00:12:57,050 --> 00:13:00,810
+par exemple, le délai
+que l'IA va mettre pour
+
+290
+00:13:00,810 --> 00:13:01,430
+répondre.
+
+291
+00:13:01,690 --> 00:13:03,190
+Là, il est réglé sur 45 secondes,
+
+292
+00:13:03,190 --> 00:13:04,810
+et on verra tout à l'heure, pendant
+
+293
+00:13:04,810 --> 00:13:06,310
+le test, qu'il attend bien 45
+
+294
+00:13:06,310 --> 00:13:06,690
+secondes.
+
+295
+00:13:07,210 --> 00:13:10,290
+Vous pouvez aussi mettre
+en pause ou supprimer
+
+296
+00:13:10,290 --> 00:13:12,330
+votre setter si vous en avez
+
+297
+00:13:12,330 --> 00:13:12,590
+envie.
+
+298
+00:13:12,930 --> 00:13:18,350
+Mais vous avez aussi
+des règles de sécurité.
+
+299
+00:13:18,790 --> 00:13:22,310
+Par exemple, vous allez pouvoir lui dire
+
+300
+00:13:22,310 --> 00:13:26,450
+d'arrêter de parler à
+partir du moment où la
+
+301
+00:13:26,450 --> 00:13:30,590
+personne parle, par
+exemple, de remboursement,
+
+302
+00:13:30,590 --> 00:13:37,410
+ou de quelque chose dont vous n'avez pas
+envie de parler, quand vous ne voulez
+
+303
+00:13:37,410 --> 00:13:38,750
+pas que l'IA
+
+304
+00:13:38,850 --> 00:13:39,970
+fasse ce choix-là
+
+305
+00:13:39,970 --> 00:13:43,050
+et prenne le risque d'aborder
+
+306
+00:13:43,050 --> 00:13:43,970
+ces sujets.
+
+307
+00:13:44,530 --> 00:13:46,290
+Donc c'est super intéressant. Et vous
+
+308
+00:13:46,290 --> 00:13:48,850
+avez ici une inbox dans
+laquelle vous allez retrouver
+
+309
+00:13:48,850 --> 00:13:49,750
+tous les messages.
+
+310
+00:13:49,850 --> 00:13:51,410
+Et comme vous pouvez le voir, on a
+
+311
+00:13:51,410 --> 00:13:53,250
+ici les messages que
+l'on a envoyés pendant
+
+312
+00:13:53,250 --> 00:13:53,630
+le test.
+
+313
+00:13:53,810 --> 00:13:55,510
+Vous pouvez donc voir directement
+
+314
+00:13:55,510 --> 00:13:58,070
+à quoi ça ressemble, et vous allez bien
+
+315
+00:13:58,070 --> 00:14:01,250
+sûr pouvoir prendre la main
+sur le lead si vous en
+
+316
+00:14:01,250 --> 00:14:01,910
+avez envie.
+
+317
+00:14:02,150 --> 00:14:04,030
+Si vous voulez gérer vos leads à la
+
+318
+00:14:04,030 --> 00:14:06,590
+main, vous pouvez récupérer
+la conversation absolument
+
+319
+00:14:06,590 --> 00:14:07,690
+quand vous le voulez.
+
+320
+00:14:08,550 --> 00:14:10,890
+Donc maintenant, il est temps de voir si
+
+321
+00:14:10,890 --> 00:14:13,430
+ça fonctionne réellement sur notre compte
+
+322
+00:14:13,430 --> 00:14:14,070
+Instagram.
+
+323
+00:14:14,410 --> 00:14:17,450
+Et c'est parti, on se rejoint
+
+324
+00:14:18,270 --> 00:14:21,590
+directement sur mon compte Instagram, ici.
+
+325
+00:14:22,030 --> 00:14:23,290
+Donc on peut voir que,
+
+326
+00:14:23,290 --> 00:14:26,290
+je vais décaler mon image,
+on peut voir que juste ici
+
+327
+00:14:26,290 --> 00:14:28,290
+se trouve le compte Instagram qui est
+
+328
+00:14:28,290 --> 00:14:30,950
+relié à ManyChat, et nous
+allons lui envoyer un
+
+329
+00:14:30,950 --> 00:14:31,810
+premier message.
+
+330
+00:14:32,090 --> 00:14:40,690
+Donc nous allons écrire, par
+exemple : « About ecom ».
+
+331
+00:14:42,350 --> 00:14:45,670
+Tout simplement, nous allons envoyer ce
+
+332
+00:14:45,670 --> 00:14:48,470
+message, attendre la réponse et voir ce
+
+333
+00:14:48,470 --> 00:14:50,230
+que notre setter répond.
+
+334
+00:14:50,910 --> 00:14:53,110
+On voit qu'il nous demande si j'ai déjà
+
+335
+00:14:53,110 --> 00:14:55,030
+commencé à vendre ou si je débute
+
+336
+00:14:55,030 --> 00:14:55,930
+tout juste.
+
+337
+00:14:56,090 --> 00:14:57,010
+Donc je lui
+
+338
+00:14:57,010 --> 00:15:02,530
+dis que j'ai déjà fait un
+million. Il me demande ce que je
+
+339
+00:15:02,530 --> 00:15:04,270
+vends actuellement.
+
+340
+00:15:04,530 --> 00:15:06,510
+Je lui réponds : des produits pour chiens.
+
+341
+00:15:06,650 --> 00:15:08,130
+Ce à quoi il me répond : «
+
+342
+00:15:08,130 --> 00:15:08,810
+C'est une
+
+343
+00:15:08,990 --> 00:15:10,510
+bonne niche. Depuis combien
+
+344
+00:15:10,510 --> 00:15:12,810
+de temps est-ce que tu fais de l'e-com ? »
+
+345
+00:15:13,410 --> 00:15:14,750
+Je lui réponds : deux ans.
+
+346
+00:15:15,630 --> 00:15:21,600
+« Est-ce que tu as déjà essayé
+de trouver des produits
+
+347
+00:15:21,600 --> 00:15:23,080
+gagnants ? »
+
+348
+00:15:24,320 --> 00:15:26,880
+Du coup, je lui dis que je regarde
+
+349
+00:15:26,880 --> 00:15:29,520
+actuellement Pinterest Trends, et là, il
+
+350
+00:15:29,520 --> 00:15:31,900
+me dit : « Ah, mais qu'est-ce qui
+
+351
+00:15:31,900 --> 00:15:35,200
+te retient, à ton avis,
+d'atteindre les 10k par
+
+352
+00:15:35,200 --> 00:15:37,400
+mois avec ta boutique e-com ? »
+
+353
+00:15:37,400 --> 00:15:39,920
+Donc je lui dis : les bonnes sources, et
+
+354
+00:15:39,920 --> 00:15:42,440
+peut-être les compétences
+pour faire de meilleures
+
+355
+00:15:42,440 --> 00:15:44,220
+ads ou de meilleures boutiques.
+
+356
+00:15:44,640 --> 00:15:52,360
+Il me répond qu'il pourrait m'aider
+à atteindre les 10 000 euros par
+
+357
+00:15:52,360 --> 00:15:55,140
+mois, mais me demande d'abord
+
+358
+00:15:55,140 --> 00:15:57,740
+si j'ai 3 000 euros de
+
+359
+00:15:57,740 --> 00:16:00,820
+côté à investir dans ce
+
+360
+00:16:00,820 --> 00:16:01,260
+projet.
+
+361
+00:16:01,560 --> 00:16:03,620
+Je lui dis : oui, pourquoi pas. Il me fait
+
+362
+00:16:03,620 --> 00:16:05,380
+un récap et me dit que la prochaine
+
+363
+00:16:05,380 --> 00:16:06,960
+étape, c'est un appel de 30 minutes.
+
+364
+00:16:07,260 --> 00:16:08,560
+Je lui dis que je suis OK.
+
+365
+00:16:09,000 --> 00:16:09,840
+Il m'envoie le lien.
+
+366
+00:16:10,240 --> 00:16:12,020
+Je lui dis que j'ai pris mon
+
+367
+00:16:12,920 --> 00:16:16,760
+appel pour le lendemain à 4
+heures de l'après-midi, et il
+
+368
+00:16:16,760 --> 00:16:18,280
+me dit : « Parfait, on
+
+369
+00:16:18,280 --> 00:16:19,800
+se voit à 4 heures. »
+
+370
+00:16:20,580 --> 00:16:24,920
+Le prompt utilisé n'a demandé que
+
+371
+00:16:24,920 --> 00:16:27,560
+cinq minutes de
+
+372
+00:16:27,560 --> 00:16:28,020
+travail.
+
+373
+00:16:28,120 --> 00:16:31,320
+Alors imaginez : si vous
+peaufinez votre script de setting,
+
+374
+00:16:31,320 --> 00:16:33,720
+vous pouvez avoir des
+résultats démentiels.
+
+375
+00:16:34,160 --> 00:16:35,260
+Et le plus intéressant
+
+376
+00:16:35,260 --> 00:16:38,360
+dans tout ça, c'est que si on
+retourne sur notre application
+
+377
+00:16:39,500 --> 00:16:42,140
+ManySetter, ici, et que
+vous allez directement
+
+378
+00:16:42,140 --> 00:16:43,700
+dans l'Inbox, qu'est-ce que
+
+379
+00:16:43,700 --> 00:16:44,680
+vous pouvez voir ?
+
+380
+00:16:44,680 --> 00:16:47,760
+Vous pouvez voir directement
+ici : « Booked ».
+
+381
+00:16:48,140 --> 00:16:52,300
+Donc vous allez pouvoir consulter
+directement les statistiques
+
+382
+00:16:52,300 --> 00:16:54,220
+et comprendre ce qui s'est
+
+383
+00:16:54,220 --> 00:16:54,500
+passé.
+
+384
+00:16:55,440 --> 00:16:57,160
+Vous pouvez voir la
+
+385
+00:16:57,160 --> 00:17:02,160
+conversation, vous pouvez même la
+reprendre vous-même, donc c'est génial.
+
+386
+00:17:05,900 --> 00:17:09,760
+Synchronisez ManySetter
+avec ManyChat, et vous ne
+
+387
+00:17:09,760 --> 00:17:11,920
+perdrez plus jamais aucun lead.
+
+388
+00:17:14,900 --> 00:17:16,680
+J'espère que cette vidéo vous aura plu.
+
+389
+00:17:16,800 --> 00:17:21,940
+Si vous avez des questions,
+n'hésitez pas à me les
+
+390
+00:17:21,940 --> 00:17:23,960
+poser en commentaire.
+
+391
+00:17:25,380 --> 00:17:28,520
+J'espère que cette vidéo vous aura plu.
+
+392
+00:17:30,240 --> 00:17:32,040
+Merci à tous, et à la prochaine !
+
