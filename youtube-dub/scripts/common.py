@@ -50,6 +50,10 @@ def norm_words(text: str) -> list[str]:
     """Comparable word list for QA (both the script and whisper's transcript go through it)."""
     t = spoken(text).lower()
     t = re.sub(r"\b(dollar|euro)\b", r"\1s", t)
+    # casual spoken forms are fine in a YouTube voice
+    t = re.sub(r"\bgonna\b", "going to", t)
+    t = re.sub(r"\bwanna\b", "want to", t)
+    t = re.sub(r"\bgotta\b", "got to", t)
     for a, b in ((r"\ba i\b", "ai"), (r"\bmany chat\b", "manychat"), (r"\bmany setter\b", "manysetter"),
                  (r"\bwhats app\b", "whatsapp"), (r"\be com\b", "ecom"), (r"\ba m\b", "am")):
         t = re.sub(a, b, t)
