@@ -1,0 +1,13 @@
+node_modules/
+kit/
+*.env
+.env*
+manysetter-ad/research/*.html
+manysetter-ad/research/*.css
+manysetter-ad/research/home-*.png
+manysetter-ad/research/how-*.png
+manysetter-ad/research/pricing-*.png
+!manysetter-ad/research/contact-*.png
+manysetter-ad/renders/**/frames/
+.hyperframes/
+__pycache__/
