@@ -112,6 +112,7 @@ def srt_time(t):
 
 def main():
     plan_path, takes, out = map(pathlib.Path, sys.argv[1:4])
+    length = float(sys.argv[4]) if len(sys.argv) > 4 else None  # exact video length in seconds
     out.mkdir(parents=True, exist_ok=True)
     plan = json.loads(plan_path.read_text())
     words = plan["words"]
@@ -166,14 +167,14 @@ def main():
 
     print(f"{len(units)} units")
     # 3. place on the timeline
-    total = plan["duration"] + 2.0
+    total = length if length else plan["duration"] + 2.0
     track = np.zeros(int(total * SR) + SR, dtype=np.float32)
     cursor = 0.0
     rows = []
     for k, ch in enumerate(chunks):
         clip, lead = ch["clip"], ch["lead"]
         target = ch["t"]
-        next_t = chunks[k + 1]["t"] if k + 1 < len(chunks) else target + len(clip) / SR + 1
+        next_t = chunks[k + 1]["t"] if k + 1 < len(chunks) else (total - 0.05 if length else target + len(clip) / SR + 1)
         onset = max(target, cursor + GAP)
         speech = len(clip) / SR - lead
         avail = next_t - onset - GAP

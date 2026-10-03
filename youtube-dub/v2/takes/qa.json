@@ -10,5 +10,110 @@
    "try1: PASS []"
   ],
   "ok": true
+ },
+ "2": {
+  "log": [
+   "try1: PASS [('replace', 'we', 'you'), ('replace', 'setup', 'set up')]"
+  ],
+  "ok": true
+ },
+ "3": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "4": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "5": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "6": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "7": {
+  "log": [
+   "try1: PASS [('replace', 'calendly', 'calumly')]"
+  ],
+  "ok": true
+ },
+ "8": {
+  "log": [
+   "try1: FAIL [('replace', 'ecom', 'econ'), ('replace', 'e commerce', 'ecommerce')]",
+   "try2: FAIL [('replace', 'e commerce', 'ecommerce')]"
+  ],
+  "ok": false
+ },
+ "9": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "10": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "11": {
+  "log": [
+   "try1: PASS [('replace', 'setting', 'settings')]"
+  ],
+  "ok": true
+ },
+ "12": {
+  "log": [
+   "try1: PASS [('replace', 'clients', \"client's\")]"
+  ],
+  "ok": true
+ },
+ "13": {
+  "log": [
+   "try1: PASS [('replace', \"manychat's\", 'many chats'), ('replace', 'replying', 'applying')]",
+   "try1: PASS [('replace', \"manychat's\", 'many chats')]"
+  ],
+  "ok": true
+ },
+ "14": {
+  "log": [
+   "try1: PASS [('replace', 'anytime', 'any time')]"
+  ],
+  "ok": true
+ },
+ "15": {
+  "log": [
+   "try1: PASS [('replace', 'facecam', 'face cam'), ('replace', 'manychat', 'mini chat')]"
+  ],
+  "ok": true
+ },
+ "16": {
+  "log": [
+   "try1: PASS [('replace', 'euros', 'dollars'), ('replace', 'euros', 'dollars')]",
+   "try1: PASS []"
+  ],
+  "ok": true
+ },
+ "17": {
+  "log": [
+   "try1: FAIL [('replace', 'p m', 'pm'), ('replace', 'setting', 'settings')]"
+  ],
+  "ok": false
+ },
+ "18": {
+  "log": [
+   "try1: PASS []"
+  ],
+  "ok": true
  }
 }

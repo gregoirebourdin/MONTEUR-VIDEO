@@ -34,6 +34,14 @@ def wrap(text):
     return text[:cut] + "\n" + text[cut + 1 :]
 
 
+def cue_of_words(words, cues):
+    """Cue index (0-based within the phrase) of every word, with the same split as the subtitles."""
+    out = []
+    for k, (_, _, text) in enumerate(distribute(words, cues)):
+        out += [k] * len(text.split())
+    return out
+
+
 def distribute(words, cues):
     """Split a phrase's words over its cues in proportion to their durations (≥1 word per cue)."""
     if len(cues) == 1 or len(words) <= 1:
@@ -96,9 +104,11 @@ def main():
         en_rows += distribute(en.split(), cs)
         t0, t1 = cs[0]["start"], cs[-1]["end"]
         wids = []
-        for w in en.split():
+        # each English word is anchored to the cue it is shown in, so the dub re-syncs on the
+        # speaker at every cue that starts after a comma or a full stop
+        for w, k in zip(en.split(), cue_of_words(en.split(), cs)):
             wids.append(len(words))
-            words.append({"w": w, "cue": a, "t": t0})
+            words.append({"w": w, "cue": cs[k]["i"], "t": cs[k]["start"]})
         sentences.append({"id": sid, "words": wids, "text": en})
         chunks.append({"id": sid, "sent": sid, "words": wids, "text": en, "t": round(t0, 3), "fr_end": round(t1, 3)})
         segs.append({"id": sid, "cues": [a, b], "start": t0, "end": t1, "fr": fr, "en": en})
