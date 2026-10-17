@@ -5,10 +5,12 @@
   2. each chunk (a phrase between two pauses of the speaker) is cut at quiet points
   3. the chunk's first word lands on the moment the speaker starts that phrase in the original video;
      when the English runs longer than the French, it may start up to 0.3 s early into silence, then is
-     sped up without pitch change (rubberband, at most ×1.22); anything left over delays the next phrase
-  4. the track is normalised to -16 LUFS / -1.5 dBTP (dialogue) and a timing report + SRT are written
+     sped up without pitch change (ffmpeg atempo, at most ×1.2, never slowed down); anything left over
+     delays the next phrase
+  4. dialogue processing (VOICE_EQ: less boxiness, more presence, de-esser, gentle compressor), then a
+     constant gain to -16 LUFS and a -1.5 dB limiter; a timing report + SRT are written
 
-Usage: python3 scripts/place.py plan.json takes/ out/
+Usage: python3 scripts/place.py plan.json takes/ out/ [exact_length_s]
 """
 import json
 import pathlib
