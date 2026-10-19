@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.20.0/build/matter.min.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.2/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/ui/ms.css" />
+    <style>
+      @font-face { font-family: "Nohemi"; font-weight: 600; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); }
+      @font-face { font-family: "Nohemi"; font-weight: 500; src: url("assets/fonts/Nohemi-500.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 100 900; src: url("assets/fonts/Inter-var.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0d0c0a; }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0d0c0a;
+        font-family: Inter, sans-serif; --sx: 540; --sy: 600; --su: 140; }
+      .layer { position: absolute; inset: 0; pointer-events: none; }
+
+      /* ---------- backgrounds ---------- */
+      .bg { position: absolute; inset: 0; }
+      #bg-warm { background: radial-gradient(85% 50% at 50% 34%, #5a2a10 0%, #2a160c 48%, #0d0c0a 100%); }
+      #bg-hot { background: radial-gradient(90% 55% at 50% 34%, #8a3a12 0%, #3a1a0b 50%, #0d0c0a 100%); opacity: 0; }
+      #bg-night { background: radial-gradient(80% 45% at 50% 30%, #1d1a2e 0%, #0e0d16 55%, #07070a 100%); opacity: 0; }
+      #bg-black { background: #050404; opacity: 0; }
+      #spot { position: absolute; left: 50%; top: 31%; width: 1200px; height: 1200px; margin: -600px 0 0 -600px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 70, 30, 0.5) 0%, rgba(255, 70, 30, 0) 60%); opacity: 0; }
+      #glow { position: absolute; left: 50%; top: 31%; width: 1150px; height: 1150px; margin: -575px 0 0 -575px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 110, 40, 0.32) 0%, rgba(255, 110, 40, 0) 62%); }
+      .ms-grain { opacity: 0.06; }
+
+      /* ---------- props behind Setty ---------- */
+      #marquee { position: absolute; inset: 0; opacity: 0; }
+      #marquee .row { position: absolute; left: -500px; transform: rotate(-8deg); }
+      #marquee .row { font-size: 170px; }
+      #marquee .r1 { top: 10px; }
+      #marquee .r2 { top: 950px; }
+      #marquee .row { white-space: nowrap; font: 600 230px/0.9 Nohemi, sans-serif; letter-spacing: -0.05em; }
+      #marquee .row span { margin-right: 60px; }
+      #marquee .r1 { color: #ff611d; }
+      #marquee .r2 { color: transparent; -webkit-text-stroke: 4px #ff7a3a; }
+      #ring { position: absolute; left: calc(var(--sx) * 1px); top: calc(var(--sy) * 1px);
+        width: calc(var(--su) * 4.4px); height: calc(var(--su) * 4.4px); transform: translate(-50%, -50%) scale(0.6); opacity: 0;
+        border-radius: 50%; border: calc(var(--su) * 0.34px) solid #fff7ef;
+        box-shadow: 0 0 60px 20px rgba(255, 236, 214, 0.75), inset 0 0 60px 16px rgba(255, 236, 214, 0.6); }
+      #clock { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font: 600 250px/1 Nohemi, sans-serif;
+        letter-spacing: -0.04em; color: #ff7a3a; text-shadow: 0 0 60px rgba(255, 110, 40, 0.7); opacity: 0; }
+      #bed { position: absolute; left: 160px; top: 690px; width: 760px; opacity: 0; }
+
+      #three { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+
+      /* ---------- props in front ---------- */
+      #live { position: absolute; left: 110px; top: 230px; display: flex; align-items: center; gap: 18px; opacity: 0; }
+      #live .pill { display: flex; align-items: center; gap: 14px; height: 76px; padding: 0 28px; border-radius: 999px;
+        background: #ff2d46; color: #fff; font: 700 40px/1 Inter, sans-serif; letter-spacing: 0.04em; box-shadow: 0 10px 30px -10px #ff2d46; }
+      #live .pill i { width: 18px; height: 18px; border-radius: 50%; background: #fff; }
+      #live .day { height: 76px; padding: 0 26px; border-radius: 999px; background: #1a1816; color: #fff; display: flex; align-items: center;
+        font: 600 40px/1 Inter, sans-serif; box-shadow: inset 0 0 0 2px #42403c; overflow: hidden; }
+      #live .day b { display: inline-block; width: 30px; text-align: center; }
+      #ecg { position: absolute; left: 0; top: 960px; width: 1080px; height: 220px; opacity: 0; }
+      #ecg path { fill: none; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+      .bubble { position: absolute; left: 0; top: 0; height: 92px; padding: 0 34px; border-radius: 46px; border-bottom-left-radius: 12px;
+        display: flex; align-items: center; font: 500 40px/1 Inter, sans-serif; letter-spacing: -0.01em; white-space: nowrap;
+        background: #fff; color: #1a1816; box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.55); visibility: hidden; }
+      .bubble.g { background: #f0eeec; }
+      .bubble.o { background: #ff7a3a; color: #fff; }
+      #info { position: absolute; left: 140px; top: 560px; height: 300px; padding: 0 110px; border-radius: 150px; border-bottom-left-radius: 36px;
+        display: flex; align-items: center; background: #fff; color: #1a1816; font: 600 190px/1 Nohemi, sans-serif; letter-spacing: -0.04em;
+        box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7); opacity: 0; }
+      #hand { position: absolute; left: 700px; top: 170px; width: 230px; height: 230px; border-radius: 50%; background: #ff611d;
+        display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 50px -14px #ff611d; opacity: 0; }
+      #hand svg { width: 128px; height: 128px; color: #fff; stroke-width: 2.2; }
+      #moon { position: absolute; left: 760px; top: 190px; opacity: 0; color: #ffd9a8; }
+      #moon svg { width: 130px; height: 130px; stroke-width: 2; fill: #ffd9a833; }
+      #moon b { position: absolute; font: 600 60px/1 Nohemi, sans-serif; color: #fff; }
+      #tapes { position: absolute; inset: 0; opacity: 1; }
+      .tape { position: absolute; left: -300px; width: 1700px; height: 120px; display: flex; align-items: center; overflow: hidden;
+        background: #ff611d; box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.8);
+        border-top: 14px solid #0d0c0a; border-bottom: 14px solid #0d0c0a; }
+      .tape span { white-space: nowrap; font: 600 64px/1 Nohemi, sans-serif; letter-spacing: -0.02em; color: #0d0c0a; }
+      #tape1 { top: 250px; transform: rotate(-11deg) translateX(-2200px); }
+      #tape2 { top: 1520px; transform: rotate(8deg) translateX(2200px); }
+      #mc { position: absolute; left: 100px; top: 930px; display: flex; align-items: center; gap: 22px; height: 120px; padding: 0 40px 0 22px;
+        border-radius: 999px; background: #1a1816; box-shadow: inset 0 0 0 2px #2a2825, 0 20px 50px -16px #000; opacity: 0; }
+      #mc .logo { width: 80px; height: 80px; border-radius: 50%; background: #0084ff; display: flex; align-items: center; justify-content: center; }
+      #mc .logo svg { width: 44px; height: 44px; color: #fff; stroke-width: 2.4; }
+      #mc b { font: 600 52px/1 Inter, sans-serif; color: #fff; letter-spacing: -0.02em; }
+      #mc .ok { position: absolute; left: calc(100% + 20px); top: 31px; height: 58px; padding: 0 24px; gap: 12px; font-size: 30px; opacity: 0; }
+      #mc .ok .dot { width: 14px; height: 14px; }
+      #cable { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: visible; }
+      #cable path { fill: none; stroke: #ff7a3a; stroke-width: 12; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; }
+      #spark { position: absolute; left: 300px; top: 930px; width: 0; height: 0; opacity: 0; }
+      #spark i { position: absolute; left: -5px; top: -60px; width: 10px; height: 46px; border-radius: 5px; background: #ffd27a; transform-origin: 5px 60px; }
+
+      /* app UI cards (app 1x size, zoomed) */
+      #cardsw { position: absolute; left: 100px; top: 660px; }
+      #cards { position: relative; width: 400px; height: 220px; zoom: 2.2; }
+      .card { position: absolute; left: 0; top: 0; width: 400px; opacity: 0; }
+      .card .hd { display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px; border-bottom: 1px solid var(--ink-150);
+        font: 600 15px/1 var(--font-heading); letter-spacing: -0.02em; color: var(--ink-900); }
+      .card .hd .ms-ico { color: var(--ink-500); }
+      .card .hd .ms-chip { margin-left: auto; }
+      .card .bd { padding: 12px 14px 14px; }
+      .doc { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 12px; box-shadow: var(--shadow-popover); }
+      .doc .tile { width: 34px; height: 34px; border-radius: 9px; background: var(--brand-50); box-shadow: inset 0 0 0 1px #ff611d38;
+        color: var(--brand-600); display: flex; align-items: center; justify-content: center; }
+      .doc b { display: block; font: 600 13px/1 Inter, sans-serif; margin-bottom: 4px; }
+      .doc span { font: 400 11px/1 Inter, sans-serif; color: var(--ink-500); }
+      .bar { margin-top: 12px; height: 6px; border-radius: 3px; background: var(--ink-150); overflow: hidden; }
+      .bar i { display: block; height: 100%; width: 100%; border-radius: 3px; background: linear-gradient(90deg, #ff884d, #e64b15);
+        transform-origin: left center; transform: scaleX(0); }
+      .facts { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+      .facts .ms-chip { opacity: 0; }
+      #c-thread .bd { height: 180px; overflow: hidden; position: relative; padding: 0; }
+      #thread { position: absolute; left: 14px; right: 14px; top: 12px; }
+      #thread .row { display: flex; flex-direction: column; margin-bottom: 8px; opacity: 0; }
+      #thread .ms-bubble { max-width: 290px; }
+      #thread .ms-chip { align-self: flex-end; margin-top: 2px; }
+      .who { display: flex; align-items: center; gap: 8px; }
+      .who .ms-avatar { width: 26px; height: 26px; font-size: 10px; }
+      .who span { font: 500 11px/1 Inter, sans-serif; color: var(--ink-400); margin-left: auto; }
+      #c-booked { width: 400px; padding: 16px; display: flex; align-items: center; gap: 14px; }
+      #c-booked .tile { width: 56px; height: 56px; border-radius: 16px; background: var(--emerald-50); box-shadow: inset 0 0 0 1px #00bb7f40;
+        color: var(--emerald-600); display: flex; align-items: center; justify-content: center; }
+      #c-booked .tile svg { width: 30px; height: 30px; stroke-width: 2.4; }
+      #c-booked b { display: block; font: 600 20px/1 var(--font-heading); letter-spacing: -0.03em; margin-bottom: 6px; }
+      #c-booked span { font: 400 12.5px/1.3 Inter, sans-serif; color: var(--ink-500); }
+      #cal .grid { position: relative; display: grid; grid-template-columns: 34px repeat(5, 1fr); padding: 6px 10px 10px; }
+      #cal .dh { font: 600 10.5px/1 Inter, sans-serif; color: var(--ink-500); text-align: center; padding: 6px 0 8px; }
+      #cal .dh.on { color: var(--brand-600); }
+      #cal .hr { font: 500 9.5px/1 Inter, sans-serif; color: var(--ink-400); height: 34px; padding-top: 2px; }
+      #cal .cell { height: 34px; border-top: 1px solid var(--ink-150); border-left: 1px solid var(--ink-150); }
+      .ev { position: absolute; height: 30px; border-radius: 7px; padding: 5px 6px; background: linear-gradient(#ff884d, #e64b15);
+        color: #fff; font: 600 9px/1.2 Inter, sans-serif; box-shadow: 0 4px 10px -4px #e64b15; opacity: 0; }
+      #confetti { position: absolute; left: 540px; top: 900px; width: 0; height: 0; }
+      #confetti i { position: absolute; left: 0; top: 0; width: 16px; height: 26px; border-radius: 4px; opacity: 0; }
+
+      #comment { position: absolute; left: 90px; top: 1000px; width: 900px; height: 130px; border-radius: 999px; background: #fff;
+        display: flex; align-items: center; gap: 22px; padding: 0 18px; box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.8); opacity: 0; }
+      #comment .av { width: 92px; height: 92px; border-radius: 50%; overflow: hidden; flex: none; }
+      #comment .av img { width: 100%; height: 100%; display: block; }
+      #comment .txt { flex: 1; font: 600 58px/1 Inter, sans-serif; color: #1a1816; letter-spacing: 0.02em; display: flex; align-items: center; }
+      #comment .ph { position: absolute; left: 132px; font: 400 44px/1 Inter, sans-serif; color: #a3a09d; }
+      #comment .caret { width: 4px; height: 60px; background: #ff611d; margin-left: 4px; }
+      #comment .send { width: 96px; height: 96px; border-radius: 50%; background: linear-gradient(#ff884d, #e64b15); display: flex;
+        align-items: center; justify-content: center; flex: none; }
+      #comment .send svg { width: 50px; height: 50px; color: #fff; stroke-width: 2.6; }
+      #notif { position: absolute; left: 60px; right: 60px; top: 150px; height: 150px; border-radius: 40px; background: rgba(38, 36, 34, 0.92);
+        box-shadow: 0 30px 60px -20px #000, inset 0 0 0 2px #42403c; display: flex; align-items: center; gap: 26px; padding: 0 30px;
+        transform: translateY(-420px); }
+      #notif img { width: 96px; height: 96px; border-radius: 26px; }
+      #notif b { display: block; font: 600 42px/1 Inter, sans-serif; color: #fff; margin-bottom: 10px; }
+      #notif span { font: 400 36px/1 Inter, sans-serif; color: #d7d4d2; }
+      #notif em { margin-left: auto; align-self: flex-start; margin-top: 34px; font: 400 30px/1 Inter, sans-serif; font-style: normal; color: #a3a09d; }
+
+      /* ---------- captions ---------- */
+      #caps { position: absolute; left: 80px; right: 80px; top: 1185px; height: 280px; }
+      .chunk { position: absolute; left: 0; right: 0; top: 0; text-align: center; font: 600 108px/1.04 Nohemi, sans-serif;
+        letter-spacing: -0.045em; color: #fff; visibility: hidden; }
+      .chunk.hero { font-size: 150px; }
+      .tok { display: inline-block; margin: 0 0.13em; position: relative; -webkit-text-stroke: 14px #0d0c0a; paint-order: stroke fill;
+        text-shadow: 0 10px 0 #0d0c0a; }
+      .tok.accent { color: #ff7a3a; }
+      .tok.bleep::after { content: "#@!%"; position: absolute; left: -0.08em; right: -0.08em; top: 0.06em; bottom: -0.02em; border-radius: 0.16em;
+        background: #0d0c0a; color: #ff7a3a; -webkit-text-stroke: 0; text-shadow: none; display: flex; align-items: center; justify-content: center;
+        font-size: 0.62em; transform: rotate(-3deg); }
+
+      #flash { position: absolute; inset: 0; background: #fff; opacity: 0; }
+      #endcta { position: absolute; left: 0; right: 0; top: 1195px; display: flex; justify-content: center; opacity: 0; }
+      #endcta div { display: flex; align-items: center; gap: 22px; height: 150px; padding: 0 56px; border-radius: 999px;
+        background: linear-gradient(#ff884d, #e64b15); box-shadow: 0 24px 60px -16px #e64b15, inset 0 2px 0 #ffffff55;
+        font: 600 78px/1 Nohemi, sans-serif; letter-spacing: -0.04em; color: #fff; }
+      #endcta svg { width: 70px; height: 70px; stroke-width: 2.6; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="reel1" data-start="0" data-duration="29.03" data-fps="30" data-width="1080" data-height="1920">
+      <div class="layer" id="back">
+        <div class="bg" id="bg-warm"></div>
+        <div class="bg" id="bg-hot"></div>
+        <div class="bg" id="bg-night"></div>
+        <div class="bg" id="bg-black"></div>
+        <div id="glow"></div>
+        <div id="spot"></div>
+        <div id="marquee" data-layout-ignore>
+          <div class="row r1"><span>5-DAY CHALLENGE</span><span>5-DAY CHALLENGE</span><span>5-DAY CHALLENGE</span></div>
+          <div class="row r2"><span>5-DAY CHALLENGE</span><span>5-DAY CHALLENGE</span><span>5-DAY CHALLENGE</span></div>
+        </div>
+        <div id="ring"></div>
+        <div id="clock">00:00</div>
+        <svg id="bed" viewBox="0 0 900 560">
+          <rect x="40" y="40" width="820" height="210" rx="40" fill="#2a2825" />
+          <rect x="60" y="230" width="780" height="140" rx="30" fill="#f5f3f2" />
+          <rect x="90" y="190" width="260" height="90" rx="40" fill="#fff" />
+          <rect x="20" y="300" width="860" height="200" rx="44" fill="#42403c" />
+          <rect x="20" y="300" width="860" height="40" rx="20" fill="#585552" />
+          <rect x="60" y="490" width="40" height="60" rx="10" fill="#2a2825" />
+          <rect x="800" y="490" width="40" height="60" rx="10" fill="#2a2825" />
+        </svg>
+      </div>
+      <canvas id="three"></canvas>
+      <div class="layer" id="front">
+        <div id="live"><div class="pill"><i></i>LIVE</div><div class="day">DAY&nbsp;<b id="dayn">1</b></div></div>
+        <svg id="ecg" viewBox="0 0 1080 220"><path id="ecg-line" pathLength="1" d="" /></svg>
+        <div id="rain" data-layout-ignore></div>
+        <div id="info">info?</div>
+        <div id="hand"></div>
+        <div id="moon"><b style="left: 150px; top: -10px">z</b><b style="left: 200px; top: -70px; font-size: 44px">z</b></div>
+        <div id="tapes" data-layout-ignore>
+          <div class="tape" id="tape1"><span></span></div>
+          <div class="tape" id="tape2"><span></span></div>
+        </div>
+        <svg id="cable" viewBox="0 0 1080 1920"><path id="cable-path" pathLength="1" d="M0 0" /></svg>
+        <div id="mc"><div class="logo" id="mc-logo"></div><b>Manychat</b><span class="ms-chip green ok" id="mc-ok"><i class="dot"></i>Connected</span></div>
+        <div id="spark"></div>
+        <div id="cardsw"><div id="cards">
+          <div class="card ms-window" id="c-pb">
+            <div class="hd" data-ico="book-open">Playbook<span class="ms-chip green" id="pb-chip" style="opacity: 0"><i class="dot"></i>Learned</span></div>
+            <div class="bd">
+              <div class="doc"><div class="tile" data-ico="file-text"></div><div><b>Sales page</b><span>yourcoaching.com/apply</span></div></div>
+              <div class="bar"><i id="pb-fill"></i></div>
+              <div class="facts"><span class="ms-chip orange">Offer</span><span class="ms-chip orange">Price</span><span class="ms-chip orange">Objections</span><span class="ms-chip orange">Your tone</span></div>
+            </div>
+          </div>
+          <div class="card ms-window" id="c-thread">
+            <div class="hd"><span class="who"><span class="ms-avatar">SM</span></span>sarah.mindset<span class="ms-chip"><i class="dot" style="background: #00bb7f"></i>Live</span></div>
+            <div class="bd"><div id="thread">
+              <div class="row" id="m1"><div class="ms-bubble lead">how much is the program?</div></div>
+              <div class="row" id="m1t"><div class="ms-typing" style="align-self: flex-end"><i></i><i></i><i></i></div></div>
+              <div class="row" id="m2"><div class="ms-bubble setter">Depends where you're at, honestly. What's the one result you want in the next 90 days?</div><span class="ms-chip orange" id="m2c">Sounds like you</span></div>
+              <div class="row" id="m3"><div class="ms-bubble lead">I'll think about it</div></div>
+              <div class="row" id="m3t"><div class="ms-typing" style="align-self: flex-end"><i></i><i></i><i></i></div></div>
+              <div class="row" id="m4"><div class="ms-bubble setter">Totally fair. What would you need to know to feel sure?</div><span class="ms-chip green" id="m4c"><i class="dot"></i>Qualified</span></div>
+            </div></div>
+          </div>
+          <div class="card ms-card" id="c-booked"><div class="tile" data-ico="calendar-check"></div><div><b>Call booked</b><span>Discovery call · Tue, 10:00 AM<br />Added to your calendar</span></div></div>
+          <div class="card ms-window" id="cal">
+            <div class="hd" data-ico="calendar-days">This week<span class="ms-chip">Calendly</span></div>
+            <div class="grid" id="calgrid"></div>
+          </div>
+        </div></div>
+        <div id="confetti"></div>
+        <div id="comment"><div class="av"><img src="assets/ui/logo-icon.svg" /></div><span class="ph" id="ph">Add a comment…</span><div class="txt"><span id="typed"></span><i class="caret" id="caret"></i></div><div class="send" id="send"></div></div>
+        <div id="notif" data-layout-ignore><img src="assets/ui/logo-icon.svg" /><div><b>setty</b><span>slid into your DMs 😏</span></div><em>now</em></div>
+      </div>
+      <div class="layer" id="caps"></div>
+      <div id="endcta"><div>Comment SETTY<span id="endarrow"></span></div></div>
+      <div id="flash"></div>
+      <audio id="mix" src="audio/mix.wav" data-start="0" data-duration="29.03" data-track-index="10" data-volume="1"></audio>
+    </div>
+    <script>
+      const DATA = {"words": [{"w": "Hey,", "t": 0.06, "end": 0.5}, {"w": "bitch.", "t": 0.68, "end": 1.221}, {"w": "You", "t": 1.453, "end": 1.573}, {"w": "did", "t": 1.653, "end": 1.773}, {"w": "your", "t": 1.793, "end": 1.913}, {"w": "fucking", "t": 1.933, "end": 2.173}, {"w": "challenge,", "t": 2.213, "end": 2.553}, {"w": "right?", "t": 2.593, "end": 2.833}, {"w": "Five", "t": 3.065, "end": 3.245}, {"w": "days", "t": 3.285, "end": 3.425}, {"w": "live.", "t": 3.505, "end": 3.765}, {"w": "Voice:", "t": 3.997, "end": 4.278}, {"w": "dead.", "t": 4.41, "end": 4.69}, {"w": "Ring", "t": 4.962, "end": 5.102}, {"w": "light:", "t": 5.182, "end": 5.382}, {"w": "still", "t": 5.514, "end": 5.774}, {"w": "on.", "t": 5.906, "end": 5.966}, {"w": "And", "t": 6.198, "end": 6.278}, {"w": "now,", "t": 6.338, "end": 6.478}, {"w": "four", "t": 6.71, "end": 6.91}, {"w": "hundred", "t": 6.97, "end": 7.19}, {"w": "people", "t": 7.23, "end": 7.45}, {"w": "in", "t": 7.51, "end": 7.55}, {"w": "your", "t": 7.59, "end": 7.691}, {"w": "DMs", "t": 7.731, "end": 8.071}, {"w": "like...", "t": 8.131, "end": 8.291}, {"w": "\"info?\"", "t": 8.643, "end": 9.023}, {"w": "And", "t": 9.255, "end": 9.335}, {"w": "you", "t": 9.355, "end": 9.435}, {"w": "answer", "t": 9.535, "end": 9.715}, {"w": "them...", "t": 9.775, "end": 9.895}, {"w": "by", "t": 10.207, "end": 10.407}, {"w": "hand?", "t": 10.539, "end": 10.94}, {"w": "At", "t": 11.172, "end": 11.232}, {"w": "midnight?", "t": 11.364, "end": 11.784}, {"w": "In", "t": 12.016, "end": 12.076}, {"w": "bed?", "t": 12.208, "end": 12.428}, {"w": "That's", "t": 12.78, "end": 13.0}, {"w": "not", "t": 13.06, "end": 13.2}, {"w": "a", "t": 13.26, "end": 13.28}, {"w": "business.", "t": 13.36, "end": 13.78}, {"w": "That's", "t": 14.092, "end": 14.332}, {"w": "a", "t": 14.464, "end": 14.484}, {"w": "hostage", "t": 14.564, "end": 14.905}, {"w": "situation.", "t": 14.945, "end": 15.405}, {"w": "Plug", "t": 15.777, "end": 15.937}, {"w": "me", "t": 16.017, "end": 16.057}, {"w": "into", "t": 16.117, "end": 16.237}, {"w": "ManyChat.", "t": 16.297, "end": 16.717}, {"w": "I", "t": 16.949, "end": 16.989}, {"w": "learn", "t": 17.089, "end": 17.189}, {"w": "your", "t": 17.249, "end": 17.349}, {"w": "offer,", "t": 17.389, "end": 17.61}, {"w": "I", "t": 17.842, "end": 17.862}, {"w": "talk", "t": 17.962, "end": 18.102}, {"w": "like", "t": 18.202, "end": 18.322}, {"w": "you,", "t": 18.362, "end": 18.462}, {"w": "I", "t": 18.694, "end": 18.734}, {"w": "handle", "t": 18.814, "end": 19.094}, {"w": "the", "t": 19.154, "end": 19.254}, {"w": "\"I'll", "t": 19.466, "end": 19.646}, {"w": "think", "t": 19.778, "end": 19.958}, {"w": "about", "t": 20.038, "end": 20.258}, {"w": "it\"...", "t": 20.358, "end": 20.398}, {"w": "and", "t": 20.63, "end": 20.71}, {"w": "I", "t": 20.73, "end": 20.75}, {"w": "book", "t": 20.83, "end": 20.951}, {"w": "the", "t": 21.011, "end": 21.071}, {"w": "call.", "t": 21.111, "end": 21.271}, {"w": "In", "t": 21.503, "end": 21.603}, {"w": "your", "t": 21.735, "end": 21.875}, {"w": "calendar.", "t": 21.915, "end": 22.295}, {"w": "You?", "t": 22.627, "end": 22.767}, {"w": "Go", "t": 23.079, "end": 23.159}, {"w": "to", "t": 23.239, "end": 23.299}, {"w": "sleep.", "t": 23.339, "end": 23.599}, {"w": "You", "t": 23.831, "end": 23.911}, {"w": "look", "t": 23.951, "end": 24.051}, {"w": "like", "t": 24.111, "end": 24.211}, {"w": "shit.", "t": 24.271, "end": 24.472}, {"w": "Comment", "t": 24.824, "end": 25.184}, {"w": "SETTY.", "t": 25.316, "end": 25.636}, {"w": "I'll", "t": 25.868, "end": 26.028}, {"w": "slide", "t": 26.128, "end": 26.528}, {"w": "into", "t": 26.568, "end": 26.728}, {"w": "your", "t": 26.788, "end": 26.908}, {"w": "DMs.", "t": 26.948, "end": 27.429}], "chunks": [{"id": 0, "start": 0.06, "end": 0.68, "next": 0.68, "hide": false, "hero": false, "tokens": [{"i": 0, "text": "Hey,", "t": 0.06, "accent": false, "bleep": false, "count": false}]}, {"id": 1, "start": 0.68, "end": 1.453, "next": 1.453, "hide": true, "hero": false, "tokens": [{"i": 1, "text": "bitch.", "t": 0.68, "accent": false, "bleep": true, "count": false}]}, {"id": 2, "start": 1.453, "end": 1.933, "next": 1.933, "hide": false, "hero": false, "tokens": [{"i": 2, "text": "You", "t": 1.453, "accent": false, "bleep": false, "count": false}, {"i": 3, "text": "did", "t": 1.653, "accent": false, "bleep": false, "count": false}, {"i": 4, "text": "your", "t": 1.793, "accent": false, "bleep": false, "count": false}]}, {"id": 3, "start": 1.933, "end": 2.213, "next": 2.213, "hide": false, "hero": false, "tokens": [{"i": 5, "text": "fucking", "t": 1.933, "accent": false, "bleep": true, "count": false}]}, {"id": 4, "start": 2.213, "end": 3.065, "next": 3.065, "hide": false, "hero": true, "tokens": [{"i": 6, "text": "challenge,", "t": 2.213, "accent": true, "bleep": false, "count": false}, {"i": 7, "text": "right?", "t": 2.593, "accent": false, "bleep": false, "count": false}]}, {"id": 5, "start": 3.065, "end": 3.997, "next": 3.997, "hide": false, "hero": false, "tokens": [{"i": 8, "text": "Five", "t": 3.065, "accent": false, "bleep": false, "count": false}, {"i": 9, "text": "days", "t": 3.285, "accent": false, "bleep": false, "count": false}, {"i": 10, "text": "live.", "t": 3.505, "accent": true, "bleep": false, "count": false}]}, {"id": 6, "start": 3.997, "end": 4.962, "next": 4.962, "hide": false, "hero": false, "tokens": [{"i": 11, "text": "Voice:", "t": 3.997, "accent": false, "bleep": false, "count": false}, {"i": 12, "text": "dead.", "t": 4.41, "accent": true, "bleep": false, "count": false}]}, {"id": 7, "start": 4.962, "end": 6.198, "next": 6.198, "hide": false, "hero": false, "tokens": [{"i": 13, "text": "Ring", "t": 4.962, "accent": false, "bleep": false, "count": false}, {"i": 14, "text": "light:", "t": 5.182, "accent": false, "bleep": false, "count": false}, {"i": 15, "text": "still", "t": 5.514, "accent": false, "bleep": false, "count": false}, {"i": 16, "text": "on.", "t": 5.906, "accent": false, "bleep": false, "count": false}]}, {"id": 8, "start": 6.198, "end": 6.71, "next": 6.71, "hide": false, "hero": false, "tokens": [{"i": 17, "text": "And", "t": 6.198, "accent": false, "bleep": false, "count": false}, {"i": 18, "text": "now,", "t": 6.338, "accent": false, "bleep": false, "count": false}]}, {"id": 9, "start": 6.71, "end": 7.51, "next": 7.51, "hide": false, "hero": true, "tokens": [{"i": 19, "text": "400", "t": 6.71, "accent": true, "bleep": false, "count": true}, {"i": 21, "text": "people", "t": 7.23, "accent": false, "bleep": false, "count": false}]}, {"id": 10, "start": 7.51, "end": 8.643, "next": 8.643, "hide": false, "hero": false, "tokens": [{"i": 22, "text": "in", "t": 7.51, "accent": false, "bleep": false, "count": false}, {"i": 23, "text": "your", "t": 7.59, "accent": false, "bleep": false, "count": false}, {"i": 24, "text": "DMs", "t": 7.731, "accent": false, "bleep": false, "count": false}, {"i": 25, "text": "like…", "t": 8.131, "accent": false, "bleep": false, "count": false}]}, {"id": 11, "start": 8.643, "end": 9.255, "next": 9.255, "hide": true, "hero": false, "tokens": [{"i": 26, "text": "info?", "t": 8.643, "accent": false, "bleep": false, "count": false}]}, {"id": 12, "start": 9.255, "end": 10.207, "next": 10.207, "hide": false, "hero": false, "tokens": [{"i": 27, "text": "And", "t": 9.255, "accent": false, "bleep": false, "count": false}, {"i": 28, "text": "you", "t": 9.355, "accent": false, "bleep": false, "count": false}, {"i": 29, "text": "answer", "t": 9.535, "accent": false, "bleep": false, "count": false}, {"i": 30, "text": "them…", "t": 9.775, "accent": false, "bleep": false, "count": false}]}, {"id": 13, "start": 10.207, "end": 11.172, "next": 11.172, "hide": false, "hero": true, "tokens": [{"i": 31, "text": "by", "t": 10.207, "accent": false, "bleep": false, "count": false}, {"i": 32, "text": "hand?", "t": 10.539, "accent": true, "bleep": false, "count": false}]}, {"id": 14, "start": 11.172, "end": 12.016, "next": 12.016, "hide": false, "hero": false, "tokens": [{"i": 33, "text": "At", "t": 11.172, "accent": false, "bleep": false, "count": false}, {"i": 34, "text": "midnight?", "t": 11.364, "accent": true, "bleep": false, "count": false}]}, {"id": 15, "start": 12.016, "end": 12.78, "next": 12.78, "hide": false, "hero": false, "tokens": [{"i": 35, "text": "In", "t": 12.016, "accent": false, "bleep": false, "count": false}, {"i": 36, "text": "bed?", "t": 12.208, "accent": true, "bleep": false, "count": false}]}, {"id": 16, "start": 12.78, "end": 14.092, "next": 14.092, "hide": false, "hero": false, "tokens": [{"i": 37, "text": "That's", "t": 12.78, "accent": false, "bleep": false, "count": false}, {"i": 38, "text": "not", "t": 13.06, "accent": false, "bleep": false, "count": false}, {"i": 39, "text": "a", "t": 13.26, "accent": false, "bleep": false, "count": false}, {"i": 40, "text": "business.", "t": 13.36, "accent": false, "bleep": false, "count": false}]}, {"id": 17, "start": 14.092, "end": 15.777, "next": 15.777, "hide": false, "hero": false, "tokens": [{"i": 41, "text": "That's", "t": 14.092, "accent": false, "bleep": false, "count": false}, {"i": 42, "text": "a", "t": 14.464, "accent": false, "bleep": false, "count": false}, {"i": 43, "text": "hostage", "t": 14.564, "accent": true, "bleep": false, "count": false}, {"i": 44, "text": "situation.", "t": 14.945, "accent": true, "bleep": false, "count": false}]}, {"id": 18, "start": 15.777, "end": 16.949, "next": 16.949, "hide": false, "hero": false, "tokens": [{"i": 45, "text": "Plug", "t": 15.777, "accent": false, "bleep": false, "count": false}, {"i": 46, "text": "me", "t": 16.017, "accent": false, "bleep": false, "count": false}, {"i": 47, "text": "into", "t": 16.117, "accent": false, "bleep": false, "count": false}, {"i": 48, "text": "Manychat.", "t": 16.297, "accent": true, "bleep": false, "count": false}]}, {"id": 19, "start": 16.949, "end": 17.842, "next": 17.842, "hide": false, "hero": false, "tokens": [{"i": 49, "text": "I", "t": 16.949, "accent": false, "bleep": false, "count": false}, {"i": 50, "text": "learn", "t": 17.089, "accent": false, "bleep": false, "count": false}, {"i": 51, "text": "your", "t": 17.249, "accent": false, "bleep": false, "count": false}, {"i": 52, "text": "offer,", "t": 17.389, "accent": true, "bleep": false, "count": false}]}, {"id": 20, "start": 17.842, "end": 18.694, "next": 18.694, "hide": false, "hero": false, "tokens": [{"i": 53, "text": "I", "t": 17.842, "accent": false, "bleep": false, "count": false}, {"i": 54, "text": "talk", "t": 17.962, "accent": false, "bleep": false, "count": false}, {"i": 55, "text": "like", "t": 18.202, "accent": false, "bleep": false, "count": false}, {"i": 56, "text": "you,", "t": 18.362, "accent": true, "bleep": false, "count": false}]}, {"id": 21, "start": 18.694, "end": 19.466, "next": 19.466, "hide": false, "hero": false, "tokens": [{"i": 57, "text": "I", "t": 18.694, "accent": false, "bleep": false, "count": false}, {"i": 58, "text": "handle", "t": 18.814, "accent": false, "bleep": false, "count": false}, {"i": 59, "text": "the", "t": 19.154, "accent": false, "bleep": false, "count": false}]}, {"id": 22, "start": 19.466, "end": 20.63, "next": 20.63, "hide": false, "hero": false, "tokens": [{"i": 60, "text": "“I’ll", "t": 19.466, "accent": false, "bleep": false, "count": false}, {"i": 61, "text": "think", "t": 19.778, "accent": false, "bleep": false, "count": false}, {"i": 62, "text": "about", "t": 20.038, "accent": false, "bleep": false, "count": false}, {"i": 63, "text": "it”…", "t": 20.358, "accent": false, "bleep": false, "count": false}]}, {"id": 23, "start": 20.63, "end": 21.503, "next": 21.503, "hide": false, "hero": false, "tokens": [{"i": 64, "text": "and", "t": 20.63, "accent": false, "bleep": false, "count": false}, {"i": 65, "text": "I", "t": 20.73, "accent": false, "bleep": false, "count": false}, {"i": 66, "text": "book", "t": 20.83, "accent": false, "bleep": false, "count": false}, {"i": 67, "text": "the", "t": 21.011, "accent": false, "bleep": false, "count": false}, {"i": 68, "text": "call.", "t": 21.111, "accent": true, "bleep": false, "count": false}]}, {"id": 24, "start": 21.503, "end": 22.627, "next": 22.627, "hide": false, "hero": false, "tokens": [{"i": 69, "text": "In", "t": 21.503, "accent": false, "bleep": false, "count": false}, {"i": 70, "text": "your", "t": 21.735, "accent": false, "bleep": false, "count": false}, {"i": 71, "text": "calendar.", "t": 21.915, "accent": true, "bleep": false, "count": false}]}, {"id": 25, "start": 22.627, "end": 23.079, "next": 23.079, "hide": false, "hero": true, "tokens": [{"i": 72, "text": "You?", "t": 22.627, "accent": true, "bleep": false, "count": false}]}, {"id": 26, "start": 23.079, "end": 23.831, "next": 23.831, "hide": false, "hero": false, "tokens": [{"i": 73, "text": "Go", "t": 23.079, "accent": false, "bleep": false, "count": false}, {"i": 74, "text": "to", "t": 23.239, "accent": false, "bleep": false, "count": false}, {"i": 75, "text": "sleep.", "t": 23.339, "accent": true, "bleep": false, "count": false}]}, {"id": 27, "start": 23.831, "end": 24.271, "next": 24.271, "hide": false, "hero": false, "tokens": [{"i": 76, "text": "You", "t": 23.831, "accent": false, "bleep": false, "count": false}, {"i": 77, "text": "look", "t": 23.951, "accent": false, "bleep": false, "count": false}, {"i": 78, "text": "like", "t": 24.111, "accent": false, "bleep": false, "count": false}]}, {"id": 28, "start": 24.271, "end": 24.824, "next": 24.824, "hide": false, "hero": false, "tokens": [{"i": 79, "text": "shit.", "t": 24.271, "accent": false, "bleep": true, "count": false}]}, {"id": 29, "start": 24.824, "end": 25.868, "next": 25.868, "hide": false, "hero": false, "tokens": [{"i": 80, "text": "Comment", "t": 24.824, "accent": false, "bleep": false, "count": false}, {"i": 81, "text": "SETTY.", "t": 25.316, "accent": true, "bleep": false, "count": false}]}, {"id": 30, "start": 25.868, "end": 27.729, "next": 29.03, "hide": false, "hero": false, "tokens": [{"i": 82, "text": "I'll", "t": 25.868, "accent": false, "bleep": false, "count": false}, {"i": 83, "text": "slide", "t": 26.128, "accent": false, "bleep": false, "count": false}, {"i": 84, "text": "into", "t": 26.568, "accent": false, "bleep": false, "count": false}, {"i": 85, "text": "your", "t": 26.788, "accent": false, "bleep": false, "count": false}, {"i": 86, "text": "DMs.", "t": 26.948, "accent": true, "bleep": false, "count": false}]}], "cues": {"total": 29.03, "hey": 0.06, "bleep1": 0.68, "youdid": 1.453, "bleep2": 1.933, "challenge": 2.213, "right": 2.593, "five": 3.065, "days": 3.285, "live": 3.505, "voice": 3.997, "dead": 4.41, "ring": 4.962, "stillon": 5.514, "andnow": 6.198, "four": 6.71, "people": 7.23, "dms": 7.731, "like": 8.131, "info": 8.643, "info_end": 9.023, "answer": 9.255, "byhand": 10.207, "hand": 10.539, "midnight": 11.364, "inbed": 12.016, "bed": 12.208, "business": 12.78, "business_end": 13.78, "hostage_line": 14.092, "hostage": 14.564, "situation": 14.945, "situation_end": 15.405, "plug": 15.777, "manychat": 16.297, "manychat_end": 16.717, "learn": 16.949, "offer": 17.389, "talk": 17.842, "likeyou": 18.362, "handle": 18.694, "illthink": 19.466, "thinkend": 20.398, "andbook": 20.63, "call": 21.111, "inyour": 21.503, "calendar": 21.915, "calendar_end": 22.295, "you": 22.627, "gosleep": 23.079, "sleep": 23.339, "youlook": 23.831, "bleep3": 24.271, "comment": 24.824, "setty": 25.316, "slide": 26.128, "dms_end": 27.429, "end": 27.429}, "bleeps": [{"i": 1, "t": 0.68, "end": 1.221}, {"i": 5, "t": 1.933, "end": 2.173}, {"i": 79, "t": 24.271, "end": 24.472}], "icons": {"arrow-down": "<path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/>", "hand": "<path d=\"M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2\"></path><path d=\"M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2\"></path><path d=\"M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8\"></path><path d=\"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15\"></path>", "moon": "<path d=\"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401\"/>", "message-circle": "<path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"></path>", "arrow-up": "<path d=\"m5 12 7-7 7 7\"></path><path d=\"M12 19V5\"></path>", "book-open": "<path d=\"M12 5v16\"></path><path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"></path>", "file-text": "<path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"></path><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"></path><path d=\"M10 9H8\"></path><path d=\"M16 13H8\"></path><path d=\"M16 17H8\"></path>", "calendar-check": "<path d=\"M8 2v3\"></path><path d=\"M16 2v3\"></path><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"></rect><path d=\"M3 9h18\"></path><path d=\"m9 15 2 2 4-4\"></path>", "calendar-days": "<path d=\"M8 2v3\"></path><path d=\"M16 2v3\"></path><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"></rect><path d=\"M3 9h18\"></path><path d=\"M8 13h.01\"></path><path d=\"M12 13h.01\"></path><path d=\"M16 13h.01\"></path><path d=\"M8 17h.01\"></path><path d=\"M12 17h.01\"></path><path d=\"M16 17h.01\"></path>"}};
+      window.DATA = DATA;
+    </script>
+    <script type="module">
+      import * as THREE from "three";
+      import { createSetty, setupStage, pose, basePose } from "./assets/setty/setty.js";
+
+      const W = 1080, H = 1920;
+      const C = DATA.cues, TOTAL = C.total;
+      const root = document.getElementById("root");
+      const $ = (s) => document.querySelector(s);
+      const LUCIDE = DATA.icons;
+      const ico = (name, cls = "ms-ico") => `<svg class="${cls}" viewBox="0 0 24 24">${LUCIDE[name]}</svg>`;
+      document.querySelectorAll("[data-ico]").forEach((el) => el.insertAdjacentHTML("afterbegin", ico(el.dataset.ico)));
+      $("#hand").innerHTML = ico("hand");
+      $("#moon").insertAdjacentHTML("afterbegin", ico("moon"));
+      $("#mc-logo").innerHTML = ico("message-circle");
+      $("#send").innerHTML = ico("arrow-up");
+      $("#endarrow").innerHTML = ico("arrow-down");
+      $("#notif span").textContent = "slid into your DMs";
+      document.querySelectorAll(".tape span").forEach((s) => (s.textContent = "HOSTAGE SITUATION · DO NOT CROSS · ".repeat(6)));
+      await document.fonts.ready;
+
+      // deterministic randomness
+      let seed = 1337;
+      const rnd = () => ((seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296);
+
+      // ================= THREE: Setty =================
+      const renderer = new THREE.WebGLRenderer({ canvas: $("#three"), alpha: true, antialias: true, preserveDrawingBuffer: true });
+      renderer.setSize(W, H, false);
+      renderer.setPixelRatio(1);
+      const scene = new THREE.Scene();
+      const stage = await setupStage(renderer, scene, { shadowOpacity: 0.42 });
+      const setty = createSetty();
+      scene.add(setty.root);
+      const camera = new THREE.PerspectiveCamera(30, W / H, 0.1, 100);
+
+      const FACE_SKIP = new Set(["x", "y", "z", "scale", "squash", "turn", "tilt", "lean", "dotsPhase"]);
+      const face = (name, extra = {}) => {
+        const p = pose(name), o = {};
+        for (const k in p) if (!FACE_SKIP.has(k)) o[k] = p[k];
+        return Object.assign(o, extra);
+      };
+      const P = Object.assign(basePose(), face("smug"), { turn: 0.15, dotsBounce: 1 });
+      const CAM = { z: 9.2, ly: 1.85, x: 0, roll: 0, lx: 0 };
+      const LIGHT = { key: 2.5, rim: 3.0, red: 0 };
+      const SHAKES = [];
+      const shake = (t, amp = 1, dec = 9) => SHAKES.push({ t, amp, dec });
+
+      const act = gsap.timeline({ paused: true });
+      const K = (t, d, vars, ease = "power3.out") => {
+        const { cam, light, ...p } = vars;
+        // lazy: false — the pose is read right after seek(), so every tween must apply immediately
+        if (Object.keys(p).length) act.to(P, { ...p, duration: d, ease, lazy: false }, t);
+        if (cam) act.to(CAM, { ...cam, duration: d, ease, lazy: false }, t);
+        if (light) act.to(LIGHT, { ...light, duration: d, ease, lazy: false }, t);
+      };
+      const MID = { z: 14, ly: 0.25, x: 0, lx: 0 };
+      const TOP = { z: 19, ly: -1.2, x: 0, lx: 0 };
+
+      // ---- S1 hook: close-up smug, swears, whip out on "You did your", CHALLENGE slam
+      K(0, 0.5, { cam: { z: 8.4 } }, "power2.out");
+      K(C.hey, 0.18, { browLy: 0.24, browLr: 0.3, lean: -0.05 }, "back.out(3)");
+      K(C.bleep1 - 0.04, 0.12, { censor: 1, squash: 0.06, cam: { z: 7.8 } }, "back.out(3)");
+      shake(C.bleep1, 0.6);
+      K(C.bleep1 + 0.56, 0.1, { censor: 0, squash: 0 });
+      K(C.youdid - 0.06, 0.32, { ...face("sideEye", { lookX: 0.6, dotsBounce: 1 }), turn: -0.18, cam: MID }, "expo.out");
+      K(C.bleep2 - 0.03, 0.1, { censor: 1, ...face("smug", { censor: 1 }), turn: 0.1 }, "back.out(3)");
+      K(C.challenge - 0.02, 0.08, { censor: 0, squash: -0.12 }, "power2.out");
+      K(C.challenge + 0.08, 0.5, { squash: 0 }, "elastic.out(1, 0.35)");
+      shake(C.challenge, 1.2);
+      K(C.right, 0.25, { ...face("smug", { lookX: 0.4 }), lean: 0.1, turn: 0.2 }, "back.out(2)");
+
+      // ---- S2: five days live, voice dead, ring light still on
+      K(C.five - 0.05, 0.3, { ...face("unimpressed", { lookY: 0.2, lookX: 0 }), lean: 0, turn: 0, dotsBounce: 0, y: -0.1 }, "power2.out");
+      K(C.days, 0.4, { lidL: 0.62, lidR: 0.62 });
+      K(C.voice, 0.25, { ...face("unimpressed", { lidL: 0.75, lidR: 0.75, curve: -0.2, lookY: 0 }), lean: 0.12, y: -0.25 });
+      K(C.dead - 0.02, 0.18, { lidL: 1, lidR: 1, tongue: 1, curve: 0.3, mouthW: 0.8, lean: 0.32, tilt: 0.12, y: -0.45, dots: 0 }, "back.out(2)");
+      K(C.ring - 0.05, 0.3, { ...face("happy", { lidL: 0.55, lidR: 0.55, slantL: 0.1, slantR: -0.1, lookY: 0.5, curve: 0.2, dots: 0 }),
+        lean: 0, tilt: 0, y: 0, squash: -0.08 }, "back.out(2.4)");
+      K(C.ring + 0.3, 0.4, { squash: 0 }, "elastic.out(1, 0.4)");
+      K(C.stillon, 0.2, { lidL: 0.68, lidR: 0.68 });
+      K(C.stillon + 0.06, 0.08, { lidL: 1, lidR: 1 }, "none");
+      K(C.stillon + 0.14, 0.12, { lidL: 0.6, lidR: 0.6 });
+
+      // ---- S3: 400 DMs rain on Setty, then a giant "info?"
+      K(C.andnow - 0.1, 0.3, { ...face("happy", { lookY: 0.9, lookX: 0, dots: 1, dotsBounce: 0 }), y: 0 });
+      K(C.four, 0.2, { ...face("shocked", { lookY: 0.6, alert: 0, dots: 1, armLr: 1.6, armRr: 1.6 }) }, "back.out(2)");
+      K(C.dms, 0.2, { lookY: -0.2, lookX: -0.5, pupil: 0.55 });
+      K(C.like, 0.25, { lookX: 0.4, lookY: 0 });
+      K(C.info - 0.03, 0.12, { ...face("shocked", { alert: 1, dots: 0 }), squash: -0.16, y: 0.25 }, "power4.out");
+      K(C.info + 0.1, 0.45, { squash: 0, y: 0 }, "elastic.out(1, 0.4)");
+      shake(C.info, 1.4);
+
+      // ---- S4: by hand? at midnight? in bed?
+      K(C.answer - 0.05, 0.4, { ...face("sideEye", { lookX: 0.25, lookY: -0.05 }), turn: 0.05, cam: { z: 12.2, ly: 0.6 } }, "power2.inOut");
+      K(C.answer + 0.4, 0.9, { cam: { z: 11.2, ly: 0.75 } }, "none");
+      K(C.byhand - 0.04, 0.2, { ...face("excuseMe", { armLr: 0.5, armRr: 2.2, armRf: 0.2 }), turn: -0.1 }, "back.out(2.5)");
+      K(C.midnight - 0.25, 0.25, { ...face("unimpressed", { lookY: 0.95, dots: 0 }), turn: 0, cam: MID }, "expo.out");
+      K(C.inbed - 0.05, 0.3, { ...face("unimpressed", { lidL: 0.7, lidR: 0.7, lookY: -0.3, lookX: 0.4, dots: 0 }), y: 0.15 }, "power2.out");
+
+      // ---- S5: hard cut to black, hostage situation
+      K(C.business - 0.2, 0.01, { ...face("excuseMe", { curve: -0.35, lidL: 0.25, lidR: 0.25, armLr: 0.3, armRr: 0.3, armLf: 0, armRf: 0, dots: 0 }),
+        y: 0, turn: 0, lean: 0, cam: { z: 10.6, ly: 0.95 }, light: { key: 0.8, rim: 7, red: 1 } }, "none");
+      K(C.business, 2.6, { cam: { z: 9.8 } }, "none");
+      K(C.hostage - 0.05, 0.12, { lidL: 0, lidR: 0, pupil: 0.7, browLy: 0.15, browRy: 0.15 }, "power4.out");
+      shake(C.hostage, 0.9);
+      K(C.situation, 0.15, { ...face("shocked", { alert: 1, dots: 0, armLr: 0.4, armRr: 0.4 }), squash: -0.1 }, "power4.out");
+      K(C.situation + 0.15, 0.4, { squash: 0 }, "elastic.out(1, 0.4)");
+      shake(C.situation, 1.6);
+
+      // ---- S6: plug me into Manychat (swagger)
+      K(C.plug - 0.12, 0.3, { ...face("smug", { dots: 1, dotsBounce: 1, armLr: 0.35 }), lean: -0.08, turn: 0.25, cam: MID,
+        light: { key: 2.5, rim: 3, red: 0 } }, "expo.out");
+      K(C.manychat, 0.2, { ...face("proud", { dots: 1, dotsBounce: 1 }), squash: -0.1, lean: 0 }, "back.out(2)");
+      K(C.manychat + 0.2, 0.45, { squash: 0 }, "elastic.out(1, 0.4)");
+
+      // ---- S7: the flex (Setty goes up, the app does the talking)
+      K(C.learn - 0.15, 0.5, { ...face("smug", { lookY: -0.75, lookX: 0 }), turn: 0, cam: TOP }, "expo.inOut");
+      K(C.talk, 0.25, { ...face("happy", { lookY: -0.7, lookX: 0.3 }) });
+      K(C.illthink, 0.2, { ...face("sideEye", { lookY: -0.6, lookX: -0.2 }) });
+      K(C.andbook, 0.25, { ...face("smug", { lookY: -0.65 }) });
+      K(C.call, 0.18, { ...face("laughing"), squash: -0.12 }, "back.out(2.6)");
+      K(C.call + 0.18, 0.45, { squash: 0 }, "elastic.out(1, 0.4)");
+      K(C.calendar, 0.2, { ...face("proud", { lookY: -0.5 }) });
+
+      // ---- S8: You? Go to sleep. You look like [bleep].
+      K(C.you - 0.15, 0.35, { ...face("smug", { armRr: 1.25, armRf: 1.35, lookX: 0, lookY: 0 }), turn: -0.12, lean: -0.05,
+        cam: { z: 11, ly: 1.1, x: 0, lx: 0 } }, "expo.out");
+      K(C.gosleep, 0.25, { ...face("unimpressed", { lookY: 0.2, lookX: 0.6 }), turn: 0.1, lean: 0.06 });
+      K(C.youlook, 0.2, { ...face("smug", { lookX: 0.1 }), turn: 0.15 });
+      K(C.bleep3 - 0.03, 0.1, { ...face("wink", { censor: 1, tongue: 0 }), squash: 0.05, cam: { z: 10.2 } }, "back.out(3)");
+      shake(C.bleep3, 0.7);
+      K(C.bleep3 + 0.32, 0.1, { censor: 0, tongue: 1, squash: 0 });
+
+      // ---- S9: Comment SETTY, slide into your DMs, back for the loop
+      K(C.comment - 0.1, 0.35, { ...face("happy", { lookY: -0.7, armRr: 0.4 }), turn: 0, lean: 0, cam: MID }, "expo.out");
+      K(C.setty + 0.25, 0.2, { ...face("wink") }, "back.out(2)");
+      K(C.slide - 0.05, 0.36, { x: 6.5, lean: -0.35, squash: 0.08, ...face("smug") }, "power3.in");
+      K(C.slide + 0.36, 0.01, { x: -6.5, lean: 0.35, cam: { z: 14, ly: 1.05, x: 0, lx: 0 } }, "none");
+      K(C.slide + 0.55, 0.5, { x: 0, lean: 0, squash: 0, ...face("smug", { lookX: 0.2 }) }, "back.out(1.6)");
+      K(C.end + 0.5, 0.2, { ...face("wink") }, "back.out(2)");
+
+      // ================= DOM timeline =================
+      const tl = gsap.timeline({ paused: true, defaults: { lazy: false } });
+      const flash = (at, o = 0.85, d = 0.16) =>
+        tl.fromTo("#flash", { opacity: o }, { opacity: 0, duration: d, ease: "power2.out", immediateRender: false }, at);
+
+      // captions: words pop on their own cue
+      const caps = $("#caps");
+      for (const ch of DATA.chunks) {
+        if (ch.hide) continue;
+        const el = document.createElement("div");
+        el.className = "chunk" + (ch.hero ? " hero" : "");
+        el.innerHTML = ch.tokens.map((k) => `<span class="tok${k.accent ? " accent" : ""}${k.bleep ? " bleep" : ""}${k.count ? " count" : ""}">${k.text}</span>`).join("");
+        caps.appendChild(el);
+        const toks = el.querySelectorAll(".tok");
+        tl.set(el, { visibility: "visible" }, ch.start - 0.02);
+        ch.tokens.forEach((k, j) => {
+          const r = (rnd() - 0.5) * 8;
+          tl.fromTo(toks[j], { opacity: 0, scale: 0.35, y: 60, rotation: r },
+            { opacity: 1, scale: 1, y: 0, rotation: 0, duration: 0.24, ease: "back.out(3)" }, k.t - 0.03);
+        });
+        const out = Math.min(ch.end, ch.next - 0.02);
+        tl.to(el, { opacity: 0, scale: 0.9, duration: 0.08, ease: "power2.in" }, out - 0.08);
+        tl.set(el, { visibility: "hidden" }, out);
+      }
+
+      // S1 marquee
+      tl.fromTo("#marquee", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power4.out" }, C.challenge - 0.02);
+      tl.fromTo("#marquee .r1", { x: 0 }, { x: -620, duration: 1.0, ease: "none" }, C.challenge - 0.02);
+      tl.fromTo("#marquee .r2", { x: -620 }, { x: 0, duration: 1.0, ease: "none" }, C.challenge - 0.02);
+      tl.to("#marquee", { opacity: 0, scale: 0.9, duration: 0.15, ease: "power2.in" }, C.five - 0.12);
+      flash(C.challenge - 0.02, 0.5);
+
+      // S2 live pill, day counter, ECG, ring light
+      tl.fromTo("#live", { opacity: 0, y: -40, scale: 0.6 }, { opacity: 1, y: 0, scale: 1, duration: 0.25, ease: "back.out(3)" }, C.five - 0.03);
+      const dayn = $("#dayn");
+      for (let d = 2; d <= 5; d++) tl.set(dayn, { textContent: String(d) }, C.days + (d - 2) * ((C.live + 0.15 - C.days) / 3.2));
+      tl.set(dayn, { textContent: "1" }, C.five - 0.04);
+      tl.to("#live", { opacity: 0, y: -30, duration: 0.15 }, C.andnow - 0.1);
+      const ecg = $("#ecg-line");
+      const beat = (x0) => `L${x0} 110 L${x0 + 20} 110 L${x0 + 35} 40 L${x0 + 52} 180 L${x0 + 66} 80 L${x0 + 80} 110`;
+      ecg.setAttribute("d", `M40 110 ${beat(120)} ${beat(360)} ${beat(600)} L1040 110`);
+      tl.set(ecg, { stroke: "#00d18f" }, 0);
+      tl.fromTo("#ecg", { opacity: 0 }, { opacity: 1, duration: 0.12 }, C.voice - 0.05);
+      tl.fromTo(ecg, { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: C.dead - C.voice + 0.1, ease: "none" }, C.voice - 0.05);
+      tl.set(ecg, { attr: { d: "M40 110 L1040 110" }, stroke: "#ff2d46" }, C.dead);
+      tl.fromTo("#ecg", { scaleY: 1.6 }, { scaleY: 1, duration: 0.3, ease: "power3.out" }, C.dead);
+      tl.to("#ecg", { opacity: 0, duration: 0.2 }, C.ring - 0.1);
+      tl.fromTo("#ring", { opacity: 0, scale: 0.55 }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2.2)" }, C.ring - 0.04);
+      tl.to("#ring", { opacity: 0.35, duration: 0.04, yoyo: true, repeat: 3, ease: "none" }, C.ring + 0.24);
+      tl.fromTo("#bg-hot", { opacity: 0 }, { opacity: 1, duration: 0.2 }, C.ring - 0.04);
+      flash(C.ring - 0.02, 0.7, 0.25);
+      tl.to("#ring", { opacity: 0, scale: 1.15, duration: 0.18, ease: "power2.in" }, C.andnow - 0.12);
+      tl.to("#bg-hot", { opacity: 0, duration: 0.25 }, C.andnow - 0.12);
+
+      // S3 the giant "info?"
+      tl.fromTo("#info", { opacity: 0, scale: 2.6, rotation: -14 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.2, ease: "power4.out" }, C.info - 0.06);
+      tl.to("#info", { y: 1700, rotation: 18, duration: 0.5, ease: "power2.in" }, C.answer - 0.1);
+      flash(C.info - 0.04, 0.6);
+
+      // S4 hand, midnight clock, bed
+      tl.fromTo("#hand", { opacity: 0, scale: 0.2, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.26, ease: "back.out(3)" }, C.byhand - 0.02);
+      tl.to("#hand", { rotation: 14, duration: 0.09, yoyo: true, repeat: 5, ease: "sine.inOut" }, C.hand);
+      tl.to("#hand", { opacity: 0, scale: 0.5, duration: 0.12 }, C.midnight - 0.28);
+      tl.to("#bg-night", { opacity: 1, duration: 0.15 }, C.midnight - 0.28);
+      tl.to("#glow", { opacity: 0.25, duration: 0.15 }, C.midnight - 0.28);
+      tl.fromTo("#clock", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.2, ease: "power4.out" }, C.midnight - 0.22);
+      flash(C.midnight - 0.24, 0.35);
+      tl.to("#clock", { opacity: 0.25, duration: 0.05, yoyo: true, repeat: 1 }, C.midnight + 0.35);
+      tl.to("#clock", { opacity: 0, y: -60, duration: 0.15 }, C.inbed - 0.1);
+      tl.fromTo("#bed", { opacity: 0, y: 260 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(1.8)" }, C.inbed - 0.08);
+
+      // S5 hard cut to black, hostage tape
+      tl.set(["#bed", "#bg-night"], { opacity: 0 }, C.business - 0.2);
+      tl.set("#bg-black", { opacity: 1 }, C.business - 0.2);
+      tl.set("#glow", { opacity: 0 }, C.business - 0.2);
+      tl.fromTo("#spot", { opacity: 0 }, { opacity: 1, duration: 0.6 }, C.business - 0.2);
+      tl.to("#tape1", { x: 0, duration: 0.22, ease: "power4.out" }, C.hostage - 0.06);
+      tl.to("#tape2", { x: 0, duration: 0.22, ease: "power4.out" }, C.situation - 0.06);
+      tl.to("#tape1 span", { x: -500, duration: 2, ease: "none" }, C.hostage);
+      tl.to("#tape2 span", { x: 400, duration: 2, ease: "none" }, C.situation);
+      tl.to("#tape1", { x: 2400, duration: 0.25, ease: "power3.in" }, C.plug - 0.18);
+      tl.to("#tape2", { x: -2400, duration: 0.25, ease: "power3.in" }, C.plug - 0.18);
+      tl.to(["#bg-black", "#spot"], { opacity: 0, duration: 0.2 }, C.plug - 0.15);
+      tl.to("#glow", { opacity: 1, duration: 0.2 }, C.plug - 0.15);
+      tl.to("#bg-hot", { opacity: 0.85, duration: 0.2 }, C.plug - 0.15);
+      flash(C.plug - 0.12, 0.8, 0.22);
+
+      // S6 Manychat plug
+      tl.fromTo("#mc", { opacity: 0, x: -200, scale: 0.7 }, { opacity: 1, x: 0, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, C.plug - 0.02);
+      tl.fromTo("#cable-path", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: C.manychat - C.plug, ease: "power2.inOut" }, C.plug + 0.05);
+      tl.set("#spark", { opacity: 1 }, C.manychat);
+      const spark = $("#spark");
+      for (let k = 0; k < 10; k++) {
+        const i = document.createElement("i");
+        i.style.transform = `rotate(${k * 36}deg)`;
+        spark.appendChild(i);
+        tl.fromTo(i, { scaleY: 0.2, opacity: 1, y: 0 }, { scaleY: 1, opacity: 0, y: -30, duration: 0.35, ease: "power3.out", immediateRender: false }, C.manychat);
+      }
+      tl.fromTo("#mc-ok", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(3)" }, C.manychat + 0.05);
+      flash(C.manychat, 0.45);
+      tl.to(["#mc", "#cable"], { opacity: 0, y: 60, duration: 0.18, ease: "power2.in" }, C.learn - 0.2);
+
+      // S7 the app does the talking
+      tl.fromTo("#c-pb", { opacity: 0, y: 120, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "back.out(1.8)" }, C.learn - 0.08);
+      tl.fromTo("#pb-fill", { scaleX: 0 }, { scaleX: 1, duration: C.offer - C.learn + 0.15, ease: "power2.inOut" }, C.learn);
+      tl.to("#c-pb .facts .ms-chip", { opacity: 1, duration: 0.12, stagger: 0.09 }, C.learn + 0.15);
+      tl.fromTo("#pb-chip", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(3)" }, C.offer + 0.12);
+      tl.to("#c-pb", { opacity: 0, x: -460, rotation: -6, duration: 0.2, ease: "power3.in" }, C.talk - 0.14);
+      tl.fromTo("#c-thread", { opacity: 0, x: 460, rotation: 6 }, { opacity: 1, x: 0, rotation: 0, duration: 0.26, ease: "power3.out" }, C.talk - 0.08);
+      const pop = (sel, at) => tl.fromTo(sel, { opacity: 0, y: 14, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, at);
+      pop("#m1", C.talk - 0.02);
+      pop("#m1t", C.talk + 0.22);
+      tl.set("#m1t", { display: "none" }, C.likeyou - 0.2);
+      pop("#m2", C.likeyou - 0.2);
+      tl.fromTo("#m2c", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(3)" }, C.likeyou + 0.05);
+      // scroll the thread so the newest message sits at the bottom of the window (measured, not guessed)
+      const scrollTo = (id) => {
+        const hidden = ["#m1t", "#m3t"].map((s) => $(s));
+        hidden.forEach((el) => (el.style.display = "none"));
+        const row = $(id), bottom = row.offsetTop + row.offsetHeight;
+        hidden.forEach((el) => (el.style.display = ""));
+        return Math.min(0, 180 - 14 - bottom - 28);
+      };
+      tl.to("#thread", { y: scrollTo("#m3"), duration: 0.3, ease: "power3.inOut" }, C.illthink - 0.2);
+      pop("#m3", C.illthink - 0.03);
+      pop("#m3t", C.illthink + 0.4);
+      tl.set("#m3t", { display: "none" }, C.thinkend + 0.02);
+      tl.to("#thread", { y: scrollTo("#m4"), duration: 0.3, ease: "power3.inOut" }, C.thinkend - 0.05);
+      pop("#m4", C.thinkend + 0.02);
+      tl.fromTo("#m4c", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(3)" }, C.andbook);
+      tl.to("#c-thread", { opacity: 0, scale: 0.8, y: -40, duration: 0.18, ease: "power3.in" }, C.call - 0.22);
+      tl.fromTo("#c-booked", { opacity: 0, scale: 1.6, rotation: -5 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.24, ease: "power4.out" }, C.call - 0.05);
+      flash(C.call - 0.03, 0.5);
+      // confetti
+      const conf = $("#confetti");
+      const cols = ["#ff611d", "#ff905e", "#00bb7f", "#fff", "#ffd27a"];
+      for (let k = 0; k < 34; k++) {
+        const i = document.createElement("i");
+        i.style.background = cols[k % cols.length];
+        conf.appendChild(i);
+        const a = rnd() * Math.PI * 2, r = 260 + rnd() * 420;
+        tl.fromTo(i, { opacity: 1, x: 0, y: 0, rotation: 0, scale: 0.6 + rnd() * 0.8 },
+          { opacity: 0, x: Math.cos(a) * r, y: Math.sin(a) * r * 0.8 + 260, rotation: (rnd() - 0.5) * 720, duration: 1.0, ease: "power3.out",
+            immediateRender: false }, C.call);
+      }
+      // calendar
+      const grid = $("#calgrid");
+      const days = ["", "Mon", "Tue", "Wed", "Thu", "Fri"];
+      grid.innerHTML = days.map((d, k) => `<div class="dh${k === 2 ? " on" : ""}">${d}</div>`).join("") +
+        ["9", "10", "11", "12"].map((h) => `<div class="hr">${h}:00</div>` + "<div class='cell'></div>".repeat(5)).join("");
+      const colW = (400 - 20 - 34) / 5;
+      const ev = (col, row, txt, id) => {
+        const el = document.createElement("div");
+        el.className = "ev";
+        el.id = id;
+        el.textContent = txt;
+        Object.assign(el.style, { left: `${10 + 34 + col * colW + 2}px`, top: `${6 + 24 + row * 34 + 2}px`, width: `${colW - 4}px` });
+        grid.appendChild(el);
+        return el;
+      };
+      ev(1, 1, "Discovery call", "ev1");
+      ev(3, 0, "Discovery call", "ev2");
+      ev(0, 2, "Discovery call", "ev3");
+      ev(4, 3, "Discovery call", "ev4");
+      tl.to("#c-booked", { opacity: 0, scale: 0.6, y: 120, duration: 0.2, ease: "power3.in" }, C.inyour - 0.12);
+      tl.fromTo("#cal", { opacity: 0, y: 100, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.28, ease: "back.out(1.8)" }, C.inyour - 0.06);
+      tl.fromTo("#ev1", { opacity: 0, y: -120, scale: 1.4 }, { opacity: 1, y: 0, scale: 1, duration: 0.24, ease: "back.out(2.2)" }, C.calendar);
+      ["#ev2", "#ev3", "#ev4"].forEach((s, k) =>
+        tl.fromTo(s, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(3)" }, C.calendar + 0.22 + k * 0.1));
+      tl.to("#cal", { opacity: 0, y: 200, rotation: 4, duration: 0.22, ease: "power3.in" }, C.you - 0.2);
+      tl.to("#bg-hot", { opacity: 0, duration: 0.3 }, C.you - 0.2);
+
+      // S8 moon for "go to sleep"
+      tl.fromTo("#moon", { opacity: 0, scale: 0.4, rotation: -30 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.3, ease: "back.out(2.4)" }, C.gosleep - 0.03);
+      tl.to("#moon b", { y: -30, opacity: 0.3, duration: 0.6, stagger: 0.15, ease: "sine.out" }, C.gosleep + 0.2);
+      tl.to("#moon", { opacity: 0, scale: 0.6, duration: 0.15 }, C.youlook - 0.08);
+      flash(C.bleep3 - 0.02, 0.4);
+
+      // S9 comment bar, typed SETTY, notification, end
+      tl.fromTo("#comment", { opacity: 0, y: 240 }, { opacity: 1, y: 0, duration: 0.32, ease: "back.out(1.6)" }, C.comment - 0.12);
+      const typed = $("#typed");
+      tl.set("#ph", { opacity: 1 }, 0);
+      tl.set("#ph", { opacity: 0 }, C.setty - 0.02);
+      "SETTY".split("").forEach((ch, k) => tl.set(typed, { textContent: "SETTY".slice(0, k + 1) }, C.setty - 0.02 + k * 0.065));
+      tl.set(typed, { textContent: "" }, 0);
+      tl.to("#caret", { opacity: 0, duration: 0.01, repeat: 9, yoyo: true, repeatDelay: 0.25 }, C.comment);
+      tl.fromTo("#send", { scale: 1 }, { scale: 0.8, duration: 0.07, yoyo: true, repeat: 1 }, C.setty + 0.38);
+      tl.to("#comment", { y: 30, opacity: 0, duration: 0.2, ease: "power2.in" }, C.slide - 0.1);
+      tl.to("#notif", { y: 0, duration: 0.35, ease: "back.out(1.6)" }, C.dms_end + 0.03);
+      flash(C.dms_end + 0.03, 0.25);
+
+      tl.fromTo("#endcta", { opacity: 0, scale: 0.5, y: 60 }, { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(2.4)" }, C.end + 0.32);
+      tl.to("#endarrow", { y: 16, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, C.end + 0.6);
+      tl.to({}, { duration: TOTAL }, 0);
+
+      // ================= DM rain physics (precomputed, seek-safe) =================
+      const RAIN_T0 = C.four - 0.15, RAIN_DROP = C.answer - 0.05, RAIN_T1 = C.midnight, FPS = 60;
+      const TEXTS = ["info?", "price?", "link?", "info", "how much?", "INFO", "hey!", "interested", "info pls", "link pls",
+        "is this still available?", "how does it work?", "info?", "price??", "send it", "?", "yes", "info", "can u send the link",
+        "ok", "how much is it", "info!!", "hi", "me!", "I want in", "info?", "details?", "price pls", "link", "hello?", "info",
+        "cost?", "how?", "info?", "dm me", "INFO?", "need this", "info", "link??", "pls"];
+      const rain = $("#rain");
+      const bubbles = TEXTS.map((txt, k) => {
+        const el = document.createElement("div");
+        el.className = "bubble" + (k % 7 === 3 ? " o" : k % 3 === 1 ? " g" : "");
+        el.textContent = txt;
+        rain.appendChild(el);
+        const w = el.offsetWidth, h = el.offsetHeight;
+        const spawn = RAIN_T0 + Math.pow(k / TEXTS.length, 0.75) * (C.info - 0.25 - RAIN_T0);
+        return { el, w, h, spawn, x: 110 + rnd() * 860, a: (rnd() - 0.5) * 0.8, vx: (rnd() - 0.5) * 4, va: (rnd() - 0.5) * 0.12 };
+      });
+      function settyBox() {
+        // Setty's silhouette on screen in the MID framing, as a static body for the rain
+        camera.position.set(0, MID.ly + 0.35, MID.z);
+        camera.lookAt(0, MID.ly, 0);
+        camera.updateMatrixWorld();
+        const pts = [[-1.25, 0.75], [1.25, 0.75], [-1.25, 2.8], [1.25, 2.8]].map(([x, y]) => new THREE.Vector3(x, y, 0.4).project(camera));
+        const xs = pts.map((v) => (v.x * 0.5 + 0.5) * W), ys = pts.map((v) => (-v.y * 0.5 + 0.5) * H);
+        return { x0: Math.min(...xs), x1: Math.max(...xs), y0: Math.min(...ys), y1: Math.max(...ys) };
+      }
+      const RAIN = (() => {
+        const { Engine, Bodies, Composite, Body } = Matter;
+        const engine = Engine.create({ gravity: { x: 0, y: 1.1 } });
+        const box = settyBox();
+        const floor = Bodies.rectangle(540, 1780, 1600, 120, { isStatic: true });
+        const sb = Bodies.rectangle((box.x0 + box.x1) / 2, (box.y0 + box.y1) / 2, box.x1 - box.x0, box.y1 - box.y0,
+          { isStatic: true, chamfer: { radius: 150 } });
+        Composite.add(engine.world, [floor, sb]);
+        const n = Math.ceil((RAIN_T1 - RAIN_T0) * FPS);
+        const frames = [];
+        let dropped = false;
+        for (let f = 0; f <= n; f++) {
+          const time = RAIN_T0 + f / FPS;
+          for (const b of bubbles) {
+            if (!b.body && time >= b.spawn) {
+              b.body = Bodies.rectangle(b.x, -80, b.w, b.h, { chamfer: { radius: 40 }, restitution: 0.25, friction: 0.4, angle: b.a });
+              Body.setVelocity(b.body, { x: b.vx, y: 9 });
+              Body.setAngularVelocity(b.body, b.va);
+              Composite.add(engine.world, b.body);
+            }
+          }
+          if (!dropped && time >= RAIN_DROP) {
+            Composite.remove(engine.world, [floor, sb]);
+            engine.gravity.y = 3.2; // the flood drains away fast
+            dropped = true;
+          }
+          Engine.update(engine, 1000 / FPS / 2);
+          Engine.update(engine, 1000 / FPS / 2);
+          frames.push(bubbles.map((b) => (b.body ? [b.body.position.x, b.body.position.y, b.body.angle] : null)));
+        }
+        return frames;
+      })();
+
+      // ================= per-frame render (three + physics + anchors) =================
+      const v = new THREE.Vector3();
+      const toScreen = (x, y, z) => {
+        v.set(x, y, z).project(camera);
+        return [(v.x * 0.5 + 0.5) * W, (-v.y * 0.5 + 0.5) * H];
+      };
+      const cable = $("#cable-path");
+      function renderAt(t) {
+        act.seek(t, false);
+        // camera + shakes
+        let sx = 0, sy = 0, sr = 0;
+        for (const s of SHAKES) {
+          if (t < s.t) continue;
+          const k = s.amp * Math.exp(-(t - s.t) * s.dec);
+          sx += Math.sin((t - s.t) * 63) * 0.09 * k;
+          sy += Math.cos((t - s.t) * 57) * 0.07 * k;
+          sr += Math.sin((t - s.t) * 41) * 0.025 * k;
+        }
+        camera.position.set(CAM.x + sx, CAM.ly + 0.35 + sy, CAM.z);
+        camera.lookAt(CAM.lx + sx, CAM.ly + sy, 0);
+        camera.rotateZ(CAM.roll + sr);
+        camera.updateMatrixWorld();
+        stage.key.intensity = LIGHT.key;
+        stage.rim.intensity = LIGHT.rim;
+        stage.rim.color.setRGB(1, 0.54 - 0.3 * LIGHT.red, 0.3 - 0.22 * LIGHT.red, THREE.SRGBColorSpace);
+        // idle life: a float, a sway, the typing dots
+        const bob = Math.sin(t * 2.7) * 0.06;
+        setty.apply({ ...P, y: P.y + bob, lean: P.lean + Math.sin(t * 1.9) * 0.02, dotsPhase: t * 10 });
+        renderer.render(scene, camera);
+
+        // anchors for the DOM props
+        const [cx, cy] = toScreen(P.x, P.y + bob + 1.7, 0);
+        const [ux] = toScreen(P.x + 1, P.y + bob + 1.7, 0);
+        root.style.setProperty("--sx", cx.toFixed(1));
+        root.style.setProperty("--sy", cy.toFixed(1));
+        root.style.setProperty("--su", (ux - cx).toFixed(2));
+        const [tx, ty] = toScreen(P.x - 1.78, P.y + bob + 0.5, 0.05);
+        const px = 300, py = 930;
+        cable.setAttribute("d", `M${tx.toFixed(1)} ${ty.toFixed(1)} C${(tx - 60).toFixed(1)} ${(ty + 160).toFixed(1)}, ${px + 30} ${py - 200}, ${px} ${py}`);
+
+        // rain
+        const f = Math.round((t - RAIN_T0) * FPS);
+        const fr = f >= 0 && f < RAIN.length ? RAIN[f] : null;
+        bubbles.forEach((b, k) => {
+          const s = fr && fr[k];
+          if (!s || s[1] > 2200) {
+            b.el.style.visibility = "hidden";
+            return;
+          }
+          b.el.style.visibility = "visible";
+          b.el.style.transform = `translate(${(s[0] - b.w / 2).toFixed(1)}px, ${(s[1] - b.h / 2).toFixed(1)}px) rotate(${s[2].toFixed(3)}rad)`;
+        });
+        // the 400 counter
+        const n = document.querySelector(".tok.count");
+        if (n) {
+          const k = Math.min(1, Math.max(0, (t - C.four) / (C.people + 0.2 - C.four)));
+          n.textContent = String(Math.round(400 * (1 - Math.pow(1 - k, 3))));
+        }
+      }
+      window.addEventListener("hf-seek", (e) => renderAt(e.detail.time));
+      renderAt(window.__hfThreeTime || 0);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines.reel1 = tl;
+    </script>
+  </body>
+</html>

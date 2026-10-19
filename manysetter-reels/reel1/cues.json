@@ -1,0 +1,1527 @@
+{
+ "words": [
+  {
+   "w": "Hey,",
+   "t": 0.06,
+   "end": 0.5
+  },
+  {
+   "w": "bitch.",
+   "t": 0.68,
+   "end": 1.221
+  },
+  {
+   "w": "You",
+   "t": 1.453,
+   "end": 1.573
+  },
+  {
+   "w": "did",
+   "t": 1.653,
+   "end": 1.773
+  },
+  {
+   "w": "your",
+   "t": 1.793,
+   "end": 1.913
+  },
+  {
+   "w": "fucking",
+   "t": 1.933,
+   "end": 2.173
+  },
+  {
+   "w": "challenge,",
+   "t": 2.213,
+   "end": 2.553
+  },
+  {
+   "w": "right?",
+   "t": 2.593,
+   "end": 2.833
+  },
+  {
+   "w": "Five",
+   "t": 3.065,
+   "end": 3.245
+  },
+  {
+   "w": "days",
+   "t": 3.285,
+   "end": 3.425
+  },
+  {
+   "w": "live.",
+   "t": 3.505,
+   "end": 3.765
+  },
+  {
+   "w": "Voice:",
+   "t": 3.997,
+   "end": 4.278
+  },
+  {
+   "w": "dead.",
+   "t": 4.41,
+   "end": 4.69
+  },
+  {
+   "w": "Ring",
+   "t": 4.962,
+   "end": 5.102
+  },
+  {
+   "w": "light:",
+   "t": 5.182,
+   "end": 5.382
+  },
+  {
+   "w": "still",
+   "t": 5.514,
+   "end": 5.774
+  },
+  {
+   "w": "on.",
+   "t": 5.906,
+   "end": 5.966
+  },
+  {
+   "w": "And",
+   "t": 6.198,
+   "end": 6.278
+  },
+  {
+   "w": "now,",
+   "t": 6.338,
+   "end": 6.478
+  },
+  {
+   "w": "four",
+   "t": 6.71,
+   "end": 6.91
+  },
+  {
+   "w": "hundred",
+   "t": 6.97,
+   "end": 7.19
+  },
+  {
+   "w": "people",
+   "t": 7.23,
+   "end": 7.45
+  },
+  {
+   "w": "in",
+   "t": 7.51,
+   "end": 7.55
+  },
+  {
+   "w": "your",
+   "t": 7.59,
+   "end": 7.691
+  },
+  {
+   "w": "DMs",
+   "t": 7.731,
+   "end": 8.071
+  },
+  {
+   "w": "like...",
+   "t": 8.131,
+   "end": 8.291
+  },
+  {
+   "w": "\"info?\"",
+   "t": 8.643,
+   "end": 9.023
+  },
+  {
+   "w": "And",
+   "t": 9.255,
+   "end": 9.335
+  },
+  {
+   "w": "you",
+   "t": 9.355,
+   "end": 9.435
+  },
+  {
+   "w": "answer",
+   "t": 9.535,
+   "end": 9.715
+  },
+  {
+   "w": "them...",
+   "t": 9.775,
+   "end": 9.895
+  },
+  {
+   "w": "by",
+   "t": 10.207,
+   "end": 10.407
+  },
+  {
+   "w": "hand?",
+   "t": 10.539,
+   "end": 10.94
+  },
+  {
+   "w": "At",
+   "t": 11.172,
+   "end": 11.232
+  },
+  {
+   "w": "midnight?",
+   "t": 11.364,
+   "end": 11.784
+  },
+  {
+   "w": "In",
+   "t": 12.016,
+   "end": 12.076
+  },
+  {
+   "w": "bed?",
+   "t": 12.208,
+   "end": 12.428
+  },
+  {
+   "w": "That's",
+   "t": 12.78,
+   "end": 13.0
+  },
+  {
+   "w": "not",
+   "t": 13.06,
+   "end": 13.2
+  },
+  {
+   "w": "a",
+   "t": 13.26,
+   "end": 13.28
+  },
+  {
+   "w": "business.",
+   "t": 13.36,
+   "end": 13.78
+  },
+  {
+   "w": "That's",
+   "t": 14.092,
+   "end": 14.332
+  },
+  {
+   "w": "a",
+   "t": 14.464,
+   "end": 14.484
+  },
+  {
+   "w": "hostage",
+   "t": 14.564,
+   "end": 14.905
+  },
+  {
+   "w": "situation.",
+   "t": 14.945,
+   "end": 15.405
+  },
+  {
+   "w": "Plug",
+   "t": 15.777,
+   "end": 15.937
+  },
+  {
+   "w": "me",
+   "t": 16.017,
+   "end": 16.057
+  },
+  {
+   "w": "into",
+   "t": 16.117,
+   "end": 16.237
+  },
+  {
+   "w": "ManyChat.",
+   "t": 16.297,
+   "end": 16.717
+  },
+  {
+   "w": "I",
+   "t": 16.949,
+   "end": 16.989
+  },
+  {
+   "w": "learn",
+   "t": 17.089,
+   "end": 17.189
+  },
+  {
+   "w": "your",
+   "t": 17.249,
+   "end": 17.349
+  },
+  {
+   "w": "offer,",
+   "t": 17.389,
+   "end": 17.61
+  },
+  {
+   "w": "I",
+   "t": 17.842,
+   "end": 17.862
+  },
+  {
+   "w": "talk",
+   "t": 17.962,
+   "end": 18.102
+  },
+  {
+   "w": "like",
+   "t": 18.202,
+   "end": 18.322
+  },
+  {
+   "w": "you,",
+   "t": 18.362,
+   "end": 18.462
+  },
+  {
+   "w": "I",
+   "t": 18.694,
+   "end": 18.734
+  },
+  {
+   "w": "handle",
+   "t": 18.814,
+   "end": 19.094
+  },
+  {
+   "w": "the",
+   "t": 19.154,
+   "end": 19.254
+  },
+  {
+   "w": "\"I'll",
+   "t": 19.466,
+   "end": 19.646
+  },
+  {
+   "w": "think",
+   "t": 19.778,
+   "end": 19.958
+  },
+  {
+   "w": "about",
+   "t": 20.038,
+   "end": 20.258
+  },
+  {
+   "w": "it\"...",
+   "t": 20.358,
+   "end": 20.398
+  },
+  {
+   "w": "and",
+   "t": 20.63,
+   "end": 20.71
+  },
+  {
+   "w": "I",
+   "t": 20.73,
+   "end": 20.75
+  },
+  {
+   "w": "book",
+   "t": 20.83,
+   "end": 20.951
+  },
+  {
+   "w": "the",
+   "t": 21.011,
+   "end": 21.071
+  },
+  {
+   "w": "call.",
+   "t": 21.111,
+   "end": 21.271
+  },
+  {
+   "w": "In",
+   "t": 21.503,
+   "end": 21.603
+  },
+  {
+   "w": "your",
+   "t": 21.735,
+   "end": 21.875
+  },
+  {
+   "w": "calendar.",
+   "t": 21.915,
+   "end": 22.295
+  },
+  {
+   "w": "You?",
+   "t": 22.627,
+   "end": 22.767
+  },
+  {
+   "w": "Go",
+   "t": 23.079,
+   "end": 23.159
+  },
+  {
+   "w": "to",
+   "t": 23.239,
+   "end": 23.299
+  },
+  {
+   "w": "sleep.",
+   "t": 23.339,
+   "end": 23.599
+  },
+  {
+   "w": "You",
+   "t": 23.831,
+   "end": 23.911
+  },
+  {
+   "w": "look",
+   "t": 23.951,
+   "end": 24.051
+  },
+  {
+   "w": "like",
+   "t": 24.111,
+   "end": 24.211
+  },
+  {
+   "w": "shit.",
+   "t": 24.271,
+   "end": 24.472
+  },
+  {
+   "w": "Comment",
+   "t": 24.824,
+   "end": 25.184
+  },
+  {
+   "w": "SETTY.",
+   "t": 25.316,
+   "end": 25.636
+  },
+  {
+   "w": "I'll",
+   "t": 25.868,
+   "end": 26.028
+  },
+  {
+   "w": "slide",
+   "t": 26.128,
+   "end": 26.528
+  },
+  {
+   "w": "into",
+   "t": 26.568,
+   "end": 26.728
+  },
+  {
+   "w": "your",
+   "t": 26.788,
+   "end": 26.908
+  },
+  {
+   "w": "DMs.",
+   "t": 26.948,
+   "end": 27.429
+  }
+ ],
+ "chunks": [
+  {
+   "id": 0,
+   "start": 0.06,
+   "end": 0.68,
+   "next": 0.68,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 0,
+     "text": "Hey,",
+     "t": 0.06,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "start": 0.68,
+   "end": 1.453,
+   "next": 1.453,
+   "hide": true,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 1,
+     "text": "bitch.",
+     "t": 0.68,
+     "accent": false,
+     "bleep": true,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "start": 1.453,
+   "end": 1.933,
+   "next": 1.933,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 2,
+     "text": "You",
+     "t": 1.453,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 3,
+     "text": "did",
+     "t": 1.653,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 4,
+     "text": "your",
+     "t": 1.793,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "start": 1.933,
+   "end": 2.213,
+   "next": 2.213,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 5,
+     "text": "fucking",
+     "t": 1.933,
+     "accent": false,
+     "bleep": true,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "start": 2.213,
+   "end": 3.065,
+   "next": 3.065,
+   "hide": false,
+   "hero": true,
+   "tokens": [
+    {
+     "i": 6,
+     "text": "challenge,",
+     "t": 2.213,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 7,
+     "text": "right?",
+     "t": 2.593,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "start": 3.065,
+   "end": 3.997,
+   "next": 3.997,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 8,
+     "text": "Five",
+     "t": 3.065,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 9,
+     "text": "days",
+     "t": 3.285,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 10,
+     "text": "live.",
+     "t": 3.505,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "start": 3.997,
+   "end": 4.962,
+   "next": 4.962,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 11,
+     "text": "Voice:",
+     "t": 3.997,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 12,
+     "text": "dead.",
+     "t": 4.41,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "start": 4.962,
+   "end": 6.198,
+   "next": 6.198,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 13,
+     "text": "Ring",
+     "t": 4.962,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 14,
+     "text": "light:",
+     "t": 5.182,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 15,
+     "text": "still",
+     "t": 5.514,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 16,
+     "text": "on.",
+     "t": 5.906,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "start": 6.198,
+   "end": 6.71,
+   "next": 6.71,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 17,
+     "text": "And",
+     "t": 6.198,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 18,
+     "text": "now,",
+     "t": 6.338,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "start": 6.71,
+   "end": 7.51,
+   "next": 7.51,
+   "hide": false,
+   "hero": true,
+   "tokens": [
+    {
+     "i": 19,
+     "text": "400",
+     "t": 6.71,
+     "accent": true,
+     "bleep": false,
+     "count": true
+    },
+    {
+     "i": 21,
+     "text": "people",
+     "t": 7.23,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "start": 7.51,
+   "end": 8.643,
+   "next": 8.643,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 22,
+     "text": "in",
+     "t": 7.51,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 23,
+     "text": "your",
+     "t": 7.59,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 24,
+     "text": "DMs",
+     "t": 7.731,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 25,
+     "text": "like…",
+     "t": 8.131,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "start": 8.643,
+   "end": 9.255,
+   "next": 9.255,
+   "hide": true,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 26,
+     "text": "info?",
+     "t": 8.643,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "start": 9.255,
+   "end": 10.207,
+   "next": 10.207,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 27,
+     "text": "And",
+     "t": 9.255,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 28,
+     "text": "you",
+     "t": 9.355,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 29,
+     "text": "answer",
+     "t": 9.535,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 30,
+     "text": "them…",
+     "t": 9.775,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "start": 10.207,
+   "end": 11.172,
+   "next": 11.172,
+   "hide": false,
+   "hero": true,
+   "tokens": [
+    {
+     "i": 31,
+     "text": "by",
+     "t": 10.207,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 32,
+     "text": "hand?",
+     "t": 10.539,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "start": 11.172,
+   "end": 12.016,
+   "next": 12.016,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 33,
+     "text": "At",
+     "t": 11.172,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 34,
+     "text": "midnight?",
+     "t": 11.364,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "start": 12.016,
+   "end": 12.78,
+   "next": 12.78,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 35,
+     "text": "In",
+     "t": 12.016,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 36,
+     "text": "bed?",
+     "t": 12.208,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 16,
+   "start": 12.78,
+   "end": 14.092,
+   "next": 14.092,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 37,
+     "text": "That's",
+     "t": 12.78,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 38,
+     "text": "not",
+     "t": 13.06,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 39,
+     "text": "a",
+     "t": 13.26,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 40,
+     "text": "business.",
+     "t": 13.36,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 17,
+   "start": 14.092,
+   "end": 15.777,
+   "next": 15.777,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 41,
+     "text": "That's",
+     "t": 14.092,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 42,
+     "text": "a",
+     "t": 14.464,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 43,
+     "text": "hostage",
+     "t": 14.564,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 44,
+     "text": "situation.",
+     "t": 14.945,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 18,
+   "start": 15.777,
+   "end": 16.949,
+   "next": 16.949,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 45,
+     "text": "Plug",
+     "t": 15.777,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 46,
+     "text": "me",
+     "t": 16.017,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 47,
+     "text": "into",
+     "t": 16.117,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 48,
+     "text": "Manychat.",
+     "t": 16.297,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 19,
+   "start": 16.949,
+   "end": 17.842,
+   "next": 17.842,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 49,
+     "text": "I",
+     "t": 16.949,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 50,
+     "text": "learn",
+     "t": 17.089,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 51,
+     "text": "your",
+     "t": 17.249,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 52,
+     "text": "offer,",
+     "t": 17.389,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 20,
+   "start": 17.842,
+   "end": 18.694,
+   "next": 18.694,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 53,
+     "text": "I",
+     "t": 17.842,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 54,
+     "text": "talk",
+     "t": 17.962,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 55,
+     "text": "like",
+     "t": 18.202,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 56,
+     "text": "you,",
+     "t": 18.362,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 21,
+   "start": 18.694,
+   "end": 19.466,
+   "next": 19.466,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 57,
+     "text": "I",
+     "t": 18.694,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 58,
+     "text": "handle",
+     "t": 18.814,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 59,
+     "text": "the",
+     "t": 19.154,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 22,
+   "start": 19.466,
+   "end": 20.63,
+   "next": 20.63,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 60,
+     "text": "“I’ll",
+     "t": 19.466,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 61,
+     "text": "think",
+     "t": 19.778,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 62,
+     "text": "about",
+     "t": 20.038,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 63,
+     "text": "it”…",
+     "t": 20.358,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 23,
+   "start": 20.63,
+   "end": 21.503,
+   "next": 21.503,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 64,
+     "text": "and",
+     "t": 20.63,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 65,
+     "text": "I",
+     "t": 20.73,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 66,
+     "text": "book",
+     "t": 20.83,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 67,
+     "text": "the",
+     "t": 21.011,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 68,
+     "text": "call.",
+     "t": 21.111,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 24,
+   "start": 21.503,
+   "end": 22.627,
+   "next": 22.627,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 69,
+     "text": "In",
+     "t": 21.503,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 70,
+     "text": "your",
+     "t": 21.735,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 71,
+     "text": "calendar.",
+     "t": 21.915,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 25,
+   "start": 22.627,
+   "end": 23.079,
+   "next": 23.079,
+   "hide": false,
+   "hero": true,
+   "tokens": [
+    {
+     "i": 72,
+     "text": "You?",
+     "t": 22.627,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "start": 23.079,
+   "end": 23.831,
+   "next": 23.831,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 73,
+     "text": "Go",
+     "t": 23.079,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 74,
+     "text": "to",
+     "t": 23.239,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 75,
+     "text": "sleep.",
+     "t": 23.339,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "start": 23.831,
+   "end": 24.271,
+   "next": 24.271,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 76,
+     "text": "You",
+     "t": 23.831,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 77,
+     "text": "look",
+     "t": 23.951,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 78,
+     "text": "like",
+     "t": 24.111,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 28,
+   "start": 24.271,
+   "end": 24.824,
+   "next": 24.824,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 79,
+     "text": "shit.",
+     "t": 24.271,
+     "accent": false,
+     "bleep": true,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 29,
+   "start": 24.824,
+   "end": 25.868,
+   "next": 25.868,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 80,
+     "text": "Comment",
+     "t": 24.824,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 81,
+     "text": "SETTY.",
+     "t": 25.316,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  },
+  {
+   "id": 30,
+   "start": 25.868,
+   "end": 27.729,
+   "next": 29.03,
+   "hide": false,
+   "hero": false,
+   "tokens": [
+    {
+     "i": 82,
+     "text": "I'll",
+     "t": 25.868,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 83,
+     "text": "slide",
+     "t": 26.128,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 84,
+     "text": "into",
+     "t": 26.568,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 85,
+     "text": "your",
+     "t": 26.788,
+     "accent": false,
+     "bleep": false,
+     "count": false
+    },
+    {
+     "i": 86,
+     "text": "DMs.",
+     "t": 26.948,
+     "accent": true,
+     "bleep": false,
+     "count": false
+    }
+   ]
+  }
+ ],
+ "cues": {
+  "total": 29.03,
+  "hey": 0.06,
+  "bleep1": 0.68,
+  "youdid": 1.453,
+  "bleep2": 1.933,
+  "challenge": 2.213,
+  "right": 2.593,
+  "five": 3.065,
+  "days": 3.285,
+  "live": 3.505,
+  "voice": 3.997,
+  "dead": 4.41,
+  "ring": 4.962,
+  "stillon": 5.514,
+  "andnow": 6.198,
+  "four": 6.71,
+  "people": 7.23,
+  "dms": 7.731,
+  "like": 8.131,
+  "info": 8.643,
+  "info_end": 9.023,
+  "answer": 9.255,
+  "byhand": 10.207,
+  "hand": 10.539,
+  "midnight": 11.364,
+  "inbed": 12.016,
+  "bed": 12.208,
+  "business": 12.78,
+  "business_end": 13.78,
+  "hostage_line": 14.092,
+  "hostage": 14.564,
+  "situation": 14.945,
+  "situation_end": 15.405,
+  "plug": 15.777,
+  "manychat": 16.297,
+  "manychat_end": 16.717,
+  "learn": 16.949,
+  "offer": 17.389,
+  "talk": 17.842,
+  "likeyou": 18.362,
+  "handle": 18.694,
+  "illthink": 19.466,
+  "thinkend": 20.398,
+  "andbook": 20.63,
+  "call": 21.111,
+  "inyour": 21.503,
+  "calendar": 21.915,
+  "calendar_end": 22.295,
+  "you": 22.627,
+  "gosleep": 23.079,
+  "sleep": 23.339,
+  "youlook": 23.831,
+  "bleep3": 24.271,
+  "comment": 24.824,
+  "setty": 25.316,
+  "slide": 26.128,
+  "dms_end": 27.429,
+  "end": 27.429
+ },
+ "bleeps": [
+  {
+   "i": 1,
+   "t": 0.68,
+   "end": 1.221
+  },
+  {
+   "i": 5,
+   "t": 1.933,
+   "end": 2.173
+  },
+  {
+   "i": 79,
+   "t": 24.271,
+   "end": 24.472
+  }
+ ],
+ "icons": {
+  "arrow-down": "<path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/>",
+  "hand": "<path d=\"M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2\"></path><path d=\"M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2\"></path><path d=\"M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8\"></path><path d=\"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15\"></path>",
+  "moon": "<path d=\"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401\"/>",
+  "message-circle": "<path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"></path>",
+  "arrow-up": "<path d=\"m5 12 7-7 7 7\"></path><path d=\"M12 19V5\"></path>",
+  "book-open": "<path d=\"M12 5v16\"></path><path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"></path>",
+  "file-text": "<path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"></path><path d=\"M14 2v5a1 1 0 0 0 1 1h5\"></path><path d=\"M10 9H8\"></path><path d=\"M16 13H8\"></path><path d=\"M16 17H8\"></path>",
+  "calendar-check": "<path d=\"M8 2v3\"></path><path d=\"M16 2v3\"></path><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"></rect><path d=\"M3 9h18\"></path><path d=\"m9 15 2 2 4-4\"></path>",
+  "calendar-days": "<path d=\"M8 2v3\"></path><path d=\"M16 2v3\"></path><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"></rect><path d=\"M3 9h18\"></path><path d=\"M8 13h.01\"></path><path d=\"M12 13h.01\"></path><path d=\"M16 13h.01\"></path><path d=\"M8 17h.01\"></path><path d=\"M12 17h.01\"></path><path d=\"M16 17h.01\"></path>"
+ }
+}

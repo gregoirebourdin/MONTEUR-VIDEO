@@ -164,6 +164,24 @@ function drawFace(ctx, p) {
     ctx.restore();
   }
   ctx.restore();
+  // censor bar over the mouth when Setty swears (the bleep is in the mix)
+  if (p.censor > 0.01) {
+    ctx.save();
+    ctx.translate(mx + 6, my + 8);
+    ctx.rotate(-0.07);
+    ctx.scale(p.censor, p.censor);
+    const bw = 300, bh = 112;
+    ctx.fillStyle = "#0d0c0a";
+    ctx.beginPath();
+    ctx.roundRect(-bw / 2, -bh / 2, bw, bh, 26);
+    ctx.fill();
+    ctx.fillStyle = "#ff7a3a";
+    ctx.font = "800 72px Inter, Arial, sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("#@!%", 0, 6);
+    ctx.restore();
+  }
 }
 
 // ---------- the default pose (every field is a number GSAP can tween, except `mouth`-free switches) ----------
@@ -177,7 +195,7 @@ export function basePose() {
     browLy: 0, browRy: 0, browLr: 0, browRr: 0, brows: 1,
     // face
     curve: 1, smirk: 0, mouthW: 1, mouthOpen: 0, mouthRound: 0, mouthTilt: 0, mouthX: 0,
-    teeth: 0, tongue: 0, blush: 0.6,
+    teeth: 0, tongue: 0, blush: 0.6, censor: 0,
     // arms: raise 0 = hanging, 1.57 = out to the side, 3.1 = straight up; fwd swings to the front
     armLr: 0.35, armRr: 0.35, armLf: 0, armRf: 0, armLtw: 0, armRtw: 0,
     // typing dots above the head: phase drives the bounce, alert shows "!"

@@ -3,3 +3,5 @@ snapshots/
 zoom/
 node_modules/
 .hyperframes/
+renders_log.txt
+*.log
