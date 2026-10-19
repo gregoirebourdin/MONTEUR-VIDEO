@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Reel 1 "The challenge": word timing → captions, bleeps and scene cues → index.html + cues.json.
+"""Reel build (reel1 "The challenge" is the reference): word timing → captions, bleeps and scene cues → index.html + cues.json.
 
 Every cue in the picture and in the sound comes from the aligned voice (../vo/reel1/timing.json),
-so a new take re-times the whole reel. Usage: python3 reel1/build.py
+so a new take re-times the whole reel. Usage: python3 reelN/build.py
 """
 import json
 import pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent
-TIMING = json.loads((HERE.parent / "vo/reel1/timing.json").read_text())
+REEL = HERE.name  # the folder name is the reel id: reel1, reel2…
+TIMING = json.loads((HERE.parent / f"vo/{REEL}/timing.json").read_text())
 W = TIMING["words"]
 TAIL = 1.6  # end hold after the last word (CTA, loop)
 TOTAL = round(W[-1]["end"] + TAIL, 2)
@@ -106,9 +107,9 @@ def main():
     (HERE / "cues.json").write_text(json.dumps(data, indent=1, ensure_ascii=False))
     src = (HERE / "src/template.html").read_text()
     html = src.replace("/*DATA*/", "const DATA = " + json.dumps(data, ensure_ascii=False) + ";")
-    html = html.replace("{{TOTAL}}", f"{TOTAL:.2f}")
+    html = html.replace("{{TOTAL}}", f"{TOTAL:.2f}").replace("{{ID}}", REEL)
     (HERE / "index.html").write_text(html)
-    print(f"reel1: {TOTAL:.2f}s, {len(data['chunks'])} caption chunks → index.html, cues.json")
+    print(f"{REEL}: {TOTAL:.2f}s, {len(data['chunks'])} caption chunks → index.html, cues.json")
 
 
 if __name__ == "__main__":

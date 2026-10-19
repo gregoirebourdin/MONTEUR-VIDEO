@@ -8,14 +8,16 @@ Usage: python3 scripts/check_vo.py vo/take.wav vo/script.txt [--lang en]
 import argparse
 import difflib
 import json
+import os
 import pathlib
 import re
 import subprocess
 import sys
 import tempfile
 
-WHISPER = "whisper-cli"
-MODELS = {"en": "/opt/whisper.cpp/models/ggml-small.en.bin", "fr": "/opt/whisper.cpp/models/ggml-small.bin"}
+WHISPER = os.environ.get("WHISPER_CLI", "whisper-cli")
+_MODELS_DIR = os.environ.get("WHISPER_MODELS_DIR", "/opt/whisper.cpp/models")
+MODELS = {"en": f"{_MODELS_DIR}/ggml-small.en.bin", "fr": f"{_MODELS_DIR}/ggml-small.bin"}
 
 # Spellings whisper uses for the brand names, mapped back to the script's spelling.
 ALIASES = {

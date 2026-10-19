@@ -181,7 +181,7 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="reel1" data-start="0" data-duration="{{TOTAL}}" data-fps="30" data-width="1080" data-height="1920">
+    <div id="root" data-composition-id="{{ID}}" data-start="0" data-duration="{{TOTAL}}" data-fps="30" data-width="1080" data-height="1920">
       <div class="layer" id="back">
         <div class="bg" id="bg-warm"></div>
         <div class="bg" id="bg-hot"></div>
@@ -715,7 +715,7 @@
       renderAt(window.__hfThreeTime || 0);
 
       window.__timelines = window.__timelines || {};
-      window.__timelines.reel1 = tl;
+      window.__timelines["{{ID}}"] = tl;
     </script>
   </body>
 </html>

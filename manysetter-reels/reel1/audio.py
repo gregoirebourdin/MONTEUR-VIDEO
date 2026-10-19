@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Reel 1 sound: Charon voice with bleeps, an original trap beat, and an SFX on every motion.
 
-  cues.json (build.py) + ../vo/reel1/vo.wav  →  audio/mix.wav          (voice + music + SFX, -14 LUFS, ≤ -1 dBTP)
+  cues.json (build.py) + ../vo/<reel>/vo.wav  →  audio/mix.wav          (voice + music + SFX, -14 LUFS, ≤ -1 dBTP)
                                               audio/mix_nomusic.wav  (same without music, for trending sounds)
-Every sound is placed from the same cues as the picture. Usage: python3 reel1/audio.py
+Every sound is placed from the same cues as the picture. Usage: python3 reelN/audio.py
 """
 import json
 import pathlib
@@ -30,7 +30,7 @@ def buf():
 
 
 # ---------------- voice + bleeps ----------------
-vo, sr = sf.read(HERE.parent / "vo/reel1/vo.wav", dtype="float64")
+vo, sr = sf.read(HERE.parent / f"vo/{HERE.name}/vo.wav", dtype="float64")
 assert sr == SR
 vo = vo if vo.ndim == 1 else vo.mean(axis=1)
 voice = np.zeros(N)
