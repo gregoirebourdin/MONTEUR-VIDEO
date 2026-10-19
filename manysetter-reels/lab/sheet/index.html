@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.181.2/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.2/examples/jsm/"
+        }
+      }
+    </script>
+    <style>
+      @font-face { font-family: "Nohemi"; font-weight: 600; src: url("assets/fonts/Nohemi-600.woff2") format("woff2"); }
+      @font-face { font-family: "Inter"; font-weight: 100 900; src: url("assets/fonts/Inter-var.woff2") format("woff2"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #f5f3f2; }
+      #root { position: relative; width: 100%; height: 100%; background: #f5f3f2; font-family: Inter, sans-serif; }
+      .head { position: absolute; left: 48px; top: 30px; display: flex; align-items: baseline; gap: 22px; }
+      .head h1 { font: 600 64px/1 Nohemi, sans-serif; letter-spacing: -0.045em; color: #1a1816; }
+      .head p { font-size: 20px; color: #76736f; }
+      .head .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #ff611d; margin-right: 8px; }
+      .cell { position: absolute; background: #fff; border-radius: 18px;
+        box-shadow: 0 0 0 1px #0d0c0a0f, 0 1px 2px #0d0c0a0a, 0 4px 12px -4px #0d0c0a0f; }
+      .cell span { position: absolute; left: 16px; bottom: 12px; font-size: 17px; font-weight: 600; color: #42403c; }
+      .cell em { position: absolute; right: 16px; bottom: 12px; font-size: 14px; font-style: normal; color: #a3a09d; }
+      .row-label { position: absolute; left: 48px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #a3a09d; }
+      #three-layer { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="sheet" data-start="0" data-duration="1" data-fps="30" data-width="1920" data-height="1080">
+      <div class="head"><h1>Setty</h1><p><span class="dot"></span>ManySetter's mascot · a DM bubble with an attitude · character sheet v1</p></div>
+      <div id="cells"></div>
+      <canvas id="three-layer"></canvas>
+    </div>
+    <script type="module">
+      import * as THREE from "three";
+      import { createSetty, setupStage, pose } from "./assets/setty/setty.js";
+
+      const W = 1920, H = 1080;
+      // 3 rows x 4 cells: turnaround, then 8 expressions
+      const CELLS = [
+        { label: "Front", note: "turnaround", p: pose("happy") },
+        { label: "Three-quarter", note: "turnaround", p: pose("happy", { turn: 0.7 }) },
+        { label: "Side", note: "turnaround", p: pose("happy", { turn: 1.5708 }) },
+        { label: "Back", note: "turnaround", p: pose("happy", { turn: 3.1416 }) },
+        { label: "Smug", note: "signature face", p: pose("smug", { turn: 0.2 }) },
+        { label: "Side-eye", note: "\"sure, reply tomorrow\"", p: pose("sideEye", { turn: -0.15 }) },
+        { label: "Shocked", note: "126 DMs?!", p: pose("shocked") },
+        { label: "Laughing", note: "at your setter's invoice", p: pose("laughing", { turn: 0.12 }) },
+        { label: "Unimpressed", note: "eye roll", p: pose("unimpressed", { turn: -0.1 }) },
+        { label: "Wink", note: "booked it", p: pose("wink", { turn: 0.18 }) },
+        { label: "Excuse me?", note: "sassy shrug", p: pose("excuseMe", { turn: 0.05 }) },
+        { label: "Proud", note: "chin up", p: pose("proud", { turn: 0.15 }) },
+      ];
+      const X0 = 48, Y0 = 130, GAP = 18, CW = (W - 2 * X0 - 3 * GAP) / 4, CH = (H - Y0 - 30 - 2 * GAP) / 3;
+      const cellsEl = document.getElementById("cells");
+      CELLS.forEach((c, i) => {
+        c.x = X0 + (i % 4) * (CW + GAP);
+        c.y = Y0 + Math.floor(i / 4) * (CH + GAP);
+        const el = document.createElement("div");
+        el.className = "cell";
+        Object.assign(el.style, { left: `${c.x}px`, top: `${c.y}px`, width: `${CW}px`, height: `${CH}px` });
+        el.innerHTML = `<span>${c.label}</span><em>${c.note}</em>`;
+        cellsEl.appendChild(el);
+      });
+
+      const canvas = document.getElementById("three-layer");
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, preserveDrawingBuffer: true });
+      renderer.setSize(W, H, false);
+      renderer.setPixelRatio(1);
+      renderer.autoClear = false;
+      renderer.setClearColor(0x000000, 0);
+      const scene = new THREE.Scene();
+      await setupStage(renderer, scene, { shadowOpacity: 0.16 });
+      const setty = createSetty();
+      scene.add(setty.root);
+      const camera = new THREE.PerspectiveCamera(17, CW / (CH - 26), 0.1, 100);
+      camera.position.set(0, 2.3, 14.5);
+      camera.lookAt(0, 1.75, 0);
+
+      function renderAll() {
+        renderer.setScissorTest(false);
+        renderer.clear();
+        renderer.setScissorTest(true);
+        for (const c of CELLS) {
+          setty.apply(c.p);
+          const vy = H - (c.y + CH - 26);
+          renderer.setViewport(c.x, vy, CW, CH - 26);
+          renderer.setScissor(c.x, vy, CW, CH - 26);
+          renderer.render(scene, camera);
+        }
+      }
+      renderAll();
+      window.addEventListener("hf-seek", renderAll);
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 1 });
+      window.__timelines = window.__timelines || {};
+      window.__timelines.sheet = tl;
+    </script>
+  </body>
+</html>
