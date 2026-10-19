@@ -8,7 +8,7 @@ aspect: 1080x1920
 language: en
 voice: Charon (Gemini 3.8 Flash TTS)
 length: 20-30s per reel
-angle: mascot-led series
+angle: cheeky, hardcore, a bit vulgar: straight into coaches' pains
 ---
 
 ## Intent
@@ -17,6 +17,11 @@ A series of vertical reels for Instagram and YouTube Shorts, led by Setty, ManyS
 a living DM bubble, "super jolie, ultra mignonne, ultra catchy", with an attitude (insolente).
 The edit must be "ultra dynamique, plein de motion", never boring for a second, and never cheap:
 "comme si c'était édité par un bête de monteur". The hook lands in the first second.
+
+Angle (Grégoire, 19 Oct, after rejecting the first five pitches): Setty is "ultra insolent", "hardcore",
+"un poil vulgaire", talks like a real human and goes straight into the pain of coaches who run
+webinars, 5-day lives, challenges and VSLs, then drown in Instagram DMs they have no time to answer.
+No soft, generic hooks ("tu attends des DM à 11 h" is out).
 
 ## Assets
 
